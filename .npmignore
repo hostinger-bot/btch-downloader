@@ -1,0 +1,29 @@
+# ignore file
+node_modules/
+dist/
+build/
+test/
+tests/
+__tests__/
+coverage/
+docs/
+examples/
+
+# Config & log files
+*.log
+*.gz
+*.zip
+*.map
+.yarn/
+.vscode/
+.idea/
+.eslintcache
+.prettiercache
+
+# GitHub related files
+.github/
+.gitignore
+
+# Env & private files
+.env
+.env.*
