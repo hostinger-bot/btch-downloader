@@ -1,7 +1,7 @@
 /**
  * @module btch-downloader
  * @description A module to download media from various social media platforms like Instagram, TikTok, Facebook, Twitter, and YouTube.
- * @see {@link https://github.com/BOTCAHX|GitHub Repository} for contribution and issue reporting.
+ * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contribution and issue reporting.
  * @license MIT
  */
 
