@@ -29,4 +29,4 @@ coverage/
 .nyc_output/
 
 # Exclude personal directories
-/sdcard/npm-gemini/.cache/
+/sdcard/btch-downloader/.cache/
