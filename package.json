@@ -20,9 +20,10 @@
   "author": "Tio",
   "license": "MIT",
   "dependencies": {
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "docdash": "^2.0.2"
   },
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/hostinger-bot/btch-downloader.git"
   },
@@ -35,6 +36,5 @@
   },
   "publishConfig": {
     "tag": "latest"
-  },
-  "devDependencies": {}
+  }
 }

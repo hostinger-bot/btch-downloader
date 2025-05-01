@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>jsdoc.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-btch-downloader.html">btch-downloader</a><ul class='methods'><li data-type='method'><a href="module-btch-downloader.html#~aio">aio</a></li><li data-type='method'><a href="module-btch-downloader.html#~fbdown">fbdown</a></li><li data-type='method'><a href="module-btch-downloader.html#~igdl">igdl</a></li><li data-type='method'><a href="module-btch-downloader.html#~ttdl">ttdl</a></li><li data-type='method'><a href="module-btch-downloader.html#~twitter">twitter</a></li><li data-type='method'><a href="module-btch-downloader.html#~youtube">youtube</a></li></ul></li></ul>
+    
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">jsdoc.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module btch-downloader
+ * @description A module to download media from various social media platforms like Instagram, TikTok, Facebook, Twitter, and YouTube.
+ * @see {@link https://github.com/BOTCAHX|GitHub Repository} for contribution and issue reporting.
+ * @license MIT
+ */
+
+/**
+ * Downloads media from a given URL across supported platforms.
+ * @async
+ * @param {string} url - The URL of the media to download (e.g., Instagram, TikTok, etc.).
+ * @returns {Promise&lt;Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not publicly accessible.
+ * @example
+ * const { aio } = require('btch-downloader');
+ * const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
+ * aio(url).then(data => console.log(data));
+ */
+async function aio(url) {
+  // Kode asli Anda untuk fungsi aio
+}
+
+/**
+ * Downloads media from Instagram.
+ * @async
+ * @param {string} url - The Instagram media URL.
+ * @returns {Promise&lt;Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not publicly accessible.
+ * @example
+ * const { igdl } = require('btch-downloader');
+ * const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
+ * igdl(url).then(data => console.log(data));
+ */
+async function igdl(url) {
+  // Kode asli Anda untuk fungsi igdl
+}
+
+/**
+ * Downloads media from TikTok.
+ * @async
+ * @param {string} url - The TikTok media URL.
+ * @returns {Promise&lt;Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not publicly accessible.
+ * @example
+ * const { ttdl } = require('btch-downloader');
+ * const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243';
+ * ttdl(url).then(data => console.log(data));
+ */
+async function ttdl(url) {
+  // Kode asli Anda untuk fungsi ttdl
+}
+
+/**
+ * Downloads media from Facebook.
+ * @async
+ * @param {string} url - The Facebook media URL.
+ * @returns {Promise&lt;Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not publicly accessible.
+ * @example
+ * const { fbdown } = require('btch-downloader');
+ * const url = 'https://www.facebook.com/watch/?v=1393572814172251';
+ * fbdown(url).then(data => console.log(data));
+ */
+async function fbdown(url) {
+  // Kode asli Anda untuk fungsi fbdown
+}
+
+/**
+ * Downloads media from Twitter.
+ * @async
+ * @param {string} url - The Twitter media URL.
+ * @returns {Promise&lt;Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not publicly accessible.
+ * @example
+ * const { twitter } = require('btch-downloader');
+ * const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697';
+ * twitter(url).then(data => console.log(data));
+ */
+async function twitter(url) {
+  // Kode asli Anda untuk fungsi twitter
+}
+
+/**
+ * Downloads media from YouTube.
+ * @async
+ * @param {string} url - The YouTube media URL.
+ * @returns {Promise&lt;Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not publicly accessible.
+ * @example
+ * const { youtube } = require('btch-downloader');
+ * const url = 'https://youtube.com/watch?v=C8mJ8943X80';
+ * youtube(url).then(data => console.log(data));
+ */
+async function youtube(url) {
+  // Kode asli Anda untuk fungsi youtube
+}
+
+module.exports = { aio, igdl, ttdl, fbdown, twitter, youtube };</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Thu May 01 2025 19:49:59 GMT+0700 (Western Indonesia Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

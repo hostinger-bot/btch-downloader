@@ -27,3 +27,7 @@ examples/
 # Env & private files
 .env
 .env.*
+
+# docs
+docs/
+jsdocs.js
