@@ -1,5 +1,6 @@
 # Node modules
-node_modules
+node_modules/
+**/node_modules/
 
 # Logs
 npm-debug.log*
@@ -8,6 +9,7 @@ yarn-error.log*
 
 # Environment variables
 .env
+.env.*
 
 # System files
 .DS_Store
@@ -27,4 +29,4 @@ coverage/
 .nyc_output/
 
 # Exclude personal directories
-/sdcard/npm-gemini/.cache
+/sdcard/npm-gemini/.cache/
