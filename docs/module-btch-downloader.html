@@ -29,7 +29,7 @@
 <nav >
     
     
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-btch-downloader.html">btch-downloader</a><ul class='methods'><li data-type='method'><a href="module-btch-downloader.html#~aio">aio</a></li><li data-type='method'><a href="module-btch-downloader.html#~fbdown">fbdown</a></li><li data-type='method'><a href="module-btch-downloader.html#~igdl">igdl</a></li><li data-type='method'><a href="module-btch-downloader.html#~ttdl">ttdl</a></li><li data-type='method'><a href="module-btch-downloader.html#~twitter">twitter</a></li><li data-type='method'><a href="module-btch-downloader.html#~youtube">youtube</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-btch-downloader.html">btch-downloader</a><ul class='methods'><li data-type='method'><a href="module-btch-downloader.html#~aio">aio</a></li><li data-type='method'><a href="module-btch-downloader.html#~fbdown">fbdown</a></li><li data-type='method'><a href="module-btch-downloader.html#~igdl">igdl</a></li><li data-type='method'><a href="module-btch-downloader.html#~mediafire">mediafire</a></li><li data-type='method'><a href="module-btch-downloader.html#~ttdl">ttdl</a></li><li data-type='method'><a href="module-btch-downloader.html#~twitter">twitter</a></li><li data-type='method'><a href="module-btch-downloader.html#~youtube">youtube</a></li></ul></li></ul>
     
 </nav>
 
@@ -58,7 +58,7 @@
         <div class="container-overview">
         
             
-                <div class="description usertext">A module to download media from various social media platforms like Instagram, TikTok, Facebook, Twitter, and YouTube.</div>
+                <div class="description usertext">A module for downloading media from various platforms, including Instagram, TikTok, Facebook, Twitter, YouTube, and MediaFire.</div>
             
 
             
@@ -70,7 +70,7 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li>A module to download media from various social media platforms like Instagram, TikTok, Facebook, Twitter, and YouTube.</li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li>A module for downloading media from various platforms, including Instagram, TikTok, Facebook, Twitter, YouTube, and MediaFire.</li></ul></dd>
     
 
     
@@ -81,7 +81,8 @@
     
 
     
-
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>4.0.8</li></ul></dd>
     
 
     
@@ -96,6 +97,15 @@
 
     
 
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Tio</li>
+        </ul>
+    </dd>
     
 
     
@@ -113,7 +123,7 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="https://github.com/hostinger-bot/btch-downloader">GitHub Repository</a> for contribution and issue reporting.</li>
+            <li><a href="https://github.com/hostinger-bot/btch-downloader">GitHub Repository</a> for contributions and issue reporting.</li>
         </ul>
     </dd>
     
@@ -129,6 +139,15 @@
 
 
 
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>// Install the module
+npm install btch-downloader
+
+// Import and use the module
+const { aio, igdl, ttdl, fbdown, twitter, youtube, mediafire } = require('btch-downloader');</code></pre>
 
 
 
@@ -193,7 +212,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line19">line 19</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -241,8 +260,10 @@
     <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const { aio } = require('btch-downloader');
-const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
-aio(url).then(data => console.log(data));</code></pre>
+aio('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
 
 
 
@@ -316,7 +337,7 @@ aio(url).then(data => console.log(data));</code></pre>
 <dl>
     <dt>
         <div class="param-desc usertext">
-        If the URL is invalid or the media is not publicly accessible.
+        If the URL is invalid or the media is not accessible.
         </div>
     </dt>
     <dd></dd>
@@ -388,7 +409,7 @@ aio(url).then(data => console.log(data));</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line64">line 64</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line61">line 61</a>
     </li></ul></dd>
     
 
@@ -436,8 +457,10 @@ aio(url).then(data => console.log(data));</code></pre>
     <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const { fbdown } = require('btch-downloader');
-const url = 'https://www.facebook.com/watch/?v=1393572814172251';
-fbdown(url).then(data => console.log(data));</code></pre>
+fbdown('https://www.facebook.com/watch/?v=1393572814172251')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
 
 
 
@@ -511,7 +534,7 @@ fbdown(url).then(data => console.log(data));</code></pre>
 <dl>
     <dt>
         <div class="param-desc usertext">
-        If the URL is invalid or the media is not publicly accessible.
+        If the URL is invalid or the media is not accessible.
         </div>
     </dt>
     <dd></dd>
@@ -567,7 +590,7 @@ fbdown(url).then(data => console.log(data));</code></pre>
 
     
 
-    <h4 class="name" id="~igdl"><span class="type-signature type-signature-async, inner">(async, inner) </span>igdl<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span></h4>
+    <h4 class="name" id="~igdl"><span class="type-signature type-signature-async, inner">(async, inner) </span>igdl<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array.&lt;Object>|Object)>}</span></h4>
 
     
 
@@ -583,7 +606,7 @@ fbdown(url).then(data => console.log(data));</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line34">line 34</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line31">line 31</a>
     </li></ul></dd>
     
 
@@ -631,8 +654,10 @@ fbdown(url).then(data => console.log(data));</code></pre>
     <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const { igdl } = require('btch-downloader');
-const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
-igdl(url).then(data => console.log(data));</code></pre>
+igdl('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
 
 
 
@@ -706,7 +731,204 @@ igdl(url).then(data => console.log(data));</code></pre>
 <dl>
     <dt>
         <div class="param-desc usertext">
-        If the URL is invalid or the media is not publicly accessible.
+        If the URL is invalid or the media is not accessible.
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5 class="h5-returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    An array of JSON objects or an error object.
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array.&lt;Object>|Object)></span>
+
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="~mediafire"><span class="type-signature type-signature-async, inner">(async, inner) </span>mediafire<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+    
+    <dt class="tag-description">Description:</dt>
+    <dd class="tag-description"><ul class="dummy"><li>Downloads media from MediaFire.</li></ul></dd>
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line106">line 106</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="h5-examples">Example</h5>
+    
+    <pre class="prettyprint"><code>const { mediafire } = require('btch-downloader');
+mediafire('https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
+
+
+
+
+    <h5 class="h5-parameters">Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>url</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The MediaFire media URL.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="h5-throws">Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        If the URL is invalid or the media is not accessible.
         </div>
     </dt>
     <dd></dd>
@@ -778,7 +1000,7 @@ igdl(url).then(data => console.log(data));</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line49">line 49</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line46">line 46</a>
     </li></ul></dd>
     
 
@@ -826,8 +1048,10 @@ igdl(url).then(data => console.log(data));</code></pre>
     <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const { ttdl } = require('btch-downloader');
-const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243';
-ttdl(url).then(data => console.log(data));</code></pre>
+ttdl('https://www.tiktok.com/@omagadsus/video/7025456384175017243')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
 
 
 
@@ -901,7 +1125,7 @@ ttdl(url).then(data => console.log(data));</code></pre>
 <dl>
     <dt>
         <div class="param-desc usertext">
-        If the URL is invalid or the media is not publicly accessible.
+        If the URL is invalid or the media is not accessible.
         </div>
     </dt>
     <dd></dd>
@@ -973,7 +1197,7 @@ ttdl(url).then(data => console.log(data));</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line79">line 79</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line76">line 76</a>
     </li></ul></dd>
     
 
@@ -1021,8 +1245,10 @@ ttdl(url).then(data => console.log(data));</code></pre>
     <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const { twitter } = require('btch-downloader');
-const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697';
-twitter(url).then(data => console.log(data));</code></pre>
+twitter('https://twitter.com/gofoodindonesia/status/1229369819511709697')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
 
 
 
@@ -1096,7 +1322,7 @@ twitter(url).then(data => console.log(data));</code></pre>
 <dl>
     <dt>
         <div class="param-desc usertext">
-        If the URL is invalid or the media is not publicly accessible.
+        If the URL is invalid or the media is not accessible.
         </div>
     </dt>
     <dd></dd>
@@ -1168,7 +1394,7 @@ twitter(url).then(data => console.log(data));</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line94">line 94</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line91">line 91</a>
     </li></ul></dd>
     
 
@@ -1216,8 +1442,10 @@ twitter(url).then(data => console.log(data));</code></pre>
     <h5 class="h5-examples">Example</h5>
     
     <pre class="prettyprint"><code>const { youtube } = require('btch-downloader');
-const url = 'https://youtube.com/watch?v=C8mJ8943X80';
-youtube(url).then(data => console.log(data));</code></pre>
+youtube('https://youtube.com/watch?v=C8mJ8943X80')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
 
 
 
@@ -1291,7 +1519,7 @@ youtube(url).then(data => console.log(data));</code></pre>
 <dl>
     <dt>
         <div class="param-desc usertext">
-        If the URL is invalid or the media is not publicly accessible.
+        If the URL is invalid or the media is not accessible.
         </div>
     </dt>
     <dd></dd>
@@ -1362,7 +1590,7 @@ youtube(url).then(data => console.log(data));</code></pre>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Thu May 01 2025 20:07:26 GMT+0700 (Western Indonesia Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Fri May 09 2025 21:29:57 GMT+0700 (Western Indonesia Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

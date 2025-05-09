@@ -1,98 +1,119 @@
 /**
  * @module btch-downloader
- * @description A module to download media from various social media platforms like Instagram, TikTok, Facebook, Twitter, and YouTube.
- * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contribution and issue reporting.
+ * @description A module for downloading media from various platforms, including Instagram, TikTok, Facebook, Twitter, YouTube, and MediaFire.
+ * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contributions and issue reporting.
+ * @version 4.0.8
+ * @author Tio
  * @license MIT
+ * @example
+ * // Install the module
+ * npm install btch-downloader
+ *
+ * // Import and use the module
+ * const { aio, igdl, ttdl, fbdown, twitter, youtube, mediafire } = require('btch-downloader');
  */
 
 /**
  * Downloads media from a given URL across supported platforms.
  * @async
+ * @function aio
  * @param {string} url - The URL of the media to download (e.g., Instagram, TikTok, etc.).
  * @returns {Promise<Object>} A JSON object containing the media data.
- * @throws {Error} If the URL is invalid or the media is not publicly accessible.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example
  * const { aio } = require('btch-downloader');
- * const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
- * aio(url).then(data => console.log(data));
+ * aio('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
  */
-async function aio(url) {
-  // Kode asli Anda untuk fungsi aio
-}
 
 /**
  * Downloads media from Instagram.
  * @async
+ * @function igdl
  * @param {string} url - The Instagram media URL.
- * @returns {Promise<Object>} A JSON object containing the media data.
- * @throws {Error} If the URL is invalid or the media is not publicly accessible.
+ * @returns {Promise<Array<Object>|Object>} An array of JSON objects or an error object.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example
  * const { igdl } = require('btch-downloader');
- * const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
- * igdl(url).then(data => console.log(data));
+ * igdl('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
  */
-async function igdl(url) {
-  // Kode asli Anda untuk fungsi igdl
-}
 
 /**
  * Downloads media from TikTok.
  * @async
+ * @function ttdl
  * @param {string} url - The TikTok media URL.
  * @returns {Promise<Object>} A JSON object containing the media data.
- * @throws {Error} If the URL is invalid or the media is not publicly accessible.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example
  * const { ttdl } = require('btch-downloader');
- * const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243';
- * ttdl(url).then(data => console.log(data));
+ * ttdl('https://www.tiktok.com/@omagadsus/video/7025456384175017243')
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
  */
-async function ttdl(url) {
-  // Kode asli Anda untuk fungsi ttdl
-}
 
 /**
  * Downloads media from Facebook.
  * @async
+ * @function fbdown
  * @param {string} url - The Facebook media URL.
  * @returns {Promise<Object>} A JSON object containing the media data.
- * @throws {Error} If the URL is invalid or the media is not publicly accessible.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example
  * const { fbdown } = require('btch-downloader');
- * const url = 'https://www.facebook.com/watch/?v=1393572814172251';
- * fbdown(url).then(data => console.log(data));
+ * fbdown('https://www.facebook.com/watch/?v=1393572814172251')
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
  */
-async function fbdown(url) {
-  // Kode asli Anda untuk fungsi fbdown
-}
 
 /**
  * Downloads media from Twitter.
  * @async
+ * @function twitter
  * @param {string} url - The Twitter media URL.
  * @returns {Promise<Object>} A JSON object containing the media data.
- * @throws {Error} If the URL is invalid or the media is not publicly accessible.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example
  * const { twitter } = require('btch-downloader');
- * const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697';
- * twitter(url).then(data => console.log(data));
+ * twitter('https://twitter.com/gofoodindonesia/status/1229369819511709697')
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
  */
-async function twitter(url) {
-  // Kode asli Anda untuk fungsi twitter
-}
 
 /**
  * Downloads media from YouTube.
  * @async
+ * @function youtube
  * @param {string} url - The YouTube media URL.
  * @returns {Promise<Object>} A JSON object containing the media data.
- * @throws {Error} If the URL is invalid or the media is not publicly accessible.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example
  * const { youtube } = require('btch-downloader');
- * const url = 'https://youtube.com/watch?v=C8mJ8943X80';
- * youtube(url).then(data => console.log(data));
+ * youtube('https://youtube.com/watch?v=C8mJ8943X80')
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
  */
-async function youtube(url) {
-  // Kode asli Anda untuk fungsi youtube
-}
 
-module.exports = { aio, igdl, ttdl, fbdown, twitter, youtube };
+/**
+ * Downloads media from MediaFire.
+ * @async
+ * @function mediafire
+ * @param {string} url - The MediaFire media URL.
+ * @returns {Promise<Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example
+ * const { mediafire } = require('btch-downloader');
+ * mediafire('https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file')
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
+ */
