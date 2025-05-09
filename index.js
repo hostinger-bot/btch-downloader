@@ -7,4 +7,5 @@ module.exports = {
   ttdl,
   twitter,
   youtube,
+  mediafire
 };
