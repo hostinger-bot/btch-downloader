@@ -1,4 +1,4 @@
-const { ttdl, igdl, fbdown, twitter, youtube, aio } = require('./lib/module');
+const { ttdl, igdl, fbdown, twitter, youtube, aio, mediafire } = require('./lib/module');
 
 module.exports = {
   aio,
