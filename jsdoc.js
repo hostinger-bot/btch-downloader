@@ -117,3 +117,53 @@
  *   .catch(err => console.error(err));
  * // JSON
  */
+ 
+/**
+ * Downloads media from Capcut.
+ * @async
+ * @function capcut
+ * @param {string} url - The Capcut media URL.
+ * @returns {Promise<Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example
+ * const { capcut } = require('btch-downloader');
+ * capcut('https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&enter_from=template_detail&region=ID&language=in&platform=copy_link&is_copy_link=1')
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
+ */
+ 
+ /**
+ * Downloads media from Gdrive.
+ * @async
+ * @function gdrive
+ * @param {string} url - The Google Drive media URL.
+ * @returns {Promise<Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example
+ * const { gdrive } = require('btch-downloader');
+ * gdrive('https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?usp=drivesdk')
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
+ */
+ 
+/**
+ * Downloads or searches media from Pinterest using a URL or text query.
+ * @async
+ * @function pinterest
+ * @param {string} input - The Pinterest media URL or a search query.
+ * @returns {Promise<Object>} A JSON object containing the media data.
+ * @throws {Error} If the input is invalid or the media is not accessible.
+ * @example
+ * const { pinterest } = require('btch-downloader');
+ * // Using a URL
+ * pinterest('https://pin.it/4CVodSq')
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * @example
+ * // Using a search query
+ * pinterest('Zhao Lusi')
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ */
