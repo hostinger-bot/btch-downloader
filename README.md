@@ -49,7 +49,6 @@ const { youtube } = require('btch-downloader')
 const url = 'https://youtube.com/watch?v=C8mJ8943X80'
 youtube(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
-
 ### MediaFire
 ```js
 const { mediafire } = require('btch-downloader')
@@ -57,6 +56,33 @@ const { mediafire } = require('btch-downloader')
 const url = 'https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file'
 mediafire(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
+### Capcut
+```js
+const { capcut } = require('btch-downloader')
+
+const url = 'https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&enter_from=template_detail®ion=ID&language=in&platform=copy_link&is_copy_link=1'
+capcut(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+### Gdrive
+```js
+const { gdrive } = require('btch-downloader')
+
+const url = 'https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?usp=drivesdk'
+gdrive(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+### Pinterest
+```js
+const { pinterest } = require('btch-downloader')
+
+const url = 'https://pin.it/4CVodSq'
+pinterest(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+
+// Using a search query
+pinterest('Zhao Lusi')
+  .then(data => console.log(data))
+  .catch(err => console.error(err)); //JSON
+```
+
 ### Important Notes
 
 1. This downloader can only be used to download media that is public or accessible to the public.

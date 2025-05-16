@@ -2,7 +2,7 @@
  * @module btch-downloader
  * @description A module for downloading media from various platforms, including Instagram, TikTok, Facebook, Twitter, YouTube, and MediaFire.
  * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contributions and issue reporting.
- * @version 4.0.8
+ * @version 4.0.9
  * @author Tio
  * @license MIT
  * @example
