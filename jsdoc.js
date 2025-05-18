@@ -10,7 +10,7 @@
  * npm install btch-downloader
  *
  * // Import and use the module
- * const { aio, igdl, ttdl, fbdown, twitter, youtube, mediafire } = require('btch-downloader');
+ * const { aio, igdl, ttdl, fbdown, twitter, youtube, mediafire, pinterest, gdrive, capcut } = require('btch-downloader');
  */
 
 /**
