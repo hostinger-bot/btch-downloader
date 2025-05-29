@@ -8,6 +8,15 @@ ___
 ```sh
 npm i btch-downloader
 ```
+
+### Python Installation
+Install the library using pip:
+
+```bash
+pip install btch-downloader
+```
+#### [Official Python Documentation](https://github.com/hostinger-bot/btch-downloader-py/tree/main#usage) for setup details.
+
 #### Usage
    - For complete documentation, visit [JSDoc](https://hostinger-bot.github.io/btch-downloader/).
 
