@@ -1,5 +1,9 @@
 ___
 
+<div align="center">
+  <a href="https://nodei.co/npm/btch-downloader" title="npm"><img src="https://nodei.co/npm/btch-downloader.png?downloads=true&downloadRank=true&stars=true"></img></a>
+</div>
+
 ### Installation
 ```sh
 npm i btch-downloader
