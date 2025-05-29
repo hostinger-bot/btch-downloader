@@ -11,7 +11,7 @@ npm i btch-downloader
 #### Usage
    - For complete documentation, visit [JSDoc](https://hostinger-bot.github.io/btch-downloader/).
 
-### AIO
+### AIO (Under Maintenance) zh (维护中）
 ```js
 const { aio } = require('btch-downloader')
 
