@@ -1,5 +1,5 @@
 {
-  "name": "btch-downloader",
+  "name": "btch-downloader-fana",
   "version": "4.1.15",
   "description": "Social Media Downloader.",
   "config": {
@@ -7,7 +7,10 @@
   },
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
-  "files": ["dist","README.md"],
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "tsc && node test/test.js"
