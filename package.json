@@ -1,6 +1,6 @@
 {
   "name": "btch-downloader-fana",
-  "version": "4.1.15",
+  "version": "4.1.16",
   "description": "Social Media Downloader.",
   "config": {
     "baseUrl": "https://backend1.tioo.eu.org"
