@@ -7,13 +7,14 @@ settings:
 importers:
 
   .:
+    dependencies:
+      axios:
+        specifier: ^1.4.0
+        version: 1.10.0
     devDependencies:
       '@types/node':
         specifier: ^20.8.9
         version: 20.19.7
-      axios:
-        specifier: ^1.4.0
-        version: 1.10.0
       docdash:
         specifier: ^2.0.2
         version: 2.0.2

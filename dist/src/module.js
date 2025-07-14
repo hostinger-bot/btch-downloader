@@ -1,4 +1,13 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -27,20 +36,22 @@ const BASE_DEVELOPER = package_json_1.author;
  * @example
  * const data = await _fetchapi('instagram', 'https://instagram.com/p/123');
  */
-async function _fetchapi(endpoint, url) {
-    try {
-        const response = await axios_1.default.get(`${package_json_1.config.baseUrl}/${endpoint}`, {
-            params: { url },
-            headers: {
-                'Content-Type': 'application/json',
-                'User-Agent': `btch/${package_json_1.version}`
-            }
-        });
-        return response.data;
-    }
-    catch (error) {
-        throw new Error(`Error fetching from ${endpoint}: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    }
+function _fetchapi(endpoint, url) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const response = yield axios_1.default.get(`${package_json_1.config.baseUrl}/${endpoint}`, {
+                params: { url },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'User-Agent': `btch/${package_json_1.version}`
+                }
+            });
+            return response.data;
+        }
+        catch (error) {
+            throw new Error(`Error fetching from ${endpoint}: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        }
+    });
 }
 /**
  * TikTok video downloader
@@ -53,26 +64,28 @@ async function _fetchapi(endpoint, url) {
  * const result = await ttdl('https://tiktok.com/@user/video/123');
  * console.log(result.video[0]); // Video download URL
  */
-async function ttdl(url) {
-    try {
-        const data = await _fetchapi('ttdl', url);
-        return {
-            developer: BASE_DEVELOPER,
-            title: data.title,
-            title_audio: data.title_audio,
-            thumbnail: data.thumbnail,
-            video: data.video,
-            audio: data.audio
-        };
-    }
-    catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
-    }
+function ttdl(url) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const data = yield _fetchapi('ttdl', url);
+            return {
+                developer: BASE_DEVELOPER,
+                title: data.title,
+                title_audio: data.title_audio,
+                thumbnail: data.thumbnail,
+                video: data.video,
+                audio: data.audio
+            };
+        }
+        catch (error) {
+            return {
+                developer: BASE_DEVELOPER,
+                status: false,
+                message: error instanceof Error ? error.message : 'Unknown error',
+                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
+            };
+        }
+    });
 }
 /**
  * Instagram content downloader
@@ -85,35 +98,37 @@ async function ttdl(url) {
  * const result = await igdl('https://instagram.com/p/Cxyz...');
  * result.forEach(item => console.log(item.url));
  */
-async function igdl(url) {
-    try {
-        const data = await _fetchapi('igdl', url);
-        if (!data || data.status === false) {
+function igdl(url) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const data = yield _fetchapi('igdl', url);
+            if (!data || data.status === false) {
+                return {
+                    developer: BASE_DEVELOPER,
+                    status: false,
+                    message: (data === null || data === void 0 ? void 0 : data.msg) || 'Result Not Found! Check Your Url Now!',
+                    note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
+                };
+            }
+            return {
+                developer: BASE_DEVELOPER,
+                result: data.map((item) => ({
+                    thumbnail: item.thumbnail,
+                    url: item.url,
+                    resolution: item.resolution,
+                    shouldRender: item.shouldRender
+                }))
+            };
+        }
+        catch (error) {
             return {
                 developer: BASE_DEVELOPER,
                 status: false,
-                message: data?.msg || 'Result Not Found! Check Your Url Now!',
+                message: 'Request Failed With Code 401',
                 note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
             };
         }
-        return {
-            developer: BASE_DEVELOPER,
-            result: data.map((item) => ({
-                thumbnail: item.thumbnail,
-                url: item.url,
-                resolution: item.resolution,
-                shouldRender: item.shouldRender
-            }))
-        };
-    }
-    catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: 'Request Failed With Code 401',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
-    }
+    });
 }
 /**
  * Twitter video downloader
@@ -125,23 +140,25 @@ async function igdl(url) {
  * @example
  * const result = await twitter('https://twitter.com/user/status/123');
  */
-async function twitter(url) {
-    try {
-        const data = await _fetchapi('twitter', url);
-        return {
-            developer: BASE_DEVELOPER,
-            title: data.title,
-            url: data.url
-        };
-    }
-    catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
-    }
+function twitter(url) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const data = yield _fetchapi('twitter', url);
+            return {
+                developer: BASE_DEVELOPER,
+                title: data.title,
+                url: data.url
+            };
+        }
+        catch (error) {
+            return {
+                developer: BASE_DEVELOPER,
+                status: false,
+                message: error instanceof Error ? error.message : 'Unknown error',
+                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
+            };
+        }
+    });
 }
 /**
  * YouTube video downloader
@@ -154,26 +171,28 @@ async function twitter(url) {
  * const result = await youtube('https://youtube.com/watch?v=123');
  * console.log(result.mp4); // Video download URL
  */
-async function youtube(url) {
-    try {
-        const data = await _fetchapi('youtube', url);
-        return {
-            developer: BASE_DEVELOPER,
-            title: data.title,
-            thumbnail: data.thumbnail,
-            author: data.author,
-            mp3: data.mp3,
-            mp4: data.mp4
-        };
-    }
-    catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
-    }
+function youtube(url) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const data = yield _fetchapi('youtube', url);
+            return {
+                developer: BASE_DEVELOPER,
+                title: data.title,
+                thumbnail: data.thumbnail,
+                author: data.author,
+                mp3: data.mp3,
+                mp4: data.mp4
+            };
+        }
+        catch (error) {
+            return {
+                developer: BASE_DEVELOPER,
+                status: false,
+                message: error instanceof Error ? error.message : 'Unknown error',
+                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
+            };
+        }
+    });
 }
 /**
  * Facebook video downloader
@@ -186,23 +205,25 @@ async function youtube(url) {
  * const result = await fbdown('https://facebook.com/watch/?v=123');
  * console.log(result.HD); // HD quality URL
  */
-async function fbdown(url) {
-    try {
-        const data = await _fetchapi('fbdown', url);
-        return {
-            developer: BASE_DEVELOPER,
-            Normal_video: data.Normal_video,
-            HD: data.HD
-        };
-    }
-    catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
-    }
+function fbdown(url) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const data = yield _fetchapi('fbdown', url);
+            return {
+                developer: BASE_DEVELOPER,
+                Normal_video: data.Normal_video,
+                HD: data.HD
+            };
+        }
+        catch (error) {
+            return {
+                developer: BASE_DEVELOPER,
+                status: false,
+                message: error instanceof Error ? error.message : 'Unknown error',
+                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
+            };
+        }
+    });
 }
 /**
  * MediaFire file downloader
@@ -215,22 +236,24 @@ async function fbdown(url) {
  * const result = await mediafire('https://mediafire.com/file/123');
  * console.log(result.result.filename); // Downloaded filename
  */
-async function mediafire(url) {
-    try {
-        const data = await _fetchapi('mediafire', url);
-        return {
-            developer: BASE_DEVELOPER,
-            result: data
-        };
-    }
-    catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
-    }
+function mediafire(url) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const data = yield _fetchapi('mediafire', url);
+            return {
+                developer: BASE_DEVELOPER,
+                result: data
+            };
+        }
+        catch (error) {
+            return {
+                developer: BASE_DEVELOPER,
+                status: false,
+                message: error instanceof Error ? error.message : 'Unknown error',
+                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
+            };
+        }
+    });
 }
 /**
  * CapCut template downloader
@@ -242,19 +265,21 @@ async function mediafire(url) {
  * @example
  * const result = await capcut('https://capcut.com/template/123');
  */
-async function capcut(url) {
-    try {
-        const data = await _fetchapi('capcut', url);
-        return data;
-    }
-    catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
-    }
+function capcut(url) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const data = yield _fetchapi('capcut', url);
+            return data;
+        }
+        catch (error) {
+            return {
+                developer: BASE_DEVELOPER,
+                status: false,
+                message: error instanceof Error ? error.message : 'Unknown error',
+                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
+            };
+        }
+    });
 }
 /**
  * Google Drive file downloader
@@ -267,22 +292,24 @@ async function capcut(url) {
  * const result = await gdrive('https://drive.google.com/file/d/123');
  * console.log(result.result.downloadUrl); // Download URL
  */
-async function gdrive(url) {
-    try {
-        const data = await _fetchapi('gdrive', url);
-        return {
-            developer: BASE_DEVELOPER,
-            result: data.data
-        };
-    }
-    catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
-    }
+function gdrive(url) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const data = yield _fetchapi('gdrive', url);
+            return {
+                developer: BASE_DEVELOPER,
+                result: data.data
+            };
+        }
+        catch (error) {
+            return {
+                developer: BASE_DEVELOPER,
+                status: false,
+                message: error instanceof Error ? error.message : 'Unknown error',
+                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
+            };
+        }
+    });
 }
 /**
  * Pinterest content downloader
@@ -297,20 +324,22 @@ async function gdrive(url) {
  * // For search
  * const results = await pinterest('Zhao Lusi');
  */
-async function pinterest(query) {
-    try {
-        const data = await _fetchapi('pinterest', query);
-        return {
-            developer: BASE_DEVELOPER,
-            result: data.result
-        };
-    }
-    catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
-    }
+function pinterest(query) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const data = yield _fetchapi('pinterest', query);
+            return {
+                developer: BASE_DEVELOPER,
+                result: data.result
+            };
+        }
+        catch (error) {
+            return {
+                developer: BASE_DEVELOPER,
+                status: false,
+                message: error instanceof Error ? error.message : 'Unknown error',
+                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
+            };
+        }
+    });
 }
