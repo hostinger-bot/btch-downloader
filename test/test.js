@@ -1,4 +1,4 @@
-const { igdl } = require('../index');
+const { igdl } = require('../dist/src/index.js');
 
 (async () => {
     try {
