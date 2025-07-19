@@ -58,7 +58,7 @@
         <div class="container-overview">
         
             
-                <div class="description usertext">A module for downloading media from various platforms, including Instagram, TikTok, Facebook, Twitter, YouTube, and MediaFire.</div>
+                <div class="description usertext">A Node.js library for downloading media from platforms like Instagram, TikTok, Facebook, Twitter, YouTube, MediaFire, Capcut, Google Drive, and Pinterest.</div>
             
 
             
@@ -70,7 +70,7 @@
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li>A module for downloading media from various platforms, including Instagram, TikTok, Facebook, Twitter, YouTube, and MediaFire.</li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li>A Node.js library for downloading media from platforms like Instagram, TikTok, Facebook, Twitter, YouTube, MediaFire, Capcut, Google Drive, and Pinterest.</li></ul></dd>
     
 
     
@@ -82,7 +82,7 @@
 
     
     <dt class="tag-version">Version:</dt>
-    <dd class="tag-version"><ul class="dummy"><li>4.0.16</li></ul></dd>
+    <dd class="tag-version"><ul class="dummy"><li>4.0.17</li></ul></dd>
     
 
     
@@ -139,15 +139,6 @@
 
 
 
-
-
-    <h5 class="h5-examples">Example</h5>
-    
-    <pre class="prettyprint"><code>// Install the module
-npm install btch-downloader
-
-// Import and use the module
-const { aio, igdl, ttdl, fbdown, twitter, youtube, mediafire, pinterest, gdrive, capcut } = require('btch-downloader');</code></pre>
 
 
 
@@ -212,7 +203,7 @@ const { aio, igdl, ttdl, fbdown, twitter, youtube, mediafire, pinterest, gdrive,
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line16">line 16</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line10">line 10</a>
     </li></ul></dd>
     
 
@@ -257,7 +248,17 @@ const { aio, igdl, ttdl, fbdown, twitter, youtube, mediafire, pinterest, gdrive,
 
 
 
-    <h5 class="h5-examples">Example</h5>
+    <h5 class="h5-examples">Examples</h5>
+    
+        <p class="code-caption">ESM</p>
+    
+    <pre class="prettyprint"><code>import { aio } from 'btch-downloader';
+aio('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
+
+        <p class="code-caption">CJS</p>
     
     <pre class="prettyprint"><code>const { aio } = require('btch-downloader');
 aio('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
@@ -409,7 +410,7 @@ aio('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line121">line 121</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line157">line 157</a>
     </li></ul></dd>
     
 
@@ -454,10 +455,20 @@ aio('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
 
 
 
-    <h5 class="h5-examples">Example</h5>
+    <h5 class="h5-examples">Examples</h5>
+    
+        <p class="code-caption">ESM</p>
+    
+    <pre class="prettyprint"><code>import { capcut } from 'btch-downloader';
+capcut('https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&amp;share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&amp;enter_from=template_detail®ion=ID&amp;language=in&amp;platform=copy_link&amp;is_copy_link=1')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
+
+        <p class="code-caption">CJS</p>
     
     <pre class="prettyprint"><code>const { capcut } = require('btch-downloader');
-capcut('https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&amp;share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&amp;enter_from=template_detail&amp;region=ID&amp;language=in&amp;platform=copy_link&amp;is_copy_link=1')
+capcut('https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&amp;share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&amp;enter_from=template_detail®ion=ID&amp;language=in&amp;platform=copy_link&amp;is_copy_link=1')
   .then(data => console.log(data))
   .catch(err => console.error(err));
 // JSON</code></pre>
@@ -606,7 +617,7 @@ capcut('https://www.capcut.com/template-detail/7299286607478181121?template_id=7
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line61">line 61</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line73">line 73</a>
     </li></ul></dd>
     
 
@@ -651,7 +662,17 @@ capcut('https://www.capcut.com/template-detail/7299286607478181121?template_id=7
 
 
 
-    <h5 class="h5-examples">Example</h5>
+    <h5 class="h5-examples">Examples</h5>
+    
+        <p class="code-caption">ESM</p>
+    
+    <pre class="prettyprint"><code>import { fbdown } from 'btch-downloader';
+fbdown('https://www.facebook.com/watch/?v=1393572814172251')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
+
+        <p class="code-caption">CJS</p>
     
     <pre class="prettyprint"><code>const { fbdown } = require('btch-downloader');
 fbdown('https://www.facebook.com/watch/?v=1393572814172251')
@@ -797,13 +818,13 @@ fbdown('https://www.facebook.com/watch/?v=1393572814172251')
 <dl class="details">
     
     <dt class="tag-description">Description:</dt>
-    <dd class="tag-description"><ul class="dummy"><li>Downloads media from Gdrive.</li></ul></dd>
+    <dd class="tag-description"><ul class="dummy"><li>Downloads media from Google Drive.</li></ul></dd>
     
 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line136">line 136</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line178">line 178</a>
     </li></ul></dd>
     
 
@@ -848,7 +869,17 @@ fbdown('https://www.facebook.com/watch/?v=1393572814172251')
 
 
 
-    <h5 class="h5-examples">Example</h5>
+    <h5 class="h5-examples">Examples</h5>
+    
+        <p class="code-caption">ESM</p>
+    
+    <pre class="prettyprint"><code>import { gdrive } from 'btch-downloader';
+gdrive('https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?usp=drivesdk')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
+
+        <p class="code-caption">CJS</p>
     
     <pre class="prettyprint"><code>const { gdrive } = require('btch-downloader');
 gdrive('https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?usp=drivesdk')
@@ -1045,7 +1076,17 @@ gdrive('https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?u
 
 
 
-    <h5 class="h5-examples">Example</h5>
+    <h5 class="h5-examples">Examples</h5>
+    
+        <p class="code-caption">ESM</p>
+    
+    <pre class="prettyprint"><code>import { igdl } from 'btch-downloader';
+igdl('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
+
+        <p class="code-caption">CJS</p>
     
     <pre class="prettyprint"><code>const { igdl } = require('btch-downloader');
 igdl('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
@@ -1197,7 +1238,7 @@ igdl('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line106">line 106</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line136">line 136</a>
     </li></ul></dd>
     
 
@@ -1242,7 +1283,17 @@ igdl('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
 
 
 
-    <h5 class="h5-examples">Example</h5>
+    <h5 class="h5-examples">Examples</h5>
+    
+        <p class="code-caption">ESM</p>
+    
+    <pre class="prettyprint"><code>import { mediafire } from 'btch-downloader';
+mediafire('https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
+
+        <p class="code-caption">CJS</p>
     
     <pre class="prettyprint"><code>const { mediafire } = require('btch-downloader');
 mediafire('https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file')
@@ -1394,7 +1445,7 @@ mediafire('https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMo
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line151">line 151</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line199">line 199</a>
     </li></ul></dd>
     
 
@@ -1440,6 +1491,21 @@ mediafire('https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMo
 
 
     <h5 class="h5-examples">Examples</h5>
+    
+        <p class="code-caption">ESM</p>
+    
+    <pre class="prettyprint"><code>import { pinterest } from 'btch-downloader';
+// Using a URL
+pinterest('https://pin.it/4CVodSq')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));</code></pre>
+
+    <pre class="prettyprint"><code>// Using a search query
+pinterest('Zhao Lusi')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));</code></pre>
+
+        <p class="code-caption">CJS</p>
     
     <pre class="prettyprint"><code>const { pinterest } = require('btch-downloader');
 // Using a URL
@@ -1596,7 +1662,7 @@ pinterest('Zhao Lusi')
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line46">line 46</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -1641,7 +1707,17 @@ pinterest('Zhao Lusi')
 
 
 
-    <h5 class="h5-examples">Example</h5>
+    <h5 class="h5-examples">Examples</h5>
+    
+        <p class="code-caption">ESM</p>
+    
+    <pre class="prettyprint"><code>import { ttdl } from 'btch-downloader';
+ttdl('https://www.tiktok.com/@omagadsus/video/7025456384175017243')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
+
+        <p class="code-caption">CJS</p>
     
     <pre class="prettyprint"><code>const { ttdl } = require('btch-downloader');
 ttdl('https://www.tiktok.com/@omagadsus/video/7025456384175017243')
@@ -1793,7 +1869,7 @@ ttdl('https://www.tiktok.com/@omagadsus/video/7025456384175017243')
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line76">line 76</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line94">line 94</a>
     </li></ul></dd>
     
 
@@ -1838,7 +1914,17 @@ ttdl('https://www.tiktok.com/@omagadsus/video/7025456384175017243')
 
 
 
-    <h5 class="h5-examples">Example</h5>
+    <h5 class="h5-examples">Examples</h5>
+    
+        <p class="code-caption">ESM</p>
+    
+    <pre class="prettyprint"><code>import { twitter } from 'btch-downloader';
+twitter('https://twitter.com/gofoodindonesia/status/1229369819511709697')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
+
+        <p class="code-caption">CJS</p>
     
     <pre class="prettyprint"><code>const { twitter } = require('btch-downloader');
 twitter('https://twitter.com/gofoodindonesia/status/1229369819511709697')
@@ -1990,7 +2076,7 @@ twitter('https://twitter.com/gofoodindonesia/status/1229369819511709697')
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line91">line 91</a>
+        <a href="jsdoc.js.html">jsdoc.js</a>, <a href="jsdoc.js.html#line115">line 115</a>
     </li></ul></dd>
     
 
@@ -2035,7 +2121,17 @@ twitter('https://twitter.com/gofoodindonesia/status/1229369819511709697')
 
 
 
-    <h5 class="h5-examples">Example</h5>
+    <h5 class="h5-examples">Examples</h5>
+    
+        <p class="code-caption">ESM</p>
+    
+    <pre class="prettyprint"><code>import { youtube } from 'btch-downloader';
+youtube('https://youtube.com/watch?v=C8mJ8943X80')
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON</code></pre>
+
+        <p class="code-caption">CJS</p>
     
     <pre class="prettyprint"><code>const { youtube } = require('btch-downloader');
 youtube('https://youtube.com/watch?v=C8mJ8943X80')
@@ -2186,7 +2282,7 @@ youtube('https://youtube.com/watch?v=C8mJ8943X80')
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Wed Jul 16 2025 23:57:30 GMT+0700 (Western Indonesia Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Sat Jul 19 2025 14:28:43 GMT+0700 (Western Indonesia Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>

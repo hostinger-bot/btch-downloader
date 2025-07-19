@@ -48,7 +48,6 @@
     "homepage": "https://github.com/hostinger-bot/btch-downloader#readme",
     "directories": {
         "doc": "docs",
-        "lib": "lib",
         "test": "test"
     },
     "publishConfig": {

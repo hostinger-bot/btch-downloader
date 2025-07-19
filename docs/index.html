@@ -60,98 +60,174 @@
 
 
     <section class="readme usertext">
-        <article><hr>
+        <article><h1>btch-downloader</h1>
+<p>A Node.js library for downloading media from platforms like Instagram, TikTok, Facebook, Twitter, YouTube, MediaFire, Capcut, Google Drive, and Pinterest.</p>
 <div align="center">
-  <a href="https://nodei.co/npm/btch-downloader" title="npm"><img src="https://nodei.co/npm/btch-downloader.png?downloads=true&downloadRank=true&stars=true"></img></a>
+  <a href="https://www.npmjs.com/package/btch-downloader" title="npm">
+    <img src="https://nodei.co/npm/btch-downloader.png?downloads=true&downloadRank=true&stars=true" alt="npm badge">
+  </a>
 </div>
-<h3>Installation</h3>
+<h2>Installation</h2>
+<p>Install the library using npm:</p>
 <pre class="prettyprint source lang-sh"><code>npm i btch-downloader
 </code></pre>
 <h3>Python Installation</h3>
-<p>Install the library using pip:</p>
+<p>Install the Python version using pip:</p>
 <pre class="prettyprint source lang-bash"><code>pip install btch-downloader
 </code></pre>
-<h4><a href="https://github.com/hostinger-bot/btch-downloader-py/tree/main#usage">Official Python Documentation</a> for setup details.</h4>
-<h4>Usage</h4>
-<ul>
-<li>For complete documentation, visit <a href="https://hostinger-bot.github.io/btch-downloader/">JSDoc</a>.</li>
-</ul>
-<h3>AIO (Under Maintenance) zh (维护中）</h3>
-<pre class="prettyprint source lang-js"><code>const { aio } = require('btch-downloader')
+<h3>For setup details, refer to the <a href="https://github.com/hostinger-bot/btch-downloader-py/tree/main#usage">Official Python Documentation</a>.</h3>
+<h2>Usage</h2>
+<p>For complete documentation, visit <a href="https://hostinger-bot.github.io/btch-downloader/">JSDoc</a>.</p>
+<h3>AIO (Under Maintenance)</h3>
+<h4>ESM</h4>
+<pre class="prettyprint source lang-javascript"><code>import { aio } from 'btch-downloader';
 
-const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link'
+const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
+aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+</code></pre>
+<h4>CJS</h4>
+<pre class="prettyprint source lang-javascript"><code>const { aio } = require('btch-downloader');
+
+const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
 aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 </code></pre>
 <h3>Instagram</h3>
-<pre class="prettyprint source lang-js"><code>const { igdl } = require('btch-downloader')
+<h4>ESM</h4>
+<pre class="prettyprint source lang-javascript"><code>import { igdl } from 'btch-downloader';
 
-const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link'
+const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
 igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 </code></pre>
-<h3>Tiktok</h3>
-<pre class="prettyprint source lang-js"><code>const { ttdl } = require('btch-downloader')
+<h4>CJS</h4>
+<pre class="prettyprint source lang-javascript"><code>const { igdl } = require('btch-downloader');
 
-const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243?is_from_webapp=1&sender_device=pc&web_id6982004129280116226'
+const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
+igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+</code></pre>
+<h3>TikTok</h3>
+<h4>ESM</h4>
+<pre class="prettyprint source lang-javascript"><code>import { ttdl } from 'btch-downloader';
+
+const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243?is_from_webapp=1&sender_device=pc&web_id6982004129280116226';
+ttdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+</code></pre>
+<h4>CJS</h4>
+<pre class="prettyprint source lang-javascript"><code>const { ttdl } = require('btch-downloader');
+
+const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243?is_from_webapp=1&sender_device=pc&web_id6982004129280116226';
 ttdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 </code></pre>
 <h3>Facebook</h3>
-<pre class="prettyprint source lang-js"><code>const { fbdown } = require('btch-downloader')
+<h4>ESM</h4>
+<pre class="prettyprint source lang-javascript"><code>import { fbdown } from 'btch-downloader';
 
-const url = 'https://www.facebook.com/watch/?v=1393572814172251'
+const url = 'https://www.facebook.com/watch/?v=1393572814172251';
+fbdown(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+</code></pre>
+<h4>CJS</h4>
+<pre class="prettyprint source lang-javascript"><code>const { fbdown } = require('btch-downloader');
+
+const url = 'https://www.facebook.com/watch/?v=1393572814172251';
 fbdown(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 </code></pre>
 <h3>Twitter</h3>
-<pre class="prettyprint source lang-js"><code>const { twitter } = require('btch-downloader')
+<h4>ESM</h4>
+<pre class="prettyprint source lang-javascript"><code>import { twitter } from 'btch-downloader';
 
-const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697'
+const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697';
+twitter(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+</code></pre>
+<h4>CJS</h4>
+<pre class="prettyprint source lang-javascript"><code>const { twitter } = require('btch-downloader');
+
+const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697';
 twitter(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 </code></pre>
 <h3>YouTube</h3>
-<pre class="prettyprint source lang-js"><code>const { youtube } = require('btch-downloader')
+<h4>ESM</h4>
+<pre class="prettyprint source lang-javascript"><code>import { youtube } from 'btch-downloader';
 
-const url = 'https://youtube.com/watch?v=C8mJ8943X80'
+const url = 'https://youtube.com/watch?v=C8mJ8943X80';
+youtube(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+</code></pre>
+<h4>CJS</h4>
+<pre class="prettyprint source lang-javascript"><code>const { youtube } = require('btch-downloader');
+
+const url = 'https://youtube.com/watch?v=C8mJ8943X80';
 youtube(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 </code></pre>
 <h3>MediaFire</h3>
-<pre class="prettyprint source lang-js"><code>const { mediafire } = require('btch-downloader')
+<h4>ESM</h4>
+<pre class="prettyprint source lang-javascript"><code>import { mediafire } from 'btch-downloader';
 
-const url = 'https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file'
+const url = 'https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file';
+mediafire(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+</code></pre>
+<h4>CJS</h4>
+<pre class="prettyprint source lang-javascript"><code>const { mediafire } = require('btch-downloader');
+
+const url = 'https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file';
 mediafire(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 </code></pre>
 <h3>Capcut</h3>
-<pre class="prettyprint source lang-js"><code>const { capcut } = require('btch-downloader')
+<h4>ESM</h4>
+<pre class="prettyprint source lang-javascript"><code>import { capcut } from 'btch-downloader';
 
-const url = 'https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&enter_from=template_detail®ion=ID&language=in&platform=copy_link&is_copy_link=1'
+const url = 'https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&enter_from=template_detail®ion=ID&language=in&platform=copy_link&is_copy_link=1';
 capcut(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 </code></pre>
-<h3>Gdrive</h3>
-<pre class="prettyprint source lang-js"><code>const { gdrive } = require('btch-downloader')
+<h4>CJS</h4>
+<pre class="prettyprint source lang-javascript"><code>const { capcut } = require('btch-downloader');
 
-const url = 'https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?usp=drivesdk'
+const url = 'https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&enter_from=template_detail®ion=ID&language=in&platform=copy_link&is_copy_link=1';
+capcut(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+</code></pre>
+<h3>Google Drive</h3>
+<h4>ESM</h4>
+<pre class="prettyprint source lang-javascript"><code>import { gdrive } from 'btch-downloader';
+
+const url = 'https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?usp=drivesdk';
+gdrive(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+</code></pre>
+<h4>CJS</h4>
+<pre class="prettyprint source lang-javascript"><code>const { gdrive } = require('btch-downloader');
+
+const url = 'https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?usp=drivesdk';
 gdrive(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 </code></pre>
 <h3>Pinterest</h3>
-<pre class="prettyprint source lang-js"><code>const { pinterest } = require('btch-downloader')
+<h4>ESM</h4>
+<pre class="prettyprint source lang-javascript"><code>import { pinterest } from 'btch-downloader';
 
-const url = 'https://pin.it/4CVodSq'
+const url = 'https://pin.it/4CVodSq';
 pinterest(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 
 // Using a search query
 pinterest('Zhao Lusi')
   .then(data => console.log(data))
-  .catch(err => console.error(err)); //JSON
+  .catch(err => console.error(err)); // JSON
 </code></pre>
-<h3>Important Notes</h3>
+<h4>CJS</h4>
+<pre class="prettyprint source lang-javascript"><code>const { pinterest } = require('btch-downloader');
+
+const url = 'https://pin.it/4CVodSq';
+pinterest(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+
+// Using a search query
+pinterest('Zhao Lusi')
+  .then(data => console.log(data))
+  .catch(err => console.error(err)); // JSON
+</code></pre>
+<h2>Important Notes</h2>
 <ol>
 <li>This downloader can only be used to download media that is public or accessible to the public.</li>
 <li>This application is not affiliated with or endorsed by any application.</li>
 <li>Ensure you have permission or copyright to download media before using this application.</li>
 </ol>
-<h3>Contribution and Issue Reporting</h3>
+<h2>Contribution and Issue Reporting</h2>
 <p>If you encounter any issues or wish to contribute to the development of this application, please visit our <a href="https://github.com/hostinger-bot/btch-downloader">GitHub repository</a>.</p>
-<h3>License</h3>
-<p>btch-downloader is licensed under the <a href="https://github.com/hostinger-bot/btch-downloader/blob/main/LICENSE">MIT License</a>. Please refer to the LICENSE file for more information.</p>
-<hr></article>
+<h2>License</h2>
+<p>btch-downloader is licensed under the <a href="https://github.com/hostinger-bot/btch-downloader/blob/main/LICENSE">MIT License</a>. Please refer to the LICENSE file for more information.</p></article>
     </section>
 
 
@@ -166,7 +242,7 @@ pinterest('Zhao Lusi')
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Wed Jul 16 2025 23:57:30 GMT+0700 (Western Indonesia Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.4</a> on Sat Jul 19 2025 14:28:43 GMT+0700 (Western Indonesia Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
