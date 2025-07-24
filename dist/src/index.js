@@ -344,4 +344,3 @@ function pinterest(query) {
         }
     });
 }
-//# sourceMappingURL=index.js.map
