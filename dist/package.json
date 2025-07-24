@@ -14,7 +14,7 @@
     "scripts": {
         "build": "tsc",
         "pub": "npm run build && npm publish",
-        "test": "tsc && node test/test.js"
+        "test": "tsc && node test/test.mjs"
     },
     "keywords": [
         "AIO",
