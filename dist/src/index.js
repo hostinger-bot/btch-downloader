@@ -23,7 +23,7 @@ exports.gdrive = gdrive;
 exports.pinterest = pinterest;
 const axios_1 = __importDefault(require("axios"));
 const package_json_1 = require("../package.json");
-const BASE_DEVELOPER = package_json_1.author;
+const BASE_DEVELOPER = '@prm2.0';
 /**
  * Internal API fetch utility
  * @private
