@@ -1,0 +1,56 @@
+{
+    "name": "btch-downloader",
+    "version": "4.1.20",
+    "description": "Social Media Downloader.",
+    "config": {
+        "baseUrl": "https://backend1.tioo.eu.org"
+    },
+    "main": "dist/src/index.js",
+    "types": "dist/src/index.d.ts",
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "pub": "npm run build && npm publish",
+        "test": "tsc && node test/test.js"
+    },
+    "keywords": [
+        "AIO",
+        "Instagram",
+        "TikTok",
+        "Facebook",
+        "YouTube",
+        "Twitter",
+        "MediaFire",
+        "Capcut",
+        "Gdrive",
+        "Pinterest"
+    ],
+    "author": "Tio",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^1.4.0"
+    },
+    "devDependencies": {
+        "docdash": "^2.0.2",
+        "@types/node": "^20.8.9",
+        "typescript": "^5.2.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hostinger-bot/btch-downloader.git"
+    },
+    "bugs": {
+        "url": "https://github.com/hostinger-bot/btch-downloader/issues"
+    },
+    "homepage": "https://github.com/hostinger-bot/btch-downloader#readme",
+    "directories": {
+        "doc": "docs",
+        "test": "test"
+    },
+    "publishConfig": {
+        "tag": "latest"
+    }
+}
