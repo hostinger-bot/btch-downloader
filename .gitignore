@@ -20,7 +20,7 @@ Thumbs.db
 *.temp
 
 # Dist
-/dist
+dist/
 
 # IDE-specific files
 .vscode/
