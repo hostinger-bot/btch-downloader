@@ -19,6 +19,9 @@ Thumbs.db
 *.tmp
 *.temp
 
+# Dist
+/dist
+
 # IDE-specific files
 .vscode/
 .idea/

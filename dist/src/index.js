@@ -23,7 +23,8 @@ exports.gdrive = gdrive;
 exports.pinterest = pinterest;
 const axios_1 = __importDefault(require("axios"));
 const package_json_1 = require("../package.json");
-const BASE_DEVELOPER = '@prm2.0';
+const config_json_1 = __importDefault(require("./watermark/config.json"));
+const BASE_DEVELOPER = config_json_1.default.dev.name;
 /**
  * Internal API fetch utility
  * @private
@@ -343,3 +344,4 @@ function pinterest(query) {
         }
     });
 }
+//# sourceMappingURL=index.js.map

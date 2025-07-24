@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
 import { version, config } from '../package.json';
+import watermark from './watermark/config.json';
 import {
-    BaseResponse,
     InstagramResponse,
     TikTokResponse,
     TwitterResponse,
@@ -13,7 +13,7 @@ import {
     PinterestResponse
 } from './types';
 
-const BASE_DEVELOPER = '@prm2.0';
+const BASE_DEVELOPER = watermark.dev.name;
 
 /**
  * Internal API fetch utility
