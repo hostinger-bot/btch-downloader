@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { version,author, config } from '../package.json';
+import { version, config } from '../package.json';
 import {
     BaseResponse,
     InstagramResponse,
@@ -13,7 +13,7 @@ import {
     PinterestResponse
 } from './types';
 
-const BASE_DEVELOPER = author;
+const BASE_DEVELOPER = '@prm2.0';
 
 /**
  * Internal API fetch utility
