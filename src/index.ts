@@ -1,6 +1,8 @@
-import axios, { AxiosResponse } from 'axios';
-import { version, config } from '../package.json';
-import watermark from './watermark/config.json';
+"use strict";
+import configData from './Defaults/site';
+import watermark from './Watermark/config.json';
+import { version } from '../package.json';
+import { HttpGet } from './Http/Get';
 import {
     InstagramResponse,
     TikTokResponse,
@@ -11,36 +13,164 @@ import {
     CapCutResponse,
     GoogleDriveResponse,
     PinterestResponse
-} from './types';
+} from './Types/types';
 
-const BASE_DEVELOPER = watermark.dev.name;
-
-/**
- * Internal API fetch utility
- * @private
- * @async
- * @function _fetchapi
- * @param {string} endpoint - API endpoint to call
- * @param {string} url - URL to process
- * @returns {Promise<any>} API response data
- * @throws {Error} When request fails
- * @example
- * const data = await _fetchapi('instagram', 'https://instagram.com/p/123');
- */
-async function _fetchapi(endpoint: string, url: string): Promise<any> {
-    try {
-        const response: AxiosResponse = await axios.get(`${config.baseUrl}/${endpoint}`, {
-            params: { url },
-            headers: {
-                'Content-Type': 'application/json',
-                'User-Agent': `btch/${version}`
-            }
-        });
-        return response.data;
-    } catch (error) {
-        throw new Error(`Error fetching from ${endpoint}: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    }
+interface VersionConfig {
+    config: {
+        baseUrl: string;
+    };
+    documentation: string;
 }
+
+const { config, documentation } = configData as VersionConfig;
+const wmdev = watermark.dev.name;
+const timeout = 60000;
+
+interface ApiErrorResponse {
+    developer: string;
+    status: boolean;
+    message: string;
+    note: string;
+}
+
+interface TikTokApiResponse {
+    title: string;
+    title_audio: string;
+    thumbnail: string;
+    video: string[];
+    audio: string[];
+}
+
+interface InstagramApiItem {
+    thumbnail: string;
+    url: string;
+    resolution?: string;
+    shouldRender?: boolean;
+}
+
+interface TwitterApiResponse {
+    title: string;
+    url: string;
+}
+
+interface YouTubeApiResponse {
+    title: string;
+    thumbnail: string;
+    author: string;
+    mp3: string;
+    mp4: string;
+}
+
+interface FacebookApiResponse {
+    Normal_video: string;
+    HD: string;
+}
+
+interface MediaFireApiResponse {
+    filename: string;
+    filesize: string;
+    filesizeH?: string;
+    type?: string;
+    upload_date?: string;
+    owner?: string;
+    ext?: string;
+    mimetype?: string;
+    url?: string;
+}
+
+interface CapCutApiResponse {
+    url?: string;
+    data?: {
+        "@context"?: string;
+        "@type"?: string;
+        name?: string;
+        description?: string;
+        thumbnailUrl?: string[];
+        uploadDate?: string;
+        contentUrl?: string;
+        meta?: {
+            title?: string;
+            desc?: string;
+            like?: number;
+            play?: number;
+            duration?: number;
+            usage?: number;
+            createTime?: number;
+            coverUrl?: string;
+            videoRatio?: string;
+            author?: {
+                name?: string;
+                avatarUrl?: string;
+                description?: string;
+                profileUrl?: string;
+                secUid?: string;
+                uid?: number;
+            };
+        };
+    };
+}
+
+interface GoogleDriveApiResponse {
+    filename: string;
+    filesize: string;
+    downloadUrl: string;
+}
+
+interface PinterestApiResponse {
+    query?: string;
+    count?: number;
+    result?: Array<{
+        id?: string;
+        title?: string;
+        description?: string;
+        pin_url?: string;
+        image_url?: string;
+        images?: {
+            original?: string;
+            large?: string;
+            medium?: string;
+            small?: string;
+            [key: string]: any;
+        };
+        video_url?: string | null;
+        is_video?: boolean;
+        uploader?: {
+            username?: string;
+            full_name?: string;
+            profile_url?: string;
+            avatar_url?: string;
+        };
+    }>;
+    id?: string;
+    title?: string;
+    description?: string;
+    link?: string | null;
+    image?: string;
+    images?: {
+        [key: string]: {
+            width?: number;
+            height?: number;
+            url?: string;
+        };
+    };
+    is_video?: boolean;
+    video_url?: string | null;
+    videos?: any;
+    user?: {
+        username?: string;
+        full_name?: string;
+        profile_url?: string;
+        avatar_url?: string;
+    };
+}
+
+// Formatter respons error generik
+const formatErrorResponse = (error: unknown): ApiErrorResponse => ({
+    developer: wmdev,
+    status: false,
+    message: error instanceof Error ? error.message : 'Unknown error',
+    note: `Please check the documentation at ${documentation}`
+});
 
 /**
  * TikTok video downloader
@@ -55,9 +185,10 @@ async function _fetchapi(endpoint: string, url: string): Promise<any> {
  */
 async function ttdl(url: string): Promise<TikTokResponse> {
     try {
-        const data = await _fetchapi('ttdl', url);
+        const data = await HttpGet<TikTokApiResponse>('ttdl', url, version, timeout, config.baseUrl);
         return {
-            developer: BASE_DEVELOPER,
+            developer: wmdev,
+            status: true,
             title: data.title,
             title_audio: data.title_audio,
             thumbnail: data.thumbnail,
@@ -65,12 +196,7 @@ async function ttdl(url: string): Promise<TikTokResponse> {
             audio: data.audio
         };
     } catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
+        return { ...formatErrorResponse(error), status: false };
     }
 }
 
@@ -87,19 +213,18 @@ async function ttdl(url: string): Promise<TikTokResponse> {
  */
 async function igdl(url: string): Promise<InstagramResponse> {
     try {
-        const data = await _fetchapi('igdl', url);
-        if (!data || data.status === false) {
+        const data = await HttpGet<InstagramApiItem[]>('igdl', url, version, timeout, config.baseUrl);
+        if (!data || data.length === 0) {
             return {
-                developer: BASE_DEVELOPER,
-                status: false,
-                message: data?.msg || 'Result Not Found! Check Your Url Now!',
-                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
+                ...formatErrorResponse(new Error('No results found')),
+                status: false
             };
         }
 
         return {
-            developer: BASE_DEVELOPER,
-            result: data.map((item: any) => ({
+            developer: wmdev,
+            status: true,
+            result: data.map((item: InstagramApiItem) => ({
                 thumbnail: item.thumbnail,
                 url: item.url,
                 resolution: item.resolution,
@@ -107,12 +232,7 @@ async function igdl(url: string): Promise<InstagramResponse> {
             }))
         };
     } catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: 'Request Failed With Code 401',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
+        return { ...formatErrorResponse(error), status: false };
     }
 }
 
@@ -128,19 +248,15 @@ async function igdl(url: string): Promise<InstagramResponse> {
  */
 async function twitter(url: string): Promise<TwitterResponse> {
     try {
-        const data = await _fetchapi('twitter', url);
+        const data = await HttpGet<TwitterApiResponse>('twitter', url, version, timeout, config.baseUrl);
         return {
-            developer: BASE_DEVELOPER,
+            developer: wmdev,
+            status: true,
             title: data.title,
             url: data.url
         };
     } catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
+        return { ...formatErrorResponse(error), status: false };
     }
 }
 
@@ -157,9 +273,10 @@ async function twitter(url: string): Promise<TwitterResponse> {
  */
 async function youtube(url: string): Promise<YouTubeResponse> {
     try {
-        const data = await _fetchapi('youtube', url);
+        const data = await HttpGet<YouTubeApiResponse>('youtube', url, version, timeout, config.baseUrl);
         return {
-            developer: BASE_DEVELOPER,
+            developer: wmdev,
+            status: true,
             title: data.title,
             thumbnail: data.thumbnail,
             author: data.author,
@@ -167,12 +284,7 @@ async function youtube(url: string): Promise<YouTubeResponse> {
             mp4: data.mp4
         };
     } catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
+        return { ...formatErrorResponse(error), status: false };
     }
 }
 
@@ -189,19 +301,15 @@ async function youtube(url: string): Promise<YouTubeResponse> {
  */
 async function fbdown(url: string): Promise<FacebookResponse> {
     try {
-        const data = await _fetchapi('fbdown', url);
+        const data = await HttpGet<FacebookApiResponse>('fbdown', url, version, timeout, config.baseUrl);
         return {
-            developer: BASE_DEVELOPER,
+            developer: wmdev,
+            status: true,
             Normal_video: data.Normal_video,
             HD: data.HD
         };
     } catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
+        return { ...formatErrorResponse(error), status: false };
     }
 }
 
@@ -218,18 +326,14 @@ async function fbdown(url: string): Promise<FacebookResponse> {
  */
 async function mediafire(url: string): Promise<MediaFireResponse> {
     try {
-        const data = await _fetchapi('mediafire', url);
+        const data = await HttpGet<MediaFireApiResponse>('mediafire', url, version, timeout, config.baseUrl);
         return {
-            developer: BASE_DEVELOPER,
+            developer: wmdev,
+            status: true,
             result: data
         };
     } catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
+        return { ...formatErrorResponse(error), status: false };
     }
 }
 
@@ -245,15 +349,14 @@ async function mediafire(url: string): Promise<MediaFireResponse> {
  */
 async function capcut(url: string): Promise<CapCutResponse> {
     try {
-        const data = await _fetchapi('capcut', url);
-        return data;
-    } catch (error) {
+        const data = await HttpGet<CapCutApiResponse>('capcut', url, version, timeout, config.baseUrl);
         return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
+            developer: wmdev,
+            status: true,
+            ...data
         };
+    } catch (error) {
+        return { ...formatErrorResponse(error), status: false };
     }
 }
 
@@ -270,18 +373,14 @@ async function capcut(url: string): Promise<CapCutResponse> {
  */
 async function gdrive(url: string): Promise<GoogleDriveResponse> {
     try {
-        const data = await _fetchapi('gdrive', url);
+        const data = await HttpGet<GoogleDriveApiResponse>('gdrive', url, version, timeout, config.baseUrl);
         return {
-            developer: BASE_DEVELOPER,
-            result: data.data
+            developer: wmdev,
+            status: true,
+            result: data
         };
     } catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
+        return { ...formatErrorResponse(error), status: false };
     }
 }
 
@@ -300,18 +399,14 @@ async function gdrive(url: string): Promise<GoogleDriveResponse> {
  */
 async function pinterest(query: string): Promise<PinterestResponse> {
     try {
-        const data = await _fetchapi('pinterest', query);
+        const data = await HttpGet<PinterestApiResponse>('pinterest', query, version, timeout, config.baseUrl);
         return {
-            developer: BASE_DEVELOPER,
-            result: data.result
+            developer: wmdev,
+            status: true,
+            result: data
         };
     } catch (error) {
-        return {
-            developer: BASE_DEVELOPER,
-            status: false,
-            message: error instanceof Error ? error.message : 'Unknown error',
-            note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-        };
+        return { ...formatErrorResponse(error), status: false };
     }
 }
 

@@ -21,39 +21,20 @@ exports.mediafire = mediafire;
 exports.capcut = capcut;
 exports.gdrive = gdrive;
 exports.pinterest = pinterest;
-const axios_1 = __importDefault(require("axios"));
+const site_1 = __importDefault(require("./Defaults/site"));
+const config_json_1 = __importDefault(require("./Watermark/config.json"));
 const package_json_1 = require("../package.json");
-const config_json_1 = __importDefault(require("./watermark/config.json"));
-const BASE_DEVELOPER = config_json_1.default.dev.name;
-/**
- * Internal API fetch utility
- * @private
- * @async
- * @function _fetchapi
- * @param {string} endpoint - API endpoint to call
- * @param {string} url - URL to process
- * @returns {Promise<any>} API response data
- * @throws {Error} When request fails
- * @example
- * const data = await _fetchapi('instagram', 'https://instagram.com/p/123');
- */
-function _fetchapi(endpoint, url) {
-    return __awaiter(this, void 0, void 0, function* () {
-        try {
-            const response = yield axios_1.default.get(`${package_json_1.config.baseUrl}/${endpoint}`, {
-                params: { url },
-                headers: {
-                    'Content-Type': 'application/json',
-                    'User-Agent': `btch/${package_json_1.version}`
-                }
-            });
-            return response.data;
-        }
-        catch (error) {
-            throw new Error(`Error fetching from ${endpoint}: ${error instanceof Error ? error.message : 'Unknown error'}`);
-        }
-    });
-}
+const Get_1 = require("./Http/Get");
+const { config, documentation } = site_1.default;
+const wmdev = config_json_1.default.dev.name;
+const timeout = 60000;
+// Formatter respons error generik
+const formatErrorResponse = (error) => ({
+    developer: wmdev,
+    status: false,
+    message: error instanceof Error ? error.message : 'Unknown error',
+    note: `Please check the documentation at ${documentation}`
+});
 /**
  * TikTok video downloader
  * @async
@@ -68,9 +49,10 @@ function _fetchapi(endpoint, url) {
 function ttdl(url) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const data = yield _fetchapi('ttdl', url);
+            const data = yield (0, Get_1.HttpGet)('ttdl', url, package_json_1.version, timeout, config.baseUrl);
             return {
-                developer: BASE_DEVELOPER,
+                developer: wmdev,
+                status: true,
                 title: data.title,
                 title_audio: data.title_audio,
                 thumbnail: data.thumbnail,
@@ -79,12 +61,7 @@ function ttdl(url) {
             };
         }
         catch (error) {
-            return {
-                developer: BASE_DEVELOPER,
-                status: false,
-                message: error instanceof Error ? error.message : 'Unknown error',
-                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-            };
+            return Object.assign(Object.assign({}, formatErrorResponse(error)), { status: false });
         }
     });
 }
@@ -102,17 +79,13 @@ function ttdl(url) {
 function igdl(url) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const data = yield _fetchapi('igdl', url);
-            if (!data || data.status === false) {
-                return {
-                    developer: BASE_DEVELOPER,
-                    status: false,
-                    message: (data === null || data === void 0 ? void 0 : data.msg) || 'Result Not Found! Check Your Url Now!',
-                    note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-                };
+            const data = yield (0, Get_1.HttpGet)('igdl', url, package_json_1.version, timeout, config.baseUrl);
+            if (!data || data.length === 0) {
+                return Object.assign(Object.assign({}, formatErrorResponse(new Error('No results found'))), { status: false });
             }
             return {
-                developer: BASE_DEVELOPER,
+                developer: wmdev,
+                status: true,
                 result: data.map((item) => ({
                     thumbnail: item.thumbnail,
                     url: item.url,
@@ -122,12 +95,7 @@ function igdl(url) {
             };
         }
         catch (error) {
-            return {
-                developer: BASE_DEVELOPER,
-                status: false,
-                message: 'Request Failed With Code 401',
-                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-            };
+            return Object.assign(Object.assign({}, formatErrorResponse(error)), { status: false });
         }
     });
 }
@@ -144,20 +112,16 @@ function igdl(url) {
 function twitter(url) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const data = yield _fetchapi('twitter', url);
+            const data = yield (0, Get_1.HttpGet)('twitter', url, package_json_1.version, timeout, config.baseUrl);
             return {
-                developer: BASE_DEVELOPER,
+                developer: wmdev,
+                status: true,
                 title: data.title,
                 url: data.url
             };
         }
         catch (error) {
-            return {
-                developer: BASE_DEVELOPER,
-                status: false,
-                message: error instanceof Error ? error.message : 'Unknown error',
-                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-            };
+            return Object.assign(Object.assign({}, formatErrorResponse(error)), { status: false });
         }
     });
 }
@@ -175,9 +139,10 @@ function twitter(url) {
 function youtube(url) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const data = yield _fetchapi('youtube', url);
+            const data = yield (0, Get_1.HttpGet)('youtube', url, package_json_1.version, timeout, config.baseUrl);
             return {
-                developer: BASE_DEVELOPER,
+                developer: wmdev,
+                status: true,
                 title: data.title,
                 thumbnail: data.thumbnail,
                 author: data.author,
@@ -186,12 +151,7 @@ function youtube(url) {
             };
         }
         catch (error) {
-            return {
-                developer: BASE_DEVELOPER,
-                status: false,
-                message: error instanceof Error ? error.message : 'Unknown error',
-                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-            };
+            return Object.assign(Object.assign({}, formatErrorResponse(error)), { status: false });
         }
     });
 }
@@ -209,20 +169,16 @@ function youtube(url) {
 function fbdown(url) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const data = yield _fetchapi('fbdown', url);
+            const data = yield (0, Get_1.HttpGet)('fbdown', url, package_json_1.version, timeout, config.baseUrl);
             return {
-                developer: BASE_DEVELOPER,
+                developer: wmdev,
+                status: true,
                 Normal_video: data.Normal_video,
                 HD: data.HD
             };
         }
         catch (error) {
-            return {
-                developer: BASE_DEVELOPER,
-                status: false,
-                message: error instanceof Error ? error.message : 'Unknown error',
-                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-            };
+            return Object.assign(Object.assign({}, formatErrorResponse(error)), { status: false });
         }
     });
 }
@@ -240,19 +196,15 @@ function fbdown(url) {
 function mediafire(url) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const data = yield _fetchapi('mediafire', url);
+            const data = yield (0, Get_1.HttpGet)('mediafire', url, package_json_1.version, timeout, config.baseUrl);
             return {
-                developer: BASE_DEVELOPER,
+                developer: wmdev,
+                status: true,
                 result: data
             };
         }
         catch (error) {
-            return {
-                developer: BASE_DEVELOPER,
-                status: false,
-                message: error instanceof Error ? error.message : 'Unknown error',
-                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-            };
+            return Object.assign(Object.assign({}, formatErrorResponse(error)), { status: false });
         }
     });
 }
@@ -269,16 +221,11 @@ function mediafire(url) {
 function capcut(url) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const data = yield _fetchapi('capcut', url);
-            return data;
+            const data = yield (0, Get_1.HttpGet)('capcut', url, package_json_1.version, timeout, config.baseUrl);
+            return Object.assign({ developer: wmdev, status: true }, data);
         }
         catch (error) {
-            return {
-                developer: BASE_DEVELOPER,
-                status: false,
-                message: error instanceof Error ? error.message : 'Unknown error',
-                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-            };
+            return Object.assign(Object.assign({}, formatErrorResponse(error)), { status: false });
         }
     });
 }
@@ -296,19 +243,15 @@ function capcut(url) {
 function gdrive(url) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const data = yield _fetchapi('gdrive', url);
+            const data = yield (0, Get_1.HttpGet)('gdrive', url, package_json_1.version, timeout, config.baseUrl);
             return {
-                developer: BASE_DEVELOPER,
-                result: data.data
+                developer: wmdev,
+                status: true,
+                result: data
             };
         }
         catch (error) {
-            return {
-                developer: BASE_DEVELOPER,
-                status: false,
-                message: error instanceof Error ? error.message : 'Unknown error',
-                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-            };
+            return Object.assign(Object.assign({}, formatErrorResponse(error)), { status: false });
         }
     });
 }
@@ -328,19 +271,15 @@ function gdrive(url) {
 function pinterest(query) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const data = yield _fetchapi('pinterest', query);
+            const data = yield (0, Get_1.HttpGet)('pinterest', query, package_json_1.version, timeout, config.baseUrl);
             return {
-                developer: BASE_DEVELOPER,
-                result: data.result
+                developer: wmdev,
+                status: true,
+                result: data
             };
         }
         catch (error) {
-            return {
-                developer: BASE_DEVELOPER,
-                status: false,
-                message: error instanceof Error ? error.message : 'Unknown error',
-                note: 'Please check the documentation at https://www.npmjs.com/package/btch-downloader'
-            };
+            return Object.assign(Object.assign({}, formatErrorResponse(error)), { status: false });
         }
     });
 }

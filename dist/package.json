@@ -1,10 +1,7 @@
 {
     "name": "btch-downloader",
-    "version": "4.1.21",
+    "version": "4.1.24",
     "description": "Social Media Downloader.",
-    "config": {
-        "baseUrl": "https://backend1.tioo.eu.org"
-    },
     "main": "dist/src/index.js",
     "types": "dist/src/index.d.ts",
     "files": [
@@ -30,12 +27,9 @@
     ],
     "author": "Tio",
     "license": "MIT",
-    "dependencies": {
-        "axios": "^1.4.0"
-    },
     "devDependencies": {
+        "@types/node": "^24.3.0",
         "docdash": "^2.0.2",
-        "@types/node": "^20.8.9",
         "typescript": "^5.2.2"
     },
     "repository": {
@@ -52,5 +46,10 @@
     },
     "publishConfig": {
         "tag": "latest"
+    },
+    "dependencies": {
+        "axios": "^1.4.0",
+        "lodash": "^4.17.21",
+        "undici-types": "^7.10.0"
     }
 }

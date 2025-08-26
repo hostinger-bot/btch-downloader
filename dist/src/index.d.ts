@@ -1,4 +1,4 @@
-import { InstagramResponse, TikTokResponse, TwitterResponse, YouTubeResponse, FacebookResponse, MediaFireResponse, CapCutResponse, GoogleDriveResponse, PinterestResponse } from './types';
+import { InstagramResponse, TikTokResponse, TwitterResponse, YouTubeResponse, FacebookResponse, MediaFireResponse, CapCutResponse, GoogleDriveResponse, PinterestResponse } from './Types/types';
 /**
  * TikTok video downloader
  * @async
