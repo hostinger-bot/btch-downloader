@@ -1,6 +1,6 @@
 {
   "name": "btch-downloader",
-  "version": "4.1.26",
+  "version": "4.1.27-lts",
   "description": "Social Media Downloader.",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
