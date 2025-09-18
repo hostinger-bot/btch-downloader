@@ -21,11 +21,12 @@ exports.mediafire = mediafire;
 exports.capcut = capcut;
 exports.gdrive = gdrive;
 exports.pinterest = pinterest;
+exports.aio = aio;
 const site_1 = __importDefault(require("./Defaults/site"));
 const config_json_1 = __importDefault(require("./Watermark/config.json"));
 const package_json_1 = require("../package.json");
 const Get_1 = require("./Http/Get");
-const { config, documentation } = site_1.default;
+const { config, issues } = site_1.default;
 const wmdev = config_json_1.default.dev.name;
 const timeout = 60000;
 // Formatter respons error generik
@@ -33,7 +34,7 @@ const formatErrorResponse = (error) => ({
     developer: wmdev,
     status: false,
     message: error instanceof Error ? error.message : 'Unknown error',
-    note: `Please check the documentation at ${documentation}`
+    note: `Please report issues to ${issues}`
 });
 /**
  * TikTok video downloader
@@ -222,6 +223,27 @@ function capcut(url) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const data = yield (0, Get_1.HttpGet)('capcut', url, package_json_1.version, timeout, config.baseUrl);
+            return Object.assign({ developer: wmdev, status: true }, data);
+        }
+        catch (error) {
+            return Object.assign(Object.assign({}, formatErrorResponse(error)), { status: false });
+        }
+    });
+}
+/**
+ * All In One Downloader
+ * @async
+ * @function aio
+ * @param {string} url - Video URL
+ * @returns {Promise<AioApiResponse>} Object containing video info
+ * @throws {Error} When invalid URL or request fails
+ * @example
+ * const result = await aio('https://vt.tiktok.com/12345/');
+ */
+function aio(url) {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            const data = yield (0, Get_1.HttpGet)('aio', url, package_json_1.version, timeout, config.baseUrl);
             return Object.assign({ developer: wmdev, status: true }, data);
         }
         catch (error) {

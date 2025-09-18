@@ -4,6 +4,6 @@ const configData = {
     config: {
         baseUrl: "https://backend1.tioo.eu.org",
     },
-    documentation: "https://www.npmjs.com/package/btch-downloader",
+    issues: "https://github.com/hostinger-bot/btch-downloader/issues",
 };
 exports.default = configData;

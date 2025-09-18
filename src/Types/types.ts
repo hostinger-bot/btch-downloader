@@ -3,6 +3,7 @@ export interface BaseResponse {
     status?: boolean;
     message?: string;
     note?: string;
+    code?: number;
 }
 
 export interface InstagramItem {
@@ -57,35 +58,10 @@ export interface MediaFireResponse extends BaseResponse {
 }
 
 export interface CapCutResponse extends BaseResponse {
-    url?: string;
-    data?: {
-        "@context"?: string;
-        "@type"?: string;
-        name?: string;
-        description?: string;
-        thumbnailUrl?: string[];
-        uploadDate?: string;
-        contentUrl?: string;
-        meta?: {
-            title?: string;
-            desc?: string;
-            like?: number;
-            play?: number;
-            duration?: number;
-            usage?: number;
-            createTime?: number;
-            coverUrl?: string;
-            videoRatio?: string;
-            author?: {
-                name?: string;
-                avatarUrl?: string;
-                description?: string;
-                profileUrl?: string;
-                secUid?: string;
-                uid?: number;
-            };
-        };
-    };
+    title?: string;
+    originalVideoUrl?: string;
+    coverUrl?: string;
+    authorName?: string;
 }
 
 export interface GoogleDriveResponse extends BaseResponse {
@@ -116,6 +92,24 @@ export interface PinterestPin {
         full_name?: string;
         profile_url?: string;
         avatar_url?: string;
+    };
+}
+
+export interface AioResponse extends BaseResponse {
+    result?: {
+        status?: string;
+        mess?: string;
+        p?: string;
+        vid?: string;
+        title?: string;
+        t?: number;
+        a?: string;
+        links?: {
+            mp4?: { [key: string]: { size?: string; f?: string; q?: string; q_text?: string; k?: string; selected?: string } };
+            m4a?: { [key: string]: { size?: string; f?: string; q?: string; q_text?: string; k?: string } };
+            mp3?: { [key: string]: { size?: string; f?: string; q?: string; q_text?: string; k?: string } };
+        };
+        related?: { title?: string; contents?: any[] }[];
     };
 }
 

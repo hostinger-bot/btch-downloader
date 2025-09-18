@@ -17,38 +17,10 @@ Install the library using npm:
 ```sh
 npm i btch-downloader
 ```
-
-### Python Installation
-
-Install the Python version using pip:
-
-```bash
-pip install btch-downloader
-```
-
-### For setup details, refer to the [Official Python Documentation](https://github.com/hostinger-bot/btch-downloader-py/tree/main#usage).
-
-## Usage
+# Usage
 
 For complete documentation, visit [JSDoc](https://hostinger-bot.github.io/btch-downloader/).
 
-### AIO (Under Maintenance)
-
-#### ESM
-```javascript
-import { aio } from 'btch-downloader';
-
-const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
-aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-```
-
-#### CJS
-```javascript
-const { aio } = require('btch-downloader');
-
-const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
-aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-```
 
 ### Instagram
 
@@ -140,7 +112,7 @@ const url = 'https://youtube.com/watch?v=C8mJ8943X80';
 youtube(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
-### MediaFire (Under maintenance)
+### MediaFire (no longer maintained / 不再维护) 
 
 #### ESM
 ```javascript
@@ -221,6 +193,26 @@ pinterest('Zhao Lusi')
   .then(data => console.log(data))
   .catch(err => console.error(err)); // JSON
 ```
+
+
+### AIO
+
+#### ESM
+```javascript
+import { aio } from 'btch-downloader';
+
+const url = 'https://vt.tiktok.com/ZSkGPK9Kj/';
+aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { aio } = require('btch-downloader');
+
+const url = 'https://vt.tiktok.com/ZSkGPK9Kj/';
+aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
 
 ## Important Notes
 

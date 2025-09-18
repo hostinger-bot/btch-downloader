@@ -5,14 +5,14 @@ export interface VersionConfig {
     config: {
         baseUrl: string;
     };
-    documentation: string;
+    issues: string;
 }
 
 const configData: VersionConfig = {
     config: {
         baseUrl: "https://backend1.tioo.eu.org",
     },
-    documentation: "https://www.npmjs.com/package/btch-downloader",
+    issues: "https://github.com/hostinger-bot/btch-downloader/issues",
 };
 
 export default configData;

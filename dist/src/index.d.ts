@@ -1,4 +1,4 @@
-import { InstagramResponse, TikTokResponse, TwitterResponse, YouTubeResponse, FacebookResponse, MediaFireResponse, CapCutResponse, GoogleDriveResponse, PinterestResponse } from './Types/types';
+import { InstagramResponse, TikTokResponse, TwitterResponse, YouTubeResponse, FacebookResponse, MediaFireResponse, CapCutResponse, GoogleDriveResponse, PinterestResponse, AioResponse } from './Types/types';
 /**
  * TikTok video downloader
  * @async
@@ -82,6 +82,17 @@ declare function mediafire(url: string): Promise<MediaFireResponse>;
  */
 declare function capcut(url: string): Promise<CapCutResponse>;
 /**
+ * All In One Downloader
+ * @async
+ * @function aio
+ * @param {string} url - Video URL
+ * @returns {Promise<AioApiResponse>} Object containing video info
+ * @throws {Error} When invalid URL or request fails
+ * @example
+ * const result = await aio('https://vt.tiktok.com/12345/');
+ */
+declare function aio(url: string): Promise<AioResponse>;
+/**
  * Google Drive file downloader
  * @async
  * @function gdrive
@@ -107,4 +118,4 @@ declare function gdrive(url: string): Promise<GoogleDriveResponse>;
  * const results = await pinterest('Zhao Lusi');
  */
 declare function pinterest(query: string): Promise<PinterestResponse>;
-export { fbdown, igdl, ttdl, twitter, youtube, mediafire, capcut, gdrive, pinterest };
+export { fbdown, igdl, ttdl, twitter, youtube, mediafire, capcut, gdrive, pinterest, aio };

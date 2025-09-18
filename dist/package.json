@@ -1,6 +1,6 @@
 {
     "name": "btch-downloader",
-    "version": "4.1.24",
+    "version": "5.0.0-rc",
     "description": "Social Media Downloader.",
     "main": "dist/src/index.js",
     "types": "dist/src/index.d.ts",
@@ -11,7 +11,8 @@
     "scripts": {
         "build": "tsc",
         "pub": "npm run build && npm publish",
-        "test": "tsc && node test/test.mjs"
+        "test": "npm run build && ts-node test/test.ts",
+        "docs": "jsdoc jsdoc.js --readme README.md -d docs -t node_modules/docdash"
     },
     "keywords": [
         "AIO",
@@ -48,8 +49,8 @@
         "tag": "latest"
     },
     "dependencies": {
-        "axios": "^1.4.0",
         "lodash": "^4.17.21",
+        "ts-node": "^10.9.2",
         "undici-types": "^7.10.0"
     }
 }

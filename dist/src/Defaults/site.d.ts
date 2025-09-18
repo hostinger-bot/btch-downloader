@@ -5,7 +5,7 @@ export interface VersionConfig {
     config: {
         baseUrl: string;
     };
-    documentation: string;
+    issues: string;
 }
 declare const configData: VersionConfig;
 export default configData;

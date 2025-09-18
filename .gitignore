@@ -30,3 +30,6 @@ coverage/
 
 # Exclude personal directories
 /sdcard/btch-downloader/.cache/
+
+# Build output
+dist/

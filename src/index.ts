@@ -12,17 +12,18 @@ import {
     MediaFireResponse,
     CapCutResponse,
     GoogleDriveResponse,
-    PinterestResponse
+    PinterestResponse,
+    AioResponse
 } from './Types/types';
 
 interface VersionConfig {
     config: {
         baseUrl: string;
     };
-    documentation: string;
+    issues: string;
 }
 
-const { config, documentation } = configData as VersionConfig;
+const { config, issues } = configData as VersionConfig;
 const wmdev = watermark.dev.name;
 const timeout = 60000;
 
@@ -79,35 +80,11 @@ interface MediaFireApiResponse {
 }
 
 interface CapCutApiResponse {
-    url?: string;
-    data?: {
-        "@context"?: string;
-        "@type"?: string;
-        name?: string;
-        description?: string;
-        thumbnailUrl?: string[];
-        uploadDate?: string;
-        contentUrl?: string;
-        meta?: {
-            title?: string;
-            desc?: string;
-            like?: number;
-            play?: number;
-            duration?: number;
-            usage?: number;
-            createTime?: number;
-            coverUrl?: string;
-            videoRatio?: string;
-            author?: {
-                name?: string;
-                avatarUrl?: string;
-                description?: string;
-                profileUrl?: string;
-                secUid?: string;
-                uid?: number;
-            };
-        };
-    };
+    code?: number;
+    title?: string;
+    originalVideoUrl?: string;
+    coverUrl?: string;
+    authorName?: string;
 }
 
 interface GoogleDriveApiResponse {
@@ -164,12 +141,41 @@ interface PinterestApiResponse {
     };
 }
 
+interface AioApiResponse {
+    filename?: string;
+    filesize?: string;
+    filesizeH?: string;
+    type?: string;
+    upload_date?: string;
+    owner?: string;
+    ext?: string;
+    mimetype?: string;
+    url?: string;
+    downloadUrl?: string;
+    result?: {
+        status?: string;
+        mess?: string;
+        p?: string;
+        vid?: string;
+        title?: string;
+        t?: number;
+        a?: string;
+        links?: {
+            mp4?: { [key: string]: { size?: string; f?: string; q?: string; q_text?: string; k?: string; selected?: string } };
+            m4a?: { [key: string]: { size?: string; f?: string; q?: string; q_text?: string; k?: string } };
+            mp3?: { [key: string]: { size?: string; f?: string; q?: string; q_text?: string; k?: string } };
+        };
+        related?: { title?: string; contents?: any[] }[];
+    };
+    [key: string]: any;
+}
+
 // Formatter respons error generik
 const formatErrorResponse = (error: unknown): ApiErrorResponse => ({
     developer: wmdev,
     status: false,
     message: error instanceof Error ? error.message : 'Unknown error',
-    note: `Please check the documentation at ${documentation}`
+    note: `Please report issues to ${issues}`
 });
 
 /**
@@ -361,6 +367,29 @@ async function capcut(url: string): Promise<CapCutResponse> {
 }
 
 /**
+ * All In One Downloader
+ * @async
+ * @function aio
+ * @param {string} url - Video URL
+ * @returns {Promise<AioApiResponse>} Object containing video info
+ * @throws {Error} When invalid URL or request fails
+ * @example
+ * const result = await aio('https://vt.tiktok.com/12345/');
+ */
+async function aio(url: string): Promise<AioResponse> {
+    try {
+        const data = await HttpGet<AioApiResponse>('aio', url, version, timeout, config.baseUrl);
+        return {
+            developer: wmdev,
+            status: true,
+            ...data
+        };
+    } catch (error) {
+        return { ...formatErrorResponse(error), status: false };
+    }
+}
+
+/**
  * Google Drive file downloader
  * @async
  * @function gdrive
@@ -419,5 +448,6 @@ export {
     mediafire,
     capcut,
     gdrive,
-    pinterest
+    pinterest,
+    aio
 };
