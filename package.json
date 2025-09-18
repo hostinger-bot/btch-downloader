@@ -12,7 +12,8 @@
     "build": "tsc",
     "pub": "npm run build && npm publish",
     "test": "npm run build && ts-node test/test.ts",
-    "docs": "jsdoc jsdoc.js --readme README.md -d docs -t node_modules/docdash"
+    "docs": "jsdoc jsdoc.js --readme README.md -d docs -t node_modules/docdash",
+    "prepare": "npm run build"
   },
   "keywords": [
     "AIO",
