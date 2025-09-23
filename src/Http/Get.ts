@@ -18,17 +18,17 @@ interface CustomResponse<T> {
  * @param {string} version - Client version for headers
  * @param {number} timeout - Timeout in milliseconds
  * @param {string} baseUrl - Base URL for the API
- * @returns {Promise<T>} API response data
+ * @returns {Promise<T>} URL response data
  * @throws {Error} When request fails
  * @example
- * const data = await HttpGet('instagram', 'https://instagram.com/p/123', '1.0.0', 60000, 'https://api.example.com');
+ * const data = await HttpGet('instagram', 'https://instagram.com/p/123', '1.0.0', 60000, baseUrl);
  */
 async function HttpGet<T>(endpoint: string, url: string, version: string, timeout: number, baseUrl: string): Promise<T> {
     return new Promise((resolve, reject) => {
         try {
             const BaseUrl = new URL(`${baseUrl}/${endpoint}`);
             BaseUrl.searchParams.append('url', url);
-             // Headers
+            // Headers
             const options = {
                 method: 'GET',
                 headers: {
@@ -48,41 +48,29 @@ async function HttpGet<T>(endpoint: string, url: string, version: string, timeou
                 res.on('end', () => {
                     try {
                         if (res.statusCode && (res.statusCode < 200 || res.statusCode >= 300)) {
-                            throw new Error(`API request failed: ${res.statusCode} - ${res.statusMessage || 'Unknown'}`);
+                            throw new Error(`${res.statusCode} ${res.statusMessage || 'Unknown'}`);
                         }
 
                         const parsedData: T = JSON.parse(data);
                         resolve(parsedData);
                     } catch (error) {
-                        const errorMessage = error instanceof Error
-                            ? `API request failed: ${error.message}`
-                            : 'Unknown error occurred';
-                        console.error(`[HttpGet] Error at ${endpoint}:`, errorMessage);
-                        reject(new Error(errorMessage));
+                        reject(new Error(error instanceof Error ? error.message : 'Unknown error occurred'));
                     }
                 });
             });
 
             req.on('error', (error) => {
-                const errorMessage = `API request failed: ${error.message}`;
-                console.error(`[HttpGet] Error at ${endpoint}:`, errorMessage);
-                reject(new Error(errorMessage));
+                reject(new Error(error.message));
             });
 
             req.on('timeout', () => {
                 req.destroy();
-                const errorMessage = 'API request failed: Request timed out';
-                console.error(`[HttpGet] Error at ${endpoint}:`, errorMessage);
-                reject(new Error(errorMessage));
+                reject(new Error('Request timed out'));
             });
 
             req.end();
         } catch (error) {
-            const errorMessage = error instanceof Error
-                ? `API request failed: ${error.message}`
-                : 'Unknown error occurred';
-            console.error(`[HttpGet] Error at ${endpoint}:`, errorMessage);
-            reject(new Error(errorMessage));
+            reject(new Error(error instanceof Error ? error.message : 'Unknown error occurred'));
         }
     });
 }
