@@ -28,48 +28,48 @@ const wmdev = watermark.dev.name;
 const timeout = 60000;
 
 interface ApiErrorResponse {
-    developer: string;
-    status: boolean;
-    message: string;
-    note: string;
+    developer?: string;
+    status?: boolean;
+    message?: string;
+    note?: string;
 }
 
 interface TikTokApiResponse {
-    title: string;
-    title_audio: string;
-    thumbnail: string;
-    video: string[];
-    audio: string[];
+    title?: string;
+    title_audio?: string;
+    thumbnail?: string;
+    video?: string[];
+    audio?: string[];
 }
 
 interface InstagramApiItem {
-    thumbnail: string;
-    url: string;
+    thumbnail?: string;
+    url?: string;
     resolution?: string;
     shouldRender?: boolean;
 }
 
 interface TwitterApiResponse {
-    title: string;
-    url: string;
+    title?: string;
+    url?: string;
 }
 
 interface YouTubeApiResponse {
-    title: string;
-    thumbnail: string;
-    author: string;
-    mp3: string;
-    mp4: string;
+    title?: string;
+    thumbnail?: string;
+    author?: string;
+    mp3?: string;
+    mp4?: string;
 }
 
 interface FacebookApiResponse {
-    Normal_video: string;
-    HD: string;
+    Normal_video?: string;
+    HD?: string;
 }
 
 interface MediaFireApiResponse {
-    filename: string;
-    filesize: string;
+    filename?: string;
+    filesize?: string;
     filesizeH?: string;
     type?: string;
     upload_date?: string;
@@ -88,9 +88,9 @@ interface CapCutApiResponse {
 }
 
 interface GoogleDriveApiResponse {
-    filename: string;
-    filesize: string;
-    downloadUrl: string;
+    filename?: string;
+    filesize?: string;
+    downloadUrl?: string;
 }
 
 interface PinterestApiResponse {
@@ -367,14 +367,14 @@ async function capcut(url: string): Promise<CapCutResponse> {
 }
 
 /**
- * All In One Downloader
+ * All In One Downloader (AIO)
  * @async
  * @function aio
  * @param {string} url - Video URL
  * @returns {Promise<AioApiResponse>} Object containing video info
  * @throws {Error} When invalid URL or request fails
  * @example
- * const result = await aio('https://vt.tiktok.com/12345/');
+ * const result = await aio('https://tiktok.com/@user/video/123');
  */
 async function aio(url: string): Promise<AioResponse> {
     try {
