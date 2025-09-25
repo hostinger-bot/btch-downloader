@@ -1,5 +1,8 @@
 # btch-downloader
-[![Node.js Package](https://github.com/hostinger-bot/btch-downloader/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/hostinger-bot/btch-downloader/actions/workflows/npm-publish.yml)
+
+<div align="center">
+  <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/npm-publish.yml/badge.svg" alt="Node.js Package">
+</div>
 
 A Node.js library for downloading media from platforms like Instagram, TikTok, Facebook, Twitter, YouTube, MediaFire, Capcut, Google Drive, and Pinterest.
 
