@@ -25,7 +25,7 @@ interface VersionConfig {
 
 const { config, issues } = configData as VersionConfig;
 const wmdev = watermark.dev.name;
-const timeout = 30000;
+const timeout = 60000;
 
 interface ApiErrorResponse {
     developer: string;
