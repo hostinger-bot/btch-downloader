@@ -2,11 +2,10 @@
  * @module btch-downloader
  * @description A Node.js library for downloading media from platforms like Instagram, TikTok, Facebook, Twitter, YouTube, MediaFire, Capcut, Google Drive, and Pinterest.
  * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contributions and issue reporting.
- * @version 5.0.2
+ * @version 5.0.2-rc.1
  * @author Tio
  * @license MIT
  */
-
 
 /**
  * Downloads media from a given URL across supported platforms.
