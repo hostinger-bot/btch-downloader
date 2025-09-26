@@ -1,4 +1,4 @@
-import { aio } from '../dist/src/index';
+import { aio } from '../dist/index';
 
 (async () => {
   try {

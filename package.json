@@ -1,9 +1,9 @@
 {
   "name": "btch-downloader",
-  "version": "5.0.5",
+  "version": "5.0.6",
   "description": "A lightweight TypeScript/JavaScript library for downloading media from social media platforms",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "README.md",
@@ -12,8 +12,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "pub": "npm run build && npm publish",
-    "test": "npm run build && ts-node test/test.ts",
+    "pub": "npm run build && npm publish --access public",
+    "test": "npm run build && ts-node test/fetcherTest.ts",
     "docs": "npx jsdoc -c jsdoc.json",
     "prepare": "npm run build"
   },
@@ -27,13 +27,22 @@
     "MediaFire",
     "Capcut",
     "Gdrive",
-    "Pinterest"
+    "Pinterest",
+    "media-downloader",
+    "social-media"
   ],
   "author": "Tio",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^24.3.0",
-    "typescript": "^5.2.2"
+    "@types/node": "^24.5.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "clean-jsdoc-theme": "^4.3.0",
+    "jsdoc": "^4.0.4",
+    "lodash": "^4.17.21",
+    "ts-node": "^10.9.2",
+    "undici-types": "^7.16.0"
   },
   "repository": {
     "type": "git",
@@ -48,13 +57,10 @@
     "test": "test"
   },
   "publishConfig": {
+    "access": "public",
     "tag": "latest"
   },
-  "dependencies": {
-    "clean-jsdoc-theme": "^4.3.0",
-    "jsdoc": "^4.0.4",
-    "lodash": "^4.17.21",
-    "ts-node": "^10.9.2",
-    "undici-types": "^7.10.0"
+  "engines": {
+    "node": ">=20.18.1"
   }
 }
