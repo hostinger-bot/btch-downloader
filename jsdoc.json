@@ -1,0 +1,66 @@
+{
+  "source": {
+    "include": ["jsdoc.js"],
+    "includePattern": ".js$",
+    "excludePattern": "(node_modules/|docs/)"
+  },
+  "plugins": ["plugins/markdown"],
+  "opts": {
+    "encoding": "utf8",
+    "readme": "./README.md",
+    "destination": "docs/",
+    "recurse": true,
+    "verbose": true,
+    "template": "./node_modules/clean-jsdoc-theme",
+    "theme_opts": {
+      "shouldRemoveScrollbarStyle": false,
+      "includeFilesListInHomepage": true,
+      "search": true,
+      "sections": ["Modules", "Global"],
+      "homepageTitle": "btch-downloader",
+      "title": "btch-downloader Documentation",
+      "default_theme": "dark",
+      "exclude_inherited": false,
+      "add_scripts": "function foo(){console.log('foo')} function bar() {console.log('bar')} bar(); foo();",
+      "create_style": "html { font-size: 14px !important; }",
+      "displayModuleHeader": true,
+      "footer": "<div style='margin-bottom: 0.5rem;'>btch-downloader</div> Fork: <a href='https://github.com/hostinger-bot/btch-downloader'>https://github.com/hostinger-bot/btch-downloader</a>",
+      "favicon": "data:image/jpeg;base64,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", // Add this line
+      "meta": [
+        {
+          "name": "author",
+          "content": "Tio"
+        },
+        {
+          "name": "description",
+          "content": "A lightweight TypeScript/JavaScript library for downloading media from social media platforms."
+        }
+      ],
+      "menu": [
+        {
+          "title": "Github",
+          "id": "github-link",
+          "link": "https://github.com/hostinger-bot/btch-downloader",
+          "class": "nav-link"
+        },
+        {
+          "title": "npm",
+          "id": "npm-link",
+          "link": "https://www.npmjs.com/package/btch-downloader",
+          "class": "nav-link"
+        },
+        {
+          "title": "Website",
+          "id": "web-link",
+          "link": "https://tio.is-a.dev",
+          "class": "nav-link"
+        }
+      ],
+      "prefixModuleToSidebarItems_experimental": true
+    }
+  },
+  "markdown": {
+    "hardwrap": true,
+    "idInHeadings": true
+  }
+}

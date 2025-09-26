@@ -1,18 +1,20 @@
 {
   "name": "btch-downloader",
-  "version": "5.0.4",
+  "version": "5.0.5",
   "description": "A lightweight TypeScript/JavaScript library for downloading media from social media platforms",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
   ],
   "scripts": {
     "build": "tsc",
     "pub": "npm run build && npm publish",
     "test": "npm run build && ts-node test/test.ts",
-    "docs": "jsdoc jsdoc.js --readme README.md -d docs -t node_modules/docdash",
+    "docs": "npx jsdoc -c jsdoc.json",
     "prepare": "npm run build"
   },
   "keywords": [
@@ -31,7 +33,6 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^24.3.0",
-    "docdash": "^2.0.2",
     "typescript": "^5.2.2"
   },
   "repository": {
@@ -50,6 +51,8 @@
     "tag": "latest"
   },
   "dependencies": {
+    "clean-jsdoc-theme": "^4.3.0",
+    "jsdoc": "^4.0.4",
     "lodash": "^4.17.21",
     "ts-node": "^10.9.2",
     "undici-types": "^7.10.0"
