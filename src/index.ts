@@ -2,7 +2,7 @@
 import configData from './Defaults/site';
 import watermark from './Watermark/config.json';
 import { version } from '../package.json';
-import { HttpGet } from './Http/Get';
+import HttpGet from './Http/Get';
 import {
     InstagramResponse,
     TikTokResponse,
@@ -27,7 +27,7 @@ interface VersionConfig {
 }
 
 const { config, issues } = configData as VersionConfig;
-const wm = watermark.dev.name;
+const wm = watermark.dev;
 const timeout = 60000;
 
 interface ApiErrorResponse {
@@ -567,17 +567,21 @@ async function snackvideo(url: string): Promise<SnackVideoResponse> {
 }
 
 export {
-    fbdown,
-    igdl,
-    ttdl,
-    twitter,
-    youtube,
-    mediafire,
-    capcut,
-    gdrive,
-    pinterest,
-    aio,
-    xiaohongshu,
-    douyin,
-    snackvideo
+  fbdown,
+  igdl,
+  ttdl,
+  twitter,
+  youtube,
+  mediafire,
+  capcut,
+  gdrive,
+  pinterest,
+  aio,
+  xiaohongshu,
+  douyin,
+  snackvideo,
+  version,
+  wm as developer,
+  issues
 };
+

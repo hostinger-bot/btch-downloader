@@ -75,4 +75,4 @@ async function HttpGet<T>(endpoint: string, url: string, version: string, timeou
     });
 }
 
-export { HttpGet };
+export default HttpGet
