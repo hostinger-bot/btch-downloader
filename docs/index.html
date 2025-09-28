@@ -4,7 +4,7 @@
 </code></pre><p>Using yarn:</p><pre class="prettyprint source lang-bash"><code>yarn add btch-downloader
 </code></pre><p>Using pnpm:</p><pre class="prettyprint source lang-bash"><code>pnpm add btch-downloader
 </code></pre><p>Using bun:</p><pre class="prettyprint source lang-bash"><code>bun add btch-downloader
-</code></pre><h2 id="usage">Usage</h2><h4 id="for-complete-documentation%2C-visit-http%3A%2F%2Fbtch.foo.ng.">For complete documentation, visit <a href="http://btch.foo.ng/module-btch-downloader">http://btch.foo.ng</a>.</h4><details><summary>Instagram</summary><h4 id="esm">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { igdl } from 'btch-downloader';
+</code></pre><h2 id="usage">Usage</h2><h3 id="for-complete-documentation%2C-visit-http%3A%2F%2Fbtch.foo.ng.">For complete documentation, visit <a href="http://btch.foo.ng/module-btch-downloader">http://btch.foo.ng</a>.</h3><h3 id="instagram">Instagram</h3><h4 id="esm">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { igdl } from 'btch-downloader';
 
 const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
 igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
@@ -12,7 +12,7 @@ igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // J
 
 const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
 igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre></details><details><summary>TikTok</summary><h4 id="esm-1">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { ttdl } from 'btch-downloader';
+</code></pre><h3 id="tiktok">TikTok</h3><h4 id="esm-1">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { ttdl } from 'btch-downloader';
 
 const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243?is_from_webapp=1&sender_device=pc&web_id6982004129280116226';
 ttdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
@@ -20,7 +20,7 @@ ttdl(url).then(data => console.log(data)).catch(err => console.error(err)); // J
 
 const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243?is_from_webapp=1&sender_device=pc&web_id6982004129280116226';
 ttdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre></details><details><summary>Facebook</summary><h4 id="esm-2">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { fbdown } from 'btch-downloader';
+</code></pre><h3 id="facebook">Facebook</h3><h4 id="esm-2">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { fbdown } from 'btch-downloader';
 
 const url = 'https://www.facebook.com/watch/?v=1393572814172251';
 fbdown(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
@@ -28,7 +28,7 @@ fbdown(url).then(data => console.log(data)).catch(err => console.error(err)); //
 
 const url = 'https://www.facebook.com/watch/?v=1393572814172251';
 fbdown(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre></details><details><summary>Twitter</summary><h4 id="esm-3">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { twitter } from 'btch-downloader';
+</code></pre><h3 id="twitter">Twitter</h3><h4 id="esm-3">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { twitter } from 'btch-downloader';
 
 const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697';
 twitter(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
@@ -36,7 +36,7 @@ twitter(url).then(data => console.log(data)).catch(err => console.error(err)); /
 
 const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697';
 twitter(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre></details><details><summary>YouTube</summary><h4 id="esm-4">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { youtube } from 'btch-downloader';
+</code></pre><h3 id="youtube">YouTube</h3><h4 id="esm-4">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { youtube } from 'btch-downloader';
 
 const url = 'https://youtube.com/watch?v=C8mJ8943X80';
 youtube(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
@@ -44,7 +44,7 @@ youtube(url).then(data => console.log(data)).catch(err => console.error(err)); /
 
 const url = 'https://youtube.com/watch?v=C8mJ8943X80';
 youtube(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre></details><details><summary>MediaFire (no longer maintained / 不再维护)</summary><h4 id="esm-5">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { mediafire } from 'btch-downloader';
+</code></pre><h3 id="mediafire-(no-longer-maintained-%2F-%E4%B8%8D%E5%86%8D%E7%BB%B4%E6%8A%A4)">MediaFire (no longer maintained / 不再维护)</h3><h4 id="esm-5">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { mediafire } from 'btch-downloader';
 
 const url = 'https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file';
 mediafire(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
@@ -52,15 +52,15 @@ mediafire(url).then(data => console.log(data)).catch(err => console.error(err));
 
 const url = 'https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file';
 mediafire(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre></details><details><summary>Capcut</summary><h4 id="esm-6">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { capcut } from 'btch-downloader';
+</code></pre><h3 id="capcut">Capcut</h3><h4 id="esm-6">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { capcut } from 'btch-downloader';
 
-const url = 'https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&enter_from=template_detail&region=ID&language=in&platform=copy_link&is_copy_link=1';
+const url = 'https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&enter_from=template_detail®ion=ID&language=in&platform=copy_link&is_copy_link=1';
 capcut(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 </code></pre><h4 id="cjs-6">CJS</h4><pre class="prettyprint source lang-javascript"><code>const { capcut } = require('btch-downloader');
 
-const url = 'https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&enter_from=template_detail&region=ID&language=in&platform=copy_link&is_copy_link=1';
+const url = 'https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&enter_from=template_detail®ion=ID&language=in&platform=copy_link&is_copy_link=1';
 capcut(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre></details><details><summary>Google Drive</summary><h4 id="esm-7">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { gdrive } from 'btch-downloader';
+</code></pre><h3 id="google-drive">Google Drive</h3><h4 id="esm-7">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { gdrive } from 'btch-downloader';
 
 const url = 'https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?usp=drivesdk';
 gdrive(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
@@ -68,7 +68,7 @@ gdrive(url).then(data => console.log(data)).catch(err => console.error(err)); //
 
 const url = 'https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?usp=drivesdk';
 gdrive(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre></details><details><summary>Pinterest</summary><h4 id="esm-8">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { pinterest } from 'btch-downloader';
+</code></pre><h3 id="pinterest">Pinterest</h3><h4 id="esm-8">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { pinterest } from 'btch-downloader';
 
 const url = 'https://pin.it/4CVodSq';
 pinterest(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
@@ -86,7 +86,7 @@ pinterest(url).then(data => console.log(data)).catch(err => console.error(err));
 pinterest('Zhao Lusi')
   .then(data => console.log(data))
   .catch(err => console.error(err)); // JSON
-</code></pre></details><details><summary>AIO</summary><h4 id="esm-9">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { aio } from 'btch-downloader';
+</code></pre><h3 id="aio">AIO</h3><h4 id="esm-9">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { aio } from 'btch-downloader';
 
 const url = 'https://vt.tiktok.com/ZSkGPK9Kj/';
 aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
@@ -94,7 +94,7 @@ aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JS
 
 const url = 'https://vt.tiktok.com/ZSkGPK9Kj/';
 aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre></details><details><summary>Douyin</summary><h4 id="esm-10">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { douyin } from 'btch-downloader';
+</code></pre><h3 id="douyin">Douyin</h3><h4 id="esm-10">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { douyin } from 'btch-downloader';
 
 const url = 'https://v.douyin.com/ikq8axJ/';
 douyin(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
@@ -102,20 +102,20 @@ douyin(url).then(data => console.log(data)).catch(err => console.error(err)); //
 
 const url = 'https://v.douyin.com/ikq8axJ/';
 douyin(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre></details><details><summary>Snackvideo</summary><h4 id="esm-11">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { snackvideo } from 'btch-downloader';
-
-const url = 'https://s.snackvideo.com/p/j9jKr9dR';
-snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre><h4 id="cjs-11">CJS</h4><pre class="prettyprint source lang-javascript"><code>const { snackvideo } = require('btch-downloader');
-
-const url = 'https://s.snackvideo.com/p/j9jKr9dR';
-snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre></details><details><summary>Xiaohongshu (小红书)</summary><h4 id="esm-12">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { xiaohongshu } from 'btch-downloader';
+</code></pre><h3 id="xiaohongshu-(%E5%B0%8F%E7%BA%A2%E4%B9%A6)">Xiaohongshu (小红书)</h3><h4 id="esm-11">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { xiaohongshu } from 'btch-downloader';
 
 const url = 'https://xhslink.com/o/588P0GrGwWf';
 xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre><h4 id="cjs-12">CJS</h4><pre class="prettyprint source lang-javascript"><code>const { xiaohongshu } = require('btch-downloader');
+</code></pre><h4 id="cjs-11">CJS</h4><pre class="prettyprint source lang-javascript"><code>const { xiaohongshu } = require('btch-downloader');
 
 const url = 'https://xhslink.com/o/588P0GrGwWf';
 xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-</code></pre></details><h2 id="important-notes">Important Notes</h2><ol><li>This downloader can only be used to download media that is public or accessible to the public.</li><li>This application is not affiliated with or endorsed by any application.</li><li>Ensure you have permission or copyright to download media before using this application.</li></ol><h2 id="contribution-and-issue-reporting">Contribution and Issue Reporting</h2><p>If you encounter any issues or wish to contribute to the development of this application, please visit our <a href="https://github.com/hostinger-bot/btch-downloader">GitHub repository</a>.</p><h2 id="license">License</h2><p>btch-downloader is licensed under the <a href="https://github.com/hostinger-bot/btch-downloader/blob/main/LICENSE">MIT License</a>. Please refer to the LICENSE file for more information.</p></article></section><footer class="footer" id="PeOAagUepe"><div class="wrapper"><div style="margin-bottom:.5rem">btch-downloader</div>Fork: <a href="https://github.com/hostinger-bot/btch-downloader">https://github.com/hostinger-bot/btch-downloader</a></div></footer></div></div></div><div class="search-container" id="PkfLWpAbet" style="display:none"><div class="wrapper" id="iCxFxjkHbP"><button class="icon-button search-close-button" id="VjLlGakifb" aria-label="close search"><svg><use xlink:href="#close-icon"></use></svg></button><div class="search-box-c"><svg><use xlink:href="#search-icon"></use></svg> <input type="text" id="vpcKVYIppa" class="search-input" placeholder="Search..." autofocus></div><div class="search-result-c" id="fWwVHRuDuN"><span class="search-result-c-text">Type anything to view search result</span></div></div></div><div class="mobile-menu-icon-container"><button class="icon-button" id="mobile-menu" data-isopen="false" aria-label="menu"><svg><use xlink:href="#menu-icon"></use></svg></button></div><div id="mobile-sidebar" class="mobile-sidebar-container"><div class="mobile-sidebar-wrapper"><a href="/" class="sidebar-title sidebar-title-anchor">btch-downloader Documentation</a><div class="mobile-nav-links"><div class="nav-link navbar-item"><a id="github-link-mobile" href="https://github.com/hostinger-bot/btch-downloader" target="">Github</a></div><div class="nav-link navbar-item"><a id="npm-link-mobile" href="https://www.npmjs.com/package/btch-downloader" target="">npm</a></div><div class="nav-link navbar-item"><a id="web-link-mobile" href="https://tio.is-a.dev" target="">Website</a></div></div><div class="mobile-sidebar-items-c"><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-modules"><div>Modules</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="module-btch-downloader.html" class="has-anchor"><span class="ancestors">btch~ </span>downloader</a></div></div></div><div class="mobile-navbar-actions"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div></div></div><script type="text/javascript" src="scripts/core.min.js"></script><script src="scripts/search.min.js" defer="defer"></script><script src="scripts/third-party/fuse.js" defer="defer"></script><script type="text/javascript">function foo(){console.log("foo")}function bar(){console.log("bar")}bar(),foo()</script><script type="text/javascript">var tocbotInstance=tocbot.init({tocSelector:"#eed4d2a0bfd64539bb9df78095dec881",contentSelector:".main-content",headingSelector:"h1, h2, h3",hasInnerContainers:!0,scrollContainer:".main-content",headingsOffset:130,onClick:bringLinkToView})</script></body></html>
+</code></pre><h3 id="snackvideo">Snackvideo</h3><h4 id="esm-12">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { snackvideo } from 'btch-downloader';
+
+const url = 'https://s.snackvideo.com/p/j9jKr9dR';
+snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+</code></pre><h4 id="cjs-12">CJS</h4><pre class="prettyprint source lang-javascript"><code>const { snackvideo } = require('btch-downloader');
+
+const url = 'https://s.snackvideo.com/p/j9jKr9dR';
+snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+</code></pre><h2 id="important-notes">Important Notes</h2><ol><li>This downloader can only be used to download media that is public or accessible to the public.</li><li>This application is not affiliated with or endorsed by any application.</li><li>Ensure you have permission or copyright to download media before using this application.</li></ol><h2 id="contribution-and-issue-reporting">Contribution and Issue Reporting</h2><p>If you encounter any issues or wish to contribute to the development of this application, please visit our <a href="https://github.com/hostinger-bot/btch-downloader">GitHub repository</a>.</p><h2 id="license">License</h2><p>btch-downloader is licensed under the <a href="https://github.com/hostinger-bot/btch-downloader/blob/main/LICENSE">MIT License</a>. Please refer to the LICENSE file for more information.</p></article></section><footer class="footer" id="PeOAagUepe"><div class="wrapper"><div style="margin-bottom:.5rem">btch-downloader</div>Fork: <a href="https://github.com/hostinger-bot/btch-downloader">https://github.com/hostinger-bot/btch-downloader</a></div></footer></div></div></div><div class="search-container" id="PkfLWpAbet" style="display:none"><div class="wrapper" id="iCxFxjkHbP"><button class="icon-button search-close-button" id="VjLlGakifb" aria-label="close search"><svg><use xlink:href="#close-icon"></use></svg></button><div class="search-box-c"><svg><use xlink:href="#search-icon"></use></svg> <input type="text" id="vpcKVYIppa" class="search-input" placeholder="Search..." autofocus></div><div class="search-result-c" id="fWwVHRuDuN"><span class="search-result-c-text">Type anything to view search result</span></div></div></div><div class="mobile-menu-icon-container"><button class="icon-button" id="mobile-menu" data-isopen="false" aria-label="menu"><svg><use xlink:href="#menu-icon"></use></svg></button></div><div id="mobile-sidebar" class="mobile-sidebar-container"><div class="mobile-sidebar-wrapper"><a href="/" class="sidebar-title sidebar-title-anchor">btch-downloader Documentation</a><div class="mobile-nav-links"><div class="nav-link navbar-item"><a id="github-link-mobile" href="https://github.com/hostinger-bot/btch-downloader" target="">Github</a></div><div class="nav-link navbar-item"><a id="npm-link-mobile" href="https://www.npmjs.com/package/btch-downloader" target="">npm</a></div><div class="nav-link navbar-item"><a id="web-link-mobile" href="https://tio.is-a.dev" target="">Website</a></div></div><div class="mobile-sidebar-items-c"><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-modules"><div>Modules</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="module-btch-downloader.html" class="has-anchor"><span class="ancestors">btch~ </span>downloader</a></div></div></div><div class="mobile-navbar-actions"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div></div></div><script type="text/javascript" src="scripts/core.min.js"></script><script src="scripts/search.min.js" defer="defer"></script><script src="scripts/third-party/fuse.js" defer="defer"></script><script type="text/javascript">function foo(){console.log("foo")}function bar(){console.log("bar")}bar(),foo()</script><script type="text/javascript">var tocbotInstance=tocbot.init({tocSelector:"#eed4d2a0bfd64539bb9df78095dec881",contentSelector:".main-content",headingSelector:"h1, h2, h3",hasInnerContainers:!0,scrollContainer:".main-content",headingsOffset:130,onClick:bringLinkToView})</script></body></html>

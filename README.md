@@ -53,280 +53,250 @@ bun add btch-downloader
 ```
 
 ## Usage
-#### For complete documentation, visit [http://btch.foo.ng](http://btch.foo.ng/module-btch-downloader).
+### For complete documentation, visit [http://btch.foo.ng](http://btch.foo.ng/module-btch-downloader).
 
 
+### Instagram
 
-<details>
-  <summary>Instagram</summary>
+#### ESM
+```javascript
+import { igdl } from 'btch-downloader';
 
-  #### ESM
-  ```javascript
-  import { igdl } from 'btch-downloader';
+const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
+igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
 
-  const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
-  igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
+#### CJS
+```javascript
+const { igdl } = require('btch-downloader');
 
-  #### CJS
-  ```javascript
-  const { igdl } = require('btch-downloader');
+const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
+igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
 
-  const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
-  igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-</details>
+### TikTok
 
-<details>
-  <summary>TikTok</summary>
+#### ESM
+```javascript
+import { ttdl } from 'btch-downloader';
 
-  #### ESM
-  ```javascript
-  import { ttdl } from 'btch-downloader';
+const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243?is_from_webapp=1&sender_device=pc&web_id6982004129280116226';
+ttdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
 
-  const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243?is_from_webapp=1&sender_device=pc&web_id6982004129280116226';
-  ttdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
+#### CJS
+```javascript
+const { ttdl } = require('btch-downloader');
 
-  #### CJS
-  ```javascript
-  const { ttdl } = require('btch-downloader');
+const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243?is_from_webapp=1&sender_device=pc&web_id6982004129280116226';
+ttdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
 
-  const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243?is_from_webapp=1&sender_device=pc&web_id6982004129280116226';
-  ttdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-</details>
+### Facebook
 
-<details>
-  <summary>Facebook</summary>
+#### ESM
+```javascript
+import { fbdown } from 'btch-downloader';
 
-  #### ESM
-  ```javascript
-  import { fbdown } from 'btch-downloader';
+const url = 'https://www.facebook.com/watch/?v=1393572814172251';
+fbdown(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
 
-  const url = 'https://www.facebook.com/watch/?v=1393572814172251';
-  fbdown(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
+#### CJS
+```javascript
+const { fbdown } = require('btch-downloader');
 
-  #### CJS
-  ```javascript
-  const { fbdown } = require('btch-downloader');
+const url = 'https://www.facebook.com/watch/?v=1393572814172251';
+fbdown(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
 
-  const url = 'https://www.facebook.com/watch/?v=1393572814172251';
-  fbdown(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-</details>
+### Twitter
 
-<details>
-  <summary>Twitter</summary>
+#### ESM
+```javascript
+import { twitter } from 'btch-downloader';
 
-  #### ESM
-  ```javascript
-  import { twitter } from 'btch-downloader';
+const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697';
+twitter(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
 
-  const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697';
-  twitter(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
+#### CJS
+```javascript
+const { twitter } = require('btch-downloader');
 
-  #### CJS
-  ```javascript
-  const { twitter } = require('btch-downloader');
+const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697';
+twitter(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
 
-  const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697';
-  twitter(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-</details>
+### YouTube
 
-<details>
-  <summary>YouTube</summary>
+#### ESM
+```javascript
+import { youtube } from 'btch-downloader';
 
-  #### ESM
-  ```javascript
-  import { youtube } from 'btch-downloader';
+const url = 'https://youtube.com/watch?v=C8mJ8943X80';
+youtube(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
 
-  const url = 'https://youtube.com/watch?v=C8mJ8943X80';
-  youtube(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
+#### CJS
+```javascript
+const { youtube } = require('btch-downloader');
 
-  #### CJS
-  ```javascript
-  const { youtube } = require('btch-downloader');
+const url = 'https://youtube.com/watch?v=C8mJ8943X80';
+youtube(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
 
-  const url = 'https://youtube.com/watch?v=C8mJ8943X80';
-  youtube(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-</details>
-
-<details>
-  <summary>MediaFire (no longer maintained / 不再维护)</summary>
-
-  #### ESM
-  ```javascript
-  import { mediafire } from 'btch-downloader';
-
-  const url = 'https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file';
-  mediafire(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-
-  #### CJS
-  ```javascript
-  const { mediafire } = require('btch-downloader');
-
-  const url = 'https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file';
-  mediafire(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-</details>
-
-<details>
-  <summary>Capcut</summary>
-
-  #### ESM
-  ```javascript
-  import { capcut } from 'btch-downloader';
-
-  const url = 'https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&enter_from=template_detail&region=ID&language=in&platform=copy_link&is_copy_link=1';
-  capcut(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-
-  #### CJS
-  ```javascript
-  const { capcut } = require('btch-downloader');
-
-  const url = 'https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&enter_from=template_detail&region=ID&language=in&platform=copy_link&is_copy_link=1';
-  capcut(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-</details>
-
-<details>
-  <summary>Google Drive</summary>
-
-  #### ESM
-  ```javascript
-  import { gdrive } from 'btch-downloader';
-
-  const url = 'https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?usp=drivesdk';
-  gdrive(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-
-  #### CJS
-  ```javascript
-  const { gdrive } = require('btch-downloader');
-
-  const url = 'https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?usp=drivesdk';
-  gdrive(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-</details>
-
-<details>
-  <summary>Pinterest</summary>
-
-  #### ESM
-  ```javascript
-  import { pinterest } from 'btch-downloader';
-
-  const url = 'https://pin.it/4CVodSq';
-  pinterest(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-
-  // Using a search query
-  pinterest('Zhao Lusi')
-    .then(data => console.log(data))
-    .catch(err => console.error(err)); // JSON
-  ```
-
-  #### CJS
-  ```javascript
-  const { pinterest } = require('btch-downloader');
-
-  const url = 'https://pin.it/4CVodSq';
-  pinterest(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-
-  // Using a search query
-  pinterest('Zhao Lusi')
-    .then(data => console.log(data))
-    .catch(err => console.error(err)); // JSON
-  ```
-</details>
-
-<details>
-  <summary>AIO</summary>
-
-  #### ESM
-  ```javascript
-  import { aio } from 'btch-downloader';
-
-  const url = 'https://vt.tiktok.com/ZSkGPK9Kj/';
-  aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-
-  #### CJS
-  ```javascript
-  const { aio } = require('btch-downloader');
-
-  const url = 'https://vt.tiktok.com/ZSkGPK9Kj/';
-  aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-</details>
-
-<details>
-  <summary>Douyin</summary>
-
-  #### ESM
-  ```javascript
-  import { douyin } from 'btch-downloader';
-
-  const url = 'https://v.douyin.com/ikq8axJ/';
-  douyin(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-
-  #### CJS
-  ```javascript
-  const { douyin } = require('btch-downloader');
-
-  const url = 'https://v.douyin.com/ikq8axJ/';
-  douyin(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-</details>
-
-<details>
-  <summary>Snackvideo</summary>
-
-  #### ESM
-  ```javascript
-  import { snackvideo } from 'btch-downloader';
-
-  const url = 'https://s.snackvideo.com/p/j9jKr9dR';
-  snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-
-  #### CJS
-  ```javascript
-  const { snackvideo } = require('btch-downloader');
-
-  const url = 'https://s.snackvideo.com/p/j9jKr9dR';
-  snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-</details>
-
-<details>
-  <summary>Xiaohongshu (小红书)</summary>
-
-  #### ESM
-  ```javascript
-  import { xiaohongshu } from 'btch-downloader';
-
-  const url = 'https://xhslink.com/o/588P0GrGwWf';
-  xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-
-  #### CJS
-  ```javascript
-  const { xiaohongshu } = require('btch-downloader');
-
-  const url = 'https://xhslink.com/o/588P0GrGwWf';
-  xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
-  ```
-</details>
+### MediaFire (no longer maintained / 不再维护) 
 
+#### ESM
+```javascript
+import { mediafire } from 'btch-downloader';
+
+const url = 'https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file';
+mediafire(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { mediafire } = require('btch-downloader');
+
+const url = 'https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file';
+mediafire(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+### Capcut
+
+#### ESM
+```javascript
+import { capcut } from 'btch-downloader';
+
+const url = 'https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&enter_from=template_detail®ion=ID&language=in&platform=copy_link&is_copy_link=1';
+capcut(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { capcut } = require('btch-downloader');
+
+const url = 'https://www.capcut.com/template-detail/7299286607478181121?template_id=7299286607478181121&share_token=80302b19-8026-4101-81df-2fd9a9cecb9c&enter_from=template_detail®ion=ID&language=in&platform=copy_link&is_copy_link=1';
+capcut(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+### Google Drive
+
+#### ESM
+```javascript
+import { gdrive } from 'btch-downloader';
+
+const url = 'https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?usp=drivesdk';
+gdrive(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { gdrive } = require('btch-downloader');
+
+const url = 'https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view?usp=drivesdk';
+gdrive(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+### Pinterest
+
+#### ESM
+```javascript
+import { pinterest } from 'btch-downloader';
+
+const url = 'https://pin.it/4CVodSq';
+pinterest(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+
+// Using a search query
+pinterest('Zhao Lusi')
+  .then(data => console.log(data))
+  .catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { pinterest } = require('btch-downloader');
+
+const url = 'https://pin.it/4CVodSq';
+pinterest(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+
+// Using a search query
+pinterest('Zhao Lusi')
+  .then(data => console.log(data))
+  .catch(err => console.error(err)); // JSON
+```
+
+### AIO
+
+#### ESM
+```javascript
+import { aio } from 'btch-downloader';
+
+const url = 'https://vt.tiktok.com/ZSkGPK9Kj/';
+aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { aio } = require('btch-downloader');
+
+const url = 'https://vt.tiktok.com/ZSkGPK9Kj/';
+aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+### Douyin
+
+#### ESM
+```javascript
+import { douyin } from 'btch-downloader';
+
+const url = 'https://v.douyin.com/ikq8axJ/';
+douyin(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { douyin } = require('btch-downloader');
+
+const url = 'https://v.douyin.com/ikq8axJ/';
+douyin(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+### Xiaohongshu (小红书)
+
+#### ESM
+```javascript
+import { xiaohongshu } from 'btch-downloader';
+
+const url = 'https://xhslink.com/o/588P0GrGwWf';
+xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { xiaohongshu } = require('btch-downloader');
+
+const url = 'https://xhslink.com/o/588P0GrGwWf';
+xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+### Snackvideo
+
+#### ESM
+```javascript
+import { snackvideo } from 'btch-downloader';
+
+const url = 'https://s.snackvideo.com/p/j9jKr9dR';
+snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { snackvideo } = require('btch-downloader');
+
+const url = 'https://s.snackvideo.com/p/j9jKr9dR';
+snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
 
 
 ## Important Notes
