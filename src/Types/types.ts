@@ -141,3 +141,57 @@ export interface PinterestResponse extends BaseResponse {
         };
     };
 }
+
+export interface XiaohongshuResponse extends BaseResponse {
+    result?: {
+        noteId?: string;
+        nickname?: string;
+        title?: string;
+        desc?: string;
+        keywords?: string;
+        duration?: string;
+        engagement?: {
+            likes?: string;
+            comments?: string;
+            collects?: string;
+        };
+        images?: string[];
+        downloads?: {
+            quality?: string;
+            url?: string;
+        }[];
+    };
+}
+
+export interface DouyinResponse extends BaseResponse {
+    result?: {
+        title?: string;
+        thumbnail?: string;
+        links?: Array<{
+            quality?: string;
+            url?: string;
+        }>;
+    };
+}
+
+export interface SnackVideoResponse extends BaseResponse {
+    result?: {
+        url?: string;
+        title?: string;
+        description?: string;
+        thumbnail?: string;
+        uploadDate?: string;
+        videoUrl?: string;
+        duration?: string;
+        interaction?: {
+            views?: number;
+            likes?: number;
+            shares?: number;
+        };
+        creator?: {
+            name?: string;
+            profileUrl?: string;
+            bio?: string;
+        };
+    };
+}

@@ -13,7 +13,10 @@ import {
     CapCutResponse,
     GoogleDriveResponse,
     PinterestResponse,
-    AioResponse
+    AioResponse,
+    XiaohongshuResponse,
+    DouyinResponse,
+    SnackVideoResponse
 } from './Types/types';
 
 interface VersionConfig {
@@ -24,7 +27,7 @@ interface VersionConfig {
 }
 
 const { config, issues } = configData as VersionConfig;
-const wmdev = watermark.dev.name;
+const wm = watermark.dev.name;
 const timeout = 60000;
 
 interface ApiErrorResponse {
@@ -170,9 +173,57 @@ interface AioApiResponse {
     [key: string]: any;
 }
 
+interface XiaohongshuApiResponse {
+    noteId?: string;
+    nickname?: string;
+    title?: string;
+    desc?: string;
+    keywords?: string;
+    duration?: string;
+    engagement?: {
+        likes?: string;
+        comments?: string;
+        collects?: string;
+    };
+    images?: string[];
+    downloads?: Array<{
+        quality?: string;
+        url?: string;
+    }>;
+}
+
+interface DouyinApiResponse {
+    title?: string;
+    thumbnail?: string;
+    links?: Array<{
+        quality?: string;
+        url?: string;
+    }>;
+}
+
+interface SnackVideoApiResponse {
+    url?: string;
+    title?: string;
+    description?: string;
+    thumbnail?: string;
+    uploadDate?: string;
+    videoUrl?: string;
+    duration?: string;
+    interaction?: {
+        views?: number;
+        likes?: number;
+        shares?: number;
+    };
+    creator?: {
+        name?: string;
+        profileUrl?: string;
+        bio?: string;
+    };
+}
+
 // Formatter respons error generik
 const formatErrorResponse = (error: unknown): ApiErrorResponse => ({
-    developer: wmdev,
+    developer: wm,
     status: false,
     message: error instanceof Error ? error.message : 'Unknown error',
     note: `Please report issues to ${issues}`
@@ -193,7 +244,7 @@ async function ttdl(url: string): Promise<TikTokResponse> {
     try {
         const data = await HttpGet<TikTokApiResponse>('ttdl', url, version, timeout, config.baseUrl);
         return {
-            developer: wmdev,
+            developer: wm,
             status: true,
             title: data.title,
             title_audio: data.title_audio,
@@ -228,7 +279,7 @@ async function igdl(url: string): Promise<InstagramResponse> {
         }
 
         return {
-            developer: wmdev,
+            developer: wm,
             status: true,
             result: data.map((item: InstagramApiItem) => ({
                 thumbnail: item.thumbnail,
@@ -256,7 +307,7 @@ async function twitter(url: string): Promise<TwitterResponse> {
     try {
         const data = await HttpGet<TwitterApiResponse>('twitter', url, version, timeout, config.baseUrl);
         return {
-            developer: wmdev,
+            developer: wm,
             status: true,
             title: data.title,
             url: data.url
@@ -281,7 +332,7 @@ async function youtube(url: string): Promise<YouTubeResponse> {
     try {
         const data = await HttpGet<YouTubeApiResponse>('youtube', url, version, timeout, config.baseUrl);
         return {
-            developer: wmdev,
+            developer: wm,
             status: true,
             title: data.title,
             thumbnail: data.thumbnail,
@@ -309,7 +360,7 @@ async function fbdown(url: string): Promise<FacebookResponse> {
     try {
         const data = await HttpGet<FacebookApiResponse>('fbdown', url, version, timeout, config.baseUrl);
         return {
-            developer: wmdev,
+            developer: wm,
             status: true,
             Normal_video: data.Normal_video,
             HD: data.HD
@@ -334,7 +385,7 @@ async function mediafire(url: string): Promise<MediaFireResponse> {
     try {
         const data = await HttpGet<MediaFireApiResponse>('mediafire', url, version, timeout, config.baseUrl);
         return {
-            developer: wmdev,
+            developer: wm,
             status: true,
             result: data
         };
@@ -357,7 +408,7 @@ async function capcut(url: string): Promise<CapCutResponse> {
     try {
         const data = await HttpGet<CapCutApiResponse>('capcut', url, version, timeout, config.baseUrl);
         return {
-            developer: wmdev,
+            developer: wm,
             status: true,
             ...data
         };
@@ -380,7 +431,7 @@ async function aio(url: string): Promise<AioResponse> {
     try {
         const data = await HttpGet<AioApiResponse>('aio', url, version, timeout, config.baseUrl);
         return {
-            developer: wmdev,
+            developer: wm,
             status: true,
             ...data
         };
@@ -404,7 +455,7 @@ async function gdrive(url: string): Promise<GoogleDriveResponse> {
     try {
         const data = await HttpGet<GoogleDriveApiResponse>('gdrive', url, version, timeout, config.baseUrl);
         return {
-            developer: wmdev,
+            developer: wm,
             status: true,
             result: data
         };
@@ -430,7 +481,83 @@ async function pinterest(query: string): Promise<PinterestResponse> {
     try {
         const data = await HttpGet<PinterestApiResponse>('pinterest', query, version, timeout, config.baseUrl);
         return {
-            developer: wmdev,
+            developer: wm,
+            status: true,
+            result: data
+        };
+    } catch (error) {
+        return { ...formatErrorResponse(error), status: false };
+    }
+}
+
+/**
+ * Xiaohongshu downloader
+ * @async
+ * @function xiaohongshu
+ * @param {string} url - Xiaohongshu post URL
+ * @returns {Promise<XiaohongshuResponse>} Object containing media details and download links
+ * @throws {Error} When invalid URL or request fails
+ * @example
+ * const result = await xiaohongshu('https://xhslink.com/o/123456');
+ */
+async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
+    try {
+        const data = await HttpGet<XiaohongshuApiResponse>('rednote', url, version, timeout, config.baseUrl);
+        if (!data || !data.noteId) {
+            return {
+                ...formatErrorResponse(new Error('No results found')),
+                status: false
+            };
+        }
+
+        return {
+            developer: wm,
+            status: true,
+            result: data
+        };
+    } catch (error) {
+        return { ...formatErrorResponse(error), status: false };
+    }
+}
+
+/**
+ * Douyin content downloader
+ * @async
+ * @function douyin
+ * @param {string} url - Douyin post URL
+ * @returns {Promise<DouyinResponse>} Object containing media details and download links
+ * @throws {Error} When invalid URL or request fails
+ * @example
+ * const result = await douyin('https://v.douyin.com/1234');
+ */
+async function douyin(url: string): Promise<DouyinResponse> {
+    try {
+        const data = await HttpGet<DouyinApiResponse>('douyin', url, version, timeout, config.baseUrl);
+        return {
+            developer: wm,
+            status: true,
+            result: data
+        };
+    } catch (error) {
+        return { ...formatErrorResponse(error), status: false };
+    }
+}
+
+/**
+ * SnackVideo content downloader
+ * @async
+ * @function snackvideo
+ * @param {string} url - SnackVideo post URL
+ * @returns {Promise<SnackVideoResponse>} Object containing media details and download links
+ * @throws {Error} When invalid URL or request fails
+ * @example
+ * const result = await snackvideo('https://www.snackvideo.com/@seponsbobofficial/video/5251628748119377077');
+ */
+async function snackvideo(url: string): Promise<SnackVideoResponse> {
+    try {
+        const data = await HttpGet<SnackVideoApiResponse>('snackvideo', url, version, timeout, config.baseUrl);
+        return {
+            developer: wm,
             status: true,
             result: data
         };
@@ -449,5 +576,8 @@ export {
     capcut,
     gdrive,
     pinterest,
-    aio
+    aio,
+    xiaohongshu,
+    douyin,
+    snackvideo
 };

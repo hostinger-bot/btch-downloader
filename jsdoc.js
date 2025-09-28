@@ -2,7 +2,7 @@
  * @module btch-downloader
  * @description A lightweight TypeScript/JavaScript library for downloading media from social media platforms
  * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contributions and issue reporting.
- * @version 5.0.6
+ * @version 5.0.7
  * @author Tio
  * @license MIT
  */
@@ -226,3 +226,61 @@
  *   .then(data => console.log(data))
  *   .catch(err => console.error(err));
  */
+
+/**
+ * Downloads media from Douyin.
+ * @async
+ * @function douyin
+ * @param {string} url - The Douyin media URL.
+ * @returns {Promise<Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example <caption>ESM</caption>
+ * import { douyin } from 'btch-downloader';
+ * const url = 'https://v.douyin.com/ikq8axJ/';
+ * douyin(url).then(data => console.log(data)).catch(err => console.error(err));
+ * // JSON
+ * @example <caption>CJS</caption>
+ * const { douyin } = require('btch-downloader');
+ * const url = 'https://v.douyin.com/ikq8axJ/';
+ * douyin(url).then(data => console.log(data)).catch(err => console.error(err));
+ * // JSON
+ */
+
+/**
+ * Downloads media from Xiaohongshu.
+ * @async
+ * @function xiaohongshu
+ * @param {string} url - The Xiaohongshu media URL.
+ * @returns {Promise<Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example <caption>ESM</caption>
+ * import { xiaohongshu } from 'btch-downloader';
+ * const url = 'https://xhslink.com/o/588P0GrGwWf';
+ * xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err));
+ * // JSON
+ * @example <caption>CJS</caption>
+ * const { xiaohongshu } = require('btch-downloader');
+ * const url = 'https://xhslink.com/o/588P0GrGwWf';
+ * xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err));
+ * // JSON
+ */
+
+/**
+ * Downloads media from SnackVideo.
+ * @async
+ * @function snackvideo
+ * @param {string} url - The SnackVideo media URL.
+ * @returns {Promise<Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example <caption>ESM</caption>
+ * import { snackvideo } from 'btch-downloader';
+ * const url = 'https://s.snackvideo.com/p/j9jKr9dR';
+ * snackvideo(url).then(data => console.log(data)).catch(err => console.error(err));
+ * // JSON
+ * @example <caption>CJS</caption>
+ * const { snackvideo } = require('btch-downloader');
+ * const url = 'https://s.snackvideo.com/p/j9jKr9dR';
+ * snackvideo(url).then(data => console.log(data)).catch(err => console.error(err));
+ * // JSON
+ */
+

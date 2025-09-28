@@ -1,6 +1,6 @@
 {
   "name": "btch-downloader",
-  "version": "5.0.6",
+  "version": "5.0.7",
   "description": "A lightweight TypeScript/JavaScript library for downloading media from social media platforms",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,10 +24,15 @@
     "Facebook",
     "YouTube",
     "Twitter",
+    "X",
     "MediaFire",
     "Capcut",
     "Gdrive",
     "Pinterest",
+    "Douyin",
+    "Xiaohongshu",
+    "Rednote",
+    "SnackVideo",
     "media-downloader",
     "social-media"
   ],

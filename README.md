@@ -1,10 +1,17 @@
-# btch-downloader
-
+<div align="center">
+  <h1><b>btch-downloader</b></h1>
+  <p>
+    <img src="https://img.shields.io/badge/version-5.0.7-blue.svg" alt="Version">
+    <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License">
+    <img src="https://img.shields.io/github/stars/hostinger-bot/btch-downloader?style=social" alt="GitHub Stars">
+    <img src="https://img.shields.io/github/issues/hostinger-bot/btch-downloader" alt="Issues">
+  </p>
+</div>
 <div align="center">
   <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/npm-publish.yml/badge.svg" alt="Node.js Package">
 </div>
 
-A lightweight TypeScript/JavaScript library for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, and Facebook.
+A lightweight TypeScript/JavaScript library for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu and Facebook.
 
 <div align="center">
   <a href="https://www.npmjs.com/package/btch-downloader" title="npm">
@@ -21,9 +28,8 @@ Install the library using npm:
 ```sh
 npm i btch-downloader
 ```
-# Usage
-
-For complete documentation, visit [JSDoc](https://hostinger-bot.github.io/btch-downloader/).
+## Usage
+### For complete documentation, visit [Documentation](http://btch.foo.ng).
 
 
 ### Instagram
@@ -215,6 +221,59 @@ const { aio } = require('btch-downloader');
 
 const url = 'https://vt.tiktok.com/ZSkGPK9Kj/';
 aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+
+### Douyin
+
+#### ESM
+```javascript
+import { douyin } from 'btch-downloader';
+
+const url = 'https://v.douyin.com/ikq8axJ/';
+douyin(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { douyin } = require('btch-downloader');
+
+const url = 'https://v.douyin.com/ikq8axJ/';
+douyin(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+### Xiaohongshu
+
+#### ESM
+```javascript
+import { xiaohongshu } from 'btch-downloader';
+
+const url = 'https://xhslink.com/o/588P0GrGwWf';
+xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { xiaohongshu } = require('btch-downloader');
+
+const url = 'https://xhslink.com/o/588P0GrGwWf';
+xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+### Snackvideo
+
+#### ESM
+```javascript
+import { snackvideo } from 'btch-downloader';
+
+const url = 'https://s.snackvideo.com/p/j9jKr9dR';
+snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { snackvideo } = require('btch-downloader');
+
+const url = 'https://s.snackvideo.com/p/j9jKr9dR';
+snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
 
