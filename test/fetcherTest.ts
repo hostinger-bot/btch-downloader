@@ -1,10 +1,10 @@
-import { douyin } from '../dist/index';
+import { aio } from '../dist/index';
 
 (async () => {
   try {
     console.log('Testing...');
-    const url: string = 'https://v.douyin.com/ikq8axJ/';
-    const result = await douyin(url);
+    const url: string = 'https://youtube.com/watch?v=Umqb9KENgmk';
+    const result = await aio(url);
     console.log('[RESPONSE]: ', JSON.stringify(result, null, 4));
   } catch (error: unknown) {
     if (error instanceof Error) {

@@ -1,6 +1,6 @@
 export interface BaseResponse {
     developer: string;
-    status?: boolean;
+    status?: boolean | string;
     message?: string;
     note?: string;
     code?: number;
@@ -96,22 +96,91 @@ export interface PinterestPin {
 }
 
 export interface AioResponse extends BaseResponse {
-    result?: {
-        status?: string;
-        mess?: string;
-        p?: string;
-        vid?: string;
-        title?: string;
-        t?: number;
-        a?: string;
-        links?: {
-            mp4?: { [key: string]: { size?: string; f?: string; q?: string; q_text?: string; k?: string; selected?: string } };
-            m4a?: { [key: string]: { size?: string; f?: string; q?: string; q_text?: string; k?: string } };
-            mp3?: { [key: string]: { size?: string; f?: string; q?: string; q_text?: string; k?: string } };
+  result?: {
+    status?: string;
+    mess?: string;
+    p?: string;
+    vid?: string;
+    title?: string;
+    t?: number;
+    a?: string;
+    links?: {
+      mp4?: {
+        [key: string]: {
+          size?: string;
+          f?: string;
+          q?: string;
+          q_text?: string;
+          k?: string;
+          selected?: string;
         };
-        related?: { title?: string; contents?: any[] }[];
+      };
+      m4a?: {
+        [key: string]: {
+          size?: string;
+          f?: string;
+          q?: string;
+          q_text?: string;
+          k?: string;
+        };
+      };
+      mp3?: {
+        [key: string]: {
+          size?: string;
+          f?: string;
+          q?: string;
+          q_text?: string;
+          k?: string;
+        };
+      };
     };
+    related?: { title?: string; contents?: any[] }[];
+  };
+
+  data?: {
+    page?: string;
+    extractor?: string;
+    status?: string;
+    keyword?: string;
+    title?: string;
+    thumbnail?: string;
+    pid?: string;
+    links?: {
+      [key: string]: any;
+    };
+    author?: {
+      username?: string;
+      full_name?: string;
+      avatar?: string;
+    };
+    [key: string]: any;
+  };
+
+  mp4?: {
+    status?: string;
+    mess?: string;
+    c_status?: string;
+    vid?: string;
+    title?: string;
+    ftype?: string;
+    fquality?: string;
+    dlink?: string;
+  };
+
+  mp3?: {
+    status?: string;
+    mess?: string;
+    c_status?: string;
+    vid?: string;
+    title?: string;
+    ftype?: string;
+    fquality?: string;
+    dlink?: string;
+  };
+
+  [key: string]: any;
 }
+
 
 export interface PinterestResponse extends BaseResponse {
     result?: {

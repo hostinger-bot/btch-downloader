@@ -144,34 +144,80 @@ interface PinterestApiResponse {
     };
 }
 
-interface AioApiResponse {
-    filename?: string;
-    filesize?: string;
-    filesizeH?: string;
-    type?: string;
-    upload_date?: string;
-    owner?: string;
-    ext?: string;
-    mimetype?: string;
-    url?: string;
-    downloadUrl?: string;
-    result?: {
-        status?: string;
-        mess?: string;
-        p?: string;
-        vid?: string;
-        title?: string;
-        t?: number;
-        a?: string;
-        links?: {
-            mp4?: { [key: string]: { size?: string; f?: string; q?: string; q_text?: string; k?: string; selected?: string } };
-            m4a?: { [key: string]: { size?: string; f?: string; q?: string; q_text?: string; k?: string } };
-            mp3?: { [key: string]: { size?: string; f?: string; q?: string; q_text?: string; k?: string } };
+export interface AioApiResponse {
+  developer?: string;
+  status?: string | boolean;
+  mess?: string;
+  p?: string;
+
+  result?: {
+    status?: string;
+    mess?: string;
+    p?: string;
+    vid?: string;
+    title?: string;
+    t?: number;
+    a?: string;
+    links?: {
+      [format: string]: {
+        [key: string]: {
+          size?: string;
+          f?: string;
+          q?: string;
+          q_text?: string;
+          k?: string;
+          selected?: string;
         };
-        related?: { title?: string; contents?: any[] }[];
+      };
+    };
+    related?: { title?: string; contents?: any[] }[];
+    [key: string]: any;
+  };
+
+  data?: {
+    page?: string;
+    extractor?: string;
+    status?: string;
+    keyword?: string;
+    title?: string;
+    thumbnail?: string;
+    pid?: string;
+    links?: {
+      [key: string]: any;
+    };
+    author?: {
+      username?: string;
+      full_name?: string;
+      avatar?: string;
     };
     [key: string]: any;
+  };
+
+  mp4?: {
+    status?: string;
+    mess?: string;
+    c_status?: string;
+    vid?: string;
+    title?: string;
+    ftype?: string;
+    fquality?: string;
+    dlink?: string;
+  };
+
+  mp3?: {
+    status?: string;
+    mess?: string;
+    c_status?: string;
+    vid?: string;
+    title?: string;
+    ftype?: string;
+    fquality?: string;
+    dlink?: string;
+  };
+
+  [key: string]: any;
 }
+
 
 interface XiaohongshuApiResponse {
     noteId?: string;
