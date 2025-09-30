@@ -52,9 +52,20 @@ Using bun:
 bun add btch-downloader
 ```
 
-## Usage
-### For complete documentation, visit [http://btch.foo.ng](http://btch.foo.ng/module-btch-downloader).
+## Services
 
+<div align="center">
+
+| Service       | Link                                               | Status |
+|:-------------:|:--------------------------------------------------:|:------:|
+| Documentation          | [Visit](http://btch.foo.ng/module-btch-downloader) | ![Online](https://img.shields.io/badge/status-online-brightgreen) |
+| Backend       | [Visit](https://backend1.tioo.eu.org/)             | ![Online](https://img.shields.io/badge/status-online-brightgreen) |
+
+</div>
+
+
+
+## Usage
 
 ### Instagram
 
