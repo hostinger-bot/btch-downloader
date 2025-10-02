@@ -1,12 +1,11 @@
 "use strict";
 import { request } from 'https';
 import { URL } from 'url';
-
-interface CustomResponse<T> {
-    status: number;
-    statusText: string;
-    data: T;
-}
+import { 
+  CustomResponse,
+  HttpClientConfig,
+  HttpResponse 
+} from "./types"
 
 /**
  * Custom HTTP GET function using Node.js https module
@@ -73,21 +72,6 @@ async function HttpGet<T>(endpoint: string, url: string, version: string, timeou
             reject(new Error(error instanceof Error ? error.message : 'Unknown error occurred'));
         }
     });
-}
-
-// New interfaces and types for better type safety
-interface HttpClientConfig {
-    baseUrl: string;
-    version: string;
-    timeout?: number;
-    defaultHeaders?: Record<string, string>;
-}
-
-interface HttpResponse<T> {
-    status: number;
-    statusText: string;
-    data: T;
-    headers: Record<string, string>;
 }
 
 class HttpError extends Error {

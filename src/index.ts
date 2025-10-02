@@ -38,7 +38,6 @@ import {
     VersionConfig
 } from './Types/types';
 
-
 const { config, issues } = configData as VersionConfig;
 const wm = watermark.dev;
 const timeout = 60000;
