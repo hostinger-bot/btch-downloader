@@ -1,6 +1,6 @@
 {
   "name": "btch-downloader",
-  "version": "5.0.11",
+  "version": "5.0.12",
   "description": "A lightweight TypeScript/JavaScript library for downloading media from social media platforms",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -39,8 +39,8 @@
   "author": "Tio",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^24.5.2",
-    "typescript": "^5.9.2"
+    "@types/node": "^24.6.2",
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "clean-jsdoc-theme": "^4.3.0",

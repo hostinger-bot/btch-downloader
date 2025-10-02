@@ -309,6 +309,23 @@ const url = 'https://s.snackvideo.com/p/j9jKr9dR';
 snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
+### Cocofun
+
+#### ESM
+```javascript
+import { cocofun } from 'btch-downloader';
+
+const url = 'https://www.icocofun.com/share/post/379250110809?lang=id&pkg=id&share_to=copy_link&m=81638cf44ba27b2ffa708f3410a4e6c2&d=63cd2733d8d258facd28d44fde5198d4cea826e89af7efc4238ada620140eea3&nt=1';
+cocofun(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { cocofun } = require('btch-downloader');
+
+const url = 'https://www.icocofun.com/share/post/379250110809?lang=id&pkg=id&share_to=copy_link&m=81638cf44ba27b2ffa708f3410a4e6c2&d=63cd2733d8d258facd28d44fde5198d4cea826e89af7efc4238ada620140eea3&nt=1';
+snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
 
 ## Important Notes
 
