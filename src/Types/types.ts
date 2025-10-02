@@ -6,15 +6,18 @@ export interface BaseResponse {
     code?: number;
 }
 
-export interface InstagramItem {
-    thumbnail: string;
-    url: string;
-    resolution?: string;
-    shouldRender?: boolean;
+export interface ApiErrorResponse extends BaseResponse {
+    status: boolean;
+    message: string;
+    note: string;
 }
 
-export interface InstagramResponse extends BaseResponse {
-    result?: InstagramItem[];
+export interface TikTokApiResponse {
+    title: string;
+    title_audio: string;
+    thumbnail: string;
+    video: string[];
+    audio: string[];
 }
 
 export interface TikTokResponse extends BaseResponse {
@@ -25,9 +28,33 @@ export interface TikTokResponse extends BaseResponse {
     audio?: string[];
 }
 
+export interface InstagramApiItem {
+    thumbnail: string;
+    url: string;
+    resolution?: string;
+    shouldRender?: boolean;
+}
+
+export interface InstagramResponse extends BaseResponse {
+    result?: InstagramApiItem[];
+}
+
+export interface TwitterApiResponse {
+    title: string;
+    url: string;
+}
+
 export interface TwitterResponse extends BaseResponse {
     title?: string;
     url?: string;
+}
+
+export interface YouTubeApiResponse {
+    title: string;
+    thumbnail: string;
+    author: string;
+    mp3: string;
+    mp4: string;
 }
 
 export interface YouTubeResponse extends BaseResponse {
@@ -38,23 +65,38 @@ export interface YouTubeResponse extends BaseResponse {
     mp4?: string;
 }
 
+export interface FacebookApiResponse {
+    Normal_video: string;
+    HD: string;
+}
+
 export interface FacebookResponse extends BaseResponse {
     Normal_video?: string;
     HD?: string;
 }
 
+export interface MediaFireApiResponse {
+    filename: string;
+    filesize: string;
+    filesizeH?: string;
+    type?: string;
+    upload_date?: string;
+    owner?: string;
+    ext?: string;
+    mimetype?: string;
+    url?: string;
+}
+
 export interface MediaFireResponse extends BaseResponse {
-    result?: {
-        filename: string;
-        filesize: string;
-        filesizeH?: string;
-        type?: string;
-        upload_date?: string;
-        owner?: string;
-        ext?: string;
-        mimetype?: string;
-        url?: string;
-    };
+    result?: MediaFireApiResponse;
+}
+
+export interface CapCutApiResponse {
+    code?: number;
+    title?: string;
+    originalVideoUrl?: string;
+    coverUrl?: string;
+    authorName?: string;
 }
 
 export interface CapCutResponse extends BaseResponse {
@@ -64,12 +106,14 @@ export interface CapCutResponse extends BaseResponse {
     authorName?: string;
 }
 
+export interface GoogleDriveApiResponse {
+    filename: string;
+    filesize: string;
+    downloadUrl: string;
+}
+
 export interface GoogleDriveResponse extends BaseResponse {
-    result?: {
-        filename: string;
-        filesize: string;
-        downloadUrl: string;
-    };
+    result?: GoogleDriveApiResponse;
 }
 
 export interface PinterestPin {
@@ -95,172 +139,148 @@ export interface PinterestPin {
     };
 }
 
-export interface AioResponse extends BaseResponse {
-  result?: {
-    status?: string;
-    mess?: string;
-    p?: string;
-    vid?: string;
+export interface PinterestApiResponse {
+    query?: string;
+    count?: number;
+    result?: PinterestPin[];
+    id?: string;
     title?: string;
-    t?: number;
-    a?: string;
-    links?: {
-      mp4?: {
+    description?: string;
+    link?: string | null;
+    image?: string;
+    images?: {
         [key: string]: {
-          size?: string;
-          f?: string;
-          q?: string;
-          q_text?: string;
-          k?: string;
-          selected?: string;
+            width?: number;
+            height?: number;
+            url?: string;
         };
-      };
-      m4a?: {
-        [key: string]: {
-          size?: string;
-          f?: string;
-          q?: string;
-          q_text?: string;
-          k?: string;
-        };
-      };
-      mp3?: {
-        [key: string]: {
-          size?: string;
-          f?: string;
-          q?: string;
-          q_text?: string;
-          k?: string;
-        };
-      };
     };
-    related?: { title?: string; contents?: any[] }[];
-  };
-
-  data?: {
-    page?: string;
-    extractor?: string;
-    status?: string;
-    keyword?: string;
-    title?: string;
-    thumbnail?: string;
-    pid?: string;
-    links?: {
-      [key: string]: any;
+    is_video?: boolean;
+    video_url?: string | null;
+    videos?: any;
+    user?: {
+        username?: string;
+        full_name?: string;
+        profile_url?: string;
+        avatar_url?: string;
     };
-    author?: {
-      username?: string;
-      full_name?: string;
-      avatar?: string;
-    };
-    [key: string]: any;
-  };
-
-  mp4?: {
-    status?: string;
-    mess?: string;
-    c_status?: string;
-    vid?: string;
-    title?: string;
-    ftype?: string;
-    fquality?: string;
-    dlink?: string;
-  };
-
-  mp3?: {
-    status?: string;
-    mess?: string;
-    c_status?: string;
-    vid?: string;
-    title?: string;
-    ftype?: string;
-    fquality?: string;
-    dlink?: string;
-  };
-
-  [key: string]: any;
 }
 
-
 export interface PinterestResponse extends BaseResponse {
+    result?: PinterestApiResponse;
+}
+
+export interface AioApiResponse {
+    developer?: string;
+    status?: string | boolean;
+    mess?: string;
+    p?: string;
     result?: {
-        query?: string;
-        count?: number;
-        result?: PinterestPin[];
-        id?: string;
+        status?: string;
+        mess?: string;
+        p?: string;
+        vid?: string;
         title?: string;
-        description?: string;
-        link?: string | null;
-        image?: string;
-        images?: {
-            [key: string]: {
-                width?: number;
-                height?: number;
-                url?: string;
+        t?: number;
+        a?: string;
+        links?: {
+            [format: string]: {
+                [key: string]: {
+                    size?: string;
+                    f?: string;
+                    q?: string;
+                    q_text?: string;
+                    k?: string;
+                    selected?: string;
+                };
             };
         };
-        is_video?: boolean;
-        video_url?: string | null;
-        videos?: any;
-        user?: {
-            username?: string;
-            full_name?: string;
-            profile_url?: string;
-            avatar_url?: string;
-        };
+        related?: { title?: string; contents?: any[] }[];
+        [key: string]: any;
     };
+    data?: {
+        [key: string]: any;
+    };
+    mp4?: { [key: string]: any };
+    mp3?: { [key: string]: any };
+    [key: string]: any;
+}
+
+export interface AioResponse extends BaseResponse {
+    result?: AioApiResponse['result'];
+    data?: AioApiResponse['data'];
+    mp4?: AioApiResponse['mp4'];
+    mp3?: AioApiResponse['mp3'];
+}
+
+export interface XiaohongshuApiResponse {
+    noteId?: string;
+    nickname?: string;
+    title?: string;
+    desc?: string;
+    keywords?: string;
+    duration?: string;
+    engagement?: { likes?: string; comments?: string; collects?: string };
+    images?: string[];
+    downloads?: { quality?: string; url?: string }[];
 }
 
 export interface XiaohongshuResponse extends BaseResponse {
-    result?: {
-        noteId?: string;
-        nickname?: string;
-        title?: string;
-        desc?: string;
-        keywords?: string;
-        duration?: string;
-        engagement?: {
-            likes?: string;
-            comments?: string;
-            collects?: string;
-        };
-        images?: string[];
-        downloads?: {
-            quality?: string;
-            url?: string;
-        }[];
-    };
+    result?: XiaohongshuApiResponse;
+}
+
+export interface DouyinApiResponse {
+    title?: string;
+    thumbnail?: string;
+    links?: { quality?: string; url?: string }[];
 }
 
 export interface DouyinResponse extends BaseResponse {
-    result?: {
-        title?: string;
-        thumbnail?: string;
-        links?: Array<{
-            quality?: string;
-            url?: string;
-        }>;
-    };
+    result?: DouyinApiResponse;
+}
+
+export interface SnackVideoApiResponse {
+    url?: string;
+    title?: string;
+    description?: string;
+    thumbnail?: string;
+    uploadDate?: string;
+    videoUrl?: string;
+    duration?: string;
+    interaction?: { views?: number; likes?: number; shares?: number };
+    creator?: { name?: string; profileUrl?: string; bio?: string };
 }
 
 export interface SnackVideoResponse extends BaseResponse {
-    result?: {
-        url?: string;
-        title?: string;
-        description?: string;
-        thumbnail?: string;
-        uploadDate?: string;
-        videoUrl?: string;
-        duration?: string;
-        interaction?: {
-            views?: number;
-            likes?: number;
-            shares?: number;
-        };
-        creator?: {
-            name?: string;
-            profileUrl?: string;
-            bio?: string;
-        };
-    };
+    result?: SnackVideoApiResponse;
 }
+
+export interface CocofunApiResponse {
+    topic?: string;
+    caption?: string;
+    play?: number;
+    like?: number;
+    share?: number;
+    duration?: number;
+    thumbnail?: string;
+    watermark?: string;
+    no_watermark?: string;
+}
+
+export interface CocofunResponse extends BaseResponse {
+    result?: CocofunApiResponse;
+}
+
+export interface VersionConfig {
+    config: {
+        baseUrl: string;
+    };
+    issues: string;
+}
+
+export interface HttpResponse<T> {
+  status: number;
+  statusText: string;
+  data: T;
+}
+

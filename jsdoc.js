@@ -2,7 +2,7 @@
  * @module btch-downloader
  * @description A lightweight TypeScript/JavaScript library for downloading media from social media platforms
  * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contributions and issue reporting.
- * @version 5.0.10
+ * @version 5.0.11
  * @author Tio
  * @license MIT
  */
@@ -266,21 +266,20 @@
  */
 
 /**
- * Downloads media from SnackVideo.
+ * Downloads media from Cocofun.
  * @async
- * @function snackvideo
- * @param {string} url - The SnackVideo media URL.
- * @returns {Promise<Object>} A JSON object containing the media data.
+ * @function cocofun
+ * @param {string} url - The Cocofun post URL.
+ * @returns {Promise<Promise<Object>>} A JSON object containing the media data.
  * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example <caption>ESM</caption>
- * import { snackvideo } from 'btch-downloader';
- * const url = 'https://s.snackvideo.com/p/j9jKr9dR';
- * snackvideo(url).then(data => console.log(data)).catch(err => console.error(err));
+ * import { cocofun } from 'btch-downloader';
+ * const url = 'https://www.icocofun.com/share/post/379250110809?lang=id&pkg=id&share_to=copy_link&m=81638cf44ba27b2ffa708f3410a4e6c2&d=63cd2733d8d258facd28d44fde5198d4cea826e89af7efc4238ada620140eea3&nt=1';
+ * cocofun(url).then(data => console.log(data)).catch(err => console.error(err));
  * // JSON
  * @example <caption>CJS</caption>
- * const { snackvideo } = require('btch-downloader');
- * const url = 'https://s.snackvideo.com/p/j9jKr9dR';
- * snackvideo(url).then(data => console.log(data)).catch(err => console.error(err));
+ * const { cocofun } = require('btch-downloader');
+ * const url = 'https://www.icocofun.com/share/post/379250110809?lang=id&pkg=id&share_to=copy_link&m=81638cf44ba27b2ffa708f3410a4e6c2&d=63cd2733d8d258facd28d44fde5198d4cea826e89af7efc4238ada620140eea3&nt=1';
+ * cocofun(url).then(data => console.log(data)).catch(err => console.error(err));
  * // JSON
  */
-
