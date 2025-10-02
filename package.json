@@ -1,6 +1,6 @@
 {
   "name": "btch-downloader",
-  "version": "5.0.12",
+  "version": "5.0.13",
   "description": "A lightweight TypeScript/JavaScript library for downloading media from social media platforms",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -33,6 +33,7 @@
     "Xiaohongshu",
     "Rednote",
     "SnackVideo",
+    "Cocofun",
     "media-downloader",
     "social-media"
   ],
@@ -51,7 +52,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hostinger-bot/btch-downloader.git"
+    "url": "git@github.com:hostinger-bot/btch-downloader.git"
   },
   "bugs": {
     "url": "https://github.com/hostinger-bot/btch-downloader/issues"
