@@ -27,7 +27,7 @@ A TypeScript HTTP client built on Node.js's native `https` module. Provides both
 ## Usage
 
 ```ts
-import { HttpClient, HttpGet } from './httpClient';
+import { HttpClient, HttpGet } from './HttpClient';
 
 const baseUrl = 'https://api.example.com';
 const client = new HttpClient({ baseUrl, version: '1.0.0' });

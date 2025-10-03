@@ -2,7 +2,7 @@
 import configData from './Defaults/site';
 import watermark from './Watermark/config.json';
 import { version } from '../package.json';
-import { HttpGet, HttpClient, type CustomResponse, type HttpClientConfig, type HttpResponse, type HttpError } from "./Http/HttpClient";
+import { HttpGet, HttpClient, type CustomResponse, type HttpClientConfig, type HttpResponse, type HttpError } from "./Http";
 import {
     BaseResponse,
     ApiErrorResponse,
@@ -36,7 +36,7 @@ import {
     CocofunApiResponse,
     CocofunResponse,
     VersionConfig
-} from './Types/types';
+} from './Types';
 
 const { config, issues } = configData as VersionConfig;
 const wm = watermark.dev;

@@ -1,7 +1,7 @@
 /**
  * Configuration data for the btch-downloader package.
  */
-export interface VersionConfig {
+interface VersionConfig {
     config: {
         baseUrl: string;
     };
