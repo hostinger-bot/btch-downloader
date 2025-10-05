@@ -23,6 +23,8 @@
   </a>
 </div>
 
+## Prerequisites
+This project requires a few tools to run smoothly. Make sure you have Node.js version 20 or higher installed to execute the application. Additionally, you can use pnpm (version 10.18.0 or higher), Yarn (version 1.22.22 or higher), or bun (version 1.2.23 or higher) as your preferred package manager.
 
 ## Installing
 
@@ -62,7 +64,6 @@ bun add btch-downloader
 | Backend       | [Visit](https://backend1.tioo.eu.org/)             | ![Online](https://img.shields.io/badge/status-online-brightgreen) |
 
 </div>
-
 
 
 ## Usage
@@ -324,7 +325,7 @@ cocofun(url).then(data => console.log(data)).catch(err => console.error(err)); /
 const { cocofun } = require('btch-downloader');
 
 const url = 'https://www.icocofun.com/share/post/379250110809?lang=id&pkg=id&share_to=copy_link&m=81638cf44ba27b2ffa708f3410a4e6c2&d=63cd2733d8d258facd28d44fde5198d4cea826e89af7efc4238ada620140eea3&nt=1';
-snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+cocofun(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
 ## Important Notes
