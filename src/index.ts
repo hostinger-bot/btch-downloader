@@ -51,7 +51,7 @@ const wm = watermark.dev;
 const timeout = 60000;
 const version: string = pkg.version;
 
-// Formatter respons error generik
+// Generic error response formatter
 const formatErrorResponse = (error: unknown): ApiErrorResponse => ({
     developer: wm,
     status: false,

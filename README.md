@@ -24,17 +24,12 @@
 </div>
 
 
-> [!IMPORTANT]
-> **Prerequisites**  
-> To ensure this project runs smoothly, please make sure you have the following tools installed:
-> 
-> - **Node.js v20 or higher** — required to run the application.  
-> - A package manager of your choice:
->   - **pnpm v10.18.0 or later**  
->   - **Yarn v1.22.22 or later**  
->   - **Bun v1.2.23 or later**
-> 
-> Before proceeding, verify that these tools are properly installed and configured on your system.
+### Prerequisites
+
+To ensure this project runs smoothly, make sure you have the following tools installed.
+
+Node.js v20+  
+Package manager: pnpm 10.18+, Yarn 1.22+, or Bun 1.2+
 
 
 ## Installing
@@ -75,7 +70,6 @@ bun add btch-downloader
 | Backend       | [Visit](https://backend1.tioo.eu.org/)             | ![Online](https://img.shields.io/badge/status-online-brightgreen) |
 
 </div>
-
 
 ## Usage
 
