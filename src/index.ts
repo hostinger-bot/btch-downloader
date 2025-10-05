@@ -2,7 +2,7 @@
 
 import configData from './Defaults/site';
 import watermark from './Watermark/config.json';
-import { version } from '../package.json';
+import pkg from '../package.json';
 import { 
   HttpGet, 
   HttpClient, 
@@ -49,7 +49,7 @@ import {
 const { config, issues } = configData as VersionConfig;
 const wm = watermark.dev;
 const timeout = 60000;
-const version_module = version
+const version: string = pkg.version;
 
 // Formatter respons error generik
 const formatErrorResponse = (error: unknown): ApiErrorResponse => ({
@@ -435,7 +435,7 @@ export {
   douyin,
   snackvideo,
   cocofun,
-  version as version_module,
+  version,
   wm as developer,
   issues
 };
