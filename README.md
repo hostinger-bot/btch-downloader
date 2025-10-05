@@ -23,14 +23,14 @@
   </a>
 </div>
 
-
-### Prerequisites
+## Project Prerequisites
 
 To ensure this project runs smoothly, make sure you have the following tools installed.
 
-Node.js v20+  
-Package manager: pnpm 10.18+, Yarn 1.22+, or Bun 1.2+
-
+| Prerequisite       | Version                     |
+|-------------------|-----------------------------|
+| Node.js           | v20+                       |
+| Package Manager   | pnpm 10.18+, Yarn 1.22+, or Bun 1.2+ |
 
 ## Installing
 
