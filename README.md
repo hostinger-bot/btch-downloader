@@ -23,8 +23,19 @@
   </a>
 </div>
 
-## Prerequisites
-This project requires a few tools to run smoothly. Make sure you have Node.js version 20 or higher installed to execute the application. Additionally, you can use pnpm (version 10.18.0 or higher), Yarn (version 1.22.22 or higher), or bun (version 1.2.23 or higher) as your preferred package manager.
+
+> [!IMPORTANT]
+> **Prerequisites**  
+> To ensure this project runs smoothly, please make sure you have the following tools installed:
+> 
+> - **Node.js v20 or higher** — required to run the application.  
+> - A package manager of your choice:
+>   - **pnpm v10.18.0 or later**  
+>   - **Yarn v1.22.22 or later**  
+>   - **Bun v1.2.23 or later**
+> 
+> Before proceeding, verify that these tools are properly installed and configured on your system.
+
 
 ## Installing
 
