@@ -8,13 +8,15 @@
     "dist",
     "README.md",
     "LICENSE",
-    "SECURITY.md"
+    "SECURITY.md",
+    "engine-requirements.js"
   ],
   "scripts": {
     "build": "tsc",
     "pub": "npm run build && npm publish --access public",
     "test": "npm run build && ts-node test/fetcherTest.ts",
     "docs": "npx jsdoc -c jsdoc.conf.json",
+    "preinstall": "node ./engine-requirements.js",
     "prepare": "npm run build"
   },
   "keywords": [

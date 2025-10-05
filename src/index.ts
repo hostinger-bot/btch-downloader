@@ -1,8 +1,16 @@
 "use strict";
+
 import configData from './Defaults/site';
 import watermark from './Watermark/config.json';
 import { version } from '../package.json';
-import { HttpGet, HttpClient, type CustomResponse, type HttpClientConfig, type HttpResponse, type HttpError } from "./Http";
+import { 
+  HttpGet, 
+  HttpClient, 
+  type CustomResponse, 
+  type HttpClientConfig,
+  type HttpResponse, 
+  type HttpError
+} from "./Http";
 import {
     BaseResponse,
     ApiErrorResponse,
@@ -41,6 +49,7 @@ import {
 const { config, issues } = configData as VersionConfig;
 const wm = watermark.dev;
 const timeout = 60000;
+const version_module = version
 
 // Formatter respons error generik
 const formatErrorResponse = (error: unknown): ApiErrorResponse => ({
@@ -426,7 +435,7 @@ export {
   douyin,
   snackvideo,
   cocofun,
-  version,
+  version as version_module,
   wm as developer,
   issues
 };
