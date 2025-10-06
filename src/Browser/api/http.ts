@@ -1,5 +1,6 @@
 export const API_BASE = 'https://backend1.tioo.eu.org';
 export const developer = 'prm2.0';
+export const issues = 'https://github.com/hostinger-bot/btch-downloader/issues';
 
 export async function httpGet(endpoint: string, param: string) {
   const url = `${API_BASE}/${endpoint}?url=${encodeURIComponent(param)}`;

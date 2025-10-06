@@ -1,7 +1,5 @@
-import { httpGet, developer } from './http';
-
+import { httpGet, developer, issues } from './http';
 const wm = developer;
-const issues = 'https://github.com/hostinger-bot/btch-downloader/issues';
 
 // Instagram
 export async function igdl(url: string) {
