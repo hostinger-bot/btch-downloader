@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Downloader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9fb;
+      color: #222;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 25px;
+    }
+    h1 {
+      color: #0078ff;
+      text-align: center;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background: #0078ff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005ecc;
+    }
+    pre {
+      text-align: left;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 10px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    hr {
+      margin: 30px 0;
+    }
+    ul {
+      text-align: left;
+      background: #fff;
+      border-radius: 6px;
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    a {
+      color: #0078ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .info {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Downloader</h1>
+  <p align="center">A single-page downloader for all supported platforms.</p>
+
+  <div align="center">
+    <input id="urlInput" placeholder="Paste any supported URL here..." />
+    <button id="downloadBtn">Fetch</button>
+  </div>
+
+  <div class="info">
+    Developer: <strong>@prm2.0</strong> — 
+    <a href="https://github.com/hostinger-bot/btch-downloader/issues" target="_blank">Report Issues</a>
+  </div>
+
+  <h3>Result:</h3>
+  <pre id="output">No data yet...</pre>
+
+  <hr>
+  <h3>Example URLs</h3>
+  <ul>
+    <li>Instagram: <a href="https://www.instagram.com/p/ByxKbUSnubS/" target="_blank">https://www.instagram.com/p/ByxKbUSnubS/</a></li>
+    <li>TikTok: <a href="https://www.tiktok.com/@omagadsus/video/7025456384175017243" target="_blank">https://www.tiktok.com/@omagadsus/video/7025456384175017243</a></li>
+    <li>Facebook: <a href="https://www.facebook.com/watch/?v=1393572814172251" target="_blank">https://www.facebook.com/watch/?v=1393572814172251</a></li>
+    <li>Twitter: <a href="https://twitter.com/gofoodindonesia/status/1229369819511709697" target="_blank">https://twitter.com/gofoodindonesia/status/1229369819511709697</a></li>
+    <li>YouTube: <a href="https://youtu.be/C8mJ8943X80" target="_blank">https://youtu.be/C8mJ8943X80</a></li>
+    <li>MediaFire: <a href="https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file" target="_blank">https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file</a></li>
+    <li>CapCut: <a href="https://www.capcut.com/template-detail/7299286607478181121" target="_blank">https://www.capcut.com/template-detail/7299286607478181121</a></li>
+    <li>Google Drive: <a href="https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view" target="_blank">https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view</a></li>
+    <li>Pinterest: <a href="https://pin.it/4CVodSq" target="_blank">https://pin.it/4CVodSq</a></li>
+    <li>Douyin: <a href="https://v.douyin.com/ikq8axJ/" target="_blank">https://v.douyin.com/ikq8axJ/</a></li>
+    <li>Xiaohongshu: <a href="https://xhslink.com/o/588P0GrGwWf" target="_blank">https://xhslink.com/o/588P0GrGwWf</a></li>
+    <li>SnackVideo: <a href="https://s.snackvideo.com/p/j9jKr9dR" target="_blank">https://s.snackvideo.com/p/j9jKr9dR</a></li>
+    <li>Cocofun: <a href="https://www.icocofun.com/share/post/379250110809" target="_blank">https://www.icocofun.com/share/post/379250110809</a></li>
+  </ul>
+
+  <!-- Load btch CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.3/dist/browser/index.min.js"></script>
+
+  <script>
+    const output = document.getElementById("output");
+    const btn = document.getElementById("downloadBtn");
+    const input = document.getElementById("urlInput");
+
+    const regexMap = {
+      instagram: /instagram\.com\/p\//i,
+      tiktok: /tiktok\.com/i,
+      facebook: /facebook\.com/i,
+      twitter: /(twitter|x)\.com/i,
+      youtube: /(youtube\.com|youtu\.be)/i,
+      mediafire: /mediafire\.com/i,
+      capcut: /capcut\.com/i,
+      gdrive: /drive\.google\.com/i,
+      pinterest: /(pin\.it|pinterest\.com)/i,
+      douyin: /douyin\.com/i,
+      xiaohongshu: /(xiaohongshu|xhslink)\.com/i,
+      snackvideo: /(snackvideo\.com|s\.snackvideo\.com)/i,
+      cocofun: /(icocofun|cocofun)\.com/i,
+    };
+
+    const fnMap = {
+      instagram: "igdl",
+      tiktok: "ttdl",
+      facebook: "fbdown",
+      twitter: "twitter",
+      youtube: "youtube",
+      mediafire: "mediafire",
+      capcut: "capcut",
+      gdrive: "gdrive",
+      pinterest: "pinterest",
+      douyin: "douyin",
+      xiaohongshu: "xiaohongshu",
+      snackvideo: "snackvideo",
+      cocofun: "cocofun",
+      aio: "aio",
+    };
+
+    function detectPlatform(url) {
+      for (const [name, regex] of Object.entries(regexMap)) {
+        if (regex.test(url)) return name;
+      }
+      return "aio";
+    }
+
+    btn.addEventListener("click", async () => {
+      const url = input.value.trim();
+      if (!url) return alert("Please enter a valid URL!");
+
+      output.textContent = "Detecting platform...";
+
+      try {
+        const btch = window.btch;
+        if (!btch) throw new Error("btch library not loaded.");
+
+        const platform = detectPlatform(url);
+        const fnName = fnMap[platform];
+        const fn = btch[fnName];
+
+        if (!fn) throw new Error(`Downloader function missing for ${platform}`);
+
+        output.textContent = `Detected: ${platform}\nFetching data...`;
+
+        const res = await fn(url);
+        output.textContent = JSON.stringify(res, null, 2);
+      } catch (err) {
+        output.textContent = "Error: " + (err.message || err);
+      }
+    });
+  </script>
+</body>
+</html>

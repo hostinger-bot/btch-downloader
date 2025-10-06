@@ -76,11 +76,11 @@ async function ttdl(url: string): Promise<TikTokResponse> {
         return {
             developer: wm,
             status: true,
-            title: data.title,
-            title_audio: data.title_audio,
-            thumbnail: data.thumbnail,
-            video: data.video,
-            audio: data.audio
+            title: data?.title ?? undefined,
+            title_audio: data?.title_audio ?? undefined,
+            thumbnail: data?.thumbnail ?? undefined,
+            video: data?.video ?? [],
+            audio: data?.audio ?? []
         };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };
@@ -102,24 +102,20 @@ async function igdl(url: string): Promise<InstagramResponse> {
     try {
         const data = await HttpGet<InstagramApiItem[]>('igdl', url, version, timeout, config.baseUrl);
         if (!data || data.length === 0) {
-            return {
-                ...formatErrorResponse(new Error('No results found')),
-                status: false
-            };
+            return { ...formatErrorResponse(new Error('No results found')), status: false, result: [] };
         }
-
         return {
             developer: wm,
             status: true,
-            result: data.map((item: InstagramApiItem) => ({
-                thumbnail: item.thumbnail,
-                url: item.url,
-                resolution: item.resolution,
-                shouldRender: item.shouldRender
+            result: data.map(item => ({
+                thumbnail: item?.thumbnail || '',
+                url: item?.url || '',
+                resolution: item?.resolution ?? null,
+                shouldRender: item?.shouldRender ?? false
             }))
         };
     } catch (error) {
-        return { ...formatErrorResponse(error), status: false };
+        return { ...formatErrorResponse(error), status: false, result: [] };
     }
 }
 
@@ -139,8 +135,8 @@ async function twitter(url: string): Promise<TwitterResponse> {
         return {
             developer: wm,
             status: true,
-            title: data.title,
-            url: data.url
+            title: data?.title ?? undefined,
+            url: data?.url ?? undefined
         };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };
@@ -164,11 +160,11 @@ async function youtube(url: string): Promise<YouTubeResponse> {
         return {
             developer: wm,
             status: true,
-            title: data.title,
-            thumbnail: data.thumbnail,
-            author: data.author,
-            mp3: data.mp3,
-            mp4: data.mp4
+            title: data?.title ?? undefined,
+            thumbnail: data?.thumbnail ?? undefined,
+            author: data?.author ?? undefined,
+            mp3: data?.mp3 ?? null,
+            mp4: data?.mp4 ?? null
         };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };
@@ -192,8 +188,8 @@ async function fbdown(url: string): Promise<FacebookResponse> {
         return {
             developer: wm,
             status: true,
-            Normal_video: data.Normal_video,
-            HD: data.HD
+            Normal_video: data?.Normal_video ?? null,
+            HD: data?.HD ?? null
         };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };
@@ -214,13 +210,9 @@ async function fbdown(url: string): Promise<FacebookResponse> {
 async function mediafire(url: string): Promise<MediaFireResponse> {
     try {
         const data = await HttpGet<MediaFireApiResponse>('mediafire', url, version, timeout, config.baseUrl);
-        return {
-            developer: wm,
-            status: true,
-            result: data
-        };
+        return { developer: wm, status: true, result: data ?? null };
     } catch (error) {
-        return { ...formatErrorResponse(error), status: false };
+        return { ...formatErrorResponse(error), status: false, result: null };
     }
 }
 
@@ -237,34 +229,7 @@ async function mediafire(url: string): Promise<MediaFireResponse> {
 async function capcut(url: string): Promise<CapCutResponse> {
     try {
         const data = await HttpGet<CapCutApiResponse>('capcut', url, version, timeout, config.baseUrl);
-        return {
-            developer: wm,
-            status: true,
-            ...data
-        };
-    } catch (error) {
-        return { ...formatErrorResponse(error), status: false };
-    }
-}
-
-/**
- * All In One Downloader
- * @async
- * @function aio
- * @param {string} url - Video URL
- * @returns {Promise<AioApiResponse>} Object containing video info
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await aio('https://tiktok.com/@user/video/123');
- */
-async function aio(url: string): Promise<AioResponse> {
-    try {
-        const data = await HttpGet<AioApiResponse>('aio', url, version, timeout, config.baseUrl);
-        return {
-            developer: wm,
-            status: true,
-            ...data
-        };
+        return { developer: wm, status: true, ...data };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };
     }
@@ -284,13 +249,9 @@ async function aio(url: string): Promise<AioResponse> {
 async function gdrive(url: string): Promise<GoogleDriveResponse> {
     try {
         const data = await HttpGet<GoogleDriveApiResponse>('gdrive', url, version, timeout, config.baseUrl);
-        return {
-            developer: wm,
-            status: true,
-            result: data
-        };
+        return { developer: wm, status: true, result: data ?? null };
     } catch (error) {
-        return { ...formatErrorResponse(error), status: false };
+        return { ...formatErrorResponse(error), status: false, result: null };
     }
 }
 
@@ -310,13 +271,28 @@ async function gdrive(url: string): Promise<GoogleDriveResponse> {
 async function pinterest(query: string): Promise<PinterestResponse> {
     try {
         const data = await HttpGet<PinterestApiResponse>('pinterest', query, version, timeout, config.baseUrl);
-        return {
-            developer: wm,
-            status: true,
-            result: data
-        };
+        return { developer: wm, status: true, result: data ?? null };
     } catch (error) {
-        return { ...formatErrorResponse(error), status: false };
+        return { ...formatErrorResponse(error), status: false, result: null };
+    }
+}
+
+/**
+ * All In One Downloader
+ * @async
+ * @function aio
+ * @param {string} url - Video URL
+ * @returns {Promise<AioApiResponse>} Object containing video info
+ * @throws {Error} When invalid URL or request fails
+ * @example
+ * const result = await aio('https://tiktok.com/@user/video/123');
+ */
+async function aio(url: string): Promise<AioResponse> {
+    try {
+        const data = await HttpGet<AioApiResponse>('aio', url, version, timeout, config.baseUrl);
+        return { developer: wm, status: true, result: data?.result ?? null, data: data?.data ?? null, mp4: data?.mp4 ?? null, mp3: data?.mp3 ?? null };
+    } catch (error) {
+        return { ...formatErrorResponse(error), status: false, result: null, data: null, mp4: null, mp3: null };
     }
 }
 
@@ -333,20 +309,10 @@ async function pinterest(query: string): Promise<PinterestResponse> {
 async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
     try {
         const data = await HttpGet<XiaohongshuApiResponse>('rednote', url, version, timeout, config.baseUrl);
-        if (!data || !data.noteId) {
-            return {
-                ...formatErrorResponse(new Error('No results found')),
-                status: false
-            };
-        }
-
-        return {
-            developer: wm,
-            status: true,
-            result: data
-        };
+        if (!data || !data.noteId) return { ...formatErrorResponse(new Error('No results found')), status: false, result: null };
+        return { developer: wm, status: true, result: data };
     } catch (error) {
-        return { ...formatErrorResponse(error), status: false };
+        return { ...formatErrorResponse(error), status: false, result: null };
     }
 }
 
@@ -363,13 +329,9 @@ async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
 async function douyin(url: string): Promise<DouyinResponse> {
     try {
         const data = await HttpGet<DouyinApiResponse>('douyin', url, version, timeout, config.baseUrl);
-        return {
-            developer: wm,
-            status: true,
-            result: data
-        };
+        return { developer: wm, status: true, result: data ?? null };
     } catch (error) {
-        return { ...formatErrorResponse(error), status: false };
+        return { ...formatErrorResponse(error), status: false, result: null };
     }
 }
 
@@ -386,13 +348,9 @@ async function douyin(url: string): Promise<DouyinResponse> {
 async function snackvideo(url: string): Promise<SnackVideoResponse> {
     try {
         const data = await HttpGet<SnackVideoApiResponse>('snackvideo', url, version, timeout, config.baseUrl);
-        return {
-            developer: wm,
-            status: true,
-            result: data
-        };
+        return { developer: wm, status: true, result: data ?? null };
     } catch (error) {
-        return { ...formatErrorResponse(error), status: false };
+        return { ...formatErrorResponse(error), status: false, result: null };
     }
 }
 
@@ -409,16 +367,11 @@ async function snackvideo(url: string): Promise<SnackVideoResponse> {
 async function cocofun(url: string): Promise<CocofunResponse> {
     try {
         const data = await HttpGet<CocofunApiResponse>('cocofun', url, version, timeout, config.baseUrl);
-        return {
-            developer: wm,
-            status: true,
-            result: data
-        };
+        return { developer: wm, status: true, result: data ?? null };
     } catch (error) {
-        return { ...formatErrorResponse(error), status: false };
+        return { ...formatErrorResponse(error), status: false, result: null };
     }
 }
-
 
 export {
   fbdown,
@@ -439,4 +392,3 @@ export {
   wm as developer,
   issues
 };
-

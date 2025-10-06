@@ -1,0 +1,17 @@
+import * as Endpoints from './api/endpoints';
+import { version, developer } from './api/http';
+
+export const igdl = Endpoints.igdl;
+export const ttdl = Endpoints.ttdl;
+export const twitter = Endpoints.twitter;
+export const youtube = Endpoints.youtube;
+export const fbdown = Endpoints.fbdown;
+export const mediafire = Endpoints.mediafire;
+export const capcut = Endpoints.capcut;
+export const gdrive = Endpoints.gdrive;
+export const pinterest = Endpoints.pinterest;
+export const aio = Endpoints.aio;
+export const xiaohongshu = Endpoints.xiaohongshu;
+export const douyin = Endpoints.douyin;
+export const snackvideo = Endpoints.snackvideo;
+export const cocofun = Endpoints.cocofun;

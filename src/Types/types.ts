@@ -24,19 +24,19 @@ export interface TikTokResponse extends BaseResponse {
     title?: string;
     title_audio?: string;
     thumbnail?: string;
-    video?: string[];
-    audio?: string[];
+    video?: string[] | null;
+    audio?: string[] | null;
 }
 
 export interface InstagramApiItem {
     thumbnail: string;
     url: string;
-    resolution?: string;
+    resolution: string | null;
     shouldRender?: boolean;
 }
 
 export interface InstagramResponse extends BaseResponse {
-    result?: InstagramApiItem[];
+    result: InstagramApiItem[] | null;
 }
 
 export interface TwitterApiResponse {
@@ -61,8 +61,8 @@ export interface YouTubeResponse extends BaseResponse {
     title?: string;
     thumbnail?: string;
     author?: string;
-    mp3?: string;
-    mp4?: string;
+    mp3?: string | null;
+    mp4?: string | null;
 }
 
 export interface FacebookApiResponse {
@@ -71,8 +71,8 @@ export interface FacebookApiResponse {
 }
 
 export interface FacebookResponse extends BaseResponse {
-    Normal_video?: string;
-    HD?: string;
+    Normal_video?: string | null;
+    HD?: string | null;
 }
 
 export interface MediaFireApiResponse {
@@ -88,7 +88,7 @@ export interface MediaFireApiResponse {
 }
 
 export interface MediaFireResponse extends BaseResponse {
-    result?: MediaFireApiResponse;
+    result: MediaFireApiResponse | null;
 }
 
 export interface CapCutApiResponse {
@@ -113,7 +113,7 @@ export interface GoogleDriveApiResponse {
 }
 
 export interface GoogleDriveResponse extends BaseResponse {
-    result?: GoogleDriveApiResponse;
+    result: GoogleDriveApiResponse | null;
 }
 
 export interface PinterestPin {
@@ -142,7 +142,7 @@ export interface PinterestPin {
 export interface PinterestApiResponse {
     query?: string;
     count?: number;
-    result?: PinterestPin[];
+    result?: PinterestPin[] | null;
     id?: string;
     title?: string;
     description?: string;
@@ -167,7 +167,7 @@ export interface PinterestApiResponse {
 }
 
 export interface PinterestResponse extends BaseResponse {
-    result?: PinterestApiResponse;
+    result: PinterestApiResponse | null;
 }
 
 export interface AioApiResponse {
@@ -197,20 +197,20 @@ export interface AioApiResponse {
         };
         related?: { title?: string; contents?: any[] }[];
         [key: string]: any;
-    };
+    } | null;
     data?: {
         [key: string]: any;
-    };
-    mp4?: { [key: string]: any };
-    mp3?: { [key: string]: any };
+    } | null;
+    mp4?: { [key: string]: any } | null;
+    mp3?: { [key: string]: any } | null;
     [key: string]: any;
 }
 
 export interface AioResponse extends BaseResponse {
-    result?: AioApiResponse['result'];
-    data?: AioApiResponse['data'];
-    mp4?: AioApiResponse['mp4'];
-    mp3?: AioApiResponse['mp3'];
+    result: AioApiResponse['result'] | null;
+    data: AioApiResponse['data'] | null;
+    mp4: AioApiResponse['mp4'] | null;
+    mp3: AioApiResponse['mp3'] | null;
 }
 
 export interface XiaohongshuApiResponse {
@@ -226,7 +226,7 @@ export interface XiaohongshuApiResponse {
 }
 
 export interface XiaohongshuResponse extends BaseResponse {
-    result?: XiaohongshuApiResponse;
+    result: XiaohongshuApiResponse | null;
 }
 
 export interface DouyinApiResponse {
@@ -236,7 +236,7 @@ export interface DouyinApiResponse {
 }
 
 export interface DouyinResponse extends BaseResponse {
-    result?: DouyinApiResponse;
+    result: DouyinApiResponse | null;
 }
 
 export interface SnackVideoApiResponse {
@@ -252,7 +252,7 @@ export interface SnackVideoApiResponse {
 }
 
 export interface SnackVideoResponse extends BaseResponse {
-    result?: SnackVideoApiResponse;
+    result: SnackVideoApiResponse | null;
 }
 
 export interface CocofunApiResponse {
@@ -268,7 +268,7 @@ export interface CocofunApiResponse {
 }
 
 export interface CocofunResponse extends BaseResponse {
-    result?: CocofunApiResponse;
+    result: CocofunApiResponse | null;
 }
 
 export interface VersionConfig {
@@ -279,7 +279,7 @@ export interface VersionConfig {
 }
 
 export interface HttpResponse<T> {
-  status: number;
-  statusText: string;
-  data: T;
+    status: number;
+    statusText: string;
+    data: T | null;
 }

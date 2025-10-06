@@ -60,6 +60,12 @@
           "id": "web-link",
           "link": "https://tio.is-a.dev",
           "class": "nav-link"
+        },
+        {
+          "title": "Demo",
+          "id": "demo-link",
+          "link": "https://btch.foo.ng/example.html",
+          "class": "nav-link"
         }
       ],
       "prefixModuleToSidebarItems_experimental": true

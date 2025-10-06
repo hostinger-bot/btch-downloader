@@ -3,18 +3,46 @@
   "version": "6.0.3",
   "description": "A lightweight TypeScript/JavaScript library for downloading media from social media platforms",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "browser": "dist/browser/index.js",
+  "unpkg": "dist/browser/index.min.js",
+  "jsdelivr": "dist/browser/index.min.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist",
+    "dist/browser",
     "README.md",
     "LICENSE",
     "SECURITY.md",
     "engine-requirements.js"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "browser": "./dist/browser/index.js",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./site": {
+      "types": "./dist/Defaults/site.d.ts",
+      "import": "./dist/Defaults/site.mjs",
+      "require": "./dist/Defaults/site.js"
+    },
+    "./http": {
+      "types": "./dist/Http/index.d.ts",
+      "import": "./dist/Http/index.mjs",
+      "require": "./dist/Http/index.js"
+    },
+    "./types": {
+      "types": "./dist/Types/index.d.ts",
+      "import": "./dist/Types/index.mjs",
+      "require": "./dist/Types/index.js"
+    }
+  },
   "scripts": {
-    "build": "tsc",
+    "build": "tsup",
     "pub": "npm run build && npm publish --access public",
-    "test": "npm run build && ts-node test/fetcherTest.ts",
+    "test": "ts-node test/TestTS.ts",
     "docs": "npx jsdoc -c jsdoc.conf.json",
     "preinstall": "node ./engine-requirements.js",
     "prepare": "npm run build"
@@ -37,12 +65,15 @@
     "SnackVideo",
     "Cocofun",
     "media-downloader",
-    "social-media"
+    "social-media",
+    "browser",
+    "typescript"
   ],
   "author": "Tio",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^24.6.2",
+    "tsup": "^8.5.0",
     "typescript": "^5.9.3"
   },
   "dependencies": {
@@ -50,11 +81,12 @@
     "jsdoc": "^4.0.4",
     "lodash": "^4.17.21",
     "ts-node": "^10.9.2",
+    "undici": "^7.16.0",
     "undici-types": "^7.16.0"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:hostinger-bot/btch-downloader.git"
+    "url": "git+ssh://git@github.com/hostinger-bot/btch-downloader.git"
   },
   "bugs": {
     "url": "https://github.com/hostinger-bot/btch-downloader/issues"
