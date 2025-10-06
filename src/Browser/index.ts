@@ -1,6 +1,4 @@
 import * as Endpoints from './api/endpoints';
-import { version, developer } from './api/http';
-
 export const igdl = Endpoints.igdl;
 export const ttdl = Endpoints.ttdl;
 export const twitter = Endpoints.twitter;
