@@ -10,16 +10,16 @@ importers:
     dependencies:
       clean-jsdoc-theme:
         specifier: ^4.3.0
-        version: 4.3.0(jsdoc@4.0.4)
+        version: 4.3.0(jsdoc@4.0.5)
       jsdoc:
-        specifier: ^4.0.4
-        version: 4.0.4
+        specifier: ^4.0.5
+        version: 4.0.5
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@24.7.0)(typescript@5.9.3)
+        version: 10.9.2(@types/node@24.7.2)(typescript@5.9.3)
       undici:
         specifier: ^7.16.0
         version: 7.16.0
@@ -28,8 +28,8 @@ importers:
         version: 7.16.0
     devDependencies:
       '@types/node':
-        specifier: ^24.6.2
-        version: 24.7.0
+        specifier: ^24.7.2
+        version: 24.7.2
       tsup:
         specifier: ^8.5.0
         version: 8.5.0(typescript@5.9.3)
@@ -381,8 +381,8 @@ packages:
   '@types/mdurl@2.0.0':
     resolution: {integrity: sha512-RGdgjQUZba5p6QEFAVx2OGb8rQDL/cPRG7GiedRzMcJ1tYnUANBncjbSB1NRGwbvjcPeikRABz2nshyPk1bhWg==}
 
-  '@types/node@24.7.0':
-    resolution: {integrity: sha512-IbKooQVqUBrlzWTi79E8Fw78l8k1RNtlDDNWsFZs7XonuQSJ8oNYfEeclhprUldXISRMLzBpILuKgPlIxm+/Yw==}
+  '@types/node@24.7.2':
+    resolution: {integrity: sha512-/NbVmcGTP+lj5oa4yiYxxeBjRivKQ5Ns1eSZeB99ExsEQ6rX5XYU1Zy/gGxY/ilqtD4Etx9mKyrPxZRetiahhA==}
 
   acorn-walk@8.3.4:
     resolution: {integrity: sha512-ueEepnujpqee2o5aIYnvHU6C0A42MNdsIDeqy5BydrkuC5R1ZuUFnm27EeFJGoEHJQgn3uleRvmTXaJgfXbt4g==}
@@ -588,8 +588,8 @@ packages:
   js2xmlparser@4.0.2:
     resolution: {integrity: sha512-6n4D8gLlLf1n5mNLQPRfViYzu9RATblzPEtm1SthMX1Pjao0r9YI9nw7ZIfRxQMERS87mcswrg+r/OYrPRX6jA==}
 
-  jsdoc@4.0.4:
-    resolution: {integrity: sha512-zeFezwyXeG4syyYHbvh1A967IAqq/67yXtXvuL5wnqCkFZe8I0vKfm+EO+YEvLguo6w9CDUbrAXVtJSHh2E8rw==}
+  jsdoc@4.0.5:
+    resolution: {integrity: sha512-P4C6MWP9yIlMiK8nwoZvxN84vb6MsnXcHuy7XzVOvQoCizWX5JFCBsWIIWKXBltpoRZXddUOVQmCTOZt9yDj9g==}
     engines: {node: '>=12.0.0'}
     hasBin: true
 
@@ -1158,7 +1158,7 @@ snapshots:
 
   '@types/mdurl@2.0.0': {}
 
-  '@types/node@24.7.0':
+  '@types/node@24.7.2':
     dependencies:
       undici-types: 7.14.0
 
@@ -1218,12 +1218,12 @@ snapshots:
     dependencies:
       source-map: 0.6.1
 
-  clean-jsdoc-theme@4.3.0(jsdoc@4.0.4):
+  clean-jsdoc-theme@4.3.0(jsdoc@4.0.5):
     dependencies:
       '@jsdoc/salty': 0.2.9
       fs-extra: 10.1.0
       html-minifier-terser: 7.2.0
-      jsdoc: 4.0.4
+      jsdoc: 4.0.5
       klaw-sync: 6.0.0
       lodash: 4.17.21
       showdown: 2.1.0
@@ -1365,7 +1365,7 @@ snapshots:
     dependencies:
       xmlcreate: 2.0.4
 
-  jsdoc@4.0.4:
+  jsdoc@4.0.5:
     dependencies:
       '@babel/parser': 7.28.4
       '@jsdoc/salty': 0.2.9
@@ -1635,14 +1635,14 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-node@10.9.2(@types/node@24.7.0)(typescript@5.9.3):
+  ts-node@10.9.2(@types/node@24.7.2)(typescript@5.9.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 24.7.0
+      '@types/node': 24.7.2
       acorn: 8.15.0
       acorn-walk: 8.3.4
       arg: 4.1.3

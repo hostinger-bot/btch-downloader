@@ -9,7 +9,7 @@ export default defineConfig([
       'src/Types/index.ts',
     ],
     format: ['cjs', 'esm'],
-    target: 'esnext',
+    target: 'node20',
     platform: 'node',
     dts: {
       resolve: true,
@@ -20,16 +20,20 @@ export default defineConfig([
         'src/Types/index.ts',
       ],
     },
+    bundle: true,
+    minifySyntax: true,
+    minifyWhitespace: false,
+    minifyIdentifiers: false,
     clean: true,
     sourcemap: true,
-    minify: true,
-    splitting: true,
+    minify: false,
+    splitting: false,
     treeshake: true,
     shims: false,
     esbuildOptions(options) {
       options.conditions = ['module', 'import', 'require', 'node']
       options.platform = 'node'
-      options.target = 'esnext'
+      options.target = 'node20'
     },
     noExternal: [/@types\/.*/],
     tsconfig: './tsconfig.json',
@@ -46,7 +50,7 @@ export default defineConfig([
     clean: true,
     sourcemap: true,
     minify: true,
-    splitting: true,
+    splitting: false,
     treeshake: true,
     globalName: 'btch',
     esbuildOptions(options) {

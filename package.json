@@ -42,7 +42,7 @@
   "scripts": {
     "build": "tsup",
     "pub": "npm run build && npm publish --access public",
-    "test": "ts-node test/TestTS.ts",
+    "test": "ts-node test/Test.ts",
     "docs": "npx jsdoc -c jsdoc.conf.json",
     "preinstall": "node ./engine-requirements.js",
     "prepare": "npm run build"
@@ -72,13 +72,13 @@
   "author": "Tio",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^24.6.2",
+    "@types/node": "^24.7.2",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3"
   },
   "dependencies": {
     "clean-jsdoc-theme": "^4.3.0",
-    "jsdoc": "^4.0.4",
+    "jsdoc": "^4.0.5",
     "lodash": "^4.17.21",
     "ts-node": "^10.9.2",
     "undici": "^7.16.0",
