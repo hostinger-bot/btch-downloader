@@ -13,7 +13,6 @@
     "dist/browser",
     "README.md",
     "LICENSE",
-    "SECURITY.md",
     "engine-requirements.js"
   ],
   "exports": {
