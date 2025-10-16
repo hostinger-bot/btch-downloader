@@ -70,11 +70,12 @@
   "author": "Tio",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^24.7.2",
+    "@types/node": "^24.8.0",
     "typescript": "^5.9.3"
   },
   "dependencies": {
     "clean-jsdoc-theme": "^4.3.0",
+    "esbuild": "^0.25.11",
     "jsdoc": "^4.0.5",
     "lodash": "^4.17.21",
     "ts-node": "^10.9.2",
