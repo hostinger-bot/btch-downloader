@@ -30,7 +30,7 @@ To ensure this project runs smoothly, make sure you have the following tools ins
 | Prerequisite       | Version                     |
 |-------------------|-----------------------------|
 | Node.js           | v20+                       |
-| Package Manager   | pnpm 10.18+, Yarn 1.22+, or Bun 1.2+ |
+| Package Manager   | pnpm 10.18.3+, Yarn 4.10.3+, or Bun 1.3.0+ |
 
 Alternatively, you can include btch-downloader by getting it from [npm](https://www.npmjs.com/package/btch-downloader), downloading it from [GitHub releases](https://github.com/hostinger-bot/btch-downloader/releases) or by including it via [unpkg](https://unpkg.com) or another JavaScript CDN, like jsDelivr.
 
