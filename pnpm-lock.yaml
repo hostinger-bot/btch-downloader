@@ -14,6 +14,9 @@ importers:
       esbuild:
         specifier: ^0.25.11
         version: 0.25.11
+      install:
+        specifier: ^0.13.0
+        version: 0.13.0
       jsdoc:
         specifier: ^4.0.5
         version: 4.0.5
@@ -567,6 +570,10 @@ packages:
     resolution: {integrity: sha512-tXgn3QfqPIpGl9o+K5tpcj3/MN4SfLtsx2GWwBC3SSd0tXQGyF3gsSqad8loJgKZGM3ZxbYDd5yhiBIdWpmvLA==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
+
+  install@0.13.0:
+    resolution: {integrity: sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==}
+    engines: {node: '>= 0.10'}
 
   is-fullwidth-code-point@3.0.0:
     resolution: {integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==}
@@ -1338,6 +1345,8 @@ snapshots:
       param-case: 3.0.4
       relateurl: 0.2.7
       terser: 5.44.0
+
+  install@0.13.0: {}
 
   is-fullwidth-code-point@3.0.0: {}
 
