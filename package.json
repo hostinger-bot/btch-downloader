@@ -37,10 +37,10 @@
     }
   },
   "scripts": {
-    "build": "npx tsc && npx tsup",
-    "build:browser": "npx tsup",
+    "build": "tsc && tsup",
+    "build:browser": "tsup",
     "pub": "npm run build && npm publish --access public",
-    "test": "npm run build && npx ts-node test/Test.ts",
+    "test": "npm run build && ts-node test/Test.ts",
     "docs": "npx jsdoc -c jsdoc.conf.json",
     "preinstall": "node ./engine-requirements.js",
     "prepare": "npm run build",
