@@ -70,7 +70,7 @@
   "author": "Tio",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^24.8.0",
+    "@types/node": "^24.9.0",
     "typescript": "^5.9.3"
   },
   "dependencies": {
