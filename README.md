@@ -39,13 +39,13 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://unpkg.com/btch-downloader@6.0.9/dist/browser/index.min.js"></script>
+<script src="https://unpkg.com/btch-downloader@6.0.10/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use the latest version of btch-downloader -->
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.9/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.10/dist/browser/index.min.js"></script>
 ````
 
 ---
@@ -164,6 +164,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
     <li>Xiaohongshu: <a href="https://xhslink.com/o/588P0GrGwWf" target="_blank">https://xhslink.com/o/588P0GrGwWf</a></li>
     <li>SnackVideo: <a href="https://s.snackvideo.com/p/j9jKr9dR" target="_blank">https://s.snackvideo.com/p/j9jKr9dR</a></li>
     <li>Cocofun: <a href="https://www.icocofun.com/share/post/379250110809" target="_blank">https://www.icocofun.com/share/post/379250110809</a></li>
+    <li>Spotify: <a href="https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt" target="_blank">https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt</a></li>
   </ul>
 
   <!-- Load btch CDN -->
@@ -188,6 +189,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       xiaohongshu: /(xiaohongshu|xhslink)\.com/i,
       snackvideo: /(snackvideo\.com|s\.snackvideo\.com)/i,
       cocofun: /(icocofun|cocofun)\.com/i,
+      spotify: /(open\.spotify|play\.spotify|spotify)\.com/i,
     };
 
     const fnMap = {
@@ -204,6 +206,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       xiaohongshu: "xiaohongshu",
       snackvideo: "snackvideo",
       cocofun: "cocofun",
+      spotify: "spotify",
       aio: "aio",
     };
 
@@ -547,6 +550,24 @@ const { cocofun } = require('btch-downloader');
 
 const url = 'https://www.icocofun.com/share/post/379250110809?lang=id&pkg=id&share_to=copy_link&m=81638cf44ba27b2ffa708f3410a4e6c2&d=63cd2733d8d258facd28d44fde5198d4cea826e89af7efc4238ada620140eea3&nt=1';
 cocofun(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+### Spotify
+
+#### ESM
+```javascript
+import { spotify } from 'btch-downloader';
+
+const url = 'https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt';
+spotify(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { spotify } = require('btch-downloader');
+
+const url = 'https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt';
+spotify(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
 ## Important Notes

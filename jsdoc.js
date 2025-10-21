@@ -2,7 +2,7 @@
  * @module btch-downloader
  * @description A lightweight TypeScript/JavaScript library for downloading media from social media platforms
  * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contributions and issue reporting.
- * @version 6.0.9
+ * @version 6.0.10
  * @author Tio
  * @license MIT
  */
@@ -281,5 +281,28 @@
  * const { cocofun } = require('btch-downloader');
  * const url = 'https://www.icocofun.com/share/post/379250110809?lang=id&pkg=id&share_to=copy_link&m=81638cf44ba27b2ffa708f3410a4e6c2&d=63cd2733d8d258facd28d44fde5198d4cea826e89af7efc4238ada620140eea3&nt=1';
  * cocofun(url).then(data => console.log(data)).catch(err => console.error(err));
+ * // JSON
+ */
+
+/**
+ * Downloads media from Spotify.
+ * @async
+ * @function spotify
+ * @param {string} url - The Spotify track URL.
+ * @returns {Promise<Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example <caption>ESM</caption>
+ * import { spotify } from 'btch-downloader';
+ * const url = 'https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt';
+ * spotify(url)
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
+ * @example <caption>CJS</caption>
+ * const { spotify } = require('btch-downloader');
+ * const url = 'https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt';
+ * spotify(url)
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
  * // JSON
  */

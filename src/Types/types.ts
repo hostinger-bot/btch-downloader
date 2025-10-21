@@ -271,6 +271,36 @@ export interface CocofunResponse extends BaseResponse {
     result?: CocofunApiResponse;
 }
 
+export interface SpotifyFormat {
+    url: string;
+    filesize: string | number;
+    quality: string;
+    acodec: string;
+    vcodec: string;
+    ext: string;
+    protocol: string;
+}
+
+export interface SpotifyApiResponse {
+    title?: string;
+    source?: string;
+    server?: string;
+    thumbnail?: string;
+    duration?: number;
+    message?: string;
+    subtitles?: string[];
+    formats?: SpotifyFormat[];
+}
+
+export interface SpotifyApiRaw {
+    res_data: SpotifyApiResponse;
+    message?: string;
+}
+
+export interface SpotifyResponse extends BaseResponse {
+    result?: SpotifyApiResponse;
+}
+
 export interface VersionConfig {
     config: {
         baseUrl: string;

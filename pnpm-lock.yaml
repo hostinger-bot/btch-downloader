@@ -23,19 +23,22 @@ importers:
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
+      source-map:
+        specifier: ^0.7.6
+        version: 0.7.6
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@24.9.0)(typescript@5.9.3)
+        version: 10.9.2(@types/node@24.9.1)(typescript@5.9.3)
       tsup:
         specifier: ^8.5.0
         version: 8.5.0(typescript@5.9.3)
-    devDependencies:
-      '@types/node':
-        specifier: ^24.9.0
-        version: 24.9.0
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
+    devDependencies:
+      '@types/node':
+        specifier: ^24.9.1
+        version: 24.9.1
 
 packages:
 
@@ -381,8 +384,8 @@ packages:
   '@types/mdurl@2.0.0':
     resolution: {integrity: sha512-RGdgjQUZba5p6QEFAVx2OGb8rQDL/cPRG7GiedRzMcJ1tYnUANBncjbSB1NRGwbvjcPeikRABz2nshyPk1bhWg==}
 
-  '@types/node@24.9.0':
-    resolution: {integrity: sha512-MKNwXh3seSK8WurXF7erHPJ2AONmMwkI7zAMrXZDPIru8jRqkk6rGDBVbw4mLwfqA+ZZliiDPg05JQ3uW66tKQ==}
+  '@types/node@24.9.1':
+    resolution: {integrity: sha512-QoiaXANRkSXK6p0Duvt56W208du4P9Uye9hWLWgGMDTEoKPhuenzNcC4vGUmrNkiOKTlIrBoyNQYNpSwfEZXSg==}
 
   acorn-walk@8.3.4:
     resolution: {integrity: sha512-ueEepnujpqee2o5aIYnvHU6C0A42MNdsIDeqy5BydrkuC5R1ZuUFnm27EeFJGoEHJQgn3uleRvmTXaJgfXbt4g==}
@@ -788,6 +791,10 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
+  source-map@0.7.6:
+    resolution: {integrity: sha512-i5uvt8C3ikiWeNZSVZNWcfZPItFQOsYTUAOkcUPGd8DqDy1uOUikjt5dG+uRlwyvR108Fb9DOd4GvXfT0N2/uQ==}
+    engines: {node: '>= 12'}
+
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
@@ -1155,7 +1162,7 @@ snapshots:
 
   '@types/mdurl@2.0.0': {}
 
-  '@types/node@24.9.0':
+  '@types/node@24.9.1':
     dependencies:
       undici-types: 7.16.0
 
@@ -1568,6 +1575,8 @@ snapshots:
 
   source-map@0.6.1: {}
 
+  source-map@0.7.6: {}
+
   source-map@0.8.0-beta.0:
     dependencies:
       whatwg-url: 7.1.0
@@ -1634,14 +1643,14 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-node@10.9.2(@types/node@24.9.0)(typescript@5.9.3):
+  ts-node@10.9.2(@types/node@24.9.1)(typescript@5.9.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 24.9.0
+      '@types/node': 24.9.1
       acorn: 8.15.0
       acorn-walk: 8.3.4
       arg: 4.1.3

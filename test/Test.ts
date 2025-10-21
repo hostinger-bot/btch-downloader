@@ -1,10 +1,10 @@
-import { igdl } from '../dist/index';
+import { spotify } from '../dist/index';
 
 (async () => {
   try {
     console.log('Testing...');
-    const url: string = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
-    const result = await igdl(url);
+    const url: string = 'https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt';
+    const result = await spotify(url);
     console.log('[RESPONSE]: ', JSON.stringify(result, null, 4));
   } catch (error: unknown) {
     if (error instanceof Error) {

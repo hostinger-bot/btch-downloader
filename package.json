@@ -75,12 +75,13 @@
     "install": "^0.13.0",
     "jsdoc": "^4.0.5",
     "lodash": "^4.17.21",
+    "source-map": "^0.7.6",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@types/node": "^24.9.0"
+    "@types/node": "^24.9.1"
   },
   "repository": {
     "type": "git",
@@ -100,6 +101,5 @@
   },
   "engines": {
     "node": ">=20.18.1"
-  },
-  "packageManager": "yarn@4.10.3"
+  }
 }

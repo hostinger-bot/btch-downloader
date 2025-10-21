@@ -197,3 +197,25 @@ export async function cocofun(url: string) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
   }
 }
+
+// Spotify
+export async function spotify(url: string) {
+  try {
+    const data = await httpGet('spotify', url);
+    if (data?.res_data) {
+      if (data.res_data.server === 'rapidapi') delete data.res_data.server;
+      if (data.res_data.message === 'success') delete data.res_data.message;
+      if (data.message === 'success') delete data.message;
+    }
+
+    return { developer: wm, status: true, result: data?.res_data ?? null };
+  } catch (err) {
+    return { 
+      developer: wm,
+      status: false,
+      message: (err as Error).message,
+      note: `Please report issues to ${issues}`,
+      result: []
+    };
+  }
+}

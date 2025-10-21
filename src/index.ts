@@ -43,6 +43,9 @@ import {
     SnackVideoResponse,
     CocofunApiResponse,
     CocofunResponse,
+    SpotifyApiRaw,
+    SpotifyApiResponse,
+    SpotifyResponse,
     VersionConfig
 } from './Types';
 
@@ -419,6 +422,34 @@ async function cocofun(url: string): Promise<CocofunResponse> {
     }
 }
 
+/**
+ * Spotify content downloader
+ * @async
+ * @function spotify
+ * @param {string} url - Spotify track URL
+ * @returns {Promise<SpotifyResponse>} Object containing media details and download links
+ * @throws {Error} When invalid URL or request fails
+ * @example
+ * const result = await spotify('https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt');
+ */
+async function spotify(url: string): Promise<SpotifyResponse> {
+    try {
+        const data = await HttpGet<SpotifyApiRaw>('spotify', url, version, timeout, config.baseUrl);
+        if (data?.res_data) {
+            delete data.message;
+            if (data.res_data.server === 'rapidapi') delete data.res_data.server;
+            if (data.res_data.message === 'success') delete data.res_data.message;
+        }
+
+        return {
+            developer: wm,
+            status: true,
+            result: data.res_data
+        };
+    } catch (error) {
+        return { ...formatErrorResponse(error), status: false };
+    }
+}
 
 export {
   fbdown,
@@ -435,6 +466,7 @@ export {
   douyin,
   snackvideo,
   cocofun,
+  spotify,
   version,
   wm as developer,
   issues
