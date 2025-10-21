@@ -43,7 +43,7 @@
     "test": "npm run build && ts-node test/Test.ts",
     "docs": "npx jsdoc -c jsdoc.conf.json",
     "preinstall": "node ./engine-requirements.js || true",
-    "prepare": "npm run build"
+    "postinstall": "npm run build || yarn run build || true"
   },
   "keywords": [
     "AIO",
