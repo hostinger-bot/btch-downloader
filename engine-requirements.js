@@ -1,3 +1,6 @@
+// This Node.js version check is adapted from the Baileys engine-requirements script.
+// Source: https://github.com/WhiskeySockets/Baileys/blob/4599ff84bbdef332c6f0a01b24376f868254ed89/engine-requirements.js#L1
+
 const major = parseInt(process.versions.node.split('.')[0], 10);
 
 if (major < 20) {
