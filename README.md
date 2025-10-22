@@ -39,13 +39,13 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://unpkg.com/btch-downloader@6.0.12/dist/browser/index.min.js"></script>
+<script src="https://unpkg.com/btch-downloader@6.0.13/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use the latest version of btch-downloader -->
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.12/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.13/dist/browser/index.min.js"></script>
 ````
 
 ---
@@ -62,7 +62,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Playgroud Test CDN btch-downloader</title>
+  <title>Playground Test CDN btch-downloader</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -139,7 +139,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
   </style>
 </head>
 <body>
-  <h1>Playgroud</h1>
+  <h1>Playground</h1>
   <p align="center">A single-page downloader for all supported platforms.</p>
 
   <div align="center">
