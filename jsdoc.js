@@ -2,7 +2,7 @@
  * @module btch-downloader
  * @description A lightweight TypeScript/JavaScript library for downloading media from social media platforms
  * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contributions and issue reporting.
- * @version 6.0.10
+ * @version 6.0.11
  * @author Tio
  * @license MIT
  */
@@ -305,4 +305,26 @@
  *   .then(data => console.log(data))
  *   .catch(err => console.error(err));
  * // JSON
+ */
+ 
+/**
+ * YouTube search function.
+ * @async
+ * @function yts
+ * @param {string} query - The YouTube search query.
+ * @returns {Promise<Object>} A JSON object containing search results.
+ * @throws {Error} If the query is invalid or the request fails.
+ * @example <caption>ESM</caption>
+ * import { yts } from 'btch-downloader';
+ * const query = 'Somewhere Only We Know';
+ * yts(query)
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ *
+ * @example <caption>CJS</caption>
+ * const { yts } = require('btch-downloader');
+ * const query = 'Somewhere Only We Know';
+ * yts(query)
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
  */

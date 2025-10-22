@@ -46,6 +46,8 @@ import {
     SpotifyApiRaw,
     SpotifyApiResponse,
     SpotifyResponse,
+    YtsApiResponse,
+    YtsResponse,
     VersionConfig
 } from './Types';
 
@@ -451,6 +453,30 @@ async function spotify(url: string): Promise<SpotifyResponse> {
     }
 }
 
+/**
+ * YouTube search
+ * @async
+ * @function yts
+ * @param {string} query - YouTube search query
+ * @returns {Promise<YtsResponse>} Object containing search results
+ * @throws {Error} When invalid query or request fails
+ * @example
+ * const result = await yts('Somewhere Only We Know');
+ */
+async function yts(query: string): Promise<YtsResponse> {
+    try {
+        const data = await HttpGet<YtsApiResponse>('yts', query, version, timeout, config.baseUrl);
+        return {
+            developer: wm,
+            status: true,
+            result: data
+        };
+    } catch (error) {
+        return { ...formatErrorResponse(error), status: false };
+    }
+}
+
+
 export {
   fbdown,
   igdl,
@@ -467,6 +493,7 @@ export {
   snackvideo,
   cocofun,
   spotify,
+  yts,
   version,
   wm as developer,
   issues

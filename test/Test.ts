@@ -1,10 +1,10 @@
-import { spotify } from '../dist/index';
+import { yts } from '../dist/index';
 
 (async () => {
   try {
     console.log('Testing...');
-    const url: string = 'https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt';
-    const result = await spotify(url);
+    const query: string = 'cinta dalam doa';
+    const result = await yts(query);
     console.log('[RESPONSE]: ', JSON.stringify(result, null, 4));
   } catch (error: unknown) {
     if (error instanceof Error) {

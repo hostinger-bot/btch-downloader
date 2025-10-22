@@ -301,6 +301,25 @@ export interface SpotifyResponse extends BaseResponse {
     result?: SpotifyApiResponse;
 }
 
+export interface YtsApiResponse {
+    title?: string;
+    url?: string;
+    videoId?: string;
+    author?: string;
+    authorId?: string;
+    authorUrl?: string;
+    description?: string;
+    duration?: string;
+    views?: number;
+    uploadedAt?: string;
+    thumbnail?: string;
+    type?: string;
+}
+
+export interface YtsResponse extends BaseResponse {
+    result?: YtsApiResponse;
+}
+
 export interface VersionConfig {
     config: {
         baseUrl: string;

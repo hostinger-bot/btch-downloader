@@ -14,7 +14,7 @@
 </div>
 
 <div align="center">
-<p>A lightweight TypeScript/JavaScript library for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu, Cocofun and Facebook.</p>
+<p>A lightweight TypeScript/JavaScript library for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu, Cocofun, Spotify, Youtube Search, and Facebook.</p>
 </div>
 
 <div align="center">
@@ -62,7 +62,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Downloader</title>
+  <title>Playgroud Test CDN btch-downloader</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -77,11 +77,18 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       text-align: center;
     }
     input {
-      width: 80%;
+      width: 60%;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 15px;
+    }
+    select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      margin-right: 10px;
     }
     button {
       padding: 10px 20px;
@@ -132,10 +139,28 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
   </style>
 </head>
 <body>
-  <h1>Downloader</h1>
+  <h1>Playgroud</h1>
   <p align="center">A single-page downloader for all supported platforms.</p>
 
   <div align="center">
+    <select id="platformSelect">
+      <option value="auto">Auto Detect</option>
+      <option value="instagram">Instagram</option>
+      <option value="tiktok">TikTok</option>
+      <option value="facebook">Facebook</option>
+      <option value="twitter">Twitter</option>
+      <option value="youtube">YouTube</option>
+      <option value="mediafire">MediaFire</option>
+      <option value="capcut">CapCut</option>
+      <option value="gdrive">Google Drive</option>
+      <option value="pinterest">Pinterest</option>
+      <option value="douyin">Douyin</option>
+      <option value="xiaohongshu">Xiaohongshu</option>
+      <option value="snackvideo">SnackVideo</option>
+      <option value="cocofun">Cocofun</option>
+      <option value="spotify">Spotify</option>
+      <option value="yts">YTS</option>
+    </select>
     <input id="urlInput" placeholder="Paste any supported URL here..." />
     <button id="downloadBtn">Fetch</button>
   </div>
@@ -159,12 +184,13 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
     <li>MediaFire: <a href="https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file" target="_blank">https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file</a></li>
     <li>CapCut: <a href="https://www.capcut.com/template-detail/7299286607478181121" target="_blank">https://www.capcut.com/template-detail/7299286607478181121</a></li>
     <li>Google Drive: <a href="https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view" target="_blank">https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view</a></li>
-    <li>Pinterest: <a href="https://pin.it/4CVodSq" target="_blank">https://pin.it/4CVodSq</a></li>
+    <li>Pinterest: <a href="https://pin.it/4CVodSq" target="_blank">https://pin.it/4CVodSq</a> or query (e.g., "Zhao Lusi")</li>
     <li>Douyin: <a href="https://v.douyin.com/ikq8axJ/" target="_blank">https://v.douyin.com/ikq8axJ/</a></li>
     <li>Xiaohongshu: <a href="https://xhslink.com/o/588P0GrGwWf" target="_blank">https://xhslink.com/o/588P0GrGwWf</a></li>
     <li>SnackVideo: <a href="https://s.snackvideo.com/p/j9jKr9dR" target="_blank">https://s.snackvideo.com/p/j9jKr9dR</a></li>
     <li>Cocofun: <a href="https://www.icocofun.com/share/post/379250110809" target="_blank">https://www.icocofun.com/share/post/379250110809</a></li>
     <li>Spotify: <a href="https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt" target="_blank">https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt</a></li>
+    <li>YTS: <a href="#" target="_blank">Enter a YTS query (e.g., "movie title 2023")</a></li>
   </ul>
 
   <!-- Load btch CDN -->
@@ -174,6 +200,26 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
     const output = document.getElementById("output");
     const btn = document.getElementById("downloadBtn");
     const input = document.getElementById("urlInput");
+    const platformSelect = document.getElementById("platformSelect");
+
+    const platformPlaceholders = {
+      auto: "Paste any supported URL here...",
+      instagram: "Paste Instagram URL (e.g., https://www.instagram.com/p/ByxKbUSnubS/)",
+      tiktok: "Paste TikTok URL (e.g., https://www.tiktok.com/@user/video/123)",
+      facebook: "Paste Facebook URL (e.g., https://www.facebook.com/watch/?v=123)",
+      twitter: "Paste Twitter URL (e.g., https://twitter.com/user/status/123)",
+      youtube: "Paste YouTube URL (e.g., https://youtu.be/C8mJ8943X80)",
+      mediafire: "Paste MediaFire URL (e.g., https://www.mediafire.com/file/123)",
+      capcut: "Paste CapCut URL (e.g., https://www.capcut.com/template-detail/123)",
+      gdrive: "Paste Google Drive URL (e.g., https://drive.google.com/file/d/123)",
+      pinterest: "Paste Pinterest URL (e.g., https://pin.it/4CVodSq)",
+      douyin: "Paste Douyin URL (e.g., https://v.douyin.com/ikq8axJ/)",
+      xiaohongshu: "Paste Xiaohongshu URL (e.g., https://xhslink.com/o/123)",
+      snackvideo: "Paste SnackVideo URL (e.g., https://s.snackvideo.com/p/123)",
+      cocofun: "Paste Cocofun URL (e.g., https://www.icocofun.com/share/post/123)",
+      spotify: "Paste Spotify URL (e.g., https://open.spotify.com/track/123)",
+      yts: "Enter YTS query (e.g., 'movie title 2023')"
+    };
 
     const regexMap = {
       instagram: /instagram\.com\/p\//i,
@@ -207,19 +253,47 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       snackvideo: "snackvideo",
       cocofun: "cocofun",
       spotify: "spotify",
-      aio: "aio",
+      yts: "yts",
     };
 
-    function detectPlatform(url) {
-      for (const [name, regex] of Object.entries(regexMap)) {
-        if (regex.test(url)) return name;
+    function isValidUrl(string) {
+      try {
+        new URL(string);
+        return true;
+      } catch (_) {
+        return false;
       }
-      return "pinterest";
     }
 
+    function detectPlatform(inputValue, selectedPlatform) {
+      if (selectedPlatform !== "auto") {
+        return selectedPlatform; // Respect explicit platform selection
+      }
+
+      if (isValidUrl(inputValue)) {
+        // Check for platform-specific URL patterns
+        for (const [name, regex] of Object.entries(regexMap)) {
+          if (regex.test(inputValue)) {
+            return name;
+          }
+        }
+        // Default to Pinterest for unmatched URLs
+        return "pinterest";
+      } else {
+        // Non-URL inputs default to YTS
+        return "yts";
+      }
+    }
+
+    // Update placeholder when platform changes
+    platformSelect.addEventListener("change", () => {
+      input.placeholder = platformPlaceholders[platformSelect.value];
+      input.value = ""; // Clear input on platform change
+    });
+
     btn.addEventListener("click", async () => {
-      const url = input.value.trim();
-      if (!url) return alert("Please enter a valid URL!");
+      const inputValue = input.value.trim();
+      if (!inputValue) return alert("Please enter a valid URL or YTS query!");
 
       output.textContent = "Detecting platform...";
 
@@ -227,7 +301,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
         const btch = window.btch;
         if (!btch) throw new Error("btch library not loaded.");
 
-        const platform = detectPlatform(url);
+        const platform = detectPlatform(inputValue, platformSelect.value);
         const fnName = fnMap[platform];
         const fn = btch[fnName];
 
@@ -235,7 +309,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 
         output.textContent = `Detected: ${platform}\nFetching data...`;
 
-        const res = await fn(url);
+        const res = await fn(inputValue);
         output.textContent = JSON.stringify(res, null, 2);
       } catch (err) {
         output.textContent = "Error: " + (err.message || err);
@@ -568,6 +642,24 @@ const { spotify } = require('btch-downloader');
 
 const url = 'https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt';
 spotify(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+### YT Search
+
+#### ESM
+```javascript
+import { yts } from 'btch-downloader';
+
+const query = 'Somewhere Only We Know;
+yts(query).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { yts } = require('btch-downloader');
+
+const query = 'Somewhere Only We Know';
+spotify(query).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
 ## Important Notes
