@@ -31,7 +31,7 @@ export default defineConfig([
     dts: false,
     clean: false,
     sourcemap: true,
-    minify: false,
+    minify: true,
     splitting: false,
     treeshake: true,
     globalName: 'btch',
