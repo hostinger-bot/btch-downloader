@@ -556,7 +556,7 @@ const url = 'https://vt.tiktok.com/ZSkGPK9Kj/';
 aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
-### Douyin
+### Douyin (抖音)
 
 #### ESM
 ```javascript
