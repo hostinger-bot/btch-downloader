@@ -39,13 +39,13 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://unpkg.com/btch-downloader@6.0.14/dist/browser/index.min.js"></script>
+<script src="https://unpkg.com/btch-downloader@6.0.15/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use the latest version of btch-downloader -->
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.14/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.15/dist/browser/index.min.js"></script>
 ````
 
 ---
@@ -675,7 +675,7 @@ spotify(query).then(data => console.log(data)).catch(err => console.error(err));
 import { soundcloud } from 'btch-downloader';
 
 const url = 'https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing';
-SoundCloud(query).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+soundcloud(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
 #### CJS
@@ -683,7 +683,7 @@ SoundCloud(query).then(data => console.log(data)).catch(err => console.error(err
 const { soundcloud } = require('btch-downloader');
 
 const url = 'https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing';
-soundcloud(query).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+soundcloud(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
 ## Important Notes

@@ -1,6 +1,6 @@
 {
   "name": "btch-downloader",
-  "version": "6.0.14",
+  "version": "6.0.15",
   "description": "A lightweight TypeScript/JavaScript library for downloading media from social media platforms",
   "main": "dist/index.js",
   "browser": "dist/browser/index.js",
@@ -73,6 +73,7 @@
   "author": "Tio",
   "license": "MIT",
   "dependencies": {
+    "btch-http": "^1.0.9",
     "clean-jsdoc-theme": "^4.3.0",
     "esbuild": "^0.25.11",
     "install": "^0.13.0",

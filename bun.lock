@@ -4,6 +4,7 @@
     "": {
       "name": "btch-downloader",
       "dependencies": {
+        "btch-http": "^1.0.9",
         "clean-jsdoc-theme": "^4.3.0",
         "esbuild": "^0.25.11",
         "install": "^0.13.0",
@@ -89,6 +90,8 @@
     "bluebird": ["bluebird@3.7.2", "", {}, "sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg=="],
 
     "brace-expansion": ["brace-expansion@2.0.2", "", { "dependencies": { "balanced-match": "^1.0.0" } }, "sha512-Jt0vHyM+jmUBqojB7E1NIYadt0vI0Qxjxd2TErW94wDz+E2LAm5vKMXXwg6ZZBTHPuUlDgQHKXvjGBdfcF1ZDQ=="],
+
+    "btch-http": ["btch-http@1.0.10", "", { "dependencies": { "undici-types": "^7.16.0" } }, "sha512-1jXMuia4OKJsm3WolGrJgrZMhh0ZLVukN8ky7MzYfwdDF4hlZk3YEAeFccbgbiXeIwiOl0yU0yL8wxMfG+9Fng=="],
 
     "buffer-from": ["buffer-from@1.1.2", "", {}, "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ=="],
 

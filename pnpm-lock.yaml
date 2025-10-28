@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      btch-http:
+        specifier: ^1.0.9
+        version: 1.0.10
       clean-jsdoc-theme:
         specifier: ^4.3.0
         version: 4.3.0(jsdoc@4.0.5)
@@ -429,6 +432,9 @@ packages:
 
   brace-expansion@2.0.2:
     resolution: {integrity: sha512-Jt0vHyM+jmUBqojB7E1NIYadt0vI0Qxjxd2TErW94wDz+E2LAm5vKMXXwg6ZZBTHPuUlDgQHKXvjGBdfcF1ZDQ==}
+
+  btch-http@1.0.10:
+    resolution: {integrity: sha512-1jXMuia4OKJsm3WolGrJgrZMhh0ZLVukN8ky7MzYfwdDF4hlZk3YEAeFccbgbiXeIwiOl0yU0yL8wxMfG+9Fng==}
 
   buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
@@ -1195,6 +1201,10 @@ snapshots:
   brace-expansion@2.0.2:
     dependencies:
       balanced-match: 1.0.2
+
+  btch-http@1.0.10:
+    dependencies:
+      undici-types: 7.16.0
 
   buffer-from@1.1.2: {}
 

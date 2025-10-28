@@ -1,7 +1,7 @@
 "use strict";
 
 import configData from './Defaults/site';
-import watermark from './Watermark/config.json';
+import watermark from './Watermark/config';
 import pkg from '../package.json';
 import { 
   HttpGet, 
@@ -10,7 +10,7 @@ import {
   type HttpClientConfig,
   type HttpResponse, 
   type HttpError
-} from "./Http";
+} from "btch-http";
 import {
     BaseResponse,
     ApiErrorResponse,
