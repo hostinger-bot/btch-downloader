@@ -68,7 +68,7 @@
   "author": "Tio",
   "license": "MIT",
   "dependencies": {
-    "btch-http": "2.0.0-rc.1",
+    "btch-http": "^2.0.0",
     "clean-jsdoc-theme": "^4.3.0",
     "esbuild": "^0.25.11",
     "install": "^0.13.0",
