@@ -20,17 +20,12 @@
       "import": "./dist/index.js",
       "require": "./dist/index.js"
     },
-    "./site": {
+    "./Site": {
       "types": "./dist/Defaults/site.d.ts",
       "import": "./dist/Defaults/site.js",
       "require": "./dist/Defaults/site.js"
     },
-    "./http": {
-      "types": "./dist/Http/index.d.ts",
-      "import": "./dist/Http/index.js",
-      "require": "./dist/Http/index.js"
-    },
-    "./types": {
+    "./Types": {
       "types": "./dist/Types/index.d.ts",
       "import": "./dist/Types/index.js",
       "require": "./dist/Types/index.js"
