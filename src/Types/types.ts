@@ -13,6 +13,7 @@ export interface ApiErrorResponse extends BaseResponse {
 }
 
 export interface TikTokApiResponse {
+    status: boolean;
     title: string;
     title_audio: string;
     thumbnail: string;
@@ -21,6 +22,7 @@ export interface TikTokApiResponse {
 }
 
 export interface TikTokResponse extends BaseResponse {
+    status?: boolean;
     title?: string;
     title_audio?: string;
     thumbnail?: string;
@@ -40,16 +42,19 @@ export interface InstagramResponse extends BaseResponse {
 }
 
 export interface TwitterApiResponse {
+    status: boolean;
     title: string;
     url: string;
 }
 
 export interface TwitterResponse extends BaseResponse {
+    status?: boolean;
     title?: string;
     url?: string;
 }
 
 export interface YouTubeApiResponse {
+    status: boolean;
     title: string;
     thumbnail: string;
     author: string;
@@ -58,6 +63,7 @@ export interface YouTubeApiResponse {
 }
 
 export interface YouTubeResponse extends BaseResponse {
+    status?: boolean;
     title?: string;
     thumbnail?: string;
     author?: string;
@@ -66,16 +72,19 @@ export interface YouTubeResponse extends BaseResponse {
 }
 
 export interface FacebookApiResponse {
+    status: boolean;
     Normal_video: string;
     HD: string;
 }
 
 export interface FacebookResponse extends BaseResponse {
+    status?: boolean;
     Normal_video?: string;
     HD?: string;
 }
 
 export interface MediaFireApiResponse {
+    status: boolean;
     filename: string;
     filesize: string;
     filesizeH?: string;
@@ -92,6 +101,7 @@ export interface MediaFireResponse extends BaseResponse {
 }
 
 export interface CapCutApiResponse {
+    status?: boolean;
     code?: number;
     title?: string;
     originalVideoUrl?: string;
@@ -107,6 +117,7 @@ export interface CapCutResponse extends BaseResponse {
 }
 
 export interface GoogleDriveApiResponse {
+    status: boolean;
     filename: string;
     filesize: string;
     downloadUrl: string;
@@ -214,6 +225,7 @@ export interface AioResponse extends BaseResponse {
 }
 
 export interface XiaohongshuApiResponse {
+    status?: boolean;
     noteId?: string;
     nickname?: string;
     title?: string;
@@ -230,6 +242,7 @@ export interface XiaohongshuResponse extends BaseResponse {
 }
 
 export interface DouyinApiResponse {
+    status?: boolean;
     title?: string;
     thumbnail?: string;
     links?: { quality?: string; url?: string }[];
@@ -240,6 +253,7 @@ export interface DouyinResponse extends BaseResponse {
 }
 
 export interface SnackVideoApiResponse {
+    status?: boolean;
     url?: string;
     title?: string;
     description?: string;
@@ -256,6 +270,7 @@ export interface SnackVideoResponse extends BaseResponse {
 }
 
 export interface CocofunApiResponse {
+    status?: boolean;
     topic?: string;
     caption?: string;
     play?: number;
@@ -272,6 +287,7 @@ export interface CocofunResponse extends BaseResponse {
 }
 
 export interface SpotifyFormat {
+    status: boolean;
     url: string;
     filesize: string | number;
     quality: string;
@@ -282,6 +298,7 @@ export interface SpotifyFormat {
 }
 
 export interface SpotifyApiResponse {
+    status?: boolean;
     title?: string;
     source?: string;
     server?: string;
@@ -302,6 +319,7 @@ export interface SpotifyResponse extends BaseResponse {
 }
 
 export interface YtsApiResponse {
+    status?: boolean;
     title?: string;
     url?: string;
     videoId?: string;
@@ -318,6 +336,19 @@ export interface YtsApiResponse {
 
 export interface YtsResponse extends BaseResponse {
     result?: YtsApiResponse;
+}
+
+export interface SoundCloudApiResponse {
+    status?: boolean;
+    title?: string;
+    thumbnail?: string;
+    audio?: string;
+    downloadMp3?: string;
+    downloadArtwork?: string;
+}
+
+export interface SoundCloudResponse extends BaseResponse {
+    result?: SoundCloudApiResponse;
 }
 
 export interface VersionConfig {

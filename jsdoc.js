@@ -2,7 +2,7 @@
  * @module btch-downloader
  * @description A lightweight TypeScript/JavaScript library for downloading media from social media platforms
  * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contributions and issue reporting.
- * @version 6.0.13
+ * @version 6.0.14
  * @author Tio
  * @license MIT
  */
@@ -256,12 +256,12 @@
  * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example <caption>ESM</caption>
  * import { xiaohongshu } from 'btch-downloader';
- * const url = 'https://xhslink.com/o/588P0GrGwWf';
+ * const url = 'http://xhslink.com/o/2jqifpr7GJ5f';
  * xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err));
  * // JSON
  * @example <caption>CJS</caption>
  * const { xiaohongshu } = require('btch-downloader');
- * const url = 'https://xhslink.com/o/588P0GrGwWf';
+ * const url = 'http://xhslink.com/o/2jqifpr7GJ5f';
  * xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err));
  * // JSON
  */
@@ -328,4 +328,27 @@
  * yts(query)
  *   .then(data => console.log(data))
  *   .catch(err => console.error(err));
+ */
+
+/**
+ * Downloads media from SoundCloud.
+ * @async
+ * @function soundcloud
+ * @param {string} url - The SoundCloud track URL.
+ * @returns {Promise<Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example <caption>ESM</caption>
+ * import { soundcloud } from 'btch-downloader';
+ * const url = 'https://soundcloud.com/artist-name/track-name';
+ * soundcloud(url)
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
+ * @example <caption>CJS</caption>
+ * const { soundcloud } = require('btch-downloader');
+ * const url = 'https://soundcloud.com/artist-name/track-name';
+ * soundcloud(url)
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
  */

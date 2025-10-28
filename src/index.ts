@@ -48,6 +48,8 @@ import {
     SpotifyResponse,
     YtsApiResponse,
     YtsResponse,
+    SoundCloudApiResponse,
+    SoundCloudResponse,
     VersionConfig
 } from './Types';
 
@@ -476,6 +478,28 @@ async function yts(query: string): Promise<YtsResponse> {
     }
 }
 
+/**
+ * SoundCloud content downloader
+ * @async
+ * @function soundcloud
+ * @param {string} url - SoundCloud track URL
+ * @returns {Promise<SoundCloudResponse>} Object containing media details and download links
+ * @throws {Error} When invalid URL or request fails
+ * @example
+ * const result = await soundcloud('https://soundcloud.com/artist-name/track-name');
+ */
+async function soundcloud(url: string): Promise<SoundCloudResponse> {
+    try {
+        const data = await HttpGet<SoundCloudApiResponse>('soundcloud', url, version, timeout, config.baseUrl);
+        return {
+            developer: wm,
+            status: true,
+            result: data
+        };
+    } catch (error) {
+        return { ...formatErrorResponse(error), status: false };
+    }
+}
 
 export {
   fbdown,
@@ -494,6 +518,7 @@ export {
   cocofun,
   spotify,
   yts,
+  soundcloud,
   version,
   wm as developer,
   issues

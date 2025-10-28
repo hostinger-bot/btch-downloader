@@ -15,3 +15,4 @@ export const snackvideo = Endpoints.snackvideo;
 export const cocofun = Endpoints.cocofun;
 export const spotify = Endpoints.spotify;
 export const yts = Endpoints.yts;
+export const soundcloud = Endpoints.soundcloud;

@@ -229,3 +229,23 @@ export async function yts(query: string) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
   }
 }
+
+// SoundCloud
+export async function soundcloud(query: string) {
+  try {
+    const data = await httpGet('soundcloud', query);
+    return {
+      developer: wm,
+      status: true,
+      result: data ?? null,
+    };
+  } catch (err) {
+    return {
+      developer: wm,
+      status: false,
+      message: (err as Error).message,
+      note: `Please report issues to ${issues}`,
+      result: [],
+    };
+  }
+}

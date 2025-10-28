@@ -1,10 +1,10 @@
-import { yts } from '../dist/index';
+import { soundcloud } from '../dist/index';
 
 (async () => {
   try {
     console.log('Testing...');
-    const query: string = 'cinta dalam doa';
-    const result = await yts(query);
+    const url: string = 'https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing';
+    const result = await soundcloud(url);
     console.log('[RESPONSE]: ', JSON.stringify(result, null, 4));
   } catch (error: unknown) {
     if (error instanceof Error) {

@@ -101,6 +101,7 @@
       <option value="cocofun">Cocofun</option>
       <option value="spotify">Spotify</option>
       <option value="yts">YTS</option>
+      <option value="soundcloud">SoundCloud</option>
     </select>
     <input id="urlInput" placeholder="Paste any supported URL here..." />
     <button id="downloadBtn">Fetch</button>
@@ -127,15 +128,16 @@
     <li>Google Drive: <a href="https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view" target="_blank">https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view</a></li>
     <li>Pinterest: <a href="https://pin.it/4CVodSq" target="_blank">https://pin.it/4CVodSq</a> or query (e.g., "Zhao Lusi")</li>
     <li>Douyin: <a href="https://v.douyin.com/ikq8axJ/" target="_blank">https://v.douyin.com/ikq8axJ/</a></li>
-    <li>Xiaohongshu: <a href="https://xhslink.com/o/588P0GrGwWf" target="_blank">https://xhslink.com/o/588P0GrGwWf</a></li>
+    <li>Xiaohongshu: <a href="http://xhslink.com/o/2jqifpr7GJ5" target="_blank">http://xhslink.com/o/2jqifpr7GJ5</a></li>
     <li>SnackVideo: <a href="https://s.snackvideo.com/p/j9jKr9dR" target="_blank">https://s.snackvideo.com/p/j9jKr9dR</a></li>
     <li>Cocofun: <a href="https://www.icocofun.com/share/post/379250110809" target="_blank">https://www.icocofun.com/share/post/379250110809</a></li>
     <li>Spotify: <a href="https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt" target="_blank">https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt</a></li>
+    <li>SoundCloud: <a href="https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing</a></li>
     <li>YTS: <a href="#" target="_blank">Enter a YTS query (e.g., "movie title 2023")</a></li>
   </ul>
 
   <!-- Load btch CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.13/dist/browser/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.14/dist/browser/index.min.js"></script>
 
   <script>
     const output = document.getElementById("output");
@@ -159,6 +161,7 @@
       snackvideo: "Paste SnackVideo URL (e.g., https://s.snackvideo.com/p/123)",
       cocofun: "Paste Cocofun URL (e.g., https://www.icocofun.com/share/post/123)",
       spotify: "Paste Spotify URL (e.g., https://open.spotify.com/track/123)",
+      soundcloud: "Paste SoundCloud URL (e.g., https://soundcloud.com/xxxxc)",
       yts: "Enter YTS query (e.g., 'movie title 2023')"
     };
 
@@ -177,6 +180,7 @@
       snackvideo: /(snackvideo\.com|s\.snackvideo\.com)/i,
       cocofun: /(icocofun|cocofun)\.com/i,
       spotify: /(open\.spotify|play\.spotify|spotify)\.com/i,
+      soundcloud: /(soundcloud)\.com/i,
     };
 
     const fnMap = {
@@ -194,6 +198,7 @@
       snackvideo: "snackvideo",
       cocofun: "cocofun",
       spotify: "spotify",
+      soundcloud: "soundcloud",
       yts: "yts",
     };
 

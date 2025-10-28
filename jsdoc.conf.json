@@ -64,7 +64,7 @@
         {
           "title": "Demo",
           "id": "demo-link",
-          "link": "https://btch.foo.ng/example.html",
+          "link": "/example.html",
           "class": "nav-link"
         }
       ],
