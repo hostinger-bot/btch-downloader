@@ -364,10 +364,11 @@ bun add btch-downloader
 
 | Service       | Link                                               | Status |
 |:-------------:|:--------------------------------------------------:|:------:|
-| Documentation          | [Visit](http://btch.foo.ng/module-btch-downloader) | ![Online](https://img.shields.io/badge/status-online-brightgreen) |
-| Backend       | [Visit](https://backend1.tioo.eu.org/)             | ![Online](https://img.shields.io/badge/status-online-brightgreen) |
+| Documentation | [Visit](http://btch.foo.ng/module-btch-downloader) | [![Online](https://img.shields.io/badge/status-online-brightgreen)](http://btch.foo.ng/module-btch-downloader) |
+| Backend       | [Visit](https://backend1.tioo.eu.org/)             | [![Online](https://img.shields.io/badge/status-online-brightgreen)](https://backend1.tioo.eu.org/) |
 
 </div>
+
 
 ## Usage
 
