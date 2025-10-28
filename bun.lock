@@ -4,7 +4,7 @@
     "": {
       "name": "btch-downloader",
       "dependencies": {
-        "btch-http": "2.0.0-rc.1",
+        "btch-http": "^2.0.1",
         "clean-jsdoc-theme": "^4.3.0",
         "esbuild": "^0.25.11",
         "install": "^0.13.0",
@@ -291,7 +291,7 @@
 
     "braces": ["braces@1.8.5", "", { "dependencies": { "expand-range": "^1.8.1", "preserve": "^0.2.0", "repeat-element": "^1.1.2" } }, "sha512-xU7bpz2ytJl1bH9cgIurjpg/n8Gohy9GTw81heDYLJQ4RU60dlyJsa+atVF2pI0yMMvKxI9HkKwjePCj5XI1hw=="],
 
-    "btch-http": ["btch-http@2.0.0-rc.1", "", { "dependencies": { "undici-types": "^7.16.0" } }, "sha512-LMUoc125ejcNHJfpNeF3HLWpJaTi7t1QnKTGagPFfh47D/h/HSMqttVToyqdyf711Jnb7oht6MpUuBAx6/j6ow=="],
+    "btch-http": ["btch-http@2.0.1", "", { "dependencies": { "undici-types": "^7.16.0" } }, "sha512-IfrLQAsc+8NC2OdEY882T9gKK3URXqeDDDhwezV8mhxWLbbjlBH6n8oBNzeYo1LWK23bBTxebGzIMYuObpAtnA=="],
 
     "buffer-from": ["buffer-from@1.1.2", "", {}, "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ=="],
 
