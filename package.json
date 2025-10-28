@@ -68,7 +68,7 @@
   "author": "Tio",
   "license": "MIT",
   "dependencies": {
-    "btch-http": "^2.0.0-rc.1",
+    "btch-http": "2.0.0-rc.1",
     "clean-jsdoc-theme": "^4.3.0",
     "esbuild": "^0.25.11",
     "install": "^0.13.0",
@@ -78,7 +78,8 @@
     "source-map": "^0.7.6",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "update": "^0.7.4"
   },
   "devDependencies": {
     "@types/node": "^24.9.1"

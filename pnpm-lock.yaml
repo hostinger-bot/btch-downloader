@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       btch-http:
-        specifier: ^1.0.10
-        version: 1.0.10
+        specifier: 2.0.0-rc.1
+        version: 2.0.0-rc.1
       clean-jsdoc-theme:
         specifier: ^4.3.0
         version: 4.3.0(jsdoc@4.0.5)
@@ -26,6 +26,9 @@ importers:
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
+      rollup:
+        specifier: ^4.52.5
+        version: 4.52.5
       source-map:
         specifier: ^0.7.6
         version: 0.7.6
@@ -433,8 +436,9 @@ packages:
   brace-expansion@2.0.2:
     resolution: {integrity: sha512-Jt0vHyM+jmUBqojB7E1NIYadt0vI0Qxjxd2TErW94wDz+E2LAm5vKMXXwg6ZZBTHPuUlDgQHKXvjGBdfcF1ZDQ==}
 
-  btch-http@1.0.10:
-    resolution: {integrity: sha512-1jXMuia4OKJsm3WolGrJgrZMhh0ZLVukN8ky7MzYfwdDF4hlZk3YEAeFccbgbiXeIwiOl0yU0yL8wxMfG+9Fng==}
+  btch-http@2.0.0-rc.1:
+    resolution: {integrity: sha512-LMUoc125ejcNHJfpNeF3HLWpJaTi7t1QnKTGagPFfh47D/h/HSMqttVToyqdyf711Jnb7oht6MpUuBAx6/j6ow==}
+    engines: {node: '>=14.0.0'}
 
   buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
@@ -1202,7 +1206,7 @@ snapshots:
     dependencies:
       balanced-match: 1.0.2
 
-  btch-http@1.0.10:
+  btch-http@2.0.0-rc.1:
     dependencies:
       undici-types: 7.16.0
 
