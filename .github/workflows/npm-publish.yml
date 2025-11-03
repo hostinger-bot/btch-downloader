@@ -2,6 +2,8 @@
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
 name: Node.js Package
+permissions:
+  contents: read
 
 on:
   release:
