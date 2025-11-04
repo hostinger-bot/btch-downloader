@@ -15,7 +15,7 @@ importers:
         specifier: ^4.3.0
         version: 4.3.0(jsdoc@4.0.5)
       esbuild:
-        specifier: ^0.25.11
+        specifier: ^0.25.12
         version: 0.25.12
       install:
         specifier: ^0.13.0
@@ -29,6 +29,9 @@ importers:
       rollup:
         specifier: ^4.52.5
         version: 4.52.5
+      set-value:
+        specifier: ^4.1.0
+        version: 4.1.0
       source-map:
         specifier: ^0.7.6
         version: 0.7.6
@@ -46,7 +49,7 @@ importers:
         version: 0.7.4
     devDependencies:
       '@types/node':
-        specifier: ^24.9.1
+        specifier: ^24.10.0
         version: 24.10.0
 
 packages:
@@ -1560,6 +1563,10 @@ packages:
     resolution: {integrity: sha512-N3w1tFaRfk3UrPfqeRyD+GYDASU3W5VinKhlORy8EWVf/sIdDL9GAcew85XmktCfH+ngG7SRXEVDoO18WMdB/Q==}
     engines: {node: '>=0.10.0'}
 
+  is-primitive@3.0.1:
+    resolution: {integrity: sha512-GljRxhWvlCNRfZyORiH77FwdFwGcMO620o37EOYC0ORWdq+WYNVqW0w2Juzew4M+L81l6/QS3t5gkkihyRqv9w==}
+    engines: {node: '>=0.10.0'}
+
   is-registered@0.1.5:
     resolution: {integrity: sha512-dOOjAYNmKGtjoW229wn/SDmrO65oQcUvng9WUYF/AIZAQZG/l+puNUPt+/x7YCn4W9A33H6LItHgSETDmS0urg==}
     engines: {node: '>=0.10.0'}
@@ -2380,6 +2387,10 @@ packages:
   set-value@3.0.3:
     resolution: {integrity: sha512-Xsn/XSatoVOGBbp5hs3UylFDs5Bi9i+ArpVJKdHPniZHoEgRniXTqHWrWrGQ0PbEClVT6WtfnBwR8CAHC9sveg==}
     engines: {node: '>=6.0'}
+
+  set-value@4.1.0:
+    resolution: {integrity: sha512-zTEg4HL0RwVrqcWs3ztF+x1vkxfm0lP+MQQFPiMJTKVceBwEV0A569Ou8l9IYQG8jOZdMVI1hGsc0tmeD2o/Lw==}
+    engines: {node: '>=11.0'}
 
   shallow-clone@0.1.2:
     resolution: {integrity: sha512-J1zdXCky5GmNnuauESROVu31MQSnLoYvlyEn6j2Ztk6Q5EHFIhxkMhYcv6vuDzl2XEzoRr856QwzMgWM/TmZgw==}
@@ -4656,6 +4667,8 @@ snapshots:
 
   is-primitive@2.0.0: {}
 
+  is-primitive@3.0.1: {}
+
   is-registered@0.1.5:
     dependencies:
       define-property: 0.2.5
@@ -5692,6 +5705,11 @@ snapshots:
   set-value@3.0.3:
     dependencies:
       is-plain-object: 2.0.4
+
+  set-value@4.1.0:
+    dependencies:
+      is-plain-object: 2.0.4
+      is-primitive: 3.0.1
 
   shallow-clone@0.1.2:
     dependencies:

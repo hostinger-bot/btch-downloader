@@ -70,11 +70,12 @@
   "dependencies": {
     "btch-http": "^2.0.1",
     "clean-jsdoc-theme": "^4.3.0",
-    "esbuild": "^0.25.11",
+    "esbuild": "^0.25.12",
     "install": "^0.13.0",
     "jsdoc": "^4.0.5",
     "lodash": "^4.17.21",
     "rollup": "^4.52.5",
+    "set-value": "^4.1.0",
     "source-map": "^0.7.6",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.0",
@@ -82,7 +83,7 @@
     "update": "^0.7.4"
   },
   "devDependencies": {
-    "@types/node": "^24.9.1"
+    "@types/node": "^24.10.0"
   },
   "repository": {
     "type": "git",
