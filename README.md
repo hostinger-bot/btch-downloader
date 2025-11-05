@@ -8,6 +8,7 @@
     <img src="https://img.shields.io/badge/TypeScript-Ready-3178c6.svg?logo=typescript&logoColor=white" alt="TypeScript">
     <img src="https://img.shields.io/npm/dm/btch-downloader.svg?color=orange" alt="Download">
     <img src="https://data.jsdelivr.com/v1/package/npm/btch-downloader/badge" alt="JSDelivr">
+    <img src="https://img.shields.io/badge/unpkg-CDN-blue?style=flat&logo=unpkg" alt="unpkg CDN">
   </p>
 </div>
 <div align="center">
@@ -18,9 +19,10 @@
 <p>A lightweight TypeScript/JavaScript library for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu, Cocofun, Spotify, Youtube Search, SounCloud and Facebook.</p>
 </div>
 
+
 <div align="center">
   <a href="https://www.npmjs.com/package/btch-downloader" title="npm">
-    <img src="https://nodei.co/npm/btch-downloader.png?downloads=true&downloadRank=true&stars=true" alt="npm badge">
+    <img src="https://nodei.co/npm/btch-downloader.png?downloads=true&downloadRank=true&stars=true&data=d,s&color=blue" alt="npm badge">
   </a>
 </div>
 
