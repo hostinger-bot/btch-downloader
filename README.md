@@ -13,6 +13,7 @@
 </div>
 <div align="center">
   <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/npm-publish.yml/badge.svg" alt="Node.js Package">
+    <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/codeql.yml/badge.svg" alt="CodeQL Advanced">
 </div>
 
 <div align="center">
