@@ -10,9 +10,11 @@
     <img src="https://img.shields.io/npm/dm/btch-downloader.svg?color=orange" alt="Download">
     <img src="https://data.jsdelivr.com/v1/package/npm/btch-downloader/badge" alt="JSDelivr">
     <img src="https://img.shields.io/badge/unpkg-CDN-blue?style=flat&logo=unpkg" alt="unpkg CDN">
-    <br>
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/npm-publish.yml/badge.svg" alt="Node.js Package">
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/codeql.yml/badge.svg" alt="CodeQL Advanced">
+  </p>
+
+  <p>
     <a href="https://www.npmjs.com/package/btch-downloader" title="npm">
       <img src="https://nodei.co/npm/btch-downloader.png?downloads=true&downloadRank=true&stars=true&data=d,s&color=blue" alt="npm badge">
     </a>
