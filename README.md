@@ -1,5 +1,5 @@
 <div align="center">
-  <h1><b5>btch-downloader</b5></h1>
+  <h1><b>btch-downloader</b></h1>
   <p>
     <img src="https://img.shields.io/npm/v/btch-downloader.svg?style=flat&color=blue" alt="Version">
     <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License">
@@ -7,6 +7,7 @@
     <img src="https://img.shields.io/github/issues/hostinger-bot/btch-downloader" alt="Issues">
     <img src="https://img.shields.io/badge/TypeScript-Ready-3178c6.svg?logo=typescript&logoColor=white" alt="TypeScript">
     <img src="https://img.shields.io/npm/dm/btch-downloader.svg?color=orange" alt="Download">
+    <img src="https://data.jsdelivr.com/v1/package/npm/btch-downloader/badge" alt="JSDelivr">
   </p>
 </div>
 <div align="center">
