@@ -3,14 +3,7 @@
 import configData from './Defaults/site';
 import watermark from './Watermark/config';
 import pkg from '../package.json';
-import { 
-  HttpGet, 
-  HttpClient, 
-  type CustomResponse, 
-  type HttpClientConfig,
-  type HttpResponse, 
-  type HttpError
-} from "btch-http";
+import { HttpGet } from "btch-http";
 import {
     BaseResponse,
     ApiErrorResponse,
@@ -519,7 +512,7 @@ export {
   spotify,
   yts,
   soundcloud,
-  version,
+  version as VERSION,
   wm as developer,
   issues
 };
