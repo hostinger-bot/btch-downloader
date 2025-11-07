@@ -98,26 +98,31 @@ async function ttdl(url: string): Promise<TikTokResponse> {
  * const result = await igdl('https://instagram.com/p/Cxyz...');
  * result.forEach(item => console.log(item.url));
  */
+
 async function igdl(url: string): Promise<InstagramResponse> {
     try {
         const data = await HttpGet<InstagramApiItem[]>('igdl', url, version, timeout, config.baseUrl);
+
         if (!data || data.length === 0) {
             return {
                 ...formatErrorResponse(new Error('No results found')),
                 status: false
             };
         }
+        const result: InstagramResponse['result'] = [];
+        for (const item of data) {
+            result.push({
+                thumbnail: item.thumbnail,
+                url: item.url
+            });
+        }
 
         return {
             developer: wm,
             status: true,
-            result: data.map((item: InstagramApiItem) => ({
-                thumbnail: item.thumbnail,
-                url: item.url,
-                resolution: item.resolution,
-                shouldRender: item.shouldRender
-            }))
+            result
         };
+
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };
     }

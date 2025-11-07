@@ -33,8 +33,6 @@ export interface TikTokResponse extends BaseResponse {
 export interface InstagramApiItem {
     thumbnail: string;
     url: string;
-    resolution?: string;
-    shouldRender?: boolean;
 }
 
 export interface InstagramResponse extends BaseResponse {

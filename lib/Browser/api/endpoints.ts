@@ -8,15 +8,26 @@ export async function igdl(url: string) {
     if (!data || data.length === 0) {
       return { developer: wm, status: false, message: 'No results found', note: `Please report issues to ${issues}`, result: [] };
     }
+
+    const result: Array<{
+      thumbnail: string;
+      url: string;
+      resolution: string | null;
+      shouldRender: boolean;
+    }> = [];
+
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+      result.push({
+        thumbnail: item?.thumbnail || '',
+        url: item?.url || ''
+      });
+    }
+
     return {
       developer: wm,
       status: true,
-      result: data.map(item => ({
-        thumbnail: item?.thumbnail || '',
-        url: item?.url || '',
-        resolution: item?.resolution ?? null,
-        shouldRender: item?.shouldRender ?? false,
-      })),
+      result,
     };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };

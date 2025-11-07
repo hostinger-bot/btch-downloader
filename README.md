@@ -5,9 +5,14 @@
     <img src="https://img.shields.io/npm/v/btch-downloader.svg?style=flat&color=blue" alt="Version">
     <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License">
     <img src="https://img.shields.io/github/stars/hostinger-bot/btch-downloader?style=social" alt="GitHub Stars">
-    <img src="https://img.shields.io/github/issues/hostinger-bot/btch-downloader" alt="Issues">
+    <img src="https://img.shields.io/github/forks/hostinger-bot/btch-downloader?style=social&color=green" alt="GitHub Forks">
+    <img src="https://img.shields.io/github/watchers/hostinger-bot/btch-downloader?style=social&color=purple" alt="GitHub Watchers">
+    <img src="https://img.shields.io/github/contributors/hostinger-bot/btch-downloader?style=flat&color=blue" alt="Contributors">
+    <img src="https://img.shields.io/github/issues/hostinger-bot/btch-downloader?style=flat&color=red" alt="Open Issues">
+    <img src="https://img.shields.io/github/issues-closed/hostinger-bot/btch-downloader?style=flat&color=orange" alt="Closed Issues">
+    <img src="https://img.shields.io/github/issues-pr/hostinger-bot/btch-downloader?style=flat&color=yellow" alt="Pull Requests">
     <img src="https://img.shields.io/badge/TypeScript-Ready-3178c6.svg?logo=typescript&logoColor=white" alt="TypeScript">
-    <img src="https://img.shields.io/npm/dm/btch-downloader.svg?color=orange" alt="Download">
+    <img src="https://img.shields.io/npm/dm/btch-downloader.svg?color=orange" alt="Downloads">
     <img src="https://data.jsdelivr.com/v1/package/npm/btch-downloader/badge" alt="JSDelivr">
     <img src="https://img.shields.io/badge/unpkg-CDN-blue?style=flat&logo=unpkg" alt="unpkg CDN">
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/npm-publish.yml/badge.svg" alt="Node.js Package">
@@ -47,16 +52,15 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.18/dist/browser/index.min.js"></script>
-````
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.19/dist/browser/index.min.js"></script>
+```
 
 ---
 
 <details>
-<summary style="font-size:1.3em; font-weight:bold; cursor:pointer;">
+<summary style="font-size:1.3em; font-weight:bold; cursor:pointer; color:#0066cc; text-decoration:underline;">
 📘 Click here to see how to implement this downloader using CDN (HTML Example)
-  </summary>
-
+</summary>
 
 ```html
 <!DOCTYPE html>
@@ -326,7 +330,6 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 </body>
 </html>
 ```
-
 </details>
 
 ### Demo HTML
@@ -368,6 +371,7 @@ bun add btch-downloader
 |:-------------:|:--------------------------------------------------:|:------:|
 | Documentation | [Visit](http://btch.foo.ng/module-btch-downloader) | [![Online](https://img.shields.io/badge/status-online-brightgreen)](http://btch.foo.ng/module-btch-downloader) |
 | Backend       | [Visit](https://backend1.tioo.eu.org/)             | [![Online](https://img.shields.io/badge/status-online-brightgreen)](https://backend1.tioo.eu.org/) |
+| API Reference | [Visit](https://backend1.tioo.eu.org/docs/api-reference) | [![Online](https://img.shields.io/badge/status-online-brightgreen)](https://backend1.tioo.eu.org/docs/api-reference) |
 
 </div>
 

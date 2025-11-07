@@ -2,11 +2,10 @@
  * @module btch-downloader
  * @description A lightweight TypeScript/JavaScript library for downloading media from social media platforms
  * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contributions and issue reporting.
- * @version 6.0.18
+ * @version 6.0.19
  * @author Tio
  * @license MIT
  */
-
 
 /**
  * Downloads media from a given URL across supported platforms.
