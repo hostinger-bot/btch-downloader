@@ -10,7 +10,8 @@
     <img src="https://img.shields.io/github/contributors/hostinger-bot/btch-downloader?style=flat&color=blue" alt="Contributors">
     <img src="https://img.shields.io/github/issues/hostinger-bot/btch-downloader?style=flat&color=red" alt="Open Issues">
     <img src="https://img.shields.io/github/issues-closed/hostinger-bot/btch-downloader?style=flat&color=orange" alt="Closed Issues">
-    <img src="https://img.shields.io/github/issues-pr/hostinger-bot/btch-downloader?style=flat&color=yellow" alt="Pull Requests">
+    <img src="https://img.shields.io/github/issues-pr/hostinger-bot/btch-downloader?style=flat&color=yellow" alt="Open Pull Requests">
+    <img src="https://img.shields.io/github/issues-pr-closed/hostinger-bot/btch-downloader?style=flat&color=brightgreen" alt="Closed Pull Requests">
     <img src="https://img.shields.io/badge/TypeScript-Ready-3178c6.svg?logo=typescript&logoColor=white" alt="TypeScript">
     <img src="https://img.shields.io/npm/dm/btch-downloader.svg?color=orange" alt="Downloads">
     <img src="https://data.jsdelivr.com/v1/package/npm/btch-downloader/badge" alt="JSDelivr">
