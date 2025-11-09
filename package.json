@@ -1,6 +1,6 @@
 {
   "name": "btch-downloader",
-  "version": "6.0.19",
+  "version": "6.0.20",
   "description": "A lightweight TypeScript/JavaScript library for downloading media from social media platforms",
   "main": "dist/index.js",
   "browser": "dist/browser/index.js",
@@ -9,6 +9,7 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
+    "scripts/check-build.js",
     "README.md",
     "LICENSE",
     "engine-requirements.js"
@@ -38,7 +39,8 @@
     "test": "ts-node test/Test.ts",
     "docs": "npx jsdoc -c jsdoc.conf.json",
     "preinstall": "node ./engine-requirements.js || true",
-    "postinstall": "npm run build || yarn run build || true"
+    "postinstall": "node ./scripts/check-build.js",
+    "prepare": "npm run build"
   },
   "keywords": [
     "AIO",
