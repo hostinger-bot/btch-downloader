@@ -72,7 +72,7 @@
   "dependencies": {
     "btch-http": "^2.0.1",
     "clean-jsdoc-theme": "^4.3.0",
-    "esbuild": "^0.25.12",
+    "esbuild": "^0.27.0",
     "install": "^0.13.0",
     "jsdoc": "^4.0.5",
     "lodash": "^4.17.21",
