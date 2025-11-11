@@ -5,7 +5,26 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # Specify a valid package ecosystem
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 20
+    labels:
+      - "dependencies"
+      - "automerge"
+    commit-message:
+      prefix: "chore"
+      prefix-development: "chore(dev)"
+      include: "scope"
+    pull-request-branch-name:
+      separator: "/"
+    reviewers:
+      - "BOTCAHX"
+    target-branch: "main"
+    rebase-strategy: "auto"
+    ignore:
+      - dependency-name: "some-risky-package"
+        versions: [">= 2.x"]
+    allow:
+      - dependency-type: "production"
