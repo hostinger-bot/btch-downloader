@@ -349,6 +349,17 @@ export interface SoundCloudResponse extends BaseResponse {
     result?: SoundCloudApiResponse;
 }
 
+export interface ThreadsApiResponse {
+  status: boolean;
+  type: 'image' | 'video';
+  image: string;
+  video?: string;
+}
+
+export interface ThreadsResponse extends BaseResponse {
+  result?: ThreadsApiResponse;
+}
+
 export interface VersionConfig {
     config: {
         baseUrl: string;

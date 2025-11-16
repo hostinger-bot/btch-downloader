@@ -1,10 +1,10 @@
-import { soundcloud } from '../dist/index';
+import { threads } from '../dist/index';
 
 (async () => {
   try {
     console.log('Testing...');
-    const url: string = 'https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing';
-    const result = await soundcloud(url);
+    const url: string = 'https://www.threads.com/@karokpru/post/DRGxFAREuQo?xmt=AQF05skrhZ5VkqCayTteuwBMedfbKgTj072d3WHgN-Vx8q8txCbNBn2e0w8Sjo2wsFKWn3Q&slof=1';
+    const result = await threads(url);
     console.log('[RESPONSE]: ', JSON.stringify(result, null, 4));
   } catch (error: unknown) {
     if (error instanceof Error) {

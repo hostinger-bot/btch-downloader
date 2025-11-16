@@ -28,7 +28,7 @@
 </div>
 
 <div align="center">
-  <p>A lightweight TypeScript/JavaScript library for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu, Cocofun, Spotify, Youtube Search, SounCloud and Facebook.</p>
+  <p>A lightweight TypeScript/JavaScript library for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu, Cocofun, Spotify, Youtube Search, SounCloud, Threads and Facebook.</p>
 </div>
 
 ## Project Prerequisites
@@ -168,6 +168,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       <option value="spotify">Spotify</option>
       <option value="yts">YTS</option>
       <option value="soundcloud">SoundCloud</option>
+      <option value="threads">Threads</option>
     </select>
     <input id="urlInput" placeholder="Paste any supported URL here..." />
     <button id="downloadBtn">Fetch</button>
@@ -199,6 +200,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
     <li>Cocofun: <a href="https://www.icocofun.com/share/post/379250110809" target="_blank">https://www.icocofun.com/share/post/379250110809</a></li>
     <li>Spotify: <a href="https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt" target="_blank">https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt</a></li>
     <li>SoundCloud: <a href="https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing</a></li>
+    <li>Threads: <a href="https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q" target="_blank">https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q</a></li>
     <li>YTS: <a href="#" target="_blank">Enter a YTS query (e.g., "movie title 2023")</a></li>
   </ul>
 
@@ -228,26 +230,29 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       cocofun: "Paste Cocofun URL (e.g., https://www.icocofun.com/share/post/123)",
       spotify: "Paste Spotify URL (e.g., https://open.spotify.com/track/123)",
       soundcloud: "Paste SoundCloud URL (e.g., https://soundcloud.com/xxxxc)",
+      threads: "Paste Threads URL (e.g., https://www.threads.net/@user/post/abc123)",
       yts: "Enter YTS query (e.g., 'movie title 2023')"
     };
 
     const regexMap = {
-      instagram: /instagram\.com\/p\//i,
-      tiktok: /tiktok\.com/i,
-      facebook: /facebook\.com/i,
-      twitter: /(twitter|x)\.com/i,
-      youtube: /(youtube\.com|youtu\.be)/i,
-      mediafire: /mediafire\.com/i,
-      capcut: /capcut\.com/i,
-      gdrive: /drive\.google\.com/i,
-      pinterest: /(pin\.it|pinterest\.com)/i,
-      douyin: /douyin\.com/i,
-      xiaohongshu: /(xiaohongshu|xhslink)\.com/i,
-      snackvideo: /(snackvideo\.com|s\.snackvideo\.com)/i,
-      cocofun: /(icocofun|cocofun)\.com/i,
-      spotify: /(open\.spotify|play\.spotify|spotify)\.com/i,
-      soundcloud: /(soundcloud)\.com/i,
-    };
+        instagram: /instagram\.com\/p\//i,
+        tiktok: /tiktok\.com/i,
+        facebook: /facebook\.com/i,
+        twitter: /(twitter|x)\.com/i,
+        youtube: /(youtube\.com|youtu\.be)/i,
+        mediafire: /mediafire\.com/i,
+        capcut: /capcut\.com/i,
+        gdrive: /drive\.google\.com/i,
+        pinterest: /(pin\.it|pinterest\.com)/i,
+        douyin: /douyin\.com/i,
+        xiaohongshu: /(xiaohongshu|xhslink)\.com/i,
+        snackvideo: /(snackvideo\.com|s\.snackvideo\.com)/i,
+        cocofun: /(icocofun|cocofun)\.com/i,
+        spotify: /(open\.spotify|play\.spotify|spotify)\.com/i,
+        soundcloud: /(soundcloud)\.com/i,
+        threads: /(threads)\.net\/@[\w.-]+\/post\/[\w_-]+/i,
+      };
+
 
     const fnMap = {
       instagram: "igdl",
@@ -265,6 +270,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       cocofun: "cocofun",
       spotify: "spotify",
       soundcloud: "soundcloud",
+      threads: "threads",
       yts: "yts",
     };
 
@@ -331,6 +337,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 </body>
 </html>
 ```
+
 </details>
 
 ### Demo HTML
@@ -691,6 +698,28 @@ const { soundcloud } = require('btch-downloader');
 
 const url = 'https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing';
 soundcloud(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+### Threads
+
+#### ESM
+```javascript
+import { threads } from 'btch-downloader';
+const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q';
+threads(url)
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON
+```
+
+#### CJS
+```javascript
+const { threads } = require('btch-downloader');
+const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q';
+threads(url)
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+// JSON
 ```
 
 ## Important Notes

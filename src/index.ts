@@ -43,6 +43,8 @@ import {
     YtsResponse,
     SoundCloudApiResponse,
     SoundCloudResponse,
+    ThreadsApiResponse,
+    ThreadsResponse,
     VersionConfig
 } from './Types';
 
@@ -499,6 +501,29 @@ async function soundcloud(url: string): Promise<SoundCloudResponse> {
     }
 }
 
+/**
+ * Threads content downloader
+ * @async
+ * @function threads
+ * @param {string} url - Threads post URL
+ * @returns {Promise<ThreadsResponse>} Object containing media details and download links
+ * @throws {Error} When invalid URL or request fails
+ * @example
+ * const result = await threads('https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI');
+ */
+async function threads(url: string): Promise<ThreadsResponse> {
+    try {
+        const data = await HttpGet<ThreadsApiResponse>('threads', url, version, timeout, config.baseUrl);
+        return {
+            developer: wm,
+            status: true,
+            result: data
+        };
+    } catch (error) {
+        return { ...formatErrorResponse(error), status: false };
+    }
+}
+
 export {
   fbdown,
   igdl,
@@ -517,6 +542,7 @@ export {
   spotify,
   yts,
   soundcloud,
+  threads,
   version as VERSION,
   wm as developer,
   issues

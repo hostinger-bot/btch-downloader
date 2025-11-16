@@ -338,15 +338,38 @@
  * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example <caption>ESM</caption>
  * import { soundcloud } from 'btch-downloader';
- * const url = 'https://soundcloud.com/artist-name/track-name';
+ * const url = 'https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing';
  * soundcloud(url)
  *   .then(data => console.log(data))
  *   .catch(err => console.error(err));
  * // JSON
  * @example <caption>CJS</caption>
  * const { soundcloud } = require('btch-downloader');
- * const url = 'https://soundcloud.com/artist-name/track-name';
+ * const url = 'https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing';
  * soundcloud(url)
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
+ */
+
+/**
+ * Downloads media from Threads.
+ * @async
+ * @function threads
+ * @param {string} url - The Threads post URL.
+ * @returns {Promise<Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example <caption>ESM</caption>
+ * import { threads } from 'btch-downloader';
+ * const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q';
+ * threads(url)
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
+ * @example <caption>CJS</caption>
+ * const { threads } = require('btch-downloader');
+ * const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q';
+ * threads(url)
  *   .then(data => console.log(data))
  *   .catch(err => console.error(err));
  * // JSON
