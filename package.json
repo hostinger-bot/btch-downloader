@@ -63,6 +63,9 @@
     "YT-search",
     "yts",
     "SoundCloud",
+    "Threads",
+    "BOTCAHX",
+    "Tio",
     "media-downloader",
     "social-media",
     "browser",
@@ -95,7 +98,7 @@
   "bugs": {
     "url": "https://github.com/hostinger-bot/btch-downloader/issues"
   },
-  "homepage": "https://github.com/hostinger-bot/btch-downloader#readme",
+  "homepage": "https://btch.foo.ng",
   "directories": {
     "doc": "docs",
     "test": "test"
