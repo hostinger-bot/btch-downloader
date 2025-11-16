@@ -13,7 +13,7 @@
     <img src="https://img.shields.io/github/issues-pr/hostinger-bot/btch-downloader?style=flat&color=yellow" alt="Open Pull Requests">
     <img src="https://img.shields.io/github/issues-pr-closed/hostinger-bot/btch-downloader?style=flat&color=brightgreen" alt="Closed Pull Requests">
     <img src="https://img.shields.io/badge/TypeScript-Ready-3178c6.svg?logo=typescript&logoColor=white" alt="TypeScript">
-    <img src="https://badgen.net/npm/dm/btch-downloader?color=orange" alt="Downloads">
+    <img src="https://img.shields.io/npm/dm/btch-downloader?color=orange" alt="Downloads">
     <img src="https://data.jsdelivr.com/v1/package/npm/btch-downloader/badge" alt="JSDelivr">
     <img src="https://img.shields.io/badge/unpkg-CDN-blue?style=flat&logo=unpkg" alt="unpkg CDN">
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/npm-publish.yml/badge.svg" alt="Node.js Package">
