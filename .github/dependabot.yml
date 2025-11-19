@@ -9,10 +9,14 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+      time: "09:00"
+      timezone: "Asia/Jakarta"
     open-pull-requests-limit: 20
+    target-branch: "main"
     labels:
       - "dependencies"
       - "automerge"
+      - "npm"
     commit-message:
       prefix: "chore"
       prefix-development: "chore(dev)"
@@ -21,10 +25,16 @@ updates:
       separator: "/"
     reviewers:
       - "BOTCAHX"
-    target-branch: "main"
     rebase-strategy: "auto"
     ignore:
       - dependency-name: "some-risky-package"
-        versions: [">= 2.x"]
+        versions: ">= 2.x"
     allow:
       - dependency-type: "production"
+    automerged_updates:
+      - match:
+          dependency_type: "all"
+          update_type: "semver:patch"
+      - match:
+          dependency_type: "all"
+          update_type: "semver:minor"
