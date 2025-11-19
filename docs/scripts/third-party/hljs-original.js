@@ -3704,7 +3704,7 @@ var hljs = (function () {
       keywords: KEYWORDS$1,
       // this will be extended by TypeScript
       exports: { PARAMS_CONTAINS },
-      illegal: /#(?![$_A-z])/,
+      illegal: /#(?![$_A-Za-z])/,
       contains: [
         hljs.SHEBANG({
           label: "shebang",
