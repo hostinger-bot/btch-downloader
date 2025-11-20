@@ -38,8 +38,8 @@
     "pub": "npm run build && npm publish --access public",
     "test": "ts-node test/Test.ts",
     "docs": "npx jsdoc -c jsdoc.conf.json",
-    "lint": "NODE_OPTIONS=\"--max-old-space-size=4096\" eslint . --cache",
-  "lint:fix": "NODE_OPTIONS=\"--max-old-space-size=4096\" eslint . --fix --cache",
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --fix --cache",
     "preinstall": "node ./engine-requirements.js || true",
     "postinstall": "node ./scripts/check-build.js",
     "prepare": "npm run build"
