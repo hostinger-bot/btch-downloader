@@ -231,7 +231,7 @@ export async function spotify(url: string) {
   }
 }
 
-// YT Search
+// YT Search (yts)
 export async function yts(query: string) {
   try {
     const data = await httpGet('yts', query);
@@ -261,6 +261,7 @@ export async function soundcloud(query: string) {
   }
 }
 
+// Threads
 export async function threads(query: string) {
   try {
     const data = await httpGet('threads', query);
