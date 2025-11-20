@@ -341,9 +341,7 @@ function BuildHtml(options) {
         var activeTocLink = tocElement
             .querySelector('.' + options.linkClass +
                 '.node-name--' + topHeader.nodeName +
-                '[href="' + options.basePath + '#' + topHeader.id
-                    .replace(/\\/g, '\\\\')
-                    .replace(/([ #;&,.+*~':"!^$[\]()=>|/@])/g, '\\$1') + '"]')
+                '[href="' + options.basePath + '#' + topHeader.id.replace(/([ #;&,.+*~':"!^$[\]()=>|/@])/g, '\\$1') + '"]')
         if (activeTocLink && activeTocLink.className.indexOf(options.activeLinkClass) === -1) {
             activeTocLink.className += SPACE_CHAR + options.activeLinkClass
         }

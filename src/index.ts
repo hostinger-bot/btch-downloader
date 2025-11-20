@@ -4,8 +4,7 @@ import configData from './Defaults/site';
 import watermark from './Watermark/config';
 import pkg from '../package.json';
 import { HttpGet } from "btch-http";
-import {
-    BaseResponse,
+import type {
     ApiErrorResponse,
     TikTokApiResponse,
     TikTokResponse,
@@ -23,7 +22,6 @@ import {
     CapCutResponse,
     GoogleDriveApiResponse,
     GoogleDriveResponse,
-    PinterestPin,
     PinterestApiResponse,
     PinterestResponse,
     AioApiResponse,
@@ -37,7 +35,6 @@ import {
     CocofunApiResponse,
     CocofunResponse,
     SpotifyApiRaw,
-    SpotifyApiResponse,
     SpotifyResponse,
     YtsApiResponse,
     YtsResponse,

@@ -323,15 +323,6 @@ function hideTocOnSourcePage() {
     }
 }
 
-function escapeHtml(unsafe) {
-    return String(unsafe)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
-
 function getPreTopBar(id, lang = '') {
     // tooltip
     var tooltip = '<div class="tooltip" id="tooltip-' + id + '">Copied!</div>';
@@ -344,10 +335,9 @@ function getPreTopBar(id, lang = '') {
         tooltip +
         '</button>';
 
-    var safeLang = escapeHtml(lang.toLocaleUpperCase());
     var langNameDiv =
         '<div class="code-lang-name-container"><div class="code-lang-name">' +
-        safeLang +
+        lang.toLocaleUpperCase() +
         '</div></div>';
 
     var topBar =

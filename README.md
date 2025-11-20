@@ -53,7 +53,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.21/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.22/dist/browser/index.min.js"></script>
 ```
 
 ---
@@ -706,20 +706,14 @@ soundcloud(url).then(data => console.log(data)).catch(err => console.error(err))
 ```javascript
 import { threads } from 'btch-downloader';
 const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q';
-threads(url)
-  .then(data => console.log(data))
-  .catch(err => console.error(err));
-// JSON
+threads(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
 #### CJS
 ```javascript
 const { threads } = require('btch-downloader');
 const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q';
-threads(url)
-  .then(data => console.log(data))
-  .catch(err => console.error(err));
-// JSON
+threads(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
 ## Important Notes
