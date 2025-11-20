@@ -705,6 +705,7 @@ soundcloud(url).then(data => console.log(data)).catch(err => console.error(err))
 #### ESM
 ```javascript
 import { threads } from 'btch-downloader';
+
 const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q';
 threads(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
@@ -712,6 +713,7 @@ threads(url).then(data => console.log(data)).catch(err => console.error(err)); /
 #### CJS
 ```javascript
 const { threads } = require('btch-downloader');
+
 const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q';
 threads(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
