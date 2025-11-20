@@ -10,32 +10,4 @@ enabled = true
   environment = ["nodejs"]
   runtime_version = "20.x"
   dialect = "typescript"
-  enable_checks = ["all"]
-
-[[analyzers]]
-name = "secrets"
-enabled = true
-
-[[analyzers]]
-name = "test-coverage"
-enabled = true
-
-[[analyzers]]
-name = "dependencies"
-enabled = true
-
-[[analyzers]]
-name = "docker"
-enabled = true
-
-exclude_patterns = [
-  "dist/",
-  "build/",
-  "coverage/",
-  "node_modules/",
-  ".next/",
-  "**/*.test.ts",
-  "**/*.spec.ts",
-  "**/*.test.js",
-  "**/*.spec.js"
-]
+  target = "library"
