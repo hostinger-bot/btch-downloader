@@ -40,6 +40,7 @@
     "docs": "npx jsdoc -c jsdoc.conf.json",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix --cache",
+    "lint:debug": "eslint . --debug",
     "preinstall": "node ./engine-requirements.js || true",
     "postinstall": "node ./scripts/check-build.js",
     "prepare": "npm run build"
