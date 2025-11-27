@@ -679,7 +679,7 @@ yts(query).then(data => console.log(data)).catch(err => console.error(err)); // 
 const { yts } = require('btch-downloader');
 
 const query = 'Somewhere Only We Know';
-spotify(query).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+yts(query).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
 ### SoundCloud
