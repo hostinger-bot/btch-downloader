@@ -157,16 +157,21 @@ export interface PinterestApiResponse {
     description?: string;
     link?: string | null;
     image?: string;
-    images?: {
-        [key: string]: {
-            width?: number;
-            height?: number;
-            url?: string;
-        };
-    };
+    images?: Record<string, {
+        width?: number;
+        height?: number;
+        url?: string;
+    }>;
     is_video?: boolean;
     video_url?: string | null;
-    videos?: any;
+    videos?: Record<string, {
+        url: string;
+        width?: number;
+        height?: number;
+        duration?: number;
+        thumbnail?: string;
+        captions_urls?: Record<string, any>;
+    }>;
     user?: {
         username?: string;
         full_name?: string;
@@ -178,7 +183,6 @@ export interface PinterestApiResponse {
 export interface PinterestResponse extends BaseResponse {
     result?: PinterestApiResponse;
 }
-
 export interface AioApiResponse {
     developer?: string;
     status?: string | boolean;

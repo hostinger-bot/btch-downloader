@@ -10,7 +10,7 @@
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js&quot;>&lt;/script>
 
 &lt;!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/btch-downloader@6.0.22/dist/browser/index.min.js&quot;>&lt;/script>
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/btch-downloader@6.0.23/dist/browser/index.min.js&quot;>&lt;/script>
 </code></pre><hr><details><summary style="font-size:1.3em;font-weight:700;cursor:pointer;color:#06c;text-decoration:underline">📘 Click here to see how to implement this downloader using CDN (HTML Example)</summary><pre class="prettyprint source lang-html"><code>&lt;!DOCTYPE html>
 &lt;html lang=&quot;en&quot;>
 &lt;head>
@@ -424,7 +424,7 @@ yts(query).then(data => console.log(data)).catch(err => console.error(err)); // 
 </code></pre><h4 id="cjs-15">CJS</h4><pre class="prettyprint source lang-javascript"><code>const { yts } = require('btch-downloader');
 
 const query = 'Somewhere Only We Know';
-spotify(query).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+yts(query).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 </code></pre><h3 id="soundcloud">SoundCloud</h3><h4 id="esm-16">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { soundcloud } from 'btch-downloader';
 
 const url = 'https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing';

@@ -1,6 +1,6 @@
 {
   "name": "btch-downloader",
-  "version": "6.0.22",
+  "version": "6.0.23",
   "description": "A lightweight TypeScript/JavaScript library for downloading media from social media platforms",
   "main": "dist/index.js",
   "browser": "dist/browser/index.js",
