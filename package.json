@@ -84,7 +84,7 @@
     "jsdoc": "^4.0.5",
     "lodash": "^4.17.21",
     "rollup": "^4.52.5",
-    "set-value": "^4.1.0",
+    "set-value": "4.1.0",
     "source-map": "^0.7.6",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.0",
