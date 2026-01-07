@@ -599,7 +599,7 @@ douyin(url).then(data => console.log(data)).catch(err => console.error(err)); //
 ```javascript
 import { xiaohongshu } from 'btch-downloader';
 
-const url = 'http://xhslink.com/o/2jqifpr7GJ5';
+const url = 'http://xhslink.com/o/21DKXV988zp';
 xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
@@ -607,7 +607,7 @@ xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)
 ```javascript
 const { xiaohongshu } = require('btch-downloader');
 
-const url = 'http://xhslink.com/o/2jqifpr7GJ5';
+const url = 'http://xhslink.com/o/21DKXV988zp';
 xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 ### Snackvideo
