@@ -255,12 +255,12 @@
  * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example <caption>ESM</caption>
  * import { xiaohongshu } from 'btch-downloader';
- * const url = 'http://xhslink.com/o/2jqifpr7GJ5f';
+ * const url = 'http://xhslink.com/o/21DKXV988zp';
  * xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err));
  * // JSON
  * @example <caption>CJS</caption>
  * const { xiaohongshu } = require('btch-downloader');
- * const url = 'http://xhslink.com/o/2jqifpr7GJ5f';
+ * const url = 'http://xhslink.com/o/21DKXV988zp';
  * xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err));
  * // JSON
  */
