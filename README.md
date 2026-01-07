@@ -195,7 +195,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
     <li>Google Drive: <a href="https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view" target="_blank">https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view</a></li>
     <li>Pinterest: <a href="https://pin.it/4CVodSq" target="_blank">https://pin.it/4CVodSq</a> or query (e.g., "Zhao Lusi")</li>
     <li>Douyin: <a href="https://v.douyin.com/ikq8axJ/" target="_blank">https://v.douyin.com/ikq8axJ/</a></li>
-    <li>Xiaohongshu: <a href="http://xhslink.com/o/2jqifpr7GJ5" target="_blank">http://xhslink.com/o/2jqifpr7GJ5</a></li>
+    <li>Xiaohongshu: <a href="http://xhslink.com/o/21DKXV988zp" target="_blank">http://xhslink.com/o/21DKXV988zp</a></li>
     <li>SnackVideo: <a href="https://s.snackvideo.com/p/j9jKr9dR" target="_blank">https://s.snackvideo.com/p/j9jKr9dR</a></li>
     <li>Cocofun: <a href="https://www.icocofun.com/share/post/379250110809" target="_blank">https://www.icocofun.com/share/post/379250110809</a></li>
     <li>Spotify: <a href="https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt" target="_blank">https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt</a></li>
