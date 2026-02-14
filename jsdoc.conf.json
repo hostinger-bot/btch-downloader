@@ -68,7 +68,7 @@
           "class": "nav-link"
         },
         {
-          "title": "Documentatin API",
+          "title": "Documentation API",
           "id": "api-link",
           "link": "https://backend1.tioo.eu.org/docs/api-reference",
           "class": "nav-link"
