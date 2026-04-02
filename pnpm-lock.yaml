@@ -25,7 +25,7 @@ importers:
         version: 4.0.5
       lodash:
         specifier: ^4.17.21
-        version: 4.17.23
+        version: 4.18.1
       rollup:
         specifier: ^4.52.5
         version: 4.60.1
@@ -1388,8 +1388,8 @@ packages:
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
-  lodash@4.17.23:
-    resolution: {integrity: sha512-LgVTMpQtIopCi79SJeDiP0TfWi5CNEc/L/aRdTh3yIvmZXTnheWpKjSZhnvMl8iXbC1tFg9gdHHDMLoV7CnG+w==}
+  lodash@4.18.1:
+    resolution: {integrity: sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==}
 
   lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
@@ -2165,7 +2165,7 @@ snapshots:
 
   '@jsdoc/salty@0.2.9':
     dependencies:
-      lodash: 4.17.23
+      lodash: 4.18.1
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -2540,7 +2540,7 @@ snapshots:
 
   catharsis@0.9.0:
     dependencies:
-      lodash: 4.17.23
+      lodash: 4.18.1
 
   chalk@4.1.2:
     dependencies:
@@ -2566,7 +2566,7 @@ snapshots:
       html-minifier-terser: 7.2.0
       jsdoc: 4.0.5
       klaw-sync: 6.0.0
-      lodash: 4.17.23
+      lodash: 4.18.1
       showdown: 2.1.0
 
   clean-regexp@1.0.0:
@@ -3333,7 +3333,7 @@ snapshots:
 
   lodash.merge@4.6.2: {}
 
-  lodash@4.17.23: {}
+  lodash@4.18.1: {}
 
   lower-case@2.0.2:
     dependencies:
@@ -3563,7 +3563,7 @@ snapshots:
 
   requizzle@0.2.4:
     dependencies:
-      lodash: 4.17.23
+      lodash: 4.18.1
 
   resolve-from@4.0.0: {}
 
