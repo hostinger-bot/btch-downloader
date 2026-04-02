@@ -79,28 +79,28 @@
   "dependencies": {
     "btch-http": "^2.0.3",
     "clean-jsdoc-theme": "^4.3.0",
-    "esbuild": "^0.27.0",
+    "esbuild": "^0.27.7",
     "install": "^0.13.0",
     "jsdoc": "^4.0.5",
-    "lodash": "^4.17.21",
-    "rollup": "^4.52.5",
+    "lodash": "^4.18.1",
+    "rollup": "^4.60.1",
     "set-value": "4.1.0",
     "source-map": "^0.7.6",
     "ts-node": "^10.9.2",
-    "tsup": "^8.5.0",
+    "tsup": "^8.5.1",
     "typescript": "^6.0.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
-    "@types/node": "^24.10.0",
-    "@typescript-eslint/eslint-plugin": "^8.47.0",
-    "@typescript-eslint/parser": "^8.47.0",
-    "eslint": "^9.39.1",
+    "@eslint/js": "^9.39.4",
+    "@types/node": "^24.12.0",
+    "@typescript-eslint/eslint-plugin": "^8.58.0",
+    "@typescript-eslint/parser": "^8.58.0",
+    "eslint": "^9.39.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-unicorn": "^62.0.0",
     "globals": "^16.5.0",
     "jiti": "^2.6.1",
-    "typescript-eslint": "^8.47.0"
+    "typescript-eslint": "^8.58.0"
   },
   "repository": {
     "type": "git",

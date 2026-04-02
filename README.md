@@ -1,6 +1,5 @@
 <div align="center">
   <h1><b>btch-downloader</b></h1>
-  
   <p>
     <img src="https://img.shields.io/npm/v/btch-downloader.svg?style=flat&color=blue" alt="Version">
     <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License">
