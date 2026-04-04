@@ -27,7 +27,7 @@
 </div>
 
 <div align="center">
-  <p>A lightweight TypeScript/JavaScript library for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu, Cocofun, Spotify, Youtube Search, SounCloud, Threads and Facebook.</p>
+  <p>A lightweight TypeScript/JavaScript library for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu, Cocofun, Spotify, Youtube Search, SounCloud, Threads, Kuaishou and Facebook.</p>
 </div>
 
 ## Project Prerequisites
@@ -46,13 +46,13 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://unpkg.com/btch-downloader@6.0.25/dist/browser/index.min.js"></script>
+<script src="https://unpkg.com/btch-downloader@6.0.26/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use the latest version of btch-downloader -->
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.25/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.26/dist/browser/index.min.js"></script>
 ```
 
 ---
@@ -168,6 +168,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       <option value="yts">YTS</option>
       <option value="soundcloud">SoundCloud</option>
       <option value="threads">Threads</option>
+      <option value="kuaishou">Kuaishou</option>
     </select>
     <input id="urlInput" placeholder="Paste any supported URL here..." />
     <button id="downloadBtn">Fetch</button>
@@ -200,6 +201,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
     <li>Spotify: <a href="https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt" target="_blank">https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt</a></li>
     <li>SoundCloud: <a href="https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing</a></li>
     <li>Threads: <a href="https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q" target="_blank">https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q</a></li>
+    <li>Kuaishou: <a href="https://v.kuaishou.com/JT195ZHT" target="_blank">https://v.kuaishou.com/JT195ZHT</a></li>
     <li>YTS: <a href="#" target="_blank">Enter a YTS query (e.g., "movie title 2023")</a></li>
   </ul>
 
@@ -230,6 +232,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       spotify: "Paste Spotify URL (e.g., https://open.spotify.com/track/123)",
       soundcloud: "Paste SoundCloud URL (e.g., https://soundcloud.com/xxxxc)",
       threads: "Paste Threads URL (e.g., https://www.threads.net/@user/post/abc123)",
+      kuaishou: "Paste Kuaishou URL (e.g., https://v.kuaishou.com/JT195ZHT)",
       yts: "Enter YTS query (e.g., 'movie title 2023')"
     };
 
@@ -250,8 +253,8 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
         spotify: /(open\.spotify|play\.spotify|spotify)\.com/i,
         soundcloud: /(soundcloud)\.com/i,
         threads: /(threads)\.net\/@[\w.-]+\/post\/[\w_-]+/i,
+        kuaishou: /kuaishou\.com/i
       };
-
 
     const fnMap = {
       instagram: "igdl",
@@ -270,6 +273,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       spotify: "spotify",
       soundcloud: "soundcloud",
       threads: "threads",
+      kuaishou: "kuaishou",
       yts: "yts",
     };
 
@@ -284,17 +288,15 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 
     function detectPlatform(inputValue, selectedPlatform) {
       if (selectedPlatform !== "auto") {
-        return selectedPlatform; // Respect explicit platform selection
+        return selectedPlatform;
       }
 
       if (isValidUrl(inputValue)) {
-        // Check for platform-specific URL patterns
         for (const [name, regex] of Object.entries(regexMap)) {
           if (regex.test(inputValue)) {
             return name;
           }
         }
-        // Default to Pinterest for unmatched URLs
         return "pinterest";
       } else {
         // Non-URL inputs default to YTS
@@ -302,10 +304,9 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       }
     }
 
-    // Update placeholder when platform changes
     platformSelect.addEventListener("change", () => {
       input.placeholder = platformPlaceholders[platformSelect.value];
-      input.value = ""; // Clear input on platform change
+      input.value = ""; // Clear
     });
 
     btn.addEventListener("click", async () => {
@@ -336,6 +337,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 </body>
 </html>
 ```
+
 
 </details>
 
@@ -715,6 +717,26 @@ const { threads } = require('btch-downloader');
 
 const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q';
 threads(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+### Kuaishou
+
+#### ESM
+```javascript
+import { kuaishou } from 'btch-downloader';
+
+const url = 'https://v.kuaishou.com/JT195ZHT';
+
+ksdl(url).then(data => console.log(data)).catch(err => console.error(err)); //JSON
+```
+
+#### CJS
+```javascript
+const { kuaishou } = require('btch-downloader');
+
+const url = 'https://v.kuaishou.com/JT195ZHT';
+
+ksdl(url).then(data => console.log(data)).catch(err => console.error(err)); //JSON
 ```
 
 ## Important Notes

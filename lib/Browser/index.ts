@@ -17,3 +17,4 @@ export const spotify = Endpoints.spotify;
 export const yts = Endpoints.yts;
 export const soundcloud = Endpoints.soundcloud;
 export const threads = Endpoints.threads;
+export const kuaishou = Endpoints.kuaishou;

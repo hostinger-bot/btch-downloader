@@ -280,3 +280,23 @@ export async function threads(query: string) {
     };
   }
 }
+
+// Kuaishou
+export async function kuaishou(query: string) {
+  try {
+    const data = await httpGet('kuaishou', query);
+    return {
+      developer: wm,
+      status: true,
+      result: data ?? null,
+    };
+  } catch (err) {
+    return {
+      developer: wm,
+      status: false,
+      message: (err as Error).message,
+      note: `Please report issues to ${issues}`,
+      result: [],
+    };
+  }
+}

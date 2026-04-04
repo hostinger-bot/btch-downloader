@@ -1,10 +1,10 @@
-import { pinterest } from '../dist/index';
+import { kuaishou } from '../dist/index';
 
 (async () => {
   try {
     console.log('Testing...');
-    const url: string = 'https://pin.it/16CatjvXO';
-    const result = await pinterest(url);
+    const url: string = 'https://v.kuaishou.com/JT195ZHT';
+    const result = await kuaishou(url);
     console.log('[RESPONSE]: ', JSON.stringify(result, null, 4));
   } catch (error: unknown) {
     if (error instanceof Error) {

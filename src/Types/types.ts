@@ -364,6 +364,26 @@ export interface ThreadsResponse extends BaseResponse {
   result?: ThreadsApiResponse;
 }
 
+export interface KuaishouApiResponse {
+    success: boolean;
+    videoUrl: string;
+    title: string;
+    author: string;
+    username: string;
+    likeCount: number;
+    commentCount: number;
+    viewCount: number;
+    width: number;
+    height: number;
+    duration: number;
+    rawUrl: string;
+}
+
+export interface KuaishouResponse extends BaseResponse {
+    status?: boolean;
+    result?: KuaishouApiResponse;
+}
+
 export interface VersionConfig {
     config: {
         baseUrl: string;

@@ -42,7 +42,9 @@ import type {
     SoundCloudResponse,
     ThreadsApiResponse,
     ThreadsResponse,
-    VersionConfig
+    KuaishouApiResponse,
+    KuaishouResponse,
+    VersionConfig,
 } from './Types';
 
 const { config, issues } = configData as VersionConfig;
@@ -521,6 +523,41 @@ async function threads(url: string): Promise<ThreadsResponse> {
     }
 }
 
+
+/**
+ * Kuaishou content downloader
+ * @async
+ * @function kuaishou
+ * @param {string} url - Kuaishou video URL[](https://v.kuaishou.com/...)
+ * @returns {Promise<KuaishouResponse>} Kuaishou video data with status
+ * @throws {Error} When invalid URL or request fails
+ * @example
+ * const result = await kuaishou('https://v.kuaishou.com/JT195ZHT');
+ * console.log(result.result?.videoUrl);
+ */
+
+async function kuaishou(url: string): Promise<KuaishouResponse> {
+    try {
+        const data = await HttpGet<KuaishouApiResponse>('kuaishou', url, version, timeout, config.baseUrl);
+
+        if (!data || !data.success) {
+            return {
+                ...formatErrorResponse(new Error('No results found or failed to fetch')),
+                status: false
+            };
+        }
+
+        return {
+            developer: wm,
+            status: true,
+            result: data
+        };
+
+    } catch (error) {
+        return { ...formatErrorResponse(error), status: false };
+    }
+}
+
 export {
   fbdown,
   igdl,
@@ -540,6 +577,7 @@ export {
   yts,
   soundcloud,
   threads,
+  kuaishou,
   version as VERSION,
   wm as developer,
   issues

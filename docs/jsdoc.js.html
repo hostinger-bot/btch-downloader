@@ -4,7 +4,7 @@
  * @module btch-downloader
  * @description A lightweight TypeScript/JavaScript library for downloading media from social media platforms
  * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contributions and issue reporting.
- * @version 6.0.25
+ * @version 6.0.26
  * @author Tio
  * @license MIT
  */
@@ -372,6 +372,33 @@
  * const { threads } = require('btch-downloader');
  * const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q';
  * threads(url)
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
+ */
+ 
+ /**
+ * Downloads media from Kuaishou.
+ * @async
+ * @function kuaishou
+ * @param {string} url - The Kuaishou video URL.
+ * @returns {Promise&lt;Object>} A JSON object containing the media data.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example &lt;caption>ESM&lt;/caption>
+ * import { kuaishou } from 'btch-downloader';
+ * 
+ * const url = 'https://v.kuaishou.com/JT195ZHT';
+ * 
+ * kuaishou(url)
+ *   .then(data => console.log(data))
+ *   .catch(err => console.error(err));
+ * // JSON
+ * @example &lt;caption>CJS&lt;/caption>
+ * const { kuaishou } = require('btch-downloader');
+ * 
+ * const url = 'https://v.kuaishou.com/JT195ZHT';
+ * 
+ * kuaishou(url)
  *   .then(data => console.log(data))
  *   .catch(err => console.error(err));
  * // JSON
