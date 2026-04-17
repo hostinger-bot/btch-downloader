@@ -46,13 +46,13 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://unpkg.com/btch-downloader@6.0.26/dist/browser/index.min.js"></script>
+<script src="https://unpkg.com/btch-downloader@6.0.27/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use the latest version of btch-downloader -->
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.26/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.27/dist/browser/index.min.js"></script>
 ```
 
 ---
@@ -726,8 +726,7 @@ threads(url).then(data => console.log(data)).catch(err => console.error(err)); /
 import { kuaishou } from 'btch-downloader';
 
 const url = 'https://v.kuaishou.com/JT195ZHT';
-
-ksdl(url).then(data => console.log(data)).catch(err => console.error(err)); //JSON
+kuaishou(url).then(data => console.log(data)).catch(err => console.error(err)); //JSON
 ```
 
 #### CJS
@@ -735,8 +734,7 @@ ksdl(url).then(data => console.log(data)).catch(err => console.error(err)); //JS
 const { kuaishou } = require('btch-downloader');
 
 const url = 'https://v.kuaishou.com/JT195ZHT';
-
-ksdl(url).then(data => console.log(data)).catch(err => console.error(err)); //JSON
+kuaishou(url).then(data => console.log(data)).catch(err => console.error(err)); //JSON
 ```
 
 ## Important Notes
