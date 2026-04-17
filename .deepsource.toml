@@ -1,4 +1,4 @@
-version = "1"
+version = 1
 shortlived_issue = true
 autofix = true
 
