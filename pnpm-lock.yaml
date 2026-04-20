@@ -13,7 +13,7 @@ importers:
         version: 2.0.3
       clean-jsdoc-theme:
         specifier: ^4.3.0
-        version: 4.3.0(jsdoc@4.0.5)
+        version: 4.3.2(jsdoc@4.0.5)
       esbuild:
         specifier: ^0.28.0
         version: 0.28.0
@@ -488,6 +488,10 @@ packages:
     resolution: {integrity: sha512-luR/TZqgru6gNjBQnRIbzNPOmDG62VIFQO7QyEjc1/zk3VP3yoGfuecwP2uOlAmKz+t6aq9bwsBV3FgiyHTT7Q==}
     engines: {node: '>=v12.0.0'}
 
+  '@jsdoc/salty@0.2.12':
+    resolution: {integrity: sha512-TuB0x50EoAvEX/UEWITd8Mkn3WhiTjSvbTMCLj0BhsQEl5iUzjXdA0bETEVpTk+5TGTLR6QktI9H4hLviVeaAQ==}
+    engines: {node: '>=v12.0.0'}
+
   '@rollup/rollup-android-arm-eabi@4.60.1':
     resolution: {integrity: sha512-d6FinEBLdIiK+1uACUttJKfgZREXrF0Qc2SmLII7W2AD8FfiZ9Wjd+rD/iRuf5s5dWrr1GgwXCvPqOuDquOowA==}
     cpu: [arm]
@@ -863,8 +867,8 @@ packages:
     resolution: {integrity: sha512-D5J+kHaVb/wKSFcyyV75uCn8fiY4sV38XJoe4CUyGQ+mOU/fMVYUdH1hJC+CJQ5uY3EnW27SbJYS4X8BiLrAFg==}
     engines: {node: '>= 10.0'}
 
-  clean-jsdoc-theme@4.3.0:
-    resolution: {integrity: sha512-QMrBdZ2KdPt6V2Ytg7dIt0/q32U4COpxvR0UDhPjRRKRL0o0MvRCR5YpY37/4rPF1SI1AYEKAWyof7ndCb/dzA==}
+  clean-jsdoc-theme@4.3.2:
+    resolution: {integrity: sha512-h2JR52AGdW3hDfkXaOywJ8jMSiVtUvp+tt4yKA222eb0iSyyl7hDbg1DanEiqecogE6JPuEhEtwp/14czpaqAQ==}
     peerDependencies:
       jsdoc: '>=3.x <=4.x'
 
@@ -1434,8 +1438,8 @@ packages:
     resolution: {integrity: sha512-g1MWMLBiz8FKi1e4w0UyVL3w+iJceWAFBAaBnnGKOpNa5f8TLktkbre1+s6oICydWAm+HRUGTmI+//xv2hvXYA==}
     hasBin: true
 
-  jsonfile@6.2.0:
-    resolution: {integrity: sha512-FGuPw30AdOIUTRMC2OMRtQV+jkVj2cfPqSeWXv1NEAJ1qZ5zb1X6z1mFhbfOB/iy3ssJCD+3KuZ8r8C3uVFlAg==}
+  jsonfile@6.2.1:
+    resolution: {integrity: sha512-zwOTdL3rFQ/lRdBnntKVOX6k5cKJwEc1HdilT71BWEu7J41gXIB2MRp+vxduPSwZJPWBxEzv4yH1wYLJGUHX4Q==}
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -2262,6 +2266,10 @@ snapshots:
     dependencies:
       lodash: 4.18.1
 
+  '@jsdoc/salty@0.2.12':
+    dependencies:
+      lodash: 4.18.1
+
   '@rollup/rollup-android-arm-eabi@4.60.1':
     optional: true
 
@@ -2627,9 +2635,9 @@ snapshots:
     dependencies:
       source-map: 0.6.1
 
-  clean-jsdoc-theme@4.3.0(jsdoc@4.0.5):
+  clean-jsdoc-theme@4.3.2(jsdoc@4.0.5):
     dependencies:
-      '@jsdoc/salty': 0.2.11
+      '@jsdoc/salty': 0.2.12
       fs-extra: 10.1.0
       html-minifier-terser: 7.2.0
       jsdoc: 4.0.5
@@ -3062,7 +3070,7 @@ snapshots:
   fs-extra@10.1.0:
     dependencies:
       graceful-fs: 4.2.11
-      jsonfile: 6.2.0
+      jsonfile: 6.2.1
       universalify: 2.0.1
 
   fsevents@2.3.3:
@@ -3341,7 +3349,7 @@ snapshots:
     dependencies:
       minimist: 1.2.8
 
-  jsonfile@6.2.0:
+  jsonfile@6.2.1:
     dependencies:
       universalify: 2.0.1
     optionalDependencies:
