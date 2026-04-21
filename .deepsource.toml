@@ -8,6 +8,4 @@ enabled = true
 
   [analyzers.meta]
   environment = ["nodejs"]
-  runtime_version = "20.x"
   dialect = "typescript"
-  target = "library"
