@@ -21,20 +21,11 @@ updates:
       prefix: "chore"
       prefix-development: "chore(dev)"
       include: "scope"
-    pull-request-branch-name:
-      separator: "/"
     reviewers:
       - "BOTCAHX"
     rebase-strategy: "auto"
+    allow:
+      - dependency-type: "production"
     ignore:
       - dependency-name: "some-risky-package"
         versions: ">= 2.x"
-    allow:
-      - dependency-type: "production"
-    automerged_updates:
-      - match:
-          dependency_type: "all"
-          update_type: "semver:patch"
-      - match:
-          dependency_type: "all"
-          update_type: "semver:minor"
