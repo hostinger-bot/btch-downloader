@@ -57,13 +57,13 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://unpkg.com/btch-downloader@6.0.27/dist/browser/index.min.js"></script>
+<script src="https://unpkg.com/btch-downloader@6.0.28/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use the latest version of btch-downloader -->
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.27/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.28/dist/browser/index.min.js"></script>
 ```
 
 ---
@@ -570,7 +570,7 @@ pinterest('Zhao Lusi')
   .catch(err => console.error(err)); // JSON
 ```
 
-### AIO
+### AIO (no longer maintained / 不再维护) 
 
 #### ESM
 ```javascript
@@ -730,7 +730,7 @@ const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvi
 threads(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
-### Kuaishou
+### Kuaishou (快手)
 
 #### ESM
 ```javascript

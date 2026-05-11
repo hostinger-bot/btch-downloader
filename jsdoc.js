@@ -2,7 +2,7 @@
  * @module btch-downloader
  * @description A lightweight TypeScript/JavaScript library for downloading media from social media platforms
  * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contributions and issue reporting.
- * @version 6.0.27
+ * @version 6.0.28
  * @author Tio
  * @license MIT
  */
@@ -10,7 +10,7 @@
 /**
  * Downloads media from a given URL across supported platforms.
  * @async
- * @function aio
+ * @function aio (no longer maintained / 不再维护) 
  * @param {string} url - The URL of the media to download (e.g., Instagram, TikTok, etc.).
  * @returns {Promise<Object>} A JSON object containing the media data.
  * @throws {Error} If the URL is invalid or the media is not accessible.
@@ -136,7 +136,7 @@
 /**
  * Downloads media from MediaFire.
  * @async
- * @function mediafire
+ * @function mediafire (no longer maintained / 不再维护) 
  * @param {string} url - The MediaFire media URL.
  * @returns {Promise<Object>} A JSON object containing the media data.
  * @throws {Error} If the URL is invalid or the media is not accessible.
@@ -230,7 +230,7 @@
 /**
  * Downloads media from Douyin.
  * @async
- * @function douyin
+ * @function douyin (抖音)
  * @param {string} url - The Douyin media URL.
  * @returns {Promise<Object>} A JSON object containing the media data.
  * @throws {Error} If the URL is invalid or the media is not accessible.
@@ -247,9 +247,9 @@
  */
 
 /**
- * Downloads media from Xiaohongshu.
+ * Downloads media from Xiaohongshu. 
  * @async
- * @function xiaohongshu
+ * @function xiaohongshu (小红书)
  * @param {string} url - The Xiaohongshu media URL.
  * @returns {Promise<Object>} A JSON object containing the media data.
  * @throws {Error} If the URL is invalid or the media is not accessible.
@@ -378,7 +378,7 @@
  /**
  * Downloads media from Kuaishou.
  * @async
- * @function kuaishou
+ * @function kuaishou (快手)
  * @param {string} url - The Kuaishou video URL.
  * @returns {Promise<Object>} A JSON object containing the media data.
  * @throws {Error} If the URL is invalid or the media is not accessible.

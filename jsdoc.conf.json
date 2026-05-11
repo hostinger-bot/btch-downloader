@@ -19,7 +19,7 @@
       "sections": ["Modules", "Global"],
       "homepageTitle": "btch-downloader",
       "title": "btch-downloader Documentation",
-      "default_theme": "dark",
+      "default_theme": "light",
       "exclude_inherited": false,
       "add_scripts": "function foo(){console.log('foo')} function bar() {console.log('bar')} bar(); foo();",
       "create_style": "html { font-size: 14px !important; }",
@@ -37,6 +37,12 @@
         }
       ],
       "menu": [
+        {
+          "title": "Home",
+          "id": "home-link",
+          "link": "/",
+          "class": "nav-link"
+        },
         {
           "title": "Github",
           "id": "github-link",
@@ -71,6 +77,12 @@
           "title": "Documentation API",
           "id": "api-link",
           "link": "https://backend1.tioo.eu.org/docs/api-reference",
+          "class": "nav-link"
+        },
+        {
+          "title": "Donate",
+          "id": "donate-link",
+          "link": "https://sociabuzz.com/tioclkp02/give",
           "class": "nav-link"
         }
       ],
