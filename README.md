@@ -19,12 +19,23 @@
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/codeql.yml/badge.svg" alt="CodeQL Advanced">
   </p>
 
+
+### Support Me
+
+<div align="center">
+  <a href="https://sociabuzz.com/tioclkp02/give" target="_blank">
+    <img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Donate">
+  </a>
+</div>
+
+
   <p>
     <a href="https://www.npmjs.com/package/btch-downloader" title="npm">
       <img src="https://nodei.co/npm/btch-downloader.png?downloads=true&downloadRank=true&stars=true&data=d,s&color=blue" alt="npm badge">
     </a>
   </p>
 </div>
+
 
 <div align="center">
   <p>A lightweight TypeScript/JavaScript library for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu, Cocofun, Spotify, Youtube Search, SounCloud, Threads, Kuaishou and Facebook.</p>
