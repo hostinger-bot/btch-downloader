@@ -4,13 +4,13 @@
 &lt;script src=&quot;https://unpkg.com/btch-downloader/dist/browser/index.min.js&quot;>&lt;/script>
 
 &lt;!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
-&lt;script src=&quot;https://unpkg.com/btch-downloader@6.0.28/dist/browser/index.min.js&quot;>&lt;/script>
+&lt;script src=&quot;https://unpkg.com/btch-downloader@6.0.29/dist/browser/index.min.js&quot;>&lt;/script>
 
 &lt;!-- jsDelivr : use the latest version of btch-downloader -->
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js&quot;>&lt;/script>
 
 &lt;!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/btch-downloader@6.0.28/dist/browser/index.min.js&quot;>&lt;/script>
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/btch-downloader@6.0.29/dist/browser/index.min.js&quot;>&lt;/script>
 </code></pre><hr><details><summary style="font-size:1.3em;font-weight:700;cursor:pointer;color:#06c;text-decoration:underline">📘 Click here to see how to implement this downloader using CDN (HTML Example)</summary><pre class="prettyprint source lang-html"><code>&lt;!DOCTYPE html>
 &lt;html lang=&quot;en&quot;>
 &lt;head>
@@ -133,7 +133,7 @@
   &lt;hr>
   &lt;h3>Example URLs&lt;/h3>
   &lt;ul>
-    &lt;li>Instagram: &lt;a href=&quot;https://www.instagram.com/p/ByxKbUSnubS/&quot; target=&quot;_blank&quot;>https://www.instagram.com/p/ByxKbUSnubS/&lt;/a>&lt;/li>
+    &lt;li>Instagram: &lt;a href=&quot;https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==&quot; target=&quot;_blank&quot;>https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==&lt;/a>&lt;/li>
     &lt;li>TikTok: &lt;a href=&quot;https://www.tiktok.com/@omagadsus/video/7025456384175017243&quot; target=&quot;_blank&quot;>https://www.tiktok.com/@omagadsus/video/7025456384175017243&lt;/a>&lt;/li>
     &lt;li>Facebook: &lt;a href=&quot;https://www.facebook.com/watch/?v=1393572814172251&quot; target=&quot;_blank&quot;>https://www.facebook.com/watch/?v=1393572814172251&lt;/a>&lt;/li>
     &lt;li>Twitter: &lt;a href=&quot;https://twitter.com/gofoodindonesia/status/1229369819511709697&quot; target=&quot;_blank&quot;>https://twitter.com/gofoodindonesia/status/1229369819511709697&lt;/a>&lt;/li>
@@ -155,7 +155,7 @@
 
   &lt;!-- Load btch CDN -->
   &lt;script src=&quot;https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js&quot;>&lt;/script>
-
+  
   &lt;script>
     const output = document.getElementById(&quot;output&quot;);
     const btn = document.getElementById(&quot;downloadBtn&quot;);
@@ -164,7 +164,7 @@
 
     const platformPlaceholders = {
       auto: &quot;Paste any supported URL here...&quot;,
-      instagram: &quot;Paste Instagram URL (e.g., https://www.instagram.com/p/ByxKbUSnubS/)&quot;,
+      instagram: &quot;Paste Instagram URL (e.g., https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==)&quot;,
       tiktok: &quot;Paste TikTok URL (e.g., https://www.tiktok.com/@user/video/123)&quot;,
       facebook: &quot;Paste Facebook URL (e.g., https://www.facebook.com/watch/?v=123)&quot;,
       twitter: &quot;Paste Twitter URL (e.g., https://twitter.com/user/status/123)&quot;,
@@ -185,23 +185,23 @@
     };
 
     const regexMap = {
-        instagram: /instagram\.com\/p\//i,
-        tiktok: /tiktok\.com/i,
-        facebook: /facebook\.com/i,
-        twitter: /(twitter|x)\.com/i,
-        youtube: /(youtube\.com|youtu\.be)/i,
-        mediafire: /mediafire\.com/i,
-        capcut: /capcut\.com/i,
-        gdrive: /drive\.google\.com/i,
-        pinterest: /(pin\.it|pinterest\.com)/i,
-        douyin: /douyin\.com/i,
-        xiaohongshu: /(xiaohongshu|xhslink)\.com/i,
-        snackvideo: /(snackvideo\.com|s\.snackvideo\.com)/i,
-        cocofun: /(icocofun|cocofun)\.com/i,
-        spotify: /(open\.spotify|play\.spotify|spotify)\.com/i,
-        soundcloud: /(soundcloud)\.com/i,
-        threads: /(threads)\.net\/@[\w.-]+\/post\/[\w_-]+/i,
-        kuaishou: /kuaishou\.com/i
+        instagram: /instagram\.com\/(p|reel|tv)\//i,
+        tiktok: /(tiktok\.com\/@[\w.-]+\/video\/\d+|vm\.tiktok\.com|vt\.tiktok\.com)/i,
+        facebook: /(facebook\.com\/(?:watch\/?\?v=|reel\/|share\/?|sharer\.php\?u=|photo\.php\?fbid=|video\.php\?v=|\w+\/(?:videos|posts)\/)|fb\.watch\/)\d+/i,
+        twitter: /(twitter\.com\/\w+\/status\/\d+|x\.com\/\w+\/status\/\d+)/i,
+        youtube: /(youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/|youtube\.com\/embed\/)[a-zA-Z0-9_-]+/i,
+        mediafire: /mediafire\.com\/(file|download|view)\//i,
+        capcut: /capcut\.com\/(template-detail\/\d+|@[\w.-]+\/video\/[\w-]+|t\/[\w-]+|\d+)/i,
+        gdrive: /drive\.google\.com\/(file\/d\/|open\?id=)[\w-]+/i,
+        pinterest: /(pinterest\.com\/pin\/\d+|pin\.it\/[a-zA-Z0-9]+)/i,
+        douyin: /(v\.douyin\.com\/\w+|douyin\.com\/\S+)/i,
+        xiaohongshu: /(xiaohongshu\.com\/discovery\/item\/\d+|xhslink\.com\/[a-zA-Z0-9]+)/i,
+        snackvideo: /snackvideo\.com\/@[\w.-]+\/video\/\d+|s\.snackvideo\.com\/\w+/i,
+        cocofun: /(icocofun|cocofun)\.com\/(share\/)?post\/\d+/i,
+        spotify: /(open\.spotify\.com\/(track|album|playlist|episode)\/[\w]+|spotify\.link\/[\w]+)/i,
+        soundcloud: /soundcloud\.com\/[\w.-]+\/[\w.-]+/i,
+        threads: /threads\.net\/@[\w.-]+\/post\/[\w_-]+/i,
+        kuaishou: /(v\.kuaishou\.com\/\w+|kuaishou\.com\/(?:short-video|video|share)\/[\w]+)/i,
       };
 
     const fnMap = {
@@ -290,11 +290,11 @@
 </code></pre><p>Using bun:</p><pre class="prettyprint source lang-bash"><code>bun add btch-downloader
 </code></pre><h2 id="services">Services</h2><div align="center"><table><thead><tr><th style="text-align:center">Service</th><th style="text-align:center">Link</th><th style="text-align:center">Status</th></tr></thead><tbody><tr><td style="text-align:center">Documentation</td><td style="text-align:center"><a href="http://btch.foo.ng/module-btch-downloader">Visit</a></td><td style="text-align:center"><a href="http://btch.foo.ng/module-btch-downloader"><img src="https://img.shields.io/badge/status-online-brightgreen" alt="Online"></a></td></tr><tr><td style="text-align:center">Backend</td><td style="text-align:center"><a href="https://backend1.tioo.eu.org/">Visit</a></td><td style="text-align:center"><a href="https://backend1.tioo.eu.org/"><img src="https://img.shields.io/badge/status-online-brightgreen" alt="Online"></a></td></tr><tr><td style="text-align:center">API Reference</td><td style="text-align:center"><a href="https://backend1.tioo.eu.org/docs/api-reference">Visit</a></td><td style="text-align:center"><a href="https://backend1.tioo.eu.org/docs/api-reference"><img src="https://img.shields.io/badge/status-online-brightgreen" alt="Online"></a></td></tr></tbody></table></div><h2 id="usage">Usage</h2><h3 id="instagram">Instagram</h3><h4 id="esm">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { igdl } from 'btch-downloader';
 
-const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
+const url = 'https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==';
 igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 </code></pre><h4 id="cjs">CJS</h4><pre class="prettyprint source lang-javascript"><code>const { igdl } = require('btch-downloader');
 
-const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
+const url = 'https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==';
 igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 </code></pre><h3 id="tiktok">TikTok</h3><h4 id="esm-1">ESM</h4><pre class="prettyprint source lang-javascript"><code>import { ttdl } from 'btch-downloader';
 

@@ -2,7 +2,7 @@
  * @module btch-downloader
  * @description A lightweight TypeScript/JavaScript library for downloading media from social media platforms
  * @see {@link https://github.com/hostinger-bot/btch-downloader|GitHub Repository} for contributions and issue reporting.
- * @version 6.0.28
+ * @version 6.0.29
  * @author Tio
  * @license MIT
  */
@@ -16,13 +16,13 @@
  * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example <caption>ESM</caption>
  * import { aio } from 'btch-downloader';
- * aio('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
+ * aio('https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==')
  *   .then(data => console.log(data))
  *   .catch(err => console.error(err));
  * // JSON
  * @example <caption>CJS</caption>
  * const { aio } = require('btch-downloader');
- * aio('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
+ * aio('https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==')
  *   .then(data => console.log(data))
  *   .catch(err => console.error(err));
  * // JSON
@@ -37,13 +37,13 @@
  * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example <caption>ESM</caption>
  * import { igdl } from 'btch-downloader';
- * igdl('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
+ * igdl('https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==')
  *   .then(data => console.log(data))
  *   .catch(err => console.error(err));
  * // JSON
  * @example <caption>CJS</caption>
  * const { igdl } = require('btch-downloader');
- * igdl('https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link')
+ * igdl('https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==')
  *   .then(data => console.log(data))
  *   .catch(err => console.error(err));
  * // JSON

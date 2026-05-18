@@ -57,13 +57,13 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://unpkg.com/btch-downloader@6.0.28/dist/browser/index.min.js"></script>
+<script src="https://unpkg.com/btch-downloader@6.0.29/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use the latest version of btch-downloader -->
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.28/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.29/dist/browser/index.min.js"></script>
 ```
 
 ---
@@ -196,7 +196,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
   <hr>
   <h3>Example URLs</h3>
   <ul>
-    <li>Instagram: <a href="https://www.instagram.com/p/ByxKbUSnubS/" target="_blank">https://www.instagram.com/p/ByxKbUSnubS/</a></li>
+    <li>Instagram: <a href="https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==" target="_blank">https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==</a></li>
     <li>TikTok: <a href="https://www.tiktok.com/@omagadsus/video/7025456384175017243" target="_blank">https://www.tiktok.com/@omagadsus/video/7025456384175017243</a></li>
     <li>Facebook: <a href="https://www.facebook.com/watch/?v=1393572814172251" target="_blank">https://www.facebook.com/watch/?v=1393572814172251</a></li>
     <li>Twitter: <a href="https://twitter.com/gofoodindonesia/status/1229369819511709697" target="_blank">https://twitter.com/gofoodindonesia/status/1229369819511709697</a></li>
@@ -218,7 +218,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 
   <!-- Load btch CDN -->
   <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
-
+  
   <script>
     const output = document.getElementById("output");
     const btn = document.getElementById("downloadBtn");
@@ -227,7 +227,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 
     const platformPlaceholders = {
       auto: "Paste any supported URL here...",
-      instagram: "Paste Instagram URL (e.g., https://www.instagram.com/p/ByxKbUSnubS/)",
+      instagram: "Paste Instagram URL (e.g., https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==)",
       tiktok: "Paste TikTok URL (e.g., https://www.tiktok.com/@user/video/123)",
       facebook: "Paste Facebook URL (e.g., https://www.facebook.com/watch/?v=123)",
       twitter: "Paste Twitter URL (e.g., https://twitter.com/user/status/123)",
@@ -248,23 +248,23 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
     };
 
     const regexMap = {
-        instagram: /instagram\.com\/p\//i,
-        tiktok: /tiktok\.com/i,
-        facebook: /facebook\.com/i,
-        twitter: /(twitter|x)\.com/i,
-        youtube: /(youtube\.com|youtu\.be)/i,
-        mediafire: /mediafire\.com/i,
-        capcut: /capcut\.com/i,
-        gdrive: /drive\.google\.com/i,
-        pinterest: /(pin\.it|pinterest\.com)/i,
-        douyin: /douyin\.com/i,
-        xiaohongshu: /(xiaohongshu|xhslink)\.com/i,
-        snackvideo: /(snackvideo\.com|s\.snackvideo\.com)/i,
-        cocofun: /(icocofun|cocofun)\.com/i,
-        spotify: /(open\.spotify|play\.spotify|spotify)\.com/i,
-        soundcloud: /(soundcloud)\.com/i,
-        threads: /(threads)\.net\/@[\w.-]+\/post\/[\w_-]+/i,
-        kuaishou: /kuaishou\.com/i
+        instagram: /instagram\.com\/(p|reel|tv)\//i,
+        tiktok: /(tiktok\.com\/@[\w.-]+\/video\/\d+|vm\.tiktok\.com|vt\.tiktok\.com)/i,
+        facebook: /(facebook\.com\/(?:watch\/?\?v=|reel\/|share\/?|sharer\.php\?u=|photo\.php\?fbid=|video\.php\?v=|\w+\/(?:videos|posts)\/)|fb\.watch\/)\d+/i,
+        twitter: /(twitter\.com\/\w+\/status\/\d+|x\.com\/\w+\/status\/\d+)/i,
+        youtube: /(youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/|youtube\.com\/embed\/)[a-zA-Z0-9_-]+/i,
+        mediafire: /mediafire\.com\/(file|download|view)\//i,
+        capcut: /capcut\.com\/(template-detail\/\d+|@[\w.-]+\/video\/[\w-]+|t\/[\w-]+|\d+)/i,
+        gdrive: /drive\.google\.com\/(file\/d\/|open\?id=)[\w-]+/i,
+        pinterest: /(pinterest\.com\/pin\/\d+|pin\.it\/[a-zA-Z0-9]+)/i,
+        douyin: /(v\.douyin\.com\/\w+|douyin\.com\/\S+)/i,
+        xiaohongshu: /(xiaohongshu\.com\/discovery\/item\/\d+|xhslink\.com\/[a-zA-Z0-9]+)/i,
+        snackvideo: /snackvideo\.com\/@[\w.-]+\/video\/\d+|s\.snackvideo\.com\/\w+/i,
+        cocofun: /(icocofun|cocofun)\.com\/(share\/)?post\/\d+/i,
+        spotify: /(open\.spotify\.com\/(track|album|playlist|episode)\/[\w]+|spotify\.link\/[\w]+)/i,
+        soundcloud: /soundcloud\.com\/[\w.-]+\/[\w.-]+/i,
+        threads: /threads\.net\/@[\w.-]+\/post\/[\w_-]+/i,
+        kuaishou: /(v\.kuaishou\.com\/\w+|kuaishou\.com\/(?:short-video|video|share)\/[\w]+)/i,
       };
 
     const fnMap = {
@@ -350,6 +350,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 ```
 
 
+
 </details>
 
 ### Demo HTML
@@ -404,7 +405,7 @@ bun add btch-downloader
 ```javascript
 import { igdl } from 'btch-downloader';
 
-const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
+const url = 'https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==';
 igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
@@ -412,7 +413,7 @@ igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // J
 ```javascript
 const { igdl } = require('btch-downloader');
 
-const url = 'https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link';
+const url = 'https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==';
 igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
