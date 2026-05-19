@@ -80,6 +80,7 @@ bun add btch-downloader
 | YouTube Search  | `yts`          | Text query   |
 
 > ⚠️ **MediaFire** (`mediafire`) is no longer actively maintained.
+> 
 > ⚠️ **All-In-One** (`aio`) is no longer actively maintained.
 
 ---
@@ -205,9 +206,12 @@ In the browser all functions are accessible via `window.btch`.
 - This library is **only for publicly accessible content**.
 - It is **not affiliated** with any platform.
 - Ensure you have **permission or copyright clearance** before downloading any content.
-- **MediaFire** is no longer maintained — do not extend it.
-- **All-In-One** is no longer maintained — do not extend it.
-- License: **MIT**
+
+The following libraries are no longer maintained — do not extend them:
+- **MediaFire**
+- **All-In-One**
+
+**License:** MIT
 
 ---
 
