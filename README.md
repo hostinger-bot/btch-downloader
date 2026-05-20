@@ -762,4 +762,3 @@ If you encounter any issues or wish to contribute to the development of this app
 ## License
 
 btch-downloader is licensed under the [MIT License](https://github.com/hostinger-bot/btch-downloader/blob/main/LICENSE). Please refer to the LICENSE file for more information.
-

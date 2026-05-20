@@ -64,12 +64,19 @@ const formatErrorResponse = (error: unknown): ApiErrorResponse => ({
  * TikTok video downloader
  * @async
  * @function ttdl
- * @param {string} url - TikTok video URL
- * @returns {Promise<TikTokResponse>} Object containing video info and download links
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await ttdl('https://tiktok.com/@user/video/123');
- * console.log(result.video?.[0]); // Video download URL
+ * @param {string} url - The TikTok video URL (e.g., https://www.tiktok.com/@user/video/123)
+ * @returns {Promise<TikTokResponse>} A JSON object containing video info, thumbnails, and download links.
+ * @throws {Error} If the URL is invalid or the request fails.
+ * @example <caption>ESM</caption>
+ * import { ttdl } from 'btch-downloader';
+ *
+ * const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243';
+ * ttdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { ttdl } = require('btch-downloader');
+ *
+ * const url = 'https://www.tiktok.com/@omagadsus/video/7025456384175017243';
+ * ttdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function ttdl(url: string): Promise<TikTokResponse> {
     try {
@@ -89,15 +96,22 @@ async function ttdl(url: string): Promise<TikTokResponse> {
 }
 
 /**
- * Instagram content downloader
+ * Instagram content downloader (Reels, Posts, TV, Stories)
  * @async
  * @function igdl
- * @param {string} url - Instagram post URL (reels/posts/stories)
- * @returns {Promise<InstagramResponse>} Array of media items with download links
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await igdl('https://instagram.com/p/Cxyz...');
- * result.forEach(item => console.log(item.url));
+ * @param {string} url - The Instagram media URL (e.g., https://www.instagram.com/reel/abc/)
+ * @returns {Promise<InstagramResponse>} A JSON object containing an array of media items (links and thumbnails).
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example <caption>ESM</caption>
+ * import { igdl } from 'btch-downloader';
+ *
+ * const url = 'https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==';
+ * igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { igdl } = require('btch-downloader');
+ *
+ * const url = 'https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==';
+ * igdl(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 
 async function igdl(url: string): Promise<InstagramResponse> {
@@ -130,14 +144,22 @@ async function igdl(url: string): Promise<InstagramResponse> {
 }
 
 /**
- * Twitter video downloader
+ * Twitter (X) video downloader
  * @async
  * @function twitter
- * @param {string} url - Twitter video URL
- * @returns {Promise<TwitterResponse>} Object containing video info
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await twitter('https://twitter.com/user/status/123');
+ * @param {string} url - The Twitter/X video URL (e.g., https://twitter.com/user/status/123)
+ * @returns {Promise<TwitterResponse>} A JSON object containing the video title and download link.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example <caption>ESM</caption>
+ * import { twitter } from 'btch-downloader';
+ *
+ * const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697';
+ * twitter(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { twitter } = require('btch-downloader');
+ *
+ * const url = 'https://twitter.com/gofoodindonesia/status/1229369819511709697';
+ * twitter(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function twitter(url: string): Promise<TwitterResponse> {
     try {
@@ -154,15 +176,22 @@ async function twitter(url: string): Promise<TwitterResponse> {
 }
 
 /**
- * YouTube video downloader
+ * YouTube video and audio downloader
  * @async
  * @function youtube
- * @param {string} url - YouTube video URL
- * @returns {Promise<YouTubeResponse>} Object containing video and audio download links
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await youtube('https://youtube.com/watch?v=123');
- * console.log(result.mp4); // Video download URL
+ * @param {string} url - The YouTube video URL (e.g., https://youtu.be/abc)
+ * @returns {Promise<YouTubeResponse>} A JSON object containing video/audio download links, title, and thumbnail.
+ * @throws {Error} If the URL is invalid or the request fails.
+ * @example <caption>ESM</caption>
+ * import { youtube } from 'btch-downloader';
+ *
+ * const url = 'https://youtube.com/watch?v=C8mJ8943X80';
+ * youtube(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { youtube } = require('btch-downloader');
+ *
+ * const url = 'https://youtube.com/watch?v=C8mJ8943X80';
+ * youtube(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function youtube(url: string): Promise<YouTubeResponse> {
     try {
@@ -185,12 +214,19 @@ async function youtube(url: string): Promise<YouTubeResponse> {
  * Facebook video downloader
  * @async
  * @function fbdown
- * @param {string} url - Facebook video URL
- * @returns {Promise<FacebookResponse>} Object containing video quality options
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await fbdown('https://facebook.com/watch/?v=123');
- * console.log(result.HD); // HD quality URL
+ * @param {string} url - The Facebook video URL (e.g., https://www.facebook.com/watch/?v=123)
+ * @returns {Promise<FacebookResponse>} A JSON object containing Normal and HD quality download links.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example <caption>ESM</caption>
+ * import { fbdown } from 'btch-downloader';
+ *
+ * const url = 'https://www.facebook.com/watch/?v=1393572814172251';
+ * fbdown(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { fbdown } = require('btch-downloader');
+ *
+ * const url = 'https://www.facebook.com/watch/?v=1393572814172251';
+ * fbdown(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function fbdown(url: string): Promise<FacebookResponse> {
     try {
@@ -210,13 +246,20 @@ async function fbdown(url: string): Promise<FacebookResponse> {
  * MediaFire file downloader
  * @async
  * @function mediafire
- * @param {string} url - MediaFire file URL
- * @returns {Promise<MediaFireResponse>} Object containing file info
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await mediafire('https://mediafire.com/file/123');
- * console.log(result.result.filename); // Downloaded filename
- * @deprecated MediaFire support is no longer actively maintained
+ * @param {string} url - The MediaFire file URL
+ * @returns {Promise<MediaFireResponse>} A JSON object containing file metadata and download link.
+ * @throws {Error} If the URL is invalid or the request fails.
+ * @deprecated MediaFire support is no longer actively maintained.
+ * @example <caption>ESM</caption>
+ * import { mediafire } from 'btch-downloader';
+ *
+ * const url = 'https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file';
+ * mediafire(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { mediafire } = require('btch-downloader');
+ *
+ * const url = 'https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file';
+ * mediafire(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function mediafire(url: string): Promise<MediaFireResponse> {
     console.warn('[btch-downloader] mediafire() is deprecated and no longer actively maintained.');
@@ -236,11 +279,19 @@ async function mediafire(url: string): Promise<MediaFireResponse> {
  * CapCut template downloader
  * @async
  * @function capcut
- * @param {string} url - CapCut template URL
- * @returns {Promise<CapCutResponse>} Object containing template info
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await capcut('https://capcut.com/template/123');
+ * @param {string} url - The CapCut template URL (e.g., https://www.capcut.com/template-detail/123)
+ * @returns {Promise<CapCutResponse>} A JSON object containing template video links and metadata.
+ * @throws {Error} If the URL is invalid or the request fails.
+ * @example <caption>ESM</caption>
+ * import { capcut } from 'btch-downloader';
+ *
+ * const url = 'https://www.capcut.com/template-detail/7299286607478181121';
+ * capcut(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { capcut } = require('btch-downloader');
+ *
+ * const url = 'https://www.capcut.com/template-detail/7299286607478181121';
+ * capcut(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function capcut(url: string): Promise<CapCutResponse> {
     try {
@@ -256,15 +307,23 @@ async function capcut(url: string): Promise<CapCutResponse> {
 }
 
 /**
- * All In One Downloader
+ * All-In-One (AIO) downloader for various social platforms.
  * @async
  * @function aio
- * @param {string} url - Video URL
- * @returns {Promise<AioApiResponse>} Object containing video info
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await aio('https://tiktok.com/@user/video/123');
-* @deprecated All-In-One  support is no longer actively maintained
+ * @param {string} url - The media URL to download.
+ * @returns {Promise<AioResponse>} A JSON object containing media info.
+ * @throws {Error} If the URL is invalid or the request fails.
+ * @deprecated All-In-One support is no longer actively maintained.
+ * @example <caption>ESM</caption>
+ * import { aio } from 'btch-downloader';
+ *
+ * const url = 'https://vt.tiktok.com/ZSkGPK9Kj/';
+ * aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { aio } = require('btch-downloader');
+ *
+ * const url = 'https://vt.tiktok.com/ZSkGPK9Kj/';
+ * aio(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function aio(url: string): Promise<AioResponse> {
     console.warn('[btch-downloader] aio() is deprecated and no longer actively maintained.');
@@ -284,12 +343,19 @@ async function aio(url: string): Promise<AioResponse> {
  * Google Drive file downloader
  * @async
  * @function gdrive
- * @param {string} url - Google Drive file URL
- * @returns {Promise<GoogleDriveResponse>} Object containing file info
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await gdrive('https://drive.google.com/file/d/123');
- * console.log(result.result.downloadUrl); // Download URL
+ * @param {string} url - The Google Drive file URL (e.g., https://drive.google.com/file/d/abc)
+ * @returns {Promise<GoogleDriveResponse>} A JSON object containing file metadata and download link.
+ * @throws {Error} If the URL is invalid or the file is not public.
+ * @example <caption>ESM</caption>
+ * import { gdrive } from 'btch-downloader';
+ *
+ * const url = 'https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view';
+ * gdrive(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { gdrive } = require('btch-downloader');
+ *
+ * const url = 'https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view';
+ * gdrive(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function gdrive(url: string): Promise<GoogleDriveResponse> {
     try {
@@ -305,17 +371,32 @@ async function gdrive(url: string): Promise<GoogleDriveResponse> {
 }
 
 /**
- * Pinterest content downloader
+ * Pinterest content downloader or search
  * @async
  * @function pinterest
- * @param {string} query - Pinterest URL or search query
- * @returns {Promise<PinterestResponse>} Object containing pin info or search results
- * @throws {Error} When invalid URL/query or request fails
- * @example
- * // For URL
- * const result = await pinterest('https://pin.it/123');
- * // For search
- * const results = await pinterest('Zhao Lusi');
+ * @param {string} query - The Pinterest pin URL or a search query.
+ * @returns {Promise<PinterestResponse>} A JSON object containing pin media or search results.
+ * @throws {Error} If the input is invalid or the request fails.
+ * @example <caption>ESM (URL)</caption>
+ * import { pinterest } from 'btch-downloader';
+ *
+ * const url = 'https://pin.it/4CVodSq';
+ * pinterest(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>ESM (Search)</caption>
+ * import { pinterest } from 'btch-downloader';
+ *
+ * const query = 'Zhao Lusi';
+ * pinterest(query).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS (URL)</caption>
+ * const { pinterest } = require('btch-downloader');
+ *
+ * const url = 'https://pin.it/4CVodSq';
+ * pinterest(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS (Search)</caption>
+ * const { pinterest } = require('btch-downloader');
+ *
+ * const query = 'Zhao Lusi';
+ * pinterest(query).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function pinterest(query: string): Promise<PinterestResponse> {
     try {
@@ -331,14 +412,22 @@ async function pinterest(query: string): Promise<PinterestResponse> {
 }
 
 /**
- * Xiaohongshu downloader
+ * Xiaohongshu (Little Red Book / 小红书) downloader
  * @async
  * @function xiaohongshu
- * @param {string} url - Xiaohongshu post URL
- * @returns {Promise<XiaohongshuResponse>} Object containing media details and download links
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await xiaohongshu('https://xhslink.com/o/123456');
+ * @param {string} url - The Xiaohongshu post URL (e.g., http://xhslink.com/abc)
+ * @returns {Promise<XiaohongshuResponse>} A JSON object containing image/video links and post metadata.
+ * @throws {Error} If the URL is invalid or the content is not accessible.
+ * @example <caption>ESM</caption>
+ * import { xiaohongshu } from 'btch-downloader';
+ *
+ * const url = 'http://xhslink.com/o/21DKXV988zp';
+ * xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { xiaohongshu } = require('btch-downloader');
+ *
+ * const url = 'http://xhslink.com/o/21DKXV988zp';
+ * xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
     try {
@@ -361,14 +450,22 @@ async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
 }
 
 /**
- * Douyin content downloader
+ * Douyin (抖音) downloader for videos and images
  * @async
  * @function douyin
- * @param {string} url - Douyin post URL
- * @returns {Promise<DouyinResponse>} Object containing media details and download links
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await douyin('https://v.douyin.com/1234');
+ * @param {string} url - The Douyin post URL (e.g., https://v.douyin.com/abc)
+ * @returns {Promise<DouyinResponse>} A JSON object containing media links and post metadata.
+ * @throws {Error} If the URL is invalid or the request fails.
+ * @example <caption>ESM</caption>
+ * import { douyin } from 'btch-downloader';
+ *
+ * const url = 'https://v.douyin.com/ikq8axJ/';
+ * douyin(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { douyin } = require('btch-downloader');
+ *
+ * const url = 'https://v.douyin.com/ikq8axJ/';
+ * douyin(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function douyin(url: string): Promise<DouyinResponse> {
     try {
@@ -387,11 +484,19 @@ async function douyin(url: string): Promise<DouyinResponse> {
  * SnackVideo content downloader
  * @async
  * @function snackvideo
- * @param {string} url - SnackVideo post URL
- * @returns {Promise<SnackVideoResponse>} Object containing media details and download links
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await snackvideo('https://www.snackvideo.com/@seponsbobofficial/video/5251628748119377077');
+ * @param {string} url - The SnackVideo post URL (e.g., https://s.snackvideo.com/p/abc)
+ * @returns {Promise<SnackVideoResponse>} A JSON object containing video links and metadata.
+ * @throws {Error} If the URL is invalid or the content is not accessible.
+ * @example <caption>ESM</caption>
+ * import { snackvideo } from 'btch-downloader';
+ *
+ * const url = 'https://s.snackvideo.com/p/j9jKr9dR';
+ * snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { snackvideo } = require('btch-downloader');
+ *
+ * const url = 'https://s.snackvideo.com/p/j9jKr9dR';
+ * snackvideo(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function snackvideo(url: string): Promise<SnackVideoResponse> {
     try {
@@ -410,11 +515,19 @@ async function snackvideo(url: string): Promise<SnackVideoResponse> {
  * Cocofun content downloader
  * @async
  * @function cocofun
- * @param {string} url - Cocofun post URL
- * @returns {Promise<CocofunResponse>} Object containing media details and download links
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await cocofun('https://www.icocofun.com/share/post/588965339175?lang=id&pkg=id&share_to=copy_link&m=81638cf44ba27b2ffa708f3410a4e6c2&d=63cd2733d8d258facd28d44fde5198d4cea826e89af7efc4238ada620140eea3&nt=1');
+ * @param {string} url - The Cocofun post URL (e.g., https://www.icocofun.com/share/post/123)
+ * @returns {Promise<CocofunResponse>} A JSON object containing media links and post metadata.
+ * @throws {Error} If the URL is invalid or the request fails.
+ * @example <caption>ESM</caption>
+ * import { cocofun } from 'btch-downloader';
+ *
+ * const url = 'https://www.icocofun.com/share/post/379250110809';
+ * cocofun(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { cocofun } = require('btch-downloader');
+ *
+ * const url = 'https://www.icocofun.com/share/post/379250110809';
+ * cocofun(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function cocofun(url: string): Promise<CocofunResponse> {
     try {
@@ -430,14 +543,22 @@ async function cocofun(url: string): Promise<CocofunResponse> {
 }
 
 /**
- * Spotify content downloader
+ * Spotify track downloader
  * @async
  * @function spotify
- * @param {string} url - Spotify track URL
- * @returns {Promise<SpotifyResponse>} Object containing media details and download links
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await spotify('https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt');
+ * @param {string} url - The Spotify track URL (e.g., https://open.spotify.com/track/abc)
+ * @returns {Promise<SpotifyResponse>} A JSON object containing track metadata and download links.
+ * @throws {Error} If the URL is invalid or the request fails.
+ * @example <caption>ESM</caption>
+ * import { spotify } from 'btch-downloader';
+ *
+ * const url = 'https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt';
+ * spotify(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { spotify } = require('btch-downloader');
+ *
+ * const url = 'https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt';
+ * spotify(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function spotify(url: string): Promise<SpotifyResponse> {
     try {
@@ -460,14 +581,22 @@ async function spotify(url: string): Promise<SpotifyResponse> {
 }
 
 /**
- * YouTube search
+ * YouTube search engine
  * @async
  * @function yts
- * @param {string} query - YouTube search query
- * @returns {Promise<YtsResponse>} Object containing search results
- * @throws {Error} When invalid query or request fails
- * @example
- * const result = await yts('Somewhere Only We Know');
+ * @param {string} query - The search query for YouTube videos.
+ * @returns {Promise<YtsResponse>} A JSON object containing a list of search results.
+ * @throws {Error} If the request fails.
+ * @example <caption>ESM</caption>
+ * import { yts } from 'btch-downloader';
+ *
+ * const query = 'Somewhere Only We Know';
+ * yts(query).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { yts } = require('btch-downloader');
+ *
+ * const query = 'Somewhere Only We Know';
+ * yts(query).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function yts(query: string): Promise<YtsResponse> {
     try {
@@ -483,14 +612,22 @@ async function yts(query: string): Promise<YtsResponse> {
 }
 
 /**
- * SoundCloud content downloader
+ * SoundCloud track downloader
  * @async
  * @function soundcloud
- * @param {string} url - SoundCloud track URL
- * @returns {Promise<SoundCloudResponse>} Object containing media details and download links
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await soundcloud('https://soundcloud.com/artist-name/track-name');
+ * @param {string} url - The SoundCloud track URL (e.g., https://soundcloud.com/user/track)
+ * @returns {Promise<SoundCloudResponse>} A JSON object containing track info and download links.
+ * @throws {Error} If the URL is invalid or the media is not accessible.
+ * @example <caption>ESM</caption>
+ * import { soundcloud } from 'btch-downloader';
+ *
+ * const url = 'https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio';
+ * soundcloud(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { soundcloud } = require('btch-downloader');
+ *
+ * const url = 'https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio';
+ * soundcloud(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function soundcloud(url: string): Promise<SoundCloudResponse> {
     try {
@@ -506,14 +643,22 @@ async function soundcloud(url: string): Promise<SoundCloudResponse> {
 }
 
 /**
- * Threads content downloader
+ * Threads (by Instagram) content downloader
  * @async
  * @function threads
- * @param {string} url - Threads post URL
- * @returns {Promise<ThreadsResponse>} Object containing media details and download links
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await threads('https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI');
+ * @param {string} url - The Threads post URL (e.g., https://www.threads.net/@user/post/abc)
+ * @returns {Promise<ThreadsResponse>} A JSON object containing media links and post metadata.
+ * @throws {Error} If the URL is invalid or the content is not accessible.
+ * @example <caption>ESM</caption>
+ * import { threads } from 'btch-downloader';
+ *
+ * const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/';
+ * threads(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { threads } = require('btch-downloader');
+ *
+ * const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/';
+ * threads(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function threads(url: string): Promise<ThreadsResponse> {
     try {
@@ -530,15 +675,22 @@ async function threads(url: string): Promise<ThreadsResponse> {
 
 
 /**
- * Kuaishou content downloader
+ * Kuaishou (快手) video downloader
  * @async
  * @function kuaishou
- * @param {string} url - Kuaishou video URL (e.g. https://v.kuaishou.com/...)
- * @returns {Promise<KuaishouResponse>} Kuaishou video data with status
- * @throws {Error} When invalid URL or request fails
- * @example
- * const result = await kuaishou('https://v.kuaishou.com/JT195ZHT');
- * console.log(result.result?.videoUrl);
+ * @param {string} url - The Kuaishou video URL (e.g., https://v.kuaishou.com/abc)
+ * @returns {Promise<KuaishouResponse>} A JSON object containing video metadata and download link.
+ * @throws {Error} If the URL is invalid or the request fails.
+ * @example <caption>ESM</caption>
+ * import { kuaishou } from 'btch-downloader';
+ *
+ * const url = 'https://v.kuaishou.com/JT195ZHT';
+ * kuaishou(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { kuaishou } = require('btch-downloader');
+ *
+ * const url = 'https://v.kuaishou.com/JT195ZHT';
+ * kuaishou(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 
 async function kuaishou(url: string): Promise<KuaishouResponse> {
@@ -587,4 +739,3 @@ export {
   wm as developer,
   issues
 };
-
