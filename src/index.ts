@@ -1,5 +1,7 @@
+/**
+ * Core Node.js SDK for btch-downloader.
+ */
 "use strict";
-
 import configData from './Defaults/site';
 import watermark from './Watermark/config';
 import pkg from '../package.json';
@@ -64,7 +66,8 @@ const formatErrorResponse = (error: unknown): ApiErrorResponse => ({
  * TikTok video downloader
  * @async
  * @function ttdl
- * @param {string} url - The TikTok video URL (e.g., https://www.tiktok.com/@user/video/123)
+ * 
+ * @param {string} url - The TikTok video URL (e.g., https://www.tiktok.com/@omagadsus/video/7025456384175017243)
  * @returns {Promise<TikTokResponse>} A JSON object containing video info, thumbnails, and download links.
  * @throws {Error} If the URL is invalid or the request fails.
  * @example <caption>ESM</caption>
@@ -99,7 +102,8 @@ async function ttdl(url: string): Promise<TikTokResponse> {
  * Instagram content downloader (Reels, Posts, TV, Stories)
  * @async
  * @function igdl
- * @param {string} url - The Instagram media URL (e.g., https://www.instagram.com/reel/abc/)
+ * 
+ * @param {string} url - The Instagram media URL (e.g., https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==)
  * @returns {Promise<InstagramResponse>} A JSON object containing an array of media items (links and thumbnails).
  * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example <caption>ESM</caption>
@@ -147,7 +151,8 @@ async function igdl(url: string): Promise<InstagramResponse> {
  * Twitter (X) video downloader
  * @async
  * @function twitter
- * @param {string} url - The Twitter/X video URL (e.g., https://twitter.com/user/status/123)
+ * 
+ * @param {string} url - The Twitter/X video URL (e.g., https://twitter.com/gofoodindonesia/status/1229369819511709697)
  * @returns {Promise<TwitterResponse>} A JSON object containing the video title and download link.
  * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example <caption>ESM</caption>
@@ -179,7 +184,8 @@ async function twitter(url: string): Promise<TwitterResponse> {
  * YouTube video and audio downloader
  * @async
  * @function youtube
- * @param {string} url - The YouTube video URL (e.g., https://youtu.be/abc)
+ * 
+ * @param {string} url - The YouTube video URL (e.g., https://youtu.be/C8mJ8943X80)
  * @returns {Promise<YouTubeResponse>} A JSON object containing video/audio download links, title, and thumbnail.
  * @throws {Error} If the URL is invalid or the request fails.
  * @example <caption>ESM</caption>
@@ -214,7 +220,8 @@ async function youtube(url: string): Promise<YouTubeResponse> {
  * Facebook video downloader
  * @async
  * @function fbdown
- * @param {string} url - The Facebook video URL (e.g., https://www.facebook.com/watch/?v=123)
+ * 
+ * @param {string} url - The Facebook video URL (e.g., https://www.facebook.com/watch/?v=1393572814172251)
  * @returns {Promise<FacebookResponse>} A JSON object containing Normal and HD quality download links.
  * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example <caption>ESM</caption>
@@ -246,7 +253,8 @@ async function fbdown(url: string): Promise<FacebookResponse> {
  * MediaFire file downloader
  * @async
  * @function mediafire
- * @param {string} url - The MediaFire file URL
+ * 
+ * @param {string} url - The MediaFire file URL (e.g., https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file)
  * @returns {Promise<MediaFireResponse>} A JSON object containing file metadata and download link.
  * @throws {Error} If the URL is invalid or the request fails.
  * @deprecated MediaFire support is no longer actively maintained.
@@ -279,7 +287,8 @@ async function mediafire(url: string): Promise<MediaFireResponse> {
  * CapCut template downloader
  * @async
  * @function capcut
- * @param {string} url - The CapCut template URL (e.g., https://www.capcut.com/template-detail/123)
+ * 
+ * @param {string} url - The CapCut template URL (e.g., https://www.capcut.com/template-detail/7299286607478181121)
  * @returns {Promise<CapCutResponse>} A JSON object containing template video links and metadata.
  * @throws {Error} If the URL is invalid or the request fails.
  * @example <caption>ESM</caption>
@@ -310,6 +319,7 @@ async function capcut(url: string): Promise<CapCutResponse> {
  * All-In-One (AIO) downloader for various social platforms.
  * @async
  * @function aio
+ * 
  * @param {string} url - The media URL to download.
  * @returns {Promise<AioResponse>} A JSON object containing media info.
  * @throws {Error} If the URL is invalid or the request fails.
@@ -343,7 +353,8 @@ async function aio(url: string): Promise<AioResponse> {
  * Google Drive file downloader
  * @async
  * @function gdrive
- * @param {string} url - The Google Drive file URL (e.g., https://drive.google.com/file/d/abc)
+ * 
+ * @param {string} url - The Google Drive file URL (e.g., https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view)
  * @returns {Promise<GoogleDriveResponse>} A JSON object containing file metadata and download link.
  * @throws {Error} If the URL is invalid or the file is not public.
  * @example <caption>ESM</caption>
@@ -374,6 +385,7 @@ async function gdrive(url: string): Promise<GoogleDriveResponse> {
  * Pinterest content downloader or search
  * @async
  * @function pinterest
+ * 
  * @param {string} query - The Pinterest pin URL or a search query.
  * @returns {Promise<PinterestResponse>} A JSON object containing pin media or search results.
  * @throws {Error} If the input is invalid or the request fails.
@@ -415,7 +427,8 @@ async function pinterest(query: string): Promise<PinterestResponse> {
  * Xiaohongshu (Little Red Book / 小红书) downloader
  * @async
  * @function xiaohongshu
- * @param {string} url - The Xiaohongshu post URL (e.g., http://xhslink.com/abc)
+ * 
+ * @param {string} url - The Xiaohongshu post URL (e.g., http://xhslink.com/o/21DKXV988zp)
  * @returns {Promise<XiaohongshuResponse>} A JSON object containing image/video links and post metadata.
  * @throws {Error} If the URL is invalid or the content is not accessible.
  * @example <caption>ESM</caption>
@@ -453,7 +466,8 @@ async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
  * Douyin (抖音) downloader for videos and images
  * @async
  * @function douyin
- * @param {string} url - The Douyin post URL (e.g., https://v.douyin.com/abc)
+ * 
+ * @param {string} url - The Douyin post URL (e.g., https://v.douyin.com/ikq8axJ/)
  * @returns {Promise<DouyinResponse>} A JSON object containing media links and post metadata.
  * @throws {Error} If the URL is invalid or the request fails.
  * @example <caption>ESM</caption>
@@ -484,7 +498,8 @@ async function douyin(url: string): Promise<DouyinResponse> {
  * SnackVideo content downloader
  * @async
  * @function snackvideo
- * @param {string} url - The SnackVideo post URL (e.g., https://s.snackvideo.com/p/abc)
+ * 
+ * @param {string} url - The SnackVideo post URL (e.g., https://s.snackvideo.com/p/j9jKr9dR)
  * @returns {Promise<SnackVideoResponse>} A JSON object containing video links and metadata.
  * @throws {Error} If the URL is invalid or the content is not accessible.
  * @example <caption>ESM</caption>
@@ -515,7 +530,8 @@ async function snackvideo(url: string): Promise<SnackVideoResponse> {
  * Cocofun content downloader
  * @async
  * @function cocofun
- * @param {string} url - The Cocofun post URL (e.g., https://www.icocofun.com/share/post/123)
+ * 
+ * @param {string} url - The Cocofun post URL (e.g., https://www.icocofun.com/share/post/379250110809)
  * @returns {Promise<CocofunResponse>} A JSON object containing media links and post metadata.
  * @throws {Error} If the URL is invalid or the request fails.
  * @example <caption>ESM</caption>
@@ -546,7 +562,8 @@ async function cocofun(url: string): Promise<CocofunResponse> {
  * Spotify track downloader
  * @async
  * @function spotify
- * @param {string} url - The Spotify track URL (e.g., https://open.spotify.com/track/abc)
+ * 
+ * @param {string} url - The Spotify track URL (e.g., https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt)
  * @returns {Promise<SpotifyResponse>} A JSON object containing track metadata and download links.
  * @throws {Error} If the URL is invalid or the request fails.
  * @example <caption>ESM</caption>
@@ -584,7 +601,8 @@ async function spotify(url: string): Promise<SpotifyResponse> {
  * YouTube search engine
  * @async
  * @function yts
- * @param {string} query - The search query for YouTube videos.
+ * 
+ * @param {string} query - The search query for YouTube videos (e.g., Somewhere Only We Know)
  * @returns {Promise<YtsResponse>} A JSON object containing a list of search results.
  * @throws {Error} If the request fails.
  * @example <caption>ESM</caption>
@@ -615,7 +633,8 @@ async function yts(query: string): Promise<YtsResponse> {
  * SoundCloud track downloader
  * @async
  * @function soundcloud
- * @param {string} url - The SoundCloud track URL (e.g., https://soundcloud.com/user/track)
+ * 
+ * @param {string} url - The SoundCloud track URL (e.g., https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio)
  * @returns {Promise<SoundCloudResponse>} A JSON object containing track info and download links.
  * @throws {Error} If the URL is invalid or the media is not accessible.
  * @example <caption>ESM</caption>
@@ -646,7 +665,8 @@ async function soundcloud(url: string): Promise<SoundCloudResponse> {
  * Threads (by Instagram) content downloader
  * @async
  * @function threads
- * @param {string} url - The Threads post URL (e.g., https://www.threads.net/@user/post/abc)
+ * 
+ * @param {string} url - The Threads post URL (e.g., https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/)
  * @returns {Promise<ThreadsResponse>} A JSON object containing media links and post metadata.
  * @throws {Error} If the URL is invalid or the content is not accessible.
  * @example <caption>ESM</caption>
@@ -678,7 +698,8 @@ async function threads(url: string): Promise<ThreadsResponse> {
  * Kuaishou (快手) video downloader
  * @async
  * @function kuaishou
- * @param {string} url - The Kuaishou video URL (e.g., https://v.kuaishou.com/abc)
+ * 
+ * @param {string} url - The Kuaishou video URL (e.g., https://v.kuaishou.com/JT195ZHT)
  * @returns {Promise<KuaishouResponse>} A JSON object containing video metadata and download link.
  * @throws {Error} If the URL is invalid or the request fails.
  * @example <caption>ESM</caption>

@@ -1,3 +1,8 @@
+/**
+ * Simple test script for validating the downloader functionality.
+ * @module Tests
+ */
+
 import { igdl } from '../src/index';
 
 (async () => {

@@ -1,3 +1,8 @@
+/**
+ * Configuration for tsup build tool.
+ * @module BuildConfiguration
+ */
+
 import { defineConfig } from 'tsup';
 
 export default defineConfig([

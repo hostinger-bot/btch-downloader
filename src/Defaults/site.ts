@@ -1,6 +1,7 @@
 /**
  * Configuration data for the btch-downloader package.
  * @module config
+ * 
  * @description Defines the configuration settings for the btch-downloader package, including the base URL for API requests and the URL for reporting issues.
  */
 
