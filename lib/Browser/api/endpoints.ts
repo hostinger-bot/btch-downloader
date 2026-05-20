@@ -6,7 +6,7 @@ export async function igdl(url: string) {
   try {
     const data = await httpGet('igdl', url);
     if (!data || data.length === 0) {
-      return { developer: wm, status: false, message: 'No results found', note: `Please report issues to ${issues}`, result: [] };
+      return { developer: wm, status: false, message: 'No results found', note: `Please report issues to ${issues}` };
     }
 
     const result: Array<{
@@ -147,10 +147,7 @@ export async function aio(url: string) {
     return {
       developer: wm,
       status: true,
-      result: data?.result ?? null,
-      data: data?.data ?? null,
-      mp4: data?.mp4 ?? null,
-      mp3: data?.mp3 ?? null,
+      ...data
     };
   } catch (err) {
     return {
@@ -213,7 +210,7 @@ export async function spotify(url: string) {
       if (data.res_data.server === 'rapidapi') delete data.res_data.server;
       if (data.res_data.message === 'success') delete data.res_data.message;
       if (data.res_data.message) delete data.res_data.message;
-      if (data.message === 'success') delete data.message;
+      delete data.message;
     }
 
     return { developer: wm, status: true, result: data?.res_data ?? null };
