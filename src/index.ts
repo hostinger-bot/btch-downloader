@@ -69,7 +69,7 @@ const formatErrorResponse = (error: unknown): ApiErrorResponse => ({
  * @throws {Error} When invalid URL or request fails
  * @example
  * const result = await ttdl('https://tiktok.com/@user/video/123');
- * console.log(result.video[0]); // Video download URL
+ * console.log(result.video?.[0]); // Video download URL
  */
 async function ttdl(url: string): Promise<TikTokResponse> {
     try {
@@ -216,8 +216,10 @@ async function fbdown(url: string): Promise<FacebookResponse> {
  * @example
  * const result = await mediafire('https://mediafire.com/file/123');
  * console.log(result.result.filename); // Downloaded filename
+ * @deprecated MediaFire support is no longer actively maintained
  */
 async function mediafire(url: string): Promise<MediaFireResponse> {
+    console.warn('[btch-downloader] mediafire() is deprecated and no longer actively maintained.');
     try {
         const data = await HttpGet<MediaFireApiResponse>('mediafire', url, version, timeout, config.baseUrl);
         return {
@@ -262,8 +264,10 @@ async function capcut(url: string): Promise<CapCutResponse> {
  * @throws {Error} When invalid URL or request fails
  * @example
  * const result = await aio('https://tiktok.com/@user/video/123');
+* @deprecated All-In-One  support is no longer actively maintained
  */
 async function aio(url: string): Promise<AioResponse> {
+    console.warn('[btch-downloader] aio() is deprecated and no longer actively maintained.');
     try {
         const data = await HttpGet<AioApiResponse>('aio', url, version, timeout, config.baseUrl);
         return {
@@ -528,7 +532,7 @@ async function threads(url: string): Promise<ThreadsResponse> {
  * Kuaishou content downloader
  * @async
  * @function kuaishou
- * @param {string} url - Kuaishou video URL[](https://v.kuaishou.com/...)
+ * @param {string} url - Kuaishou video URL (e.g. https://v.kuaishou.com/...)
  * @returns {Promise<KuaishouResponse>} Kuaishou video data with status
  * @throws {Error} When invalid URL or request fails
  * @example
