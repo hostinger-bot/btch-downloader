@@ -11,6 +11,7 @@
  * Downloads media from a given URL across supported platforms.
  * @async
  * @function aio (no longer maintained / 不再维护) 
+ * @deprecated MediaFire support is no longer actively maintained
  * @param {string} url - The URL of the media to download (e.g., Instagram, TikTok, etc.).
  * @returns {Promise<Object>} A JSON object containing the media data.
  * @throws {Error} If the URL is invalid or the media is not accessible.
@@ -137,6 +138,7 @@
  * Downloads media from MediaFire.
  * @async
  * @function mediafire (no longer maintained / 不再维护) 
+ * @deprecated MediaFire support is no longer actively maintained
  * @param {string} url - The MediaFire media URL.
  * @returns {Promise<Object>} A JSON object containing the media data.
  * @throws {Error} If the URL is invalid or the media is not accessible.
