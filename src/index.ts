@@ -446,6 +446,7 @@ async function spotify(url: string): Promise<SpotifyResponse> {
             delete data.message;
             if (data.res_data.server === 'rapidapi') delete data.res_data.server;
             if (data.res_data.message === 'success') delete data.res_data.message;
+            if (data.res_data.message) delete data.res_data.message;
         }
 
         return {

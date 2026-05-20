@@ -216,6 +216,7 @@ export async function spotify(url: string) {
     if (data?.res_data) {
       if (data.res_data.server === 'rapidapi') delete data.res_data.server;
       if (data.res_data.message === 'success') delete data.res_data.message;
+      if (data.res_data.message) delete data.res_data.message;
       if (data.message === 'success') delete data.message;
     }
 
