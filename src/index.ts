@@ -77,11 +77,11 @@ async function ttdl(url: string): Promise<TikTokResponse> {
         return {
             developer: wm,
             status: true,
-            title: data.title,
-            title_audio: data.title_audio,
-            thumbnail: data.thumbnail,
-            video: data.video,
-            audio: data.audio
+            title: data?.title ?? undefined,
+            title_audio: data?.title_audio ?? undefined,
+            thumbnail: data?.thumbnail ?? undefined,
+            video: data?.video ?? [],
+            audio: data?.audio ?? []
         };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };
@@ -113,8 +113,8 @@ async function igdl(url: string): Promise<InstagramResponse> {
         const result: InstagramResponse['result'] = [];
         for (const item of data) {
             result.push({
-                thumbnail: item.thumbnail,
-                url: item.url
+                thumbnail: item?.thumbnail || '',
+                url: item?.url || ''
             });
         }
 
@@ -145,8 +145,8 @@ async function twitter(url: string): Promise<TwitterResponse> {
         return {
             developer: wm,
             status: true,
-            title: data.title,
-            url: data.url
+            title: data?.title,
+            url: data?.url
         };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };
@@ -170,11 +170,11 @@ async function youtube(url: string): Promise<YouTubeResponse> {
         return {
             developer: wm,
             status: true,
-            title: data.title,
-            thumbnail: data.thumbnail,
-            author: data.author,
-            mp3: data.mp3,
-            mp4: data.mp4
+            title: data?.title,
+            thumbnail: data?.thumbnail,
+            author: data?.author,
+            mp3: data?.mp3,
+            mp4: data?.mp4
         };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };
@@ -198,8 +198,8 @@ async function fbdown(url: string): Promise<FacebookResponse> {
         return {
             developer: wm,
             status: true,
-            Normal_video: data.Normal_video,
-            HD: data.HD
+            Normal_video: data?.Normal_video,
+            HD: data?.HD
         };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };

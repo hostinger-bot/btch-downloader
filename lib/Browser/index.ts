@@ -1,4 +1,6 @@
 import * as endpoints from './api/endpoints';
+import { VERSION, developer, issues } from './api/http';
+
 export const igdl = endpoints.igdl;
 export const ttdl = endpoints.ttdl;
 export const twitter = endpoints.twitter;
@@ -18,3 +20,9 @@ export const yts = endpoints.yts;
 export const soundcloud = endpoints.soundcloud;
 export const threads = endpoints.threads;
 export const kuaishou = endpoints.kuaishou;
+
+export {
+    VERSION,
+    developer,
+    issues
+};

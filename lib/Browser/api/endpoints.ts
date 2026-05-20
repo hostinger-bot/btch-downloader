@@ -14,8 +14,7 @@ export async function igdl(url: string) {
       url: string;
     }> = [];
 
-    for (let i = 0; i < data.length; i++) {
-      const item = data[i];
+    for (const item of data) {
       result.push({
         thumbnail: item?.thumbnail || '',
         url: item?.url || ''
@@ -75,8 +74,8 @@ export async function youtube(url: string) {
       title: data?.title ?? undefined,
       thumbnail: data?.thumbnail ?? undefined,
       author: data?.author ?? undefined,
-      mp3: data?.mp3 ?? null,
-      mp4: data?.mp4 ?? null,
+      mp3: data?.mp3 ?? undefined,
+      mp4: data?.mp4 ?? undefined,
     };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
@@ -90,8 +89,8 @@ export async function fbdown(url: string) {
     return {
       developer: wm,
       status: true,
-      Normal_video: data?.Normal_video ?? null,
-      HD: data?.HD ?? null,
+      Normal_video: data?.Normal_video ?? undefined,
+      HD: data?.HD ?? undefined,
     };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
@@ -103,7 +102,7 @@ export async function mediafire(url: string) {
   console.warn('[btch-downloader] mediafire() is deprecated and no longer actively maintained.');
   try {
     const data = await httpGet('mediafire', url);
-    return { developer: wm, status: true, result: data ?? null };
+    return { developer: wm, status: true, result: data ?? undefined };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
@@ -123,7 +122,7 @@ export async function capcut(url: string) {
 export async function gdrive(url: string) {
   try {
     const data = await httpGet('gdrive', url);
-    return { developer: wm, status: true, result: data ?? null };
+    return { developer: wm, status: true, result: data ?? undefined };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
@@ -133,7 +132,7 @@ export async function gdrive(url: string) {
 export async function pinterest(query: string) {
   try {
     const data = await httpGet('pinterest', query);
-    return { developer: wm, status: true, result: data ?? null };
+    return { developer: wm, status: true, result: data ?? undefined };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
@@ -176,7 +175,7 @@ export async function xiaohongshu(url: string) {
 export async function douyin(url: string) {
   try {
     const data = await httpGet('douyin', url);
-    return { developer: wm, status: true, result: data ?? null };
+    return { developer: wm, status: true, result: data ?? undefined };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
@@ -186,7 +185,7 @@ export async function douyin(url: string) {
 export async function snackvideo(url: string) {
   try {
     const data = await httpGet('snackvideo', url);
-    return { developer: wm, status: true, result: data ?? null };
+    return { developer: wm, status: true, result: data ?? undefined };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
@@ -196,7 +195,7 @@ export async function snackvideo(url: string) {
 export async function cocofun(url: string) {
   try {
     const data = await httpGet('cocofun', url);
-    return { developer: wm, status: true, result: data ?? null };
+    return { developer: wm, status: true, result: data ?? undefined };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
@@ -213,7 +212,7 @@ export async function spotify(url: string) {
       delete data.message;
     }
 
-    return { developer: wm, status: true, result: data?.res_data ?? null };
+    return { developer: wm, status: true, result: data?.res_data ?? undefined };
   } catch (err) {
     return { 
       developer: wm,
@@ -228,7 +227,7 @@ export async function spotify(url: string) {
 export async function yts(query: string) {
   try {
     const data = await httpGet('yts', query);
-    return { developer: wm, status: true, result: data ?? null };
+    return { developer: wm, status: true, result: data ?? undefined };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
@@ -241,7 +240,7 @@ export async function soundcloud(url: string) {
     return {
       developer: wm,
       status: true,
-      result: data ?? null,
+      result: data ?? undefined,
     };
   } catch (err) {
     return {
@@ -260,7 +259,7 @@ export async function threads(url: string) {
     return {
       developer: wm,
       status: true,
-      result: data ?? null,
+      result: data ?? undefined,
     };
   } catch (err) {
     return {
