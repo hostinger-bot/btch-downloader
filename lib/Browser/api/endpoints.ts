@@ -28,7 +28,7 @@ export async function igdl(url: string) {
       result,
     };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
@@ -46,7 +46,7 @@ export async function ttdl(url: string) {
       audio: data?.audio ?? [],
     };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
@@ -61,7 +61,7 @@ export async function twitter(url: string) {
       url: data?.url ?? undefined,
     };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
@@ -79,7 +79,7 @@ export async function youtube(url: string) {
       mp4: data?.mp4 ?? null,
     };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
@@ -94,7 +94,7 @@ export async function fbdown(url: string) {
       HD: data?.HD ?? null,
     };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
@@ -105,7 +105,7 @@ export async function mediafire(url: string) {
     const data = await httpGet('mediafire', url);
     return { developer: wm, status: true, result: data ?? null };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
@@ -115,7 +115,7 @@ export async function capcut(url: string) {
     const data = await httpGet('capcut', url);
     return { developer: wm, status: true, ...data };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
@@ -125,7 +125,7 @@ export async function gdrive(url: string) {
     const data = await httpGet('gdrive', url);
     return { developer: wm, status: true, result: data ?? null };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
@@ -135,7 +135,7 @@ export async function pinterest(query: string) {
     const data = await httpGet('pinterest', query);
     return { developer: wm, status: true, result: data ?? null };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
@@ -157,11 +157,7 @@ export async function aio(url: string) {
       developer: wm,
       status: false,
       message: (err as Error).message,
-      note: `Please report issues to ${issues}`,
-      result: [],
-      data: null,
-      mp4: null,
-      mp3: null,
+      note: `Please report issues to ${issues}`
     };
   }
 }
@@ -171,11 +167,11 @@ export async function xiaohongshu(url: string) {
   try {
     const data = await httpGet('rednote', url);
     if (!data || !data.noteId) {
-      return { developer: wm, status: false, message: 'No results found', note: `Please report issues to ${issues}`, result: [] };
+      return { developer: wm, status: false, message: 'No results found', note: `Please report issues to ${issues}` };
     }
     return { developer: wm, status: true, result: data };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
@@ -185,7 +181,7 @@ export async function douyin(url: string) {
     const data = await httpGet('douyin', url);
     return { developer: wm, status: true, result: data ?? null };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
@@ -195,7 +191,7 @@ export async function snackvideo(url: string) {
     const data = await httpGet('snackvideo', url);
     return { developer: wm, status: true, result: data ?? null };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
@@ -205,7 +201,7 @@ export async function cocofun(url: string) {
     const data = await httpGet('cocofun', url);
     return { developer: wm, status: true, result: data ?? null };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
@@ -226,8 +222,7 @@ export async function spotify(url: string) {
       developer: wm,
       status: false,
       message: (err as Error).message,
-      note: `Please report issues to ${issues}`,
-      result: []
+      note: `Please report issues to ${issues}`
     };
   }
 }
@@ -238,14 +233,14 @@ export async function yts(query: string) {
     const data = await httpGet('yts', query);
     return { developer: wm, status: true, result: data ?? null };
   } catch (err) {
-    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}`, result: [] };
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
 }
 
 // SoundCloud
-export async function soundcloud(query: string) {
+export async function soundcloud(url: string) {
   try {
-    const data = await httpGet('soundcloud', query);
+    const data = await httpGet('soundcloud', url);
     return {
       developer: wm,
       status: true,
@@ -256,16 +251,15 @@ export async function soundcloud(query: string) {
       developer: wm,
       status: false,
       message: (err as Error).message,
-      note: `Please report issues to ${issues}`,
-      result: [],
+      note: `Please report issues to ${issues}`
     };
   }
 }
 
 // Threads
-export async function threads(query: string) {
+export async function threads(url: string) {
   try {
-    const data = await httpGet('threads', query);
+    const data = await httpGet('threads', url);
     return {
       developer: wm,
       status: true,
@@ -276,28 +270,34 @@ export async function threads(query: string) {
       developer: wm,
       status: false,
       message: (err as Error).message,
-      note: `Please report issues to ${issues}`,
-      result: [],
+      note: `Please report issues to ${issues}`
     };
   }
 }
 
 // Kuaishou
-export async function kuaishou(query: string) {
+export async function kuaishou(url: string) {
   try {
-    const data = await httpGet('kuaishou', query);
+    const data = await httpGet('kuaishou', url);
+    if (!data || !data.success) {
+        return {
+            developer: wm,
+            status: false,
+            message: 'No results found or failed to fetch',
+            note: `Please report issues to ${issues}`
+        };
+    }
     return {
       developer: wm,
       status: true,
-      result: data ?? null,
+      result: data,
     };
   } catch (err) {
     return {
       developer: wm,
       status: false,
       message: (err as Error).message,
-      note: `Please report issues to ${issues}`,
-      result: [],
+      note: `Please report issues to ${issues}`
     };
   }
 }

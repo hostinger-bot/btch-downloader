@@ -1,5 +1,5 @@
 export const API_URL = 'https://backend1.tioo.eu.org';
-export const developer = 'prm2.0';
+export const developer = '@prm2.0';
 export const issues = 'https://github.com/hostinger-bot/btch-downloader/issues';
 
 export async function httpGet(endpoint: string, param: string) {
