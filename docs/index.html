@@ -11,7 +11,280 @@
 
 &lt;!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
 &lt;script src=&quot;https://cdn.jsdelivr.net/npm/btch-downloader@6.0.31/dist/browser/index.min.js&quot;>&lt;/script>
-</code></pre><hr><h2 id="playground">Playground</h2><blockquote><p>[!TIP]<br>You can find a complete, ready-to-use HTML implementation for all platforms in our <a href="./examples/playground.html">Playground Example</a>.</p></blockquote><h3 id="live-demo">Live Demo</h3><p><a href="https://btch.foo.ng/example.html">Try Live Playground</a></p><hr><h2 id="installing">Installing</h2><h3 id="package-manager">Package manager</h3><p>Using npm:</p><pre class="prettyprint source lang-bash"><code>npm install btch-downloader
+</code></pre><hr><details><summary style="font-size:1.3em;font-weight:700;cursor:pointer;color:#06c;text-decoration:underline">📘 Click here to see how to implement this downloader using CDN (HTML Example)</summary><pre class="prettyprint source lang-html"><code>&lt;!DOCTYPE html>
+&lt;html lang=&quot;en&quot;>
+&lt;head>
+  &lt;meta charset=&quot;UTF-8&quot; />
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; />
+  &lt;title>Playground Test CDN btch-downloader&lt;/title>
+  &lt;style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9fb;
+      color: #222;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 25px;
+    }
+    h1 {
+      color: #0078ff;
+      text-align: center;
+    }
+    input {
+      width: 60%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+    select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background: #0078ff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005ecc;
+    }
+    pre {
+      text-align: left;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 10px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    hr {
+      margin: 30px 0;
+    }
+    ul {
+      text-align: left;
+      background: #fff;
+      border-radius: 6px;
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    a {
+      color: #0078ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .info {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+  &lt;/style>
+&lt;/head>
+&lt;body>
+  &lt;h1>Playground&lt;/h1>
+  &lt;p align=&quot;center&quot;>A single-page downloader for all supported platforms.&lt;/p>
+
+  &lt;div align=&quot;center&quot;>
+    &lt;select id=&quot;platformSelect&quot;>
+      &lt;option value=&quot;auto&quot;>Auto Detect&lt;/option>
+      &lt;option value=&quot;instagram&quot;>Instagram&lt;/option>
+      &lt;option value=&quot;tiktok&quot;>TikTok&lt;/option>
+      &lt;option value=&quot;facebook&quot;>Facebook&lt;/option>
+      &lt;option value=&quot;twitter&quot;>Twitter&lt;/option>
+      &lt;option value=&quot;youtube&quot;>YouTube&lt;/option>
+      &lt;option value=&quot;mediafire&quot;>MediaFire&lt;/option>
+      &lt;option value=&quot;capcut&quot;>CapCut&lt;/option>
+      &lt;option value=&quot;gdrive&quot;>Google Drive&lt;/option>
+      &lt;option value=&quot;pinterest&quot;>Pinterest&lt;/option>
+      &lt;option value=&quot;douyin&quot;>Douyin&lt;/option>
+      &lt;option value=&quot;xiaohongshu&quot;>Xiaohongshu&lt;/option>
+      &lt;option value=&quot;snackvideo&quot;>SnackVideo&lt;/option>
+      &lt;option value=&quot;cocofun&quot;>Cocofun&lt;/option>
+      &lt;option value=&quot;spotify&quot;>Spotify&lt;/option>
+      &lt;option value=&quot;yts&quot;>YTS&lt;/option>
+      &lt;option value=&quot;soundcloud&quot;>SoundCloud&lt;/option>
+      &lt;option value=&quot;threads&quot;>Threads&lt;/option>
+      &lt;option value=&quot;kuaishou&quot;>Kuaishou&lt;/option>
+    &lt;/select>
+    &lt;input id=&quot;urlInput&quot; placeholder=&quot;Paste any supported URL here...&quot; />
+    &lt;button id=&quot;downloadBtn&quot;>Fetch&lt;/button>
+  &lt;/div>
+
+  &lt;div class=&quot;info&quot;>
+    Developer: &lt;strong>@prm2.0&lt;/strong> — 
+    &lt;a href=&quot;https://github.com/hostinger-bot/btch-downloader/issues&quot; target=&quot;_blank&quot;>Report Issues&lt;/a>
+  &lt;/div>
+
+  &lt;h3>Result:&lt;/h3>
+  &lt;pre id=&quot;output&quot;>No data yet...&lt;/pre>
+
+  &lt;hr>
+  &lt;h3>Example URLs&lt;/h3>
+  &lt;ul>
+    &lt;li>Instagram: &lt;a href=&quot;https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==&quot; target=&quot;_blank&quot;>https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==&lt;/a>&lt;/li>
+    &lt;li>TikTok: &lt;a href=&quot;https://www.tiktok.com/@omagadsus/video/7025456384175017243&quot; target=&quot;_blank&quot;>https://www.tiktok.com/@omagadsus/video/7025456384175017243&lt;/a>&lt;/li>
+    &lt;li>Facebook: &lt;a href=&quot;https://www.facebook.com/watch/?v=1393572814172251&quot; target=&quot;_blank&quot;>https://www.facebook.com/watch/?v=1393572814172251&lt;/a>&lt;/li>
+    &lt;li>Twitter: &lt;a href=&quot;https://twitter.com/gofoodindonesia/status/1229369819511709697&quot; target=&quot;_blank&quot;>https://twitter.com/gofoodindonesia/status/1229369819511709697&lt;/a>&lt;/li>
+    &lt;li>YouTube: &lt;a href=&quot;https://youtu.be/C8mJ8943X80&quot; target=&quot;_blank&quot;>https://youtu.be/C8mJ8943X80&lt;/a>&lt;/li>
+    &lt;li>MediaFire: &lt;a href=&quot;https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file&quot; target=&quot;_blank&quot;>https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file&lt;/a>&lt;/li>
+    &lt;li>CapCut: &lt;a href=&quot;https://www.capcut.com/template-detail/7299286607478181121&quot; target=&quot;_blank&quot;>https://www.capcut.com/template-detail/7299286607478181121&lt;/a>&lt;/li>
+    &lt;li>Google Drive: &lt;a href=&quot;https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view&quot; target=&quot;_blank&quot;>https://drive.google.com/file/d/1thDYWcS5p5FFhzTpTev7RUv0VFnNQyZ4/view&lt;/a>&lt;/li>
+    &lt;li>Pinterest: &lt;a href=&quot;https://pin.it/4CVodSq&quot; target=&quot;_blank&quot;>https://pin.it/4CVodSq&lt;/a> or query (e.g., &quot;Zhao Lusi&quot;)&lt;/li>
+    &lt;li>Douyin: &lt;a href=&quot;https://v.douyin.com/ikq8axJ/&quot; target=&quot;_blank&quot;>https://v.douyin.com/ikq8axJ/&lt;/a>&lt;/li>
+    &lt;li>Xiaohongshu: &lt;a href=&quot;http://xhslink.com/o/21DKXV988zp&quot; target=&quot;_blank&quot;>http://xhslink.com/o/21DKXV988zp&lt;/a>&lt;/li>
+    &lt;li>SnackVideo: &lt;a href=&quot;https://s.snackvideo.com/p/j9jKr9dR&quot; target=&quot;_blank&quot;>https://s.snackvideo.com/p/j9jKr9dR&lt;/a>&lt;/li>
+    &lt;li>Cocofun: &lt;a href=&quot;https://www.icocofun.com/share/post/379250110809&quot; target=&quot;_blank&quot;>https://www.icocofun.com/share/post/379250110809&lt;/a>&lt;/li>
+    &lt;li>Spotify: &lt;a href=&quot;https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt&quot; target=&quot;_blank&quot;>https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt&lt;/a>&lt;/li>
+    &lt;li>SoundCloud: &lt;a href=&quot;https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing&quot; target=&quot;_blank&quot;>https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing&lt;/a>&lt;/li>
+    &lt;li>Threads: &lt;a href=&quot;https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q&quot; target=&quot;_blank&quot;>https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q&lt;/a>&lt;/li>
+    &lt;li>Kuaishou: &lt;a href=&quot;https://v.kuaishou.com/JT195ZHT&quot; target=&quot;_blank&quot;>https://v.kuaishou.com/JT195ZHT&lt;/a>&lt;/li>
+    &lt;li>YTS: &lt;a href=&quot;#&quot; target=&quot;_blank&quot;>Enter a YTS query (e.g., &quot;movie title 2023&quot;)&lt;/a>&lt;/li>
+  &lt;/ul>
+
+  &lt;!-- Load btch CDN -->
+  &lt;script src=&quot;https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js&quot;>&lt;/script>
+  
+  &lt;script>
+    const output = document.getElementById(&quot;output&quot;);
+    const btn = document.getElementById(&quot;downloadBtn&quot;);
+    const input = document.getElementById(&quot;urlInput&quot;);
+    const platformSelect = document.getElementById(&quot;platformSelect&quot;);
+
+    const platformPlaceholders = {
+      auto: &quot;Paste any supported URL here...&quot;,
+      instagram: &quot;Paste Instagram URL (e.g., https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==)&quot;,
+      tiktok: &quot;Paste TikTok URL (e.g., https://www.tiktok.com/@user/video/123)&quot;,
+      facebook: &quot;Paste Facebook URL (e.g., https://www.facebook.com/watch/?v=123)&quot;,
+      twitter: &quot;Paste Twitter URL (e.g., https://twitter.com/user/status/123)&quot;,
+      youtube: &quot;Paste YouTube URL (e.g., https://youtu.be/C8mJ8943X80)&quot;,
+      mediafire: &quot;Paste MediaFire URL (e.g., https://www.mediafire.com/file/123)&quot;,
+      capcut: &quot;Paste CapCut URL (e.g., https://www.capcut.com/template-detail/123)&quot;,
+      gdrive: &quot;Paste Google Drive URL (e.g., https://drive.google.com/file/d/123)&quot;,
+      pinterest: &quot;Paste Pinterest URL (e.g., https://pin.it/4CVodSq)&quot;,
+      douyin: &quot;Paste Douyin URL (e.g., https://v.douyin.com/ikq8axJ/)&quot;,
+      xiaohongshu: &quot;Paste Xiaohongshu URL (e.g., https://xhslink.com/o/123)&quot;,
+      snackvideo: &quot;Paste SnackVideo URL (e.g., https://s.snackvideo.com/p/123)&quot;,
+      cocofun: &quot;Paste Cocofun URL (e.g., https://www.icocofun.com/share/post/123)&quot;,
+      spotify: &quot;Paste Spotify URL (e.g., https://open.spotify.com/track/123)&quot;,
+      soundcloud: &quot;Paste SoundCloud URL (e.g., https://soundcloud.com/xxxxc)&quot;,
+      threads: &quot;Paste Threads URL (e.g., https://www.threads.net/@user/post/abc123)&quot;,
+      kuaishou: &quot;Paste Kuaishou URL (e.g., https://v.kuaishou.com/JT195ZHT)&quot;,
+      yts: &quot;Enter YTS query (e.g., 'movie title 2023')&quot;
+    };
+
+    const regexMap = {
+        instagram: /instagram\.com\/(p|reel|tv)\//i,
+        tiktok: /(tiktok\.com\/@[\w.-]+\/video\/\d+|vm\.tiktok\.com|vt\.tiktok\.com)/i,
+        facebook: /(facebook\.com\/(?:watch\/?\?v=|reel\/|share\/?|sharer\.php\?u=|photo\.php\?fbid=|video\.php\?v=|\w+\/(?:videos|posts)\/)|fb\.watch\/)\d+/i,
+        twitter: /(twitter\.com\/\w+\/status\/\d+|x\.com\/\w+\/status\/\d+)/i,
+        youtube: /(youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/|youtube\.com\/embed\/)[a-zA-Z0-9_-]+/i,
+        mediafire: /mediafire\.com\/(file|download|view)\//i,
+        capcut: /capcut\.com\/(template-detail\/\d+|@[\w.-]+\/video\/[\w-]+|t\/[\w-]+|\d+)/i,
+        gdrive: /drive\.google\.com\/(file\/d\/|open\?id=)[\w-]+/i,
+        pinterest: /(pinterest\.com\/pin\/\d+|pin\.it\/[a-zA-Z0-9]+)/i,
+        douyin: /(v\.douyin\.com\/\w+|douyin\.com\/\S+)/i,
+        xiaohongshu: /(xiaohongshu\.com\/discovery\/item\/\d+|xhslink\.com\/[a-zA-Z0-9]+)/i,
+        snackvideo: /snackvideo\.com\/@[\w.-]+\/video\/\d+|s\.snackvideo\.com\/\w+/i,
+        cocofun: /(icocofun|cocofun)\.com\/(share\/)?post\/\d+/i,
+        spotify: /(open\.spotify\.com\/(track|album|playlist|episode)\/[\w]+|spotify\.link\/[\w]+)/i,
+        soundcloud: /soundcloud\.com\/[\w.-]+\/[\w.-]+/i,
+        threads: /threads\.net\/@[\w.-]+\/post\/[\w_-]+/i,
+        kuaishou: /(v\.kuaishou\.com\/\w+|kuaishou\.com\/(?:short-video|video|share)\/[\w]+)/i,
+      };
+
+    const fnMap = {
+      instagram: &quot;igdl&quot;,
+      tiktok: &quot;ttdl&quot;,
+      facebook: &quot;fbdown&quot;,
+      twitter: &quot;twitter&quot;,
+      youtube: &quot;youtube&quot;,
+      mediafire: &quot;mediafire&quot;,
+      capcut: &quot;capcut&quot;,
+      gdrive: &quot;gdrive&quot;,
+      pinterest: &quot;pinterest&quot;,
+      douyin: &quot;douyin&quot;,
+      xiaohongshu: &quot;xiaohongshu&quot;,
+      snackvideo: &quot;snackvideo&quot;,
+      cocofun: &quot;cocofun&quot;,
+      spotify: &quot;spotify&quot;,
+      soundcloud: &quot;soundcloud&quot;,
+      threads: &quot;threads&quot;,
+      kuaishou: &quot;kuaishou&quot;,
+      yts: &quot;yts&quot;,
+    };
+
+    function isValidUrl(string) {
+      try {
+        new URL(string);
+        return true;
+      } catch (_) {
+        return false;
+      }
+    }
+
+    function detectPlatform(inputValue, selectedPlatform) {
+      if (selectedPlatform !== &quot;auto&quot;) {
+        return selectedPlatform;
+      }
+
+      if (isValidUrl(inputValue)) {
+        for (const [name, regex] of Object.entries(regexMap)) {
+          if (regex.test(inputValue)) {
+            return name;
+          }
+        }
+        return &quot;pinterest&quot;;
+      } else {
+        // Non-URL inputs default to YTS
+        return &quot;yts&quot;;
+      }
+    }
+
+    platformSelect.addEventListener(&quot;change&quot;, () => {
+      input.placeholder = platformPlaceholders[platformSelect.value];
+      input.value = &quot;&quot;; // Clear
+    });
+
+    btn.addEventListener(&quot;click&quot;, async () => {
+      const inputValue = input.value.trim();
+      if (!inputValue) return alert(&quot;Please enter a valid URL or YTS query!&quot;);
+
+      output.textContent = &quot;Detecting platform...&quot;;
+
+      try {
+        const btch = window.btch;
+        if (!btch) throw new Error(&quot;btch library not loaded.&quot;);
+
+        const platform = detectPlatform(inputValue, platformSelect.value);
+        const fnName = fnMap[platform];
+        const fn = btch[fnName];
+
+        if (!fn) throw new Error(`Downloader function missing for ${platform}`);
+
+        output.textContent = `Detected: ${platform}\nFetching data...`;
+
+        const res = await fn(inputValue);
+        output.textContent = JSON.stringify(res, null, 2);
+      } catch (err) {
+        output.textContent = &quot;Error: &quot; + (err.message || err);
+      }
+    });
+  &lt;/script>
+&lt;/body>
+&lt;/html>
+</code></pre></details><h3 id="demo-html">Demo HTML</h3><p><a href="https://btch.foo.ng/example.html">Try Demo</a></p><h2 id="installing">Installing</h2><h3 id="package-manager">Package manager</h3><p>Using npm:</p><pre class="prettyprint source lang-bash"><code>npm install btch-downloader
 </code></pre><p>Using yarn:</p><pre class="prettyprint source lang-bash"><code>yarn add btch-downloader
 </code></pre><p>Using pnpm:</p><pre class="prettyprint source lang-bash"><code>pnpm add btch-downloader
 </code></pre><p>Using bun:</p><pre class="prettyprint source lang-bash"><code>bun add btch-downloader
