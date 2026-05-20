@@ -406,7 +406,7 @@ async function snackvideo(url: string): Promise<SnackVideoResponse> {
  * Cocofun content downloader
  * @async
  * @function cocofun
- * @param {string} url - SnackVideo post URL
+ * @param {string} url - Cocofun post URL
  * @returns {Promise<CocofunResponse>} Object containing media details and download links
  * @throws {Error} When invalid URL or request fails
  * @example
