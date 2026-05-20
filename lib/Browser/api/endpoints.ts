@@ -12,8 +12,6 @@ export async function igdl(url: string) {
     const result: Array<{
       thumbnail: string;
       url: string;
-      resolution: string | null;
-      shouldRender: boolean;
     }> = [];
 
     for (let i = 0; i < data.length; i++) {
@@ -102,6 +100,7 @@ export async function fbdown(url: string) {
 
 // MediaFire
 export async function mediafire(url: string) {
+  console.warn('[btch-downloader] mediafire() is deprecated and no longer actively maintained.');
   try {
     const data = await httpGet('mediafire', url);
     return { developer: wm, status: true, result: data ?? null };
@@ -142,6 +141,7 @@ export async function pinterest(query: string) {
 
 // AIO
 export async function aio(url: string) {
+  console.warn('[btch-downloader] aio() is deprecated and no longer actively maintained.');
   try {
     const data = await httpGet('aio', url);
     return {

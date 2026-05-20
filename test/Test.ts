@@ -1,4 +1,4 @@
-import { igdl } from '../dist/index';
+import { igdl } from '../src/index';
 
 (async () => {
   try {
