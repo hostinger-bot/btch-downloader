@@ -79,7 +79,7 @@
   "license": "MIT",
   "dependencies": {
     "btch-http": "^2.0.3",
-    "clean-jsdoc-theme": "^4.3.0",
+    "clean-jsdoc-theme": "^5.0.0",
     "esbuild": "^0.28.0",
     "install": "^0.13.0",
     "jsdoc": "^4.0.5",
