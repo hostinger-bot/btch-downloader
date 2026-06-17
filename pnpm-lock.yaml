@@ -13,7 +13,7 @@ importers:
         version: 2.0.3
       clean-jsdoc-theme:
         specifier: ^5.0.0
-        version: 5.0.0(jsdoc@4.0.5)
+        version: 5.0.1(jsdoc@4.0.5)
       esbuild:
         specifier: ^0.28.0
         version: 0.28.1
@@ -620,20 +620,20 @@ packages:
     resolution: {integrity: sha512-4zBIxpPzowiZpusoFkyGVwakdRJUyuH5PxQ/PrqghfdFWWasvnCdPfQXHrenDai+gyLARulZjZowCOj6fjT4pA==}
     engines: {node: '>=6.9.0'}
 
-  '@clean-jsdoc-theme/bhasha@5.0.0':
-    resolution: {integrity: sha512-2Fa+Dxg7zTsE5njeFtKF9nzRDniRobdUmJL/r15kFxO00KnBbKVYkZBchUFufO1vvXH+5aBJhcVfJYlvNeoWWQ==}
+  '@clean-jsdoc-theme/bhasha@5.0.1':
+    resolution: {integrity: sha512-+uwF1FQgOGecwzdIlRnEXNycyBci+Ts6vsv6IPVX/oNGsAdKJY9juivhl1eFQ9tLeact81GoRN3ztilhYoTjMA==}
 
-  '@clean-jsdoc-theme/dwar@5.0.0':
-    resolution: {integrity: sha512-nfjJzsysaJz2EvfBCHYXsV8690ZzTptY7tPcQopHGTNm1408kgKAVRmvxss8GBse0VM9Jq75TbQ+PdVxBP5Njw==}
+  '@clean-jsdoc-theme/dwar@5.0.1':
+    resolution: {integrity: sha512-/iyM1KitxFGV7OSP9sYMw0dx0/zPuiKaPuncs0m2Sq/aOrsZ6TzAfObtNf+DGnjm5TkHNVnIGG4ZA2dqLoevHQ==}
 
-  '@clean-jsdoc-theme/rang@5.0.0':
-    resolution: {integrity: sha512-j9rUsGXIK2h6pf44uGxSh/Cz4vNUbzcCtgqDd+ionNmo+9uJ8fJucLCFxdQ+uyy8HyI69dPWdPtyIVpYBbGiXA==}
+  '@clean-jsdoc-theme/rang@5.0.1':
+    resolution: {integrity: sha512-KV7SEjQpwJTWLminLedSdltJts3Ikxi821sMoMB0oqQxE1LCWFTT/ys7S/ThgRDxD14jyYLm1b5pYpnMzp8PuA==}
 
-  '@clean-jsdoc-theme/setu@5.0.0':
-    resolution: {integrity: sha512-K4776/nbwePrrN03PhUmPY7OkCCk8vVB8glWXgoNwpd6sR5BkEkDnNzP1x03RZ/5OW1tgNqzbT52kedLkQO7yg==}
+  '@clean-jsdoc-theme/setu@5.0.1':
+    resolution: {integrity: sha512-oXEew4OxK5+nXOJmycsqkpmnKU+3RL0TDS9o/2amA6sbaVlvIhqpCSPFQB7BKxU6EIDXjttsvshdXrGmCQFwMA==}
 
-  '@clean-jsdoc-theme/utils@5.0.0':
-    resolution: {integrity: sha512-r93i4xD3EsTGWmHt1WCEothoz5DrLslAa7AVsz2uRm9FbddXDiasLLtv+d1spoaHQ9gBskuYFtvfANnptyn/IA==}
+  '@clean-jsdoc-theme/utils@5.0.1':
+    resolution: {integrity: sha512-wv/ftsuFomk+/ZOHb0qQLHnJTZaDcWBXOUP1QzYOsJ02Te6naC/mGFcK9jOorxV2w4wgcXjb1eKWwqgnw25ugg==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -1245,79 +1245,66 @@ packages:
     resolution: {integrity: sha512-T1dMEQhXA/jkJ/jyMIw9IovK8bSUq7A8kLIlvZTb/6YIVsp2zLavr4F3oyllHWo7eIVJRyE5n3tUjQJEbE1IuQ==}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.62.0':
     resolution: {integrity: sha512-2as0LgT7qQpyceQq6VUJYnumUMUrgGQCWIiDIN9DE0/tglsk6o66uCB4f3djRawAltvfCNLyZZrsqbPA6inCsA==}
     cpu: [arm]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.62.0':
     resolution: {integrity: sha512-bVURMg+6eNN9C/yc0aVjooZcwTTtYF4YW3xta5pP0//r3o1V8gXEHXWCndj47w/HhwsFroZrFhR+6uQP5T0n0g==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.62.0':
     resolution: {integrity: sha512-Ful8pM/2yYI83PViWdFdpZhdI8HJ5qsXANe5atypbHDf+KIBBDsZsbyy8hbXnULVvW9NsTh5DHwbcBftyLTfiw==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-loong64-gnu@4.62.0':
     resolution: {integrity: sha512-9Gp/DgrkzfUBmNPVTyPTvay+4xEP7M/clXpj3efXBcm6uTIVIgDg4rqUpqKXvLEuFRVuEpSAOkhgNeecvaZ4Cg==}
     cpu: [loong64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-loong64-musl@4.62.0':
     resolution: {integrity: sha512-m9tsJz54LUXkSYM8+8PG81B9IKK5r+2T0clMq4QrS16xFosufU7firBDAZEsDheDs7wTlP7h3++S7lMsU955HA==}
     cpu: [loong64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-ppc64-gnu@4.62.0':
     resolution: {integrity: sha512-3UvJ5PNVU16aJf6M3tFI24pWzAl2/ynfbyRN3ICyQajK1lSkrnVYNnLz3v04J32qKa0FczJc22zeToc0lr2A3w==}
     cpu: [ppc64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-ppc64-musl@4.62.0':
     resolution: {integrity: sha512-vRWUAbYLGHBZS6Q8Msb2sfnf1fvJf+47t8l/TwOerM2qArzy+IeNMTHrYLHXh95h8MoatPHI5hhSZNs+mGXKPg==}
     cpu: [ppc64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-riscv64-gnu@4.62.0':
     resolution: {integrity: sha512-c00T5SYENHAt86cfW47URaP3Us5vLC/4QO7GYud1G5VNRffCwwCuBspwqYrriuJB+5m0WFzClCn9wed0FBjKvg==}
     cpu: [riscv64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-musl@4.62.0':
     resolution: {integrity: sha512-krrCDilhXOwFkSkO3Wm9I/f9H0L92XHHwy2fwxjukxIbh0dem8gZqOW5Y8BsHrpJv5qwlRBV+Wl4ZFyRWhUpwg==}
     cpu: [riscv64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-linux-s390x-gnu@4.62.0':
     resolution: {integrity: sha512-7pfYFSTc4/rUC/FtAI0Qp6QthDBCIi6/AuP1xYqFk5vanI6KnL5dWKP60OM/05LOsbwTmIcvr6eXC4CJuJ75IA==}
     cpu: [s390x]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.62.0':
     resolution: {integrity: sha512-7SDIalKeIpG0Ifogbbdn58HmSotYMlf23K3dCJEmiVd9Fg36Vmni82iPQec27N3wY4Bvbxftkxz6vSx9OcouTg==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.62.0':
     resolution: {integrity: sha512-eRZevouTH2i1HeAVLqJuLnt256krQkGY0TN6WsTmsIhuzbh457HuWDMakKwmi0Cjadux983CoSr8Lim2QhUIFw==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rollup/rollup-openbsd-x64@4.62.0':
     resolution: {integrity: sha512-3oVS7FLGa4U1qcvao9ylGxrjXZyUQqR8UwxEcnUEyPX53O/C/mKDZegNXTdHCP+h3e6ta/f1EN38Yif1mmZHYg==}
@@ -1707,8 +1694,8 @@ packages:
   class-variance-authority@0.7.1:
     resolution: {integrity: sha512-Ka+9Trutv7G8M6WT6SeiRWz792K5qEqIGEGzXKhAE6xOWAY6pPH8U+9IY3oCMv6kqTmLsv7Xh/2w2RigkePMsg==}
 
-  clean-jsdoc-theme@5.0.0:
-    resolution: {integrity: sha512-J0dax6ZNkNDEu+KoRr/RmeNK8+AEQeQ0moS6EbLG+Ewl7ooPpo3nimdWijndmzvnzzj/R9WQXu0377JWDi9DEA==}
+  clean-jsdoc-theme@5.0.1:
+    resolution: {integrity: sha512-WmUk7W6DMWPo7NqxOClCBSeON8TN3baL5klIIZ0qiMwzr5FjZuL+okAH6fP7/aLSBKYWLOzTN2GOlrDtfIBjSg==}
     peerDependencies:
       jsdoc: '>=4.x'
 
@@ -2497,10 +2484,14 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-preact@1.18.0:
-    resolution: {integrity: sha512-wNVJVhzG4duzmSEh/Uh5qO7/K+Po2ISe8nBYi9ysx4YkeYmG6pu4k95CFZYiTN8VXlwExveEb9aIMa5DzItaiA==}
+  lucide-preact@1.20.0:
+    resolution: {integrity: sha512-O5JqNvkWUO+zWKNq2AHm81KpzUz2Z17pvEAtGr2DV6FrcYDpnyI/kelGc8A7glSxu9uVPqbINNi9D0RjfYW8BQ==}
     peerDependencies:
       preact: ^10.27.2
+
+  lz-string@1.5.0:
+    resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
+    hasBin: true
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -4090,16 +4081,16 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@clean-jsdoc-theme/bhasha@5.0.0':
+  '@clean-jsdoc-theme/bhasha@5.0.1':
     dependencies:
-      '@clean-jsdoc-theme/utils': 5.0.0
+      '@clean-jsdoc-theme/utils': 5.0.1
       preact: 10.29.2
 
-  '@clean-jsdoc-theme/dwar@5.0.0':
+  '@clean-jsdoc-theme/dwar@5.0.1':
     dependencies:
-      '@clean-jsdoc-theme/rang': 5.0.0
-      '@clean-jsdoc-theme/setu': 5.0.0
-      '@clean-jsdoc-theme/utils': 5.0.0
+      '@clean-jsdoc-theme/rang': 5.0.1
+      '@clean-jsdoc-theme/setu': 5.0.1
+      '@clean-jsdoc-theme/utils': 5.0.1
       '@mdx-js/mdx': 3.1.1
       '@shikijs/rehype': 4.2.0
       esbuild: 0.21.5
@@ -4112,20 +4103,21 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@clean-jsdoc-theme/rang@5.0.0':
+  '@clean-jsdoc-theme/rang@5.0.1':
     dependencies:
-      '@clean-jsdoc-theme/bhasha': 5.0.0
-      '@clean-jsdoc-theme/utils': 5.0.0
+      '@clean-jsdoc-theme/bhasha': 5.0.1
+      '@clean-jsdoc-theme/utils': 5.0.1
       class-variance-authority: 0.7.1
       clsx: 2.1.1
-      lucide-preact: 1.18.0(preact@10.29.2)
+      lucide-preact: 1.20.0(preact@10.29.2)
+      lz-string: 1.5.0
       preact: 10.29.2
       tailwind-merge: 3.6.0
 
-  '@clean-jsdoc-theme/setu@5.0.0':
+  '@clean-jsdoc-theme/setu@5.0.1':
     dependencies:
-      '@clean-jsdoc-theme/bhasha': 5.0.0
-      '@clean-jsdoc-theme/utils': 5.0.0
+      '@clean-jsdoc-theme/bhasha': 5.0.1
+      '@clean-jsdoc-theme/utils': 5.0.1
       '@jsdoc/salty': 0.2.12
       hast-util-from-html: 2.0.3
       hast-util-to-html: 9.0.5
@@ -4140,7 +4132,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@clean-jsdoc-theme/utils@5.0.0':
+  '@clean-jsdoc-theme/utils@5.0.1':
     dependencies:
       zod: 4.4.3
 
@@ -4998,13 +4990,13 @@ snapshots:
     dependencies:
       clsx: 2.1.1
 
-  clean-jsdoc-theme@5.0.0(jsdoc@4.0.5):
+  clean-jsdoc-theme@5.0.1(jsdoc@4.0.5):
     dependencies:
-      '@clean-jsdoc-theme/bhasha': 5.0.0
-      '@clean-jsdoc-theme/dwar': 5.0.0
-      '@clean-jsdoc-theme/rang': 5.0.0
-      '@clean-jsdoc-theme/setu': 5.0.0
-      '@clean-jsdoc-theme/utils': 5.0.0
+      '@clean-jsdoc-theme/bhasha': 5.0.1
+      '@clean-jsdoc-theme/dwar': 5.0.1
+      '@clean-jsdoc-theme/rang': 5.0.1
+      '@clean-jsdoc-theme/setu': 5.0.1
+      '@clean-jsdoc-theme/utils': 5.0.1
       jsdoc: 4.0.5
       ora: 9.4.0
     transitivePeerDependencies:
@@ -6037,9 +6029,11 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-preact@1.18.0(preact@10.29.2):
+  lucide-preact@1.20.0(preact@10.29.2):
     dependencies:
       preact: 10.29.2
+
+  lz-string@1.5.0: {}
 
   magic-string@0.30.21:
     dependencies:
