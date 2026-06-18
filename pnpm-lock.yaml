@@ -13,7 +13,7 @@ importers:
         version: 2.0.3
       clean-jsdoc-theme:
         specifier: ^5.0.0
-        version: 5.0.1(jsdoc@4.0.5)
+        version: 5.0.2(jsdoc@4.0.5)
       esbuild:
         specifier: ^0.28.0
         version: 0.28.1
@@ -620,20 +620,20 @@ packages:
     resolution: {integrity: sha512-4zBIxpPzowiZpusoFkyGVwakdRJUyuH5PxQ/PrqghfdFWWasvnCdPfQXHrenDai+gyLARulZjZowCOj6fjT4pA==}
     engines: {node: '>=6.9.0'}
 
-  '@clean-jsdoc-theme/bhasha@5.0.1':
-    resolution: {integrity: sha512-+uwF1FQgOGecwzdIlRnEXNycyBci+Ts6vsv6IPVX/oNGsAdKJY9juivhl1eFQ9tLeact81GoRN3ztilhYoTjMA==}
+  '@clean-jsdoc-theme/bhasha@5.0.2':
+    resolution: {integrity: sha512-PgNfEkLhXitpEb4DCdTPpY2ls0W86uL1Yn+PpMxW0wnFTjBDwk8REjTF1w0PQnld9pJjTLr5nIIf1Q3O201E/w==}
 
-  '@clean-jsdoc-theme/dwar@5.0.1':
-    resolution: {integrity: sha512-/iyM1KitxFGV7OSP9sYMw0dx0/zPuiKaPuncs0m2Sq/aOrsZ6TzAfObtNf+DGnjm5TkHNVnIGG4ZA2dqLoevHQ==}
+  '@clean-jsdoc-theme/dwar@5.0.2':
+    resolution: {integrity: sha512-vGBurOuIdbuaNcO6Ir0vhAn6BRM+Ll00tJXHuRJipycHdBc/eZPivnQh7eEysH0Zrf3luas/Pn6HQHt9N/P5Xg==}
 
-  '@clean-jsdoc-theme/rang@5.0.1':
-    resolution: {integrity: sha512-KV7SEjQpwJTWLminLedSdltJts3Ikxi821sMoMB0oqQxE1LCWFTT/ys7S/ThgRDxD14jyYLm1b5pYpnMzp8PuA==}
+  '@clean-jsdoc-theme/rang@5.0.2':
+    resolution: {integrity: sha512-WAc04AfxOUudZucG0A90qBlE07YXD4g0lHgtPQDLevMJCcodHEhtkp+56bYNt0WqDFSLzpfwkgD8IRTEwUkMsQ==}
 
-  '@clean-jsdoc-theme/setu@5.0.1':
-    resolution: {integrity: sha512-oXEew4OxK5+nXOJmycsqkpmnKU+3RL0TDS9o/2amA6sbaVlvIhqpCSPFQB7BKxU6EIDXjttsvshdXrGmCQFwMA==}
+  '@clean-jsdoc-theme/setu@5.0.2':
+    resolution: {integrity: sha512-7A3yu+9+Skg5kOG6CqMn65O3oLrXfLQBmFrks68V0BYRMcZ2cFJTaqgS7GlqhuVg+LjgNwhVaq/sfST1HScUuQ==}
 
-  '@clean-jsdoc-theme/utils@5.0.1':
-    resolution: {integrity: sha512-wv/ftsuFomk+/ZOHb0qQLHnJTZaDcWBXOUP1QzYOsJ02Te6naC/mGFcK9jOorxV2w4wgcXjb1eKWwqgnw25ugg==}
+  '@clean-jsdoc-theme/utils@5.0.2':
+    resolution: {integrity: sha512-CkBeN3hWldTkhs7rN2VcNJlcFbDLo9zTiWP+WfirMXrlCt6k495C38hFlBpKDHX83y5yIBgNfBuDD494iK1maw==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -1694,8 +1694,8 @@ packages:
   class-variance-authority@0.7.1:
     resolution: {integrity: sha512-Ka+9Trutv7G8M6WT6SeiRWz792K5qEqIGEGzXKhAE6xOWAY6pPH8U+9IY3oCMv6kqTmLsv7Xh/2w2RigkePMsg==}
 
-  clean-jsdoc-theme@5.0.1:
-    resolution: {integrity: sha512-WmUk7W6DMWPo7NqxOClCBSeON8TN3baL5klIIZ0qiMwzr5FjZuL+okAH6fP7/aLSBKYWLOzTN2GOlrDtfIBjSg==}
+  clean-jsdoc-theme@5.0.2:
+    resolution: {integrity: sha512-yvfNEcsd3FvweIZq0mZ3tj6fWt5K7nsvGyBZPZ/QLP1pGxKlPIqnlRTHmib3teoG7Qq2RJjy0MEydSe9BH/8WA==}
     peerDependencies:
       jsdoc: '>=4.x'
 
@@ -4081,16 +4081,16 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@clean-jsdoc-theme/bhasha@5.0.1':
+  '@clean-jsdoc-theme/bhasha@5.0.2':
     dependencies:
-      '@clean-jsdoc-theme/utils': 5.0.1
+      '@clean-jsdoc-theme/utils': 5.0.2
       preact: 10.29.2
 
-  '@clean-jsdoc-theme/dwar@5.0.1':
+  '@clean-jsdoc-theme/dwar@5.0.2':
     dependencies:
-      '@clean-jsdoc-theme/rang': 5.0.1
-      '@clean-jsdoc-theme/setu': 5.0.1
-      '@clean-jsdoc-theme/utils': 5.0.1
+      '@clean-jsdoc-theme/rang': 5.0.2
+      '@clean-jsdoc-theme/setu': 5.0.2
+      '@clean-jsdoc-theme/utils': 5.0.2
       '@mdx-js/mdx': 3.1.1
       '@shikijs/rehype': 4.2.0
       esbuild: 0.21.5
@@ -4103,10 +4103,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@clean-jsdoc-theme/rang@5.0.1':
+  '@clean-jsdoc-theme/rang@5.0.2':
     dependencies:
-      '@clean-jsdoc-theme/bhasha': 5.0.1
-      '@clean-jsdoc-theme/utils': 5.0.1
+      '@clean-jsdoc-theme/bhasha': 5.0.2
+      '@clean-jsdoc-theme/utils': 5.0.2
       class-variance-authority: 0.7.1
       clsx: 2.1.1
       lucide-preact: 1.20.0(preact@10.29.2)
@@ -4114,10 +4114,10 @@ snapshots:
       preact: 10.29.2
       tailwind-merge: 3.6.0
 
-  '@clean-jsdoc-theme/setu@5.0.1':
+  '@clean-jsdoc-theme/setu@5.0.2':
     dependencies:
-      '@clean-jsdoc-theme/bhasha': 5.0.1
-      '@clean-jsdoc-theme/utils': 5.0.1
+      '@clean-jsdoc-theme/bhasha': 5.0.2
+      '@clean-jsdoc-theme/utils': 5.0.2
       '@jsdoc/salty': 0.2.12
       hast-util-from-html: 2.0.3
       hast-util-to-html: 9.0.5
@@ -4132,7 +4132,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@clean-jsdoc-theme/utils@5.0.1':
+  '@clean-jsdoc-theme/utils@5.0.2':
     dependencies:
       zod: 4.4.3
 
@@ -4990,13 +4990,13 @@ snapshots:
     dependencies:
       clsx: 2.1.1
 
-  clean-jsdoc-theme@5.0.1(jsdoc@4.0.5):
+  clean-jsdoc-theme@5.0.2(jsdoc@4.0.5):
     dependencies:
-      '@clean-jsdoc-theme/bhasha': 5.0.1
-      '@clean-jsdoc-theme/dwar': 5.0.1
-      '@clean-jsdoc-theme/rang': 5.0.1
-      '@clean-jsdoc-theme/setu': 5.0.1
-      '@clean-jsdoc-theme/utils': 5.0.1
+      '@clean-jsdoc-theme/bhasha': 5.0.2
+      '@clean-jsdoc-theme/dwar': 5.0.2
+      '@clean-jsdoc-theme/rang': 5.0.2
+      '@clean-jsdoc-theme/setu': 5.0.2
+      '@clean-jsdoc-theme/utils': 5.0.2
       jsdoc: 4.0.5
       ora: 9.4.0
     transitivePeerDependencies:

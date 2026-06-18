@@ -834,22 +834,22 @@
     "@babel/helper-string-parser" "^7.29.7"
     "@babel/helper-validator-identifier" "^7.29.7"
 
-"@clean-jsdoc-theme/bhasha@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@clean-jsdoc-theme/bhasha/-/bhasha-5.0.1.tgz#34c809057cc1b21dcf4e71b8149c76f164f4538d"
-  integrity sha512-+uwF1FQgOGecwzdIlRnEXNycyBci+Ts6vsv6IPVX/oNGsAdKJY9juivhl1eFQ9tLeact81GoRN3ztilhYoTjMA==
+"@clean-jsdoc-theme/bhasha@^5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@clean-jsdoc-theme/bhasha/-/bhasha-5.0.2.tgz#50b711ac98d5946b3397c68b059d3a8029e2eaa8"
+  integrity sha512-PgNfEkLhXitpEb4DCdTPpY2ls0W86uL1Yn+PpMxW0wnFTjBDwk8REjTF1w0PQnld9pJjTLr5nIIf1Q3O201E/w==
   dependencies:
-    "@clean-jsdoc-theme/utils" "^5.0.1"
+    "@clean-jsdoc-theme/utils" "^5.0.2"
     preact "^10.22.0"
 
-"@clean-jsdoc-theme/dwar@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@clean-jsdoc-theme/dwar/-/dwar-5.0.1.tgz#af7a876704c0912f3b0577dd0c00310a9ef6cd19"
-  integrity sha512-/iyM1KitxFGV7OSP9sYMw0dx0/zPuiKaPuncs0m2Sq/aOrsZ6TzAfObtNf+DGnjm5TkHNVnIGG4ZA2dqLoevHQ==
+"@clean-jsdoc-theme/dwar@^5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@clean-jsdoc-theme/dwar/-/dwar-5.0.2.tgz#4f0a6dfaa17e10f117af400eaf81392b6ef44f6d"
+  integrity sha512-vGBurOuIdbuaNcO6Ir0vhAn6BRM+Ll00tJXHuRJipycHdBc/eZPivnQh7eEysH0Zrf3luas/Pn6HQHt9N/P5Xg==
   dependencies:
-    "@clean-jsdoc-theme/rang" "^5.0.1"
-    "@clean-jsdoc-theme/setu" "^5.0.1"
-    "@clean-jsdoc-theme/utils" "^5.0.1"
+    "@clean-jsdoc-theme/rang" "^5.0.2"
+    "@clean-jsdoc-theme/setu" "^5.0.2"
+    "@clean-jsdoc-theme/utils" "^5.0.2"
     "@mdx-js/mdx" "^3.0.0"
     "@shikijs/rehype" "^4.2.0"
     esbuild "^0.21.5"
@@ -860,13 +860,13 @@
     remark-gfm "^4"
     shiki "^4.2.0"
 
-"@clean-jsdoc-theme/rang@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@clean-jsdoc-theme/rang/-/rang-5.0.1.tgz#ae8365a4f3d9bde30c95c29b358275872a91e045"
-  integrity sha512-KV7SEjQpwJTWLminLedSdltJts3Ikxi821sMoMB0oqQxE1LCWFTT/ys7S/ThgRDxD14jyYLm1b5pYpnMzp8PuA==
+"@clean-jsdoc-theme/rang@^5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@clean-jsdoc-theme/rang/-/rang-5.0.2.tgz#49cd631cb51db6e713270eb2746ec354dffc574f"
+  integrity sha512-WAc04AfxOUudZucG0A90qBlE07YXD4g0lHgtPQDLevMJCcodHEhtkp+56bYNt0WqDFSLzpfwkgD8IRTEwUkMsQ==
   dependencies:
-    "@clean-jsdoc-theme/bhasha" "^5.0.1"
-    "@clean-jsdoc-theme/utils" "^5.0.1"
+    "@clean-jsdoc-theme/bhasha" "^5.0.2"
+    "@clean-jsdoc-theme/utils" "^5.0.2"
     class-variance-authority "^0.7.1"
     clsx "^2.1.1"
     lucide-preact "^1.17.0"
@@ -874,13 +874,13 @@
     preact "^10.22.0"
     tailwind-merge "^3.6.0"
 
-"@clean-jsdoc-theme/setu@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@clean-jsdoc-theme/setu/-/setu-5.0.1.tgz#fbc34d4ccd7c7928ce5482b6b78f0cad2907049c"
-  integrity sha512-oXEew4OxK5+nXOJmycsqkpmnKU+3RL0TDS9o/2amA6sbaVlvIhqpCSPFQB7BKxU6EIDXjttsvshdXrGmCQFwMA==
+"@clean-jsdoc-theme/setu@^5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@clean-jsdoc-theme/setu/-/setu-5.0.2.tgz#2c1e024bfb1fa1634bb7e261978fa5b051f3875d"
+  integrity sha512-7A3yu+9+Skg5kOG6CqMn65O3oLrXfLQBmFrks68V0BYRMcZ2cFJTaqgS7GlqhuVg+LjgNwhVaq/sfST1HScUuQ==
   dependencies:
-    "@clean-jsdoc-theme/bhasha" "^5.0.1"
-    "@clean-jsdoc-theme/utils" "^5.0.1"
+    "@clean-jsdoc-theme/bhasha" "^5.0.2"
+    "@clean-jsdoc-theme/utils" "^5.0.2"
     "@jsdoc/salty" "^0.2.12"
     hast-util-from-html "^2.0.3"
     hast-util-to-html "^9.0.5"
@@ -893,10 +893,10 @@
     micromark-extension-gfm "^3.0.0"
     turndown "^7.2.4"
 
-"@clean-jsdoc-theme/utils@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@clean-jsdoc-theme/utils/-/utils-5.0.1.tgz#7cb7862b2f1ac1e94379a9b94a9bc822882e4689"
-  integrity sha512-wv/ftsuFomk+/ZOHb0qQLHnJTZaDcWBXOUP1QzYOsJ02Te6naC/mGFcK9jOorxV2w4wgcXjb1eKWwqgnw25ugg==
+"@clean-jsdoc-theme/utils@^5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@clean-jsdoc-theme/utils/-/utils-5.0.2.tgz#23c4b209305b09ae40caaf3af1ab50ab28a96f7a"
+  integrity sha512-CkBeN3hWldTkhs7rN2VcNJlcFbDLo9zTiWP+WfirMXrlCt6k495C38hFlBpKDHX83y5yIBgNfBuDD494iK1maw==
   dependencies:
     zod "^4.3.6"
 
@@ -2264,15 +2264,15 @@ class-variance-authority@^0.7.1:
     clsx "^2.1.1"
 
 clean-jsdoc-theme@^5.0.0:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/clean-jsdoc-theme/-/clean-jsdoc-theme-5.0.1.tgz#90804892e30ff364cb365ae09d98ca4ebef648e4"
-  integrity sha512-WmUk7W6DMWPo7NqxOClCBSeON8TN3baL5klIIZ0qiMwzr5FjZuL+okAH6fP7/aLSBKYWLOzTN2GOlrDtfIBjSg==
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/clean-jsdoc-theme/-/clean-jsdoc-theme-5.0.2.tgz#603ea9c3b58def1f1df84af158e4f898ce060d03"
+  integrity sha512-yvfNEcsd3FvweIZq0mZ3tj6fWt5K7nsvGyBZPZ/QLP1pGxKlPIqnlRTHmib3teoG7Qq2RJjy0MEydSe9BH/8WA==
   dependencies:
-    "@clean-jsdoc-theme/bhasha" "^5.0.1"
-    "@clean-jsdoc-theme/dwar" "^5.0.1"
-    "@clean-jsdoc-theme/rang" "^5.0.1"
-    "@clean-jsdoc-theme/setu" "^5.0.1"
-    "@clean-jsdoc-theme/utils" "^5.0.1"
+    "@clean-jsdoc-theme/bhasha" "^5.0.2"
+    "@clean-jsdoc-theme/dwar" "^5.0.2"
+    "@clean-jsdoc-theme/rang" "^5.0.2"
+    "@clean-jsdoc-theme/setu" "^5.0.2"
+    "@clean-jsdoc-theme/utils" "^5.0.2"
     ora "^9.3.0"
 
 clean-regexp@^1.0.0:
