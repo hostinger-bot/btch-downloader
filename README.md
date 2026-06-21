@@ -173,6 +173,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       <option value="pinterest">Pinterest</option>
       <option value="douyin">Douyin</option>
       <option value="xiaohongshu">Xiaohongshu</option>
+      <option value="xiaohongshuProfile">Xiaohongshu Profile</option>
       <option value="snackvideo">SnackVideo</option>
       <option value="cocofun">Cocofun</option>
       <option value="spotify">Spotify</option>
@@ -207,6 +208,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
     <li>Pinterest: <a href="https://pin.it/4CVodSq" target="_blank">https://pin.it/4CVodSq</a> or query (e.g., "Zhao Lusi")</li>
     <li>Douyin: <a href="https://v.douyin.com/ikq8axJ/" target="_blank">https://v.douyin.com/ikq8axJ/</a></li>
     <li>Xiaohongshu: <a href="http://xhslink.com/o/21DKXV988zp" target="_blank">http://xhslink.com/o/21DKXV988zp</a></li>
+    <li>Xiaohongshu Profile: <a href="https://www.xiaohongshu.com/user/profile/67873204000000000803d9a5" target="_blank">https://www.xiaohongshu.com/user/profile/67873204000000000803d9a5</a></li>
     <li>SnackVideo: <a href="https://s.snackvideo.com/p/j9jKr9dR" target="_blank">https://s.snackvideo.com/p/j9jKr9dR</a></li>
     <li>Cocofun: <a href="https://www.icocofun.com/share/post/379250110809" target="_blank">https://www.icocofun.com/share/post/379250110809</a></li>
     <li>Spotify: <a href="https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt" target="_blank">https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt</a></li>
@@ -238,6 +240,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       pinterest: "Paste Pinterest URL (e.g., https://pin.it/4CVodSq)",
       douyin: "Paste Douyin URL (e.g., https://v.douyin.com/ikq8axJ/)",
       xiaohongshu: "Paste Xiaohongshu URL (e.g., https://xhslink.com/o/123)",
+      xiaohongshuProfile: "Paste Xiaohongshu Profile URL (e.g., https://www.xiaohongshu.com/user/profile/...)",
       snackvideo: "Paste SnackVideo URL (e.g., https://s.snackvideo.com/p/123)",
       cocofun: "Paste Cocofun URL (e.g., https://www.icocofun.com/share/post/123)",
       spotify: "Paste Spotify URL (e.g., https://open.spotify.com/track/123)",
@@ -258,6 +261,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
         gdrive: /drive\.google\.com\/(file\/d\/|open\?id=)[\w-]+/i,
         pinterest: /(pinterest\.com\/pin\/\d+|pin\.it\/[a-zA-Z0-9]+)/i,
         douyin: /(v\.douyin\.com\/\w+|douyin\.com\/\S+)/i,
+        xiaohongshuProfile: /xiaohongshu\.com\/user\/profile\/[\w]+/i,
         xiaohongshu: /(xiaohongshu\.com\/discovery\/item\/\d+|xhslink\.com\/[a-zA-Z0-9]+)/i,
         snackvideo: /snackvideo\.com\/@[\w.-]+\/video\/\d+|s\.snackvideo\.com\/\w+/i,
         cocofun: /(icocofun|cocofun)\.com\/(share\/)?post\/\d+/i,
@@ -278,6 +282,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       gdrive: "gdrive",
       pinterest: "pinterest",
       douyin: "douyin",
+      xiaohongshuProfile: "xiaohongshuProfile",
       xiaohongshu: "xiaohongshu",
       snackvideo: "snackvideo",
       cocofun: "cocofun",
