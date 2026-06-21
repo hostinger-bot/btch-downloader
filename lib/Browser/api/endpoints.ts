@@ -14,6 +14,7 @@ import type {
     PinterestResponse,
     AioResponse,
     XiaohongshuResponse,
+    XiaohongshuProfileResponse,
     DouyinResponse,
     SnackVideoResponse,
     CocofunResponse,
@@ -308,6 +309,30 @@ export async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
   try {
     const data = await httpGet('rednote', url);
     if (!data || !data.noteId) {
+      return { developer: wm, status: false, message: 'No results found', note: `Please report issues to ${issues}` };
+    }
+    return { developer: wm, status: true, result: data };
+  } catch (err) {
+    return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
+  }
+}
+
+/**
+ * Xiaohongshu Profile (Little Red Book / 小红书) metadata downloader
+ * @async
+ * @function xiaohongshuProfile
+ * @memberof Browser
+ * 
+ * @param {string} url - The Xiaohongshu profile URL (e.g., https://www.xiaohongshu.com/user/profile/67873204000000000803d9a5)
+ * @returns {Promise<XiaohongshuProfileResponse>} A JSON object containing profile metadata.
+ * @throws {Error} If the URL is invalid or the content is not accessible.
+ * @example
+ * btch.xiaohongshuProfile('https://www.xiaohongshu.com/user/profile/67873204000000000803d9a5').then(data => console.log(data));
+ */
+export async function xiaohongshuProfile(url: string): Promise<XiaohongshuProfileResponse> {
+  try {
+    const data = await httpGet('rednote-profile', url);
+    if (!data || !data.user) {
       return { developer: wm, status: false, message: 'No results found', note: `Please report issues to ${issues}` };
     }
     return { developer: wm, status: true, result: data };

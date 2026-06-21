@@ -30,6 +30,8 @@ import type {
     AioResponse,
     XiaohongshuApiResponse,
     XiaohongshuResponse,
+    XiaohongshuProfileApiResponse,
+    XiaohongshuProfileResponse,
     DouyinApiResponse,
     DouyinResponse,
     SnackVideoApiResponse,
@@ -45,11 +47,10 @@ import type {
     ThreadsApiResponse,
     ThreadsResponse,
     KuaishouApiResponse,
-    KuaishouResponse,
-    VersionConfig,
+    KuaishouResponse
 } from './Types';
 
-const { config, issues } = configData as VersionConfig;
+const { config, issues } = configData;
 const wm = watermark.dev;
 const timeout = 60000;
 const version: string = pkg.version;
@@ -445,7 +446,7 @@ async function pinterest(query: string): Promise<PinterestResponse> {
 async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
     try {
         const data = await HttpGet<XiaohongshuApiResponse>('rednote', url, version, timeout, config.baseUrl);
-        if (!data || !data.noteId) {
+        if (!data || !data.result || !data.result.noteId) {
             return {
                 ...formatErrorResponse(new Error('No results found')),
                 status: false
@@ -455,7 +456,46 @@ async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
         return {
             developer: wm,
             status: true,
-            result: data
+            result: data.result
+        };
+    } catch (error) {
+        return { ...formatErrorResponse(error), status: false };
+    }
+}
+
+/**
+ * Xiaohongshu (Little Red Book / 小红书) user profile metadata
+ * @async
+ * @function xiaohongshuProfile
+ * 
+ * @param {string} url - The Xiaohongshu profile URL (e.g., https://www.xiaohongshu.com/user/profile/67873204000000000803d9a5)
+ * @returns {Promise<XiaohongshuProfileResponse>} A JSON object containing user metadata.
+ * @throws {Error} If the URL is invalid or the content is not accessible.
+ * @example <caption>ESM</caption>
+ * import { xiaohongshuProfile } from 'btch-downloader';
+ *
+ * const url = 'https://www.xiaohongshu.com/user/profile/67873204000000000803d9a5';
+ * xiaohongshuProfile(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ * @example <caption>CJS</caption>
+ * const { xiaohongshuProfile } = require('btch-downloader');
+ *
+ * const url = 'https://www.xiaohongshu.com/user/profile/67873204000000000803d9a5';
+ * xiaohongshuProfile(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+ */
+async function xiaohongshuProfile(url: string): Promise<XiaohongshuProfileResponse> {
+    try {
+        const data = await HttpGet<XiaohongshuProfileApiResponse>('rednote-profile', url, version, timeout, config.baseUrl);
+        if (!data || !data.result || !data.result.user) {
+            return {
+                ...formatErrorResponse(new Error('No results found')),
+                status: false
+            };
+        }
+
+        return {
+            developer: wm,
+            status: true,
+            result: data.result
         };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };
@@ -748,6 +788,7 @@ export {
   pinterest,
   aio,
   xiaohongshu,
+  xiaohongshuProfile,
   douyin,
   snackvideo,
   cocofun,

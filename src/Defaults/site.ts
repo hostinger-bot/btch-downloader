@@ -5,27 +5,7 @@
  * @description Defines the configuration settings for the btch-downloader package, including the base URL for API requests and the URL for reporting issues.
  */
 
-/**
- * Interface defining the structure of the configuration data.
- * @interface VersionConfig
- */
-interface VersionConfig {
-  /**
-   * Configuration settings for the application.
-   */
-  config: {
-    /**
-     * The base URL for the backend API.
-     * @example "https://backend1.tioo.eu.org"
-     */
-    baseUrl: string;
-  };
-  /**
-   * URL for reporting issues related to the btch-downloader package.
-   * @example "https://github.com/hostinger-bot/btch-downloader/issues"
-   */
-  issues: string;
-}
+import type { VersionConfig } from '../Types';
 
 /**
  * The configuration object for the btch-downloader package.

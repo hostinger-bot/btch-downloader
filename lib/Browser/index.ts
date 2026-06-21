@@ -1,6 +1,20 @@
 /**
  * @namespace Browser
  * @description Browser-specific version of btch-downloader.
+ *
+ * ```html
+ * <!-- unpkg : use the latest version of btch-downloader -->
+ * <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
+ *  
+ * <!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
+ * <script src="https://unpkg.com/btch-downloader@6.0.33/dist/browser/index.min.js"></script>
+ *  
+ * <!-- jsDelivr : use the latest version of btch-downloader -->
+ * <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
+ *  
+ * <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
+ * <script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.33/dist/browser/index.min.js"></script>
+ * ```
  */
 
 import * as endpoints from './api/endpoints';
@@ -61,6 +75,11 @@ export const aio = endpoints.aio;
  * @memberof Browser
  */
 export const xiaohongshu = endpoints.xiaohongshu;
+/** 
+ * Xiaohongshu Profile (Little Red Book) downloader (Browser version) 
+ * @memberof Browser
+ */
+export const xiaohongshuProfile = endpoints.xiaohongshuProfile;
 /** 
  * Douyin downloader (Browser version) 
  * @memberof Browser

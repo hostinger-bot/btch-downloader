@@ -38,7 +38,7 @@
 
 
 <div align="center">
-  <p>A lightweight TypeScript/JavaScript library for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu, Cocofun, Spotify, Youtube Search, SounCloud, Threads, Kuaishou and Facebook.</p>
+  <p>A lightweight TypeScript/JavaScript library for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu (and Profile), Cocofun, Spotify, Youtube Search, SounCloud, Threads, Kuaishou and Facebook.</p>
 </div>
 
 ## Project Prerequisites
@@ -57,13 +57,13 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://unpkg.com/btch-downloader@6.0.32/dist/browser/index.min.js"></script>
+<script src="https://unpkg.com/btch-downloader@6.0.33/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use the latest version of btch-downloader -->
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.32/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.33/dist/browser/index.min.js"></script>
 ```
 
 ---
@@ -622,6 +622,24 @@ const { xiaohongshu } = require('btch-downloader');
 
 const url = 'http://xhslink.com/o/21DKXV988zp';
 xiaohongshu(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+### Xiaohongshu Profile (小红书)
+
+#### ESM
+```javascript
+import { xiaohongshuProfile } from 'btch-downloader';
+
+const url = 'https://www.xiaohongshu.com/user/profile/67873204000000000803d9a5';
+xiaohongshuProfile(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
+```
+
+#### CJS
+```javascript
+const { xiaohongshuProfile } = require('btch-downloader');
+
+const url = 'https://www.xiaohongshu.com/user/profile/67873204000000000803d9a5';
+xiaohongshuProfile(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 ### Snackvideo
 

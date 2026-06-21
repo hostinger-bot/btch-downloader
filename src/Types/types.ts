@@ -442,17 +442,74 @@ export interface AioResponse extends BaseResponse {
 }
 
 /**
- * Raw response from the Xiaohongshu API.
- * @interface XiaohongshuApiResponse
- * 
- * 
+ * The core profile data from the Xiaohongshu API.
+ * @interface XiaohongshuProfileApiResult
  */
-export interface XiaohongshuApiResponse {
+export interface XiaohongshuProfileApiResult {
     status?: boolean;
+    user?: {
+        id?: string;
+        redId?: string;
+        nickname?: string;
+        avatar?: string;
+        profileUrl?: string;
+        bio?: string;
+        gender?: number;
+        ipLocation?: string;
+        verified?: boolean;
+        verifyType?: number;
+    };
+    stats?: {
+        followers?: number;
+        followings?: number;
+        likes?: number;
+        notes?: number;
+    };
+    notes?: Array<{
+        noteId?: string;
+        title?: string;
+        type?: string;
+        cover?: string;
+        likes?: number;
+    }>;
+    pagination?: {
+        hasMore?: boolean;
+        nextCursor?: string;
+    };
+}
+
+/**
+ * Raw response from the Xiaohongshu profile API.
+ * @interface XiaohongshuProfileApiResponse
+ */
+export interface XiaohongshuProfileApiResponse {
+    status?: boolean;
+    result?: XiaohongshuProfileApiResult;
+}
+
+/**
+ * Formatted Xiaohongshu profile response.
+ * @interface XiaohongshuProfileResponse
+ * @extends BaseResponse
+ */
+export interface XiaohongshuProfileResponse extends BaseResponse {
+    result?: XiaohongshuProfileApiResult;
+}
+
+/**
+ * The core note data from the Xiaohongshu API.
+ * @interface XiaohongshuApiResult
+ */
+export interface XiaohongshuApiResult {
     /** Unique note identifier. */
     noteId?: string;
-    /** Author nickname. */
-    nickname?: string;
+    /** Author details. */
+    author?: {
+        id?: string;
+        nickname?: string;
+        avatar?: string;
+        profileUrl?: string;
+    };
     /** Post title. */
     title?: string;
     /** Post description. */
@@ -462,11 +519,27 @@ export interface XiaohongshuApiResponse {
     /** Video duration if applicable. */
     duration?: string;
     /** Social engagement metrics. */
-    engagement?: { likes?: string; comments?: string; collects?: string };
+    engagement?: { 
+        likes?: number | string; 
+        comments?: number | string; 
+        collects?: number | string; 
+        shares?: number | string; 
+    };
     /** List of high-quality image URLs. */
     images?: string[];
     /** List of available download links. */
     downloads?: { quality?: string; url?: string }[];
+}
+
+/**
+ * Raw response from the Xiaohongshu API.
+ * @interface XiaohongshuApiResponse
+ * 
+ * 
+ */
+export interface XiaohongshuApiResponse {
+    status?: boolean;
+    result?: XiaohongshuApiResult;
 }
 
 /**
@@ -478,7 +551,7 @@ export interface XiaohongshuApiResponse {
  */
 export interface XiaohongshuResponse extends BaseResponse {
     /** Post metadata and media links. */
-    result?: XiaohongshuApiResponse;
+    result?: XiaohongshuApiResult;
 }
 
 /**

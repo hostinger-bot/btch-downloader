@@ -3,13 +3,13 @@
  * @module Tests
  */
 
-import { igdl } from '../src/index';
+import { xiaohongshu } from '../src/index';
 
 (async () => {
   try {
     console.log('Testing...');
-    const url: string = 'https://www.instagram.com/reel/DKPtUL_S9Nh/?igsh=MTE1dTVkb2E4NTFmcw==';
-    const result = await igdl(url);
+    const url: string = 'http://xhslink.com/o/8eizn4DZwe5';
+    const result = await xiaohongshu(url);
     console.log('[RESPONSE]: ', JSON.stringify(result, null, 2));
   } catch (error: unknown) {
     if (error instanceof Error) {

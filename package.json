@@ -1,6 +1,6 @@
 {
   "name": "btch-downloader",
-  "version": "6.0.32",
+  "version": "6.0.33",
   "description": "A lightweight TypeScript/JavaScript library for downloading media from social media platforms",
   "main": "dist/index.js",
   "browser": "dist/browser/index.js",
@@ -9,7 +9,6 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "scripts/check-build.js",
     "README.md",
     "LICENSE",
     "engine-requirements.js"
@@ -42,7 +41,6 @@
     "lint:fix": "eslint . --fix --cache",
     "lint:debug": "eslint . --debug",
     "preinstall": "node ./engine-requirements.js || true",
-    "postinstall": "node ./scripts/check-build.js",
     "prepare": "npm run build"
   },
   "keywords": [
@@ -84,28 +82,28 @@
     "install": "^0.13.0",
     "jsdoc": "^4.0.5",
     "lodash": "^4.18.1",
-    "rollup": "^4.60.1",
+    "rollup": "^4.62.2",
     "set-value": "4.1.0",
     "source-map": "^0.7.6",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.1",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.0",
-    "@babel/preset-env": "^7.29.5",
-    "@babel/preset-typescript": "^7.28.5",
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-typescript": "^7.29.7",
     "@eslint/js": "^9.39.4",
-    "@types/node": "^24.12.2",
-    "@typescript-eslint/eslint-plugin": "^8.58.0",
-    "@typescript-eslint/parser": "^8.58.0",
+    "@types/node": "^24.13.2",
+    "@typescript-eslint/eslint-plugin": "^8.61.1",
+    "@typescript-eslint/parser": "^8.61.1",
     "eslint": "^9.39.4",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-unicorn": "^62.0.0",
     "globals": "^16.5.0",
-    "jiti": "^2.6.1",
+    "jiti": "^2.7.0",
     "jsdoc-babel": "^0.5.0",
-    "typescript-eslint": "^8.58.0"
+    "typescript-eslint": "^8.61.1"
   },
   "repository": {
     "type": "git",
