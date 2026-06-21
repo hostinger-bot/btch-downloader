@@ -308,10 +308,10 @@ export async function aio(url: string): Promise<AioResponse> {
 export async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
   try {
     const data = await httpGet('rednote', url);
-    if (!data || !data.noteId) {
+    if (!data || !data.result || !data.result.noteId) {
       return { developer: wm, status: false, message: 'No results found', note: `Please report issues to ${issues}` };
     }
-    return { developer: wm, status: true, result: data };
+    return { developer: wm, status: true, result: data.result };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
@@ -332,10 +332,10 @@ export async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
 export async function xiaohongshuProfile(url: string): Promise<XiaohongshuProfileResponse> {
   try {
     const data = await httpGet('rednote-profile', url);
-    if (!data || !data.user) {
+    if (!data || !data.result || !data.result.user) {
       return { developer: wm, status: false, message: 'No results found', note: `Please report issues to ${issues}` };
     }
-    return { developer: wm, status: true, result: data };
+    return { developer: wm, status: true, result: data.result };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
