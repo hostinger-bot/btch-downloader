@@ -222,7 +222,7 @@ The library ships a browser bundle. Load it via CDN and access all functions thr
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- Specific version -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.33/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.34/dist/browser/index.min.js"></script>
 
 <script>
   const { igdl, ttdl, aio } = window.btch;

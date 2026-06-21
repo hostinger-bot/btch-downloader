@@ -7,13 +7,13 @@
  * <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
  *  
  * <!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
- * <script src="https://unpkg.com/btch-downloader@6.0.33/dist/browser/index.min.js"></script>
+ * <script src="https://unpkg.com/btch-downloader@6.0.34/dist/browser/index.min.js"></script>
  *  
  * <!-- jsDelivr : use the latest version of btch-downloader -->
  * <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
  *  
  * <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
- * <script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.33/dist/browser/index.min.js"></script>
+ * <script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.34/dist/browser/index.min.js"></script>
  * ```
  */
 
