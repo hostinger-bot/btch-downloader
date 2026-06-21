@@ -15,7 +15,7 @@
     "destination": "docs/",
     "recurse": true,
     "verbose": true,
-    "template": "./node_modules/clean-jsdoc-theme",
+    "template": "./node_modules/clean-jsdoc-theme/dist",
     "theme_opts": {
       "shouldRemoveScrollbarStyle": false,
       "includeFilesListInHomepage": true,
