@@ -445,8 +445,9 @@ async function pinterest(query: string): Promise<PinterestResponse> {
  */
 async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
     try {
-        const data = await HttpGet<XiaohongshuApiResponse>('rednote', url, version, timeout, config.baseUrl);
-        if (!data || !data.result || !data.result.noteId) {
+        const data = await HttpGet<any>('rednote', url, version, timeout, config.baseUrl);
+        const actualData = data.result || data;
+        if (!actualData || (!actualData.noteId && !actualData.notes)) {
             return {
                 ...formatErrorResponse(new Error('No results found')),
                 status: false
@@ -456,7 +457,7 @@ async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
         return {
             developer: wm,
             status: true,
-            result: data.result
+            result: actualData
         };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };
@@ -484,8 +485,9 @@ async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
  */
 async function xiaohongshuProfile(url: string): Promise<XiaohongshuProfileResponse> {
     try {
-        const data = await HttpGet<XiaohongshuProfileApiResponse>('rednote-profile', url, version, timeout, config.baseUrl);
-        if (!data || !data.result || !data.result.user) {
+        const data = await HttpGet<any>('rednote-profile', url, version, timeout, config.baseUrl);
+        const actualData = data.result || data;
+        if (!actualData || (!actualData.user && !actualData.stats)) {
             return {
                 ...formatErrorResponse(new Error('No results found')),
                 status: false
@@ -495,7 +497,7 @@ async function xiaohongshuProfile(url: string): Promise<XiaohongshuProfileRespon
         return {
             developer: wm,
             status: true,
-            result: data.result
+            result: actualData
         };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };

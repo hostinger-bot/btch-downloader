@@ -308,10 +308,12 @@ export async function aio(url: string): Promise<AioResponse> {
 export async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
   try {
     const data = await httpGet('rednote', url);
-    if (!data || !data.result || !data.result.noteId) {
+    // Because API doesn't always wrap in result, we extract safely
+    const actualData = data.result || data;
+    if (!actualData || (!actualData.noteId && !actualData.notes)) {
       return { developer: wm, status: false, message: 'No results found', note: `Please report issues to ${issues}` };
     }
-    return { developer: wm, status: true, result: data.result };
+    return { developer: wm, status: true, result: actualData };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
@@ -332,10 +334,12 @@ export async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
 export async function xiaohongshuProfile(url: string): Promise<XiaohongshuProfileResponse> {
   try {
     const data = await httpGet('rednote-profile', url);
-    if (!data || !data.result || !data.result.user) {
+    // Because API doesn't always wrap in result, we extract safely
+    const actualData = data.result || data;
+    if (!actualData || (!actualData.user && !actualData.stats)) {
       return { developer: wm, status: false, message: 'No results found', note: `Please report issues to ${issues}` };
     }
-    return { developer: wm, status: true, result: data.result };
+    return { developer: wm, status: true, result: actualData };
   } catch (err) {
     return { developer: wm, status: false, message: (err as Error).message, note: `Please report issues to ${issues}` };
   }
