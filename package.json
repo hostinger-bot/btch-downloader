@@ -40,7 +40,7 @@
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix --cache",
     "lint:debug": "eslint . --debug",
-    "preinstall": "node ./engine-requirements.js || true",
+    "preinstall": "node ./engine-requirements.js",
     "prepare": "npm run build"
   },
   "keywords": [
