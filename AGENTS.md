@@ -1,6 +1,6 @@
 # AGENTS.md — btch-downloader
 
-> Last verified: **May 20, 2026** · Latest stable version: **6.0.35**
+> Last verified: **June 23, 2026** · Latest stable version: **6.0.36**
 
 This file provides guidance for AI agents (e.g. Codex, GitHub Copilot, autonomous coding agents) working inside the **btch-downloader** repository.
 
@@ -13,7 +13,7 @@ This file provides guidance for AI agents (e.g. Codex, GitHub Copilot, autonomou
 | Field          | Value                                                    |
 |----------------|----------------------------------------------------------|
 | npm package    | `btch-downloader`                                        |
-| Latest version | `6.0.35` (published ~May 20, 2026)                        |
+| Latest version | `6.0.36` (published ~June 23, 2026)                        |
 | Repository     | https://github.com/hostinger-bot/btch-downloader         |
 | License        | MIT                                                      |
 | Author         | BOTCAHX / @prm2.0                                        |
@@ -190,8 +190,8 @@ Tests live in `test/`. Each platform should have a dedicated test file.
 <!-- Always latest -->
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
-<!-- Pinned to 6.0.35 -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.35/dist/browser/index.min.js"></script>
+<!-- Pinned to 6.0.36 -->
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.36/dist/browser/index.min.js"></script>
 
 <!-- unpkg alternative -->
 <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
