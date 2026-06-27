@@ -447,8 +447,9 @@ async function pinterest(query: string): Promise&lt;PinterestResponse> {
  */
 async function xiaohongshu(url: string): Promise&lt;XiaohongshuResponse> {
     try {
-        const data = await HttpGet&lt;XiaohongshuApiResponse>('rednote', url, version, timeout, config.baseUrl);
-        if (!data || !data.result || !data.result.noteId) {
+        const data = await HttpGet&lt;any>('rednote', url, version, timeout, config.baseUrl);
+        const actualData = data.result || data;
+        if (!actualData || (!actualData.noteId &amp;&amp; !actualData.notes)) {
             return {
                 ...formatErrorResponse(new Error('No results found')),
                 status: false
@@ -458,7 +459,7 @@ async function xiaohongshu(url: string): Promise&lt;XiaohongshuResponse> {
         return {
             developer: wm,
             status: true,
-            result: data.result
+            result: actualData
         };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };
@@ -486,8 +487,9 @@ async function xiaohongshu(url: string): Promise&lt;XiaohongshuResponse> {
  */
 async function xiaohongshuProfile(url: string): Promise&lt;XiaohongshuProfileResponse> {
     try {
-        const data = await HttpGet&lt;XiaohongshuProfileApiResponse>('rednote-profile', url, version, timeout, config.baseUrl);
-        if (!data || !data.result || !data.result.user) {
+        const data = await HttpGet&lt;any>('rednote-profile', url, version, timeout, config.baseUrl);
+        const actualData = data.result || data;
+        if (!actualData || (!actualData.user &amp;&amp; !actualData.stats)) {
             return {
                 ...formatErrorResponse(new Error('No results found')),
                 status: false
@@ -497,7 +499,7 @@ async function xiaohongshuProfile(url: string): Promise&lt;XiaohongshuProfileRes
         return {
             developer: wm,
             status: true,
-            result: data.result
+            result: actualData
         };
     } catch (error) {
         return { ...formatErrorResponse(error), status: false };

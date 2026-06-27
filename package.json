@@ -36,7 +36,7 @@
     "build:browser": "tsup",
     "pub": "npm run build && npm publish --access public",
     "test": "ts-node test/Test.ts",
-    "docs": "npx jsdoc -c jsdoc.conf.json",
+    "docs": "node node_modules/.bin/jsdoc -c jsdoc.conf.json",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix --cache",
     "lint:debug": "eslint . --debug",
@@ -78,7 +78,7 @@
   "license": "MIT",
   "dependencies": {
     "btch-http": "^2.0.3",
-    "clean-jsdoc-theme": "^5.0.0",
+    "clean-jsdoc-theme": "^4.3.3",
     "esbuild": "^0.28.0",
     "install": "^0.13.0",
     "jsdoc": "^4.0.5",

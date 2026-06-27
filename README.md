@@ -17,6 +17,7 @@
     <img src="https://img.shields.io/badge/unpkg-CDN-blue?style=flat&logo=unpkg" alt="unpkg CDN">
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/npm-publish.yml/badge.svg" alt="Node.js Package">
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/codeql.yml/badge.svg" alt="CodeQL Advanced">
+    <a href="https://badge.socket.dev/npm/package/btch-downloader/6.0.36" target="_blank"><img src="https://badge.socket.dev/npm/package/btch-downloader/6.0.36" alt="Socket Badge"></a>
   </p>
 
 
