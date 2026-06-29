@@ -295,3 +295,8 @@ console.log(result);
 - The backend (`backend1.tioo.eu.org`) must be reachable; all actual resolution happens there.
 
 
+## AI Agent Notes
+
+- On every new release: update **CHANGELOG.md** — add `# version (YYYY-MM-DD)` at the top.
+- Update **AGENTS.md** — change `Latest version` and `Last verified` date.
+- Update pinned CDN URLs in README.md and example.html.
