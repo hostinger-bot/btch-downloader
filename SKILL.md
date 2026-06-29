@@ -1,6 +1,6 @@
 ---
 name: btch-downloader
-description: "Use this skill whenever the user wants to download media (videos, images, audio) from social media platforms using the btch-downloader npm library. Triggers include: downloading from Instagram, TikTok, YouTube, Facebook, Twitter/X, Pinterest, Spotify, SoundCloud, Threads, CapCut, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu, Cocofun, or Kuaishou using JavaScript/TypeScript; using the igdl, ttdl, fbdown, youtube, twitter, or aio functions; building a media downloader bot or app in Node.js. Do NOT use for Python-based downloaders or for platforms not listed above."
+description: "Use this skill whenever the user wants to download media (videos, images, audio) from social media platforms using the btch-downloader npm client SDK. Triggers include: downloading from Instagram, TikTok, YouTube, Facebook, Twitter/X, Pinterest, Spotify, SoundCloud, Threads, CapCut, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu, Cocofun, or Kuaishou using JavaScript/TypeScript; using the igdl, ttdl, fbdown, youtube, twitter, or aio functions; building a media downloader bot or app in Node.js. Do NOT use for Python-based downloaders or for platforms not listed above."
 license: MIT
 ---
 
@@ -8,7 +8,7 @@ license: MIT
 
 ## Overview
 
-`btch-downloader` is a lightweight TypeScript/JavaScript library by [@BOTCAHX](https://github.com/hostinger-bot) for fetching downloadable media links from social media platforms. It does **not** directly scrape platforms — all resolution is handled by the backend service at `backend1.tioo.eu.org`. Each function returns a Promise resolving to a JSON object with media URLs and metadata.
+`btch-downloader` is a lightweight TypeScript/JavaScript client SDK by [@BOTCAHX](https://github.com/hostinger-bot) for fetching downloadable media links from social media platforms. It does **not** directly scrape platforms — all resolution is handled by the backend service at `backend1.tioo.eu.org`. Each function returns a Promise resolving to a JSON object with media URLs and metadata.
 
 - **npm:** `btch-downloader`
 - **GitHub:** `hostinger-bot/btch-downloader`
@@ -215,7 +215,7 @@ import type { IgdlResult, TtdlResult, YoutubeResult } from 'btch-downloader/Type
 
 ## Browser / CDN Usage
 
-The library ships a browser bundle. Load it via CDN and access all functions through `window.btch`:
+The client SDK ships a browser bundle. Load it via CDN and access all functions through `window.btch`:
 
 ```html
 <!-- Latest version -->
@@ -237,7 +237,7 @@ The library ships a browser bundle. Load it via CDN and access all functions thr
 
 ## Error Handling
 
-Always wrap calls in try/catch — the library throws on invalid URLs or network failures:
+Always wrap calls in try/catch — the client SDK throws on invalid URLs or network failures:
 
 ```ts
 import { ttdl } from 'btch-downloader';
@@ -288,7 +288,7 @@ console.log(result);
 ## Important Notes
 
 - Only public media can be downloaded. Private content is not accessible.
-- This library is not affiliated with or endorsed by any of the supported platforms.
+- This client SDK is not affiliated with or endorsed by any of the supported platforms.
 - Always ensure you have the right to download and use the media before doing so.
 - `mediafire` support is **no longer maintained**.
 - `aio` support is **no longer maintained**.

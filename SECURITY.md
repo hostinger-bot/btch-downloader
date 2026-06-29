@@ -26,7 +26,7 @@ You can expect an initial response within **72 hours**. If the vulnerability is 
 
 ## Scope
 
-This library is a **client SDK** — it does not run a server, store user data, or handle authentication. Security concerns most relevant to this project:
+This client SDK does not run a server, store user data, or handle authentication. Security concerns most relevant to this project:
 
 - Malicious payloads returned by the backend (`backend1.tioo.eu.org`) passed unsanitized to callers
 - Dependency vulnerabilities (reported via `npm audit` or Dependabot)

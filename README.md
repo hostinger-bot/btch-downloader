@@ -17,7 +17,7 @@
     <img src="https://img.shields.io/badge/unpkg-CDN-blue?style=flat&logo=unpkg" alt="unpkg CDN">
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/npm-publish.yml/badge.svg" alt="Node.js Package">
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/codeql.yml/badge.svg" alt="CodeQL Advanced">
-    <a href="https://badge.socket.dev/npm/package/btch-downloader/6.0.36" target="_blank"><img src="https://badge.socket.dev/npm/package/btch-downloader/6.0.36" alt="Socket Badge"></a>
+    <a href="https://badge.socket.dev/npm/package/btch-downloader/6.0.37" target="_blank"><img src="https://badge.socket.dev/npm/package/btch-downloader/6.0.37" alt="Socket Badge"></a>
   </p>
 
 
@@ -39,7 +39,7 @@
 
 
 <div align="center">
-  <p>A lightweight TypeScript/JavaScript library for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu (and Profile), Cocofun, Spotify, Youtube Search, SounCloud, Threads, Kuaishou and Facebook.</p>
+  <p>A lightweight TypeScript/JavaScript client SDK for downloading videos, images, and audio from Instagram, TikTok, YouTube, Capcut, Pinterest, Twitter, X, Google Drive, MediaFire, Douyin, SnackVideo, Xiaohongshu (and Profile), Cocofun, Spotify, Youtube Search, SounCloud, Threads, Kuaishou and Facebook.</p>
 </div>
 
 ## Project Prerequisites
@@ -58,13 +58,13 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://unpkg.com/btch-downloader@6.0.36/dist/browser/index.min.js"></script>
+<script src="https://unpkg.com/btch-downloader@6.0.37/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use the latest version of btch-downloader -->
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.36/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.37/dist/browser/index.min.js"></script>
 ```
 
 ---
@@ -334,7 +334,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 
       try {
         const btch = window.btch;
-        if (!btch) throw new Error("btch library not loaded.");
+        if (!btch) throw new Error("btch client SDK not loaded.");
 
         const platform = detectPlatform(inputValue, platformSelect.value);
         const fnName = fnMap[platform];

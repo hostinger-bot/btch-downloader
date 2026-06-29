@@ -142,9 +142,8 @@
     <li>YTS: <a href="#" target="_blank">Enter a YTS query (e.g., "movie title 2023")</a></li>
   </ul>
 
- <!-- Load btch Local /dist -->
-  <script src="dist/browser/index.min.js"></script>
-
+  <!-- Load btch CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.37/dist/browser/index.min.js"></script>
   
   <script>
     const output = document.getElementById("output");
@@ -258,7 +257,7 @@
 
       try {
         const btch = window.btch;
-        if (!btch) throw new Error("btch client SDK not loaded.");
+        if (!btch) throw new Error("btch library not loaded.");
 
         const platform = detectPlatform(inputValue, platformSelect.value);
         const fnName = fnMap[platform];

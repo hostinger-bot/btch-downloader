@@ -20,12 +20,12 @@ We as contributors and maintainers pledge to make participation in **btch-downlo
 
 ## Legal Use Policy
 
-This library is provided **for downloading publicly accessible media only.** By contributing or using this project you agree:
+This client SDK is provided **for downloading publicly accessible media only.** By contributing or using this project you agree:
 
-- You will not use or extend this library to access private, paywalled, or DRM-protected content
+- You will not use or extend this client SDK to access private, paywalled, or DRM-protected content
 - You will not use it to violate any platform's Terms of Service
 - You hold the responsibility for ensuring you have permission or copyright clearance for any content you download
-- The maintainers are not liable for misuse of this library
+- The maintainers are not liable for misuse of this client SDK
 
 ## § AI Policy
 

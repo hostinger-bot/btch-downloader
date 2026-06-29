@@ -37,7 +37,7 @@
         },
         {
           "name": "description",
-          "content": "A lightweight TypeScript/JavaScript library for downloading media from social media platforms."
+          "content": "A lightweight TypeScript/JavaScript client SDK for downloading media from social media platforms."
         }
       ],
       "menu": [
