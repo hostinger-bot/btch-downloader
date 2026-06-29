@@ -12,7 +12,7 @@ importers:
         specifier: ^2.0.3
         version: 2.0.3
       clean-jsdoc-theme:
-        specifier: ^5.0.0
+        specifier: ^5.0.5
         version: 5.0.5(jsdoc@4.0.5)
       esbuild:
         specifier: ^0.28.0
@@ -2467,8 +2467,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucide-preact@1.21.0:
-    resolution: {integrity: sha512-GUJs/vYSHNM5HU0UwNADfKvDbNDQ7i6vciniCvtpRVMsXy+FOcaRHgRhqVcY/CiORqA6oMC8xK5JJ7Wvb1r1Sw==}
+  lucide-preact@1.22.0:
+    resolution: {integrity: sha512-zFaBtoaWQgvapVEI96M3b5iUOlAEvpUfDuW3Gs8K1RHDyoOTrnXm+Cz5tupm8StKbRKn3W/YKIPolllf5voVDw==}
     peerDependencies:
       preact: ^10.27.2
 
@@ -2844,8 +2844,8 @@ packages:
     peerDependencies:
       preact: '>=10 || >= 11.0.0-0'
 
-  preact@10.29.2:
-    resolution: {integrity: sha512-7tNmwg/7mzzAoB/8kSg6Hl37JraAZw3Z3A0JSY7VXlZwo82Xn0G7wKbNNs2qoF4ZEEsQGTwDAroNdqKs1ofJxQ==}
+  preact@10.29.3:
+    resolution: {integrity: sha512-D9NL1GAnJZhc3RndVs4gDdxEeU9TcHgywMrhhOsnpdlvFjdbx0gAsLUnH6JEhlJH5giL7Tx5biWPUSEXE/HPzw==}
 
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -4052,7 +4052,7 @@ snapshots:
   '@clean-jsdoc-theme/bhasha@5.0.5':
     dependencies:
       '@clean-jsdoc-theme/utils': 5.0.5
-      preact: 10.29.2
+      preact: 10.29.3
 
   '@clean-jsdoc-theme/dwar@5.0.5':
     dependencies:
@@ -4063,8 +4063,8 @@ snapshots:
       '@shikijs/rehype': 4.3.0
       esbuild: 0.21.5
       pagefind: 1.5.2
-      preact: 10.29.2
-      preact-render-to-string: 6.7.0(preact@10.29.2)
+      preact: 10.29.3
+      preact-render-to-string: 6.7.0(preact@10.29.3)
       remark-frontmatter: 5.0.0
       remark-gfm: 4.0.1
       shiki: 4.3.0
@@ -4077,9 +4077,9 @@ snapshots:
       '@clean-jsdoc-theme/utils': 5.0.5
       class-variance-authority: 0.7.1
       clsx: 2.1.1
-      lucide-preact: 1.21.0(preact@10.29.2)
+      lucide-preact: 1.22.0(preact@10.29.3)
       lz-string: 1.5.0
-      preact: 10.29.2
+      preact: 10.29.3
       tailwind-merge: 3.6.0
 
   '@clean-jsdoc-theme/setu@5.0.5':
@@ -5999,9 +5999,9 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-preact@1.21.0(preact@10.29.2):
+  lucide-preact@1.22.0(preact@10.29.3):
     dependencies:
-      preact: 10.29.2
+      preact: 10.29.3
 
   lz-string@1.5.0: {}
 
@@ -6666,11 +6666,11 @@ snapshots:
     optionalDependencies:
       jiti: 2.7.0
 
-  preact-render-to-string@6.7.0(preact@10.29.2):
+  preact-render-to-string@6.7.0(preact@10.29.3):
     dependencies:
-      preact: 10.29.2
+      preact: 10.29.3
 
-  preact@10.29.2: {}
+  preact@10.29.3: {}
 
   prelude-ls@1.2.1: {}
 
