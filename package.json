@@ -78,7 +78,7 @@
   "license": "MIT",
   "dependencies": {
     "btch-http": "^2.0.3",
-    "clean-jsdoc-theme": "5.0.5",
+    "clean-jsdoc-theme": "4.3.0",
     "esbuild": "^0.28.0",
     "install": "^0.13.0",
     "jsdoc": "^4.0.5",
@@ -126,6 +126,7 @@
     "node": ">=20.18.1"
   },
   "overrides": {
+    "clean-jsdoc-theme": "4.3.0",
     "set-value": "4.1.0"
   }
 }

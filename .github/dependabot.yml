@@ -27,5 +27,6 @@ updates:
     allow:
       - dependency-type: "production"
     ignore:
+      - dependency-name: "clean-jsdoc-theme"
       - dependency-name: "some-risky-package"
         versions: ">= 2.x"
