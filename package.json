@@ -85,7 +85,7 @@
     "lodash": "^4.18.1",
     "rollup": "^4.62.2",
     "set-value": "4.1.0",
-    "source-map": "^0.7.6",
+    "source-map": "^0.8.0",
     "ts-node": "^10.9.2",
     "tsup": "^8.5.1",
     "typescript": "^6.0.3"
