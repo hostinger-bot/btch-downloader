@@ -32,8 +32,10 @@ import type {
     AioResponse,
     XiaohongshuApiResponse,
     XiaohongshuResponse,
+    XiaohongshuApiResult,
     XiaohongshuProfileApiResponse,
     XiaohongshuProfileResponse,
+    XiaohongshuProfileApiResult,
     DouyinApiResponse,
     DouyinResponse,
     SnackVideoApiResponse,
@@ -447,7 +449,7 @@ async function pinterest(query: string): Promise&lt;PinterestResponse> {
  */
 async function xiaohongshu(url: string): Promise&lt;XiaohongshuResponse> {
     try {
-        const data = await HttpGet&lt;any>('rednote', url, version, timeout, config.baseUrl);
+        const data = await HttpGet&lt;XiaohongshuApiResponse &amp; XiaohongshuApiResult>('rednote', url, version, timeout, config.baseUrl);
         const actualData = data.result || data;
         if (!actualData || (!actualData.noteId &amp;&amp; !actualData.notes)) {
             return {
@@ -487,7 +489,7 @@ async function xiaohongshu(url: string): Promise&lt;XiaohongshuResponse> {
  */
 async function xiaohongshuProfile(url: string): Promise&lt;XiaohongshuProfileResponse> {
     try {
-        const data = await HttpGet&lt;any>('rednote-profile', url, version, timeout, config.baseUrl);
+        const data = await HttpGet&lt;XiaohongshuProfileApiResponse &amp; XiaohongshuProfileApiResult>('rednote-profile', url, version, timeout, config.baseUrl);
         const actualData = data.result || data;
         if (!actualData || (!actualData.user &amp;&amp; !actualData.stats)) {
             return {

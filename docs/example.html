@@ -137,13 +137,13 @@
     <li>Cocofun: <a href="https://www.icocofun.com/share/post/379250110809" target="_blank">https://www.icocofun.com/share/post/379250110809</a></li>
     <li>Spotify: <a href="https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt" target="_blank">https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt</a></li>
     <li>SoundCloud: <a href="https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing</a></li>
-    <li>Threads: <a href="https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q" target="_blank">https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q</a></li>
+    <li>Threads: <a href="https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1" target="_blank">https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1</a></li>
     <li>Kuaishou: <a href="https://v.kuaishou.com/JT195ZHT" target="_blank">https://v.kuaishou.com/JT195ZHT</a></li>
     <li>YTS: <a href="#" target="_blank">Enter a YTS query (e.g., "movie title 2023")</a></li>
   </ul>
 
   <!-- Load btch CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.37/dist/browser/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.38/dist/browser/index.min.js"></script>
   
   <script>
     const output = document.getElementById("output");
@@ -169,7 +169,7 @@
       cocofun: "Paste Cocofun URL (e.g., https://www.icocofun.com/share/post/123)",
       spotify: "Paste Spotify URL (e.g., https://open.spotify.com/track/123)",
       soundcloud: "Paste SoundCloud URL (e.g., https://soundcloud.com/xxxxc)",
-      threads: "Paste Threads URL (e.g., https://www.threads.net/@user/post/abc123)",
+      threads: "Paste Threads URL (e.g., https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1)",
       kuaishou: "Paste Kuaishou URL (e.g., https://v.kuaishou.com/JT195ZHT)",
       yts: "Enter YTS query (e.g., 'movie title 2023')"
     };
@@ -191,7 +191,7 @@
         cocofun: /(icocofun|cocofun)\.com\/(share\/)?post\/\d+/i,
         spotify: /(open\.spotify\.com\/(track|album|playlist|episode)\/[\w]+|spotify\.link\/[\w]+)/i,
         soundcloud: /soundcloud\.com\/[\w.-]+\/[\w.-]+/i,
-        threads: /threads\.net\/@[\w.-]+\/post\/[\w_-]+/i,
+        threads: /threads\.(net|com)\/@[\w.-]+\/post\/[\w_-]+/i,
         kuaishou: /(v\.kuaishou\.com\/\w+|kuaishou\.com\/(?:short-video|video|share)\/[\w]+)/i,
       };
 

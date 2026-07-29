@@ -498,11 +498,11 @@ export async function soundcloud(url: string): Promise<SoundCloudResponse> {
  * @function threads
  * @memberof Browser
  * 
- * @param {string} url - The Threads post URL (e.g., https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/)
+ * @param {string} url - The Threads post URL (e.g., https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1)
  * @returns {Promise<ThreadsResponse>} A JSON object containing media links and post metadata.
  * @throws {Error} If the URL is invalid or the content is not accessible.
  * @example
- * btch.threads('https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/').then(data => console.log(data));
+ * btch.threads('https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1').then(data => console.log(data));
  */
 export async function threads(url: string): Promise<ThreadsResponse> {
   try {
