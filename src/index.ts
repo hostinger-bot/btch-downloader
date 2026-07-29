@@ -708,18 +708,18 @@ async function soundcloud(url: string): Promise<SoundCloudResponse> {
  * @async
  * @function threads
  * 
- * @param {string} url - The Threads post URL (e.g., https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/)
+ * @param {string} url - The Threads post URL (e.g., https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1)
  * @returns {Promise<ThreadsResponse>} A JSON object containing media links and post metadata.
  * @throws {Error} If the URL is invalid or the content is not accessible.
  * @example <caption>ESM</caption>
  * import { threads } from 'btch-downloader';
  *
- * const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/';
+ * const url = 'https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1';
  * threads(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  * @example <caption>CJS</caption>
  * const { threads } = require('btch-downloader');
  *
- * const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/';
+ * const url = 'https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1';
  * threads(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
  */
 async function threads(url: string): Promise<ThreadsResponse> {

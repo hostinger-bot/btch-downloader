@@ -184,7 +184,7 @@ console.log(data);
 ```ts
 import { threads } from 'btch-downloader';
 
-const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/';
+const url = 'https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1';
 const data = await threads(url);
 console.log(data);
 ```

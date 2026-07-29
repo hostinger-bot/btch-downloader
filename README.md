@@ -17,7 +17,7 @@
     <img src="https://img.shields.io/badge/unpkg-CDN-blue?style=flat&logo=unpkg" alt="unpkg CDN">
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/npm-publish.yml/badge.svg" alt="Node.js Package">
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/codeql.yml/badge.svg" alt="CodeQL Advanced">
-    <a href="https://badge.socket.dev/npm/package/btch-downloader/6.0.37" target="_blank"><img src="https://badge.socket.dev/npm/package/btch-downloader/6.0.37" alt="Socket Badge"></a>
+    <a href="https://badge.socket.dev/npm/package/btch-downloader/6.0.38" target="_blank"><img src="https://badge.socket.dev/npm/package/btch-downloader/6.0.38" alt="Socket Badge"></a>
   </p>
 
 
@@ -58,13 +58,13 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://unpkg.com/btch-downloader@6.0.37/dist/browser/index.min.js"></script>
+<script src="https://unpkg.com/btch-downloader@6.0.38/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use the latest version of btch-downloader -->
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.37/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.0.38/dist/browser/index.min.js"></script>
 ```
 
 ---
@@ -214,7 +214,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
     <li>Cocofun: <a href="https://www.icocofun.com/share/post/379250110809" target="_blank">https://www.icocofun.com/share/post/379250110809</a></li>
     <li>Spotify: <a href="https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt" target="_blank">https://open.spotify.com/track/3zakx7RAwdkUQlOoQ7SJRt</a></li>
     <li>SoundCloud: <a href="https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" target="_blank">https://soundcloud.com/issabella-marchelina/sisa-rasa-mahalini-official-audio?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing</a></li>
-    <li>Threads: <a href="https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q" target="_blank">https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q</a></li>
+    <li>Threads: <a href="https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1" target="_blank">https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1</a></li>
     <li>Kuaishou: <a href="https://v.kuaishou.com/JT195ZHT" target="_blank">https://v.kuaishou.com/JT195ZHT</a></li>
     <li>YTS: <a href="#" target="_blank">Enter a YTS query (e.g., "movie title 2023")</a></li>
   </ul>
@@ -246,7 +246,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
       cocofun: "Paste Cocofun URL (e.g., https://www.icocofun.com/share/post/123)",
       spotify: "Paste Spotify URL (e.g., https://open.spotify.com/track/123)",
       soundcloud: "Paste SoundCloud URL (e.g., https://soundcloud.com/xxxxc)",
-      threads: "Paste Threads URL (e.g., https://www.threads.net/@user/post/abc123)",
+      threads: "Paste Threads URL (e.g., https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1)",
       kuaishou: "Paste Kuaishou URL (e.g., https://v.kuaishou.com/JT195ZHT)",
       yts: "Enter YTS query (e.g., 'movie title 2023')"
     };
@@ -268,7 +268,7 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
         cocofun: /(icocofun|cocofun)\.com\/(share\/)?post\/\d+/i,
         spotify: /(open\.spotify\.com\/(track|album|playlist|episode)\/[\w]+|spotify\.link\/[\w]+)/i,
         soundcloud: /soundcloud\.com\/[\w.-]+\/[\w.-]+/i,
-        threads: /threads\.net\/@[\w.-]+\/post\/[\w_-]+/i,
+        threads: /threads\.(net|com)\/@[\w.-]+\/post\/[\w_-]+/i,
         kuaishou: /(v\.kuaishou\.com\/\w+|kuaishou\.com\/(?:short-video|video|share)\/[\w]+)/i,
       };
 
@@ -743,7 +743,7 @@ soundcloud(url).then(data => console.log(data)).catch(err => console.error(err))
 ```javascript
 import { threads } from 'btch-downloader';
 
-const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q';
+const url = 'https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1';
 threads(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
@@ -751,7 +751,7 @@ threads(url).then(data => console.log(data)).catch(err => console.error(err)); /
 ```javascript
 const { threads } = require('btch-downloader');
 
-const url = 'https://www.threads.net/@cindyyuvia/post/C_Nqx3khgkI/?xmt=AQGzpsCvidh8IwIqOvq4Ov05Zd5raANiVdvCujM_pjBa1Q';
+const url = 'https://www.threads.com/@prm2.0/post/DUAdQcAkhRP?xmt=AQG0V_OPLTmE_5E242r6SPgYY_ofjuQxxRsZwS92_gBAKy4ctmOEbZP5cnKEibNlvn_8l-oK&slof=1';
 threads(url).then(data => console.log(data)).catch(err => console.error(err)); // JSON
 ```
 
