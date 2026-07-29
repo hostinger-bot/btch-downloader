@@ -30,6 +30,7 @@ import type {
     AioResponse,
     XiaohongshuApiResponse,
     XiaohongshuResponse,
+    XiaohongshuApiResult,
     XiaohongshuProfileApiResponse,
     XiaohongshuProfileResponse,
     DouyinApiResponse,
@@ -445,8 +446,8 @@ async function pinterest(query: string): Promise<PinterestResponse> {
  */
 async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
     try {
-        const data = await HttpGet<any>('rednote', url, version, timeout, config.baseUrl);
-        const actualData = data.result || data;
+        const data = await HttpGet<XiaohongshuApiResponse>('rednote', url, version, timeout, config.baseUrl);
+        const actualData = data.result || (data as unknown as XiaohongshuApiResult);
         if (!actualData || (!actualData.noteId && !actualData.notes)) {
             return {
                 ...formatErrorResponse(new Error('No results found')),
@@ -485,8 +486,8 @@ async function xiaohongshu(url: string): Promise<XiaohongshuResponse> {
  */
 async function xiaohongshuProfile(url: string): Promise<XiaohongshuProfileResponse> {
     try {
-        const data = await HttpGet<any>('rednote-profile', url, version, timeout, config.baseUrl);
-        const actualData = data.result || data;
+        const data = await HttpGet<XiaohongshuProfileApiResponse>('rednote-profile', url, version, timeout, config.baseUrl);
+        const actualData = data.result || (data);
         if (!actualData || (!actualData.user && !actualData.stats)) {
             return {
                 ...formatErrorResponse(new Error('No results found')),
