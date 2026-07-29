@@ -503,6 +503,8 @@ export interface XiaohongshuProfileResponse extends BaseResponse {
 export interface XiaohongshuApiResult {
     /** Unique note identifier. */
     noteId?: string;
+    /** Post notes */
+    notes?: any;
     /** Author details. */
     author?: {
         id?: string;
