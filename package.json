@@ -102,6 +102,7 @@
     "@babel/preset-env": "^7.29.7",
     "@babel/preset-typescript": "^7.29.7",
     "@eslint/js": "^9.39.4",
+    "@semantic-release/exec": "^7.1.0",
     "@types/node": "^24.13.2",
     "@typescript-eslint/eslint-plugin": "^8.61.1",
     "@typescript-eslint/parser": "^8.61.1",
@@ -111,6 +112,7 @@
     "globals": "^16.5.0",
     "jiti": "^2.7.0",
     "jsdoc-babel": "^0.5.0",
+    "semantic-release": "^25.0.9",
     "typescript-eslint": "^8.61.1"
   },
   "repository": {
