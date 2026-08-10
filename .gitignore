@@ -26,6 +26,7 @@ Thumbs.db
 
 # Test coverage
 coverage/
+.eslintcache
 .nyc_output/
 
 # Exclude personal directories
