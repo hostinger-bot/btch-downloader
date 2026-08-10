@@ -80,6 +80,7 @@
     "btch-http": "^2.0.3",
     "clean-jsdoc-theme": "4.3.0",
     "esbuild": "^0.28.0",
+    "glob": "10.5.0",
     "install": "^0.13.0",
     "jsdoc": "^4.0.5",
     "lodash": "^4.18.1",
