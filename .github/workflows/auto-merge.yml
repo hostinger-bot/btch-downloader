@@ -1,0 +1,21 @@
+name: Auto Merge Bot
+
+on:
+  pull_request_target: { types: [opened, synchronize] }
+  issue_comment: { types: [created] }
+
+permissions:
+  pull-requests: write
+  contents: write
+
+jobs:
+  auto-merge-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Auto Merge Bot
+        uses: casassg/auto-merge-bot@v0.3.6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          merge_method: "squash"
