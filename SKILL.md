@@ -222,7 +222,7 @@ The client SDK ships a browser bundle. Load it via CDN and access all functions 
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- Specific version -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.3.1/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.3.2/dist/browser/index.min.js"></script>
 
 <script>
   const { igdl, ttdl, aio } = window.btch;
