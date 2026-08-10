@@ -18,7 +18,7 @@
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/release.yml/badge.svg" alt="Release">
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/autofix.yml/badge.svg" alt="autofix.ci">
     <img src="https://github.com/hostinger-bot/btch-downloader/actions/workflows/codeql.yml/badge.svg" alt="CodeQL Advanced">
-    <a href="https://badge.socket.dev/npm/package/btch-downloader/6.3.2" target="_blank"><img src="https://badge.socket.dev/npm/package/btch-downloader/6.3.2" alt="Socket Badge"></a>
+    <a href="https://badge.socket.dev/npm/package/btch-downloader/6.3.3" target="_blank"><img src="https://badge.socket.dev/npm/package/btch-downloader/6.3.3" alt="Socket Badge"></a>
   </p>
 
 
@@ -59,13 +59,13 @@ Alternatively, you can include btch-downloader by getting it from [npm](https://
 <script src="https://unpkg.com/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- unpkg : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://unpkg.com/btch-downloader@6.3.2/dist/browser/index.min.js"></script>
+<script src="https://unpkg.com/btch-downloader@6.3.3/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use the latest version of btch-downloader -->
 <script src="https://cdn.jsdelivr.net/npm/btch-downloader/dist/browser/index.min.js"></script>
 
 <!-- jsDelivr : use a specific version of btch-downloader (change the version numbers as necessary) -->
-<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.3.2/dist/browser/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/btch-downloader@6.3.3/dist/browser/index.min.js"></script>
 ```
 
 ---
