@@ -9,7 +9,7 @@
  */
 const watermark = {
   /** The developer handle used in responses. */
-  dev: "@prm2.0"
+  dev: "BOTCAHX"
 };
 
 export default watermark;
