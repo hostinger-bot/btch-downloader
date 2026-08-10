@@ -7,13 +7,21 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "npm run docs && node scripts/update-readme-version.js"
+        "prepareCmd": "npm run docs && node scripts/update-version-references.js"
       }
     ],
     [
       "@semantic-release/git",
       {
-        "assets": ["package.json", "package-lock.json", "README.md", "docs/**"]
+        "assets": [
+          "package.json",
+          "package-lock.json",
+          "README.md",
+          "AGENTS.md",
+          "SKILL.md",
+          "CHANGELOG.md",
+          "docs/**"
+        ]
       }
     ],
     "@semantic-release/github"
