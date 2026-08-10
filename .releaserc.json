@@ -7,7 +7,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "npm run docs && node scripts/update-version-references.js"
+        "prepareCmd": "node scripts/update-version-references.js && npm run docs"
       }
     ],
     [
@@ -20,6 +20,8 @@
           "AGENTS.md",
           "SKILL.md",
           "CHANGELOG.md",
+          "lib/Browser/index.ts",
+          "example.html",
           "docs/**"
         ]
       }
