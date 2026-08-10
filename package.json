@@ -82,6 +82,7 @@
     "esbuild": "^0.28.0",
     "install": "^0.13.0",
     "jsdoc": "^4.0.5",
+    "linkify-it": "5.0.2",
     "lodash": "^4.18.1",
     "picomatch": "4.0.4",
     "rollup": "^4.62.2",
