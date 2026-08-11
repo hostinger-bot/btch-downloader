@@ -14,12 +14,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
+      # Auto-approve PR dari bot/AI
+      - name: Auto Approve Bot PRs
+        uses: hmarr/auto-approve-action@v3
+        if: |
+          github.actor == 'dependabot[bot]' ||
+          github.actor == 'github-actions[bot]' ||
+          github.actor == 'renovate[bot]' ||
+          github.actor == 'cubichq[bot]'
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Auto Merge Bot
         uses: casassg/auto-merge-bot@v0.3.6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           merge_method: "squash"
-          # Path repo-relative (dipakai API sebagai prefix "CODEOWNERS");
-          # bukan path absolut runner — github.workspace bikin 404 lalu crash.
           cwd: ".github/"
