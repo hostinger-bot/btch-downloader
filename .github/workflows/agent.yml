@@ -1,0 +1,19 @@
+name: AI PR Reviewer
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  pr_agent:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: Codium-ai/pr-agent@main
+        env:
+          OPENAI.KEY: ${{ secrets.OPENAI_KEY }}
+          OPENAI.API_BASE: "https://ai.tioo.eu.org/v1"
+          OPENAI.MODEL: "Qwen3.6-35B-A3B-FP8"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
