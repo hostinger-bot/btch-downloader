@@ -33,7 +33,7 @@ export const issues = configData.issues || "https://github.com/hostinger-bot/btc
  * @type {string}
  * @memberof module:BrowserInternal
  */
-export const VERSION = pkg.version || "1.0.0;
+export const VERSION = pkg.version || "1.0.0";
 
 /**
  * Performs a GET request to the backend API.
