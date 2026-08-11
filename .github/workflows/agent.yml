@@ -1,19 +1,60 @@
-name: AI PR Reviewer
+name: AI Auto Code Fixer
 
 on:
   pull_request:
     types: [opened, synchronize]
 
 jobs:
-  pr_agent:
+  ai-autofix:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pull-requests: write
+
     steps:
-      - uses: Codium-ai/pr-agent@main
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Run AI Code Auto-Edit
         env:
-          OPENAI.KEY: ${{ secrets.OPENAI_KEY }}
-          OPENAI.API_BASE: "https://ai.tioo.eu.org/v1"
-          OPENAI.MODEL: "Qwen3.6-35B-A3B-FP8"
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+        run: |
+          git fetch origin ${{ github.base_ref }}
+          FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          
+          for FILE in $FILES; do
+            if [ -f "$FILE" ] && [[ "$FILE" != *.md ]] && [[ "$FILE" != *.json ]] && [[ "$FILE" != *.yml ]]; then
+              CONTENT=$(cat "$FILE")
+              
+              RESPONSE=$(curl -s https://ai.tioo.eu.org/v1/chat/completions \
+                -H "Content-Type: application/json" \
+                -H "Authorization: Bearer $OPENAI_KEY" \
+                -d "{
+                  \"model\": \"Qwen3.6-35B-A3B-FP8\",
+                  \"messages\": [
+                    {
+                      \"role\": \"system\",
+                      \"content\": \"Kamu adalah AI auto-refactor. Perbaiki bug, tingkatkan performa, dan kembalikan HANYA kode hasil perbaikannya tanpa markdown backticks atau penjelasan.\"
+                    },
+                    {
+                      \"role\": \"user\",
+                      \"content\": \"Perbaiki kode berikut:\n$CONTENT\"
+                    }
+                  ]
+                }")
+
+              FIXED_CODE=$(echo "$RESPONSE" | jq -r '.choices[0].message.content')
+              if [ "$FIXED_CODE" != "null" ] && [ -n "$FIXED_CODE" ]; then
+                echo "$FIXED_CODE" > "$FILE"
+              fi
+            fi
+          done
+
+      - name: Auto-Commit & Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --quiet && git diff --staged --quiet || (git commit -m "style: auto-fix code by Qwen AI" && git push)
