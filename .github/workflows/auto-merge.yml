@@ -1,34 +1,30 @@
 name: Auto Merge Bot
 
 on:
-  pull_request_target: { types: [opened, synchronize] }
-  issue_comment: { types: [created] }
+  pull_request_target:
+    types: [opened, synchronize]
 
 permissions:
   pull-requests: write
   contents: write
-  issues: write
 
 jobs:
-  auto-merge-bot:
+  auto-merge:
     runs-on: ubuntu-latest
+    if: |
+      github.actor == 'dependabot[bot]' ||
+      github.actor == 'github-actions[bot]' ||
+      github.actor == 'renovate[bot]' ||
+      github.actor == 'cubichq[bot]'
     steps:
-      - uses: actions/checkout@v4
-      
-      # Auto-approve PR dari bot/AI
       - name: Auto Approve Bot PRs
-        uses: hmarr/auto-approve-action@v3
-        if: |
-          github.actor == 'dependabot[bot]' ||
-          github.actor == 'github-actions[bot]' ||
-          github.actor == 'renovate[bot]' ||
-          github.actor == 'cubichq[bot]'
+        uses: hmarr/auto-approve-action@v4
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Auto Merge Bot
-        uses: casassg/auto-merge-bot@v0.3.6
+
+      - name: Auto Merge PR
+        run: gh pr merge --auto --squash "$PR_URL"
         env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          merge_method: "squash"
+          
