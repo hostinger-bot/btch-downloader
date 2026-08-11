@@ -19,4 +19,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           merge_method: "squash"
-          cwd: ${{ github.workspace }}
+          # Path repo-relative (dipakai API sebagai prefix "CODEOWNERS");
+          # bukan path absolut runner — github.workspace bikin 404 lalu crash.
+          cwd: ".github/"
