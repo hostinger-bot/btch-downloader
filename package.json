@@ -82,7 +82,7 @@
     "clean-jsdoc-theme": "4.3.0",
     "diff": "4.0.4",
     "esbuild": "^0.28.0",
-    "glob": "10.5.0",
+    "glob": "13.0.6",
     "install": "^0.13.0",
     "jsdoc": "^4.0.5",
     "linkify-it": "6.1.0",
