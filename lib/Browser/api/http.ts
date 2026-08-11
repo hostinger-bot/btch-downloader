@@ -12,7 +12,7 @@ import pkg from '../../../package.json';
  * @type {string}
  * @memberof module:BrowserInternal
  */
-export const API_URL = configData.config.baseUrl;
+export const API_URL = configData.config.baseUrl || "https://backend1.tioo.eu.org";
 
 /**
  * The developer signature for the library.
