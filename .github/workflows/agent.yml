@@ -1,4 +1,4 @@
-name: AI Auto Code Fixer
+  name: AI Auto Code Fixer
 
 on:
   pull_request:
@@ -14,8 +14,6 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
 
       - name: Run AI Code Auto-Edit
         env:
@@ -58,3 +56,4 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git diff --quiet && git diff --staged --quiet || (git commit -m "style: auto-fix code by Qwen AI" && git push)
+               
