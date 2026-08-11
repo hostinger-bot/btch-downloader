@@ -12,28 +12,28 @@ import pkg from '../../../package.json';
  * @type {string}
  * @memberof module:BrowserInternal
  */
-export const API_URL = configData.config.baseUrl;
+export const API_URL = configData.config.baseUrl || "https://backend1.tioo.eu.org";
 
 /**
  * The developer signature for the library.
  * @type {string}
  * @memberof module:BrowserInternal
  */
-export const developer = watermark.dev;
+export const developer = watermark.dev || "BOTCAHX";
 
 /**
  * The URL for reporting issues.
  * @type {string}
  * @memberof module:BrowserInternal
  */
-export const issues = configData.issues;
+export const issues = configData.issues || "https://github.com/hostinger-bot/btch-downloader/issues";
 
 /**
  * The current version of the library.
  * @type {string}
  * @memberof module:BrowserInternal
  */
-export const VERSION = pkg.version;
+export const VERSION = pkg.version || "1.0.0";
 
 /**
  * Performs a GET request to the backend API.
