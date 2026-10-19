@@ -93,7 +93,7 @@
     "set-value": "4.1.0",
     "source-map": "^0.8.0",
     "ts-node": "^10.9.2",
-    "tsup": "^8.5.1",
+    "tsup": "^9.0.0",
     "typescript": "^6.0.3",
     "underscore": "1.13.8"
   },
